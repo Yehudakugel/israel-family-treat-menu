@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="he" dir="rtl">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Our Thursday Adventure · Oct 1</title>
-  <meta property="og:title" content="Our Thursday Adventure · Oct 1 🚤🔫🏎️🍝" />
-  <meta property="og:description" content="Speedboat, laser tag, go-karts, pasta &amp; sunset. The whole gang!" />
+  <title>ההרפתקה שלנו ביום חמישי · 1 באוקטובר</title>
+  <meta property="og:title" content="ההרפתקה שלנו ביום חמישי · Our Thursday Adventure · 1.10 🚤🔫🏎️🍝" />
+  <meta property="og:description" content="סירת מרוץ, לייזר טאג, קארטינג, פסטה ושקיעה. כל החבורה! · Speedboat, laser tag, go-karts, pasta &amp; sunset." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet" />
   <style>
     :root {
       --bg: #0b1020;
@@ -21,7 +24,7 @@
     * { box-sizing: border-box; }
     body {
       margin: 0;
-      font-family: "Segoe UI", system-ui, sans-serif;
+      font-family: "Heebo", "Segoe UI", system-ui, sans-serif;
       background:
         radial-gradient(900px 500px at 0% 0%, #243b6b 0%, transparent 55%),
         radial-gradient(700px 400px at 100% 10%, #4a2560 0%, transparent 50%),
@@ -69,7 +72,7 @@
       margin: 0 0 4px;
       font-size: 1.25rem;
     }
-    .emoji { margin-right: 6px; }
+    .emoji { margin-inline-end: 6px; }
     .meta {
       font-size: 0.88rem;
       color: var(--ok);
@@ -93,7 +96,7 @@
     }
     .playlist ul {
       margin: 0;
-      padding-left: 1.1rem;
+      padding-inline-start: 1.1rem;
       color: var(--muted);
       font-size: 0.92rem;
     }
@@ -109,7 +112,7 @@
     .phone { color: var(--muted); font-size: 0.85rem; }
     .tag {
       display: inline-block; padding: 2px 8px; border-radius: 999px;
-      font-size: 0.75rem; font-weight: 700; margin-left: 6px; vertical-align: middle;
+      font-size: 0.75rem; font-weight: 700; margin-inline-start: 6px; vertical-align: middle;
     }
     .tag.ok { background: #13402f; color: var(--ok); }
     .tag.call { background: #4a3413; color: var(--warm); }
@@ -147,322 +150,355 @@
     .older{opacity:.8;border-top:1px dashed var(--line);margin-top:30px;padding-top:6px}
     .older h1{font-size:1.3rem}
     @media (max-width:430px){.stop .pics img{height:190px}.stop .pics{grid-template-columns:1fr}.stop .pics img+img{display:none}}
+
+    html[lang=he] .en,html[lang=en] .he{display:none}
+    html[lang=he] h2,html[lang=he] .playlist strong{letter-spacing:0}
+    html[lang=he] .hero h1{letter-spacing:0}
+    .lang{position:fixed;top:10px;inset-inline-end:10px;z-index:50;display:flex;background:#1a1030;border-radius:999px;padding:3px;box-shadow:0 4px 14px rgba(0,0,0,.35)}
+    .lang button{font:inherit;font-size:.85rem;font-weight:800;border:0;background:transparent;color:#ffd36b;padding:6px 12px;border-radius:999px;cursor:pointer}
+    .lang button[aria-pressed=true]{background:#ffd36b;color:#1a1030}
+    .hero{padding-top:52px}
+    bdi,.ltr{unicode-bidi:isolate}
   </style>
 </head>
 <body>
+  <div class="lang" role="group" aria-label="Language / שפה">
+    <button type="button" data-set="he" aria-pressed="true">עברית</button>
+    <button type="button" data-set="en" aria-pressed="false">English</button>
+  </div>
   <div class="wrap">
     <section class="hero">
       <div class="conf">🎉🚤🔫🏎️🍝🌅</div>
-      <h1>Our Thursday Adventure</h1>
-      <span class="date">Thu · Oct 1 · Chol HaMoed Sukkot</span>
-      <p>Boats, lasers, race cars and pasta by the sea. The whole gang, one epic day! We leave at 11:00.</p>
+      <h1><span class="en">Our Thursday Adventure</span><span class="he">ההרפתקה שלנו ביום חמישי</span></h1>
+      <span class="date"><span class="en">Thu · Oct 1 · Chol HaMoed Sukkot</span><span class="he">יום חמישי · 1 באוקטובר · חול המועד סוכות</span></span>
+      <p><span class="en">Boats, lasers, race cars and pasta by the sea. The whole gang, one epic day! We leave at 11:00.</span><span class="he">סירות, לייזרים, מכוניות מרוץ ופסטה ליד הים. כל החבורה, יום אחד מטורף! יוצאים ב־11:00.</span></p>
     </section>
 
     <nav class="tl" aria-label="Timeline">
-      <a href="#boat"><b>🚤</b><small>12:30</small><span>Speedboat</span></a>
-      <a href="#laser"><b>🔫</b><small>13:40</small><span>Laser tag</span></a>
-      <a href="#kart"><b>🏎️</b><small>14:55</small><span>Go-karts</span></a>
-      <a href="#pasta"><b>🍝</b><small>17:00</small><span>Pasta</span></a>
-      <a href="#sunset"><b>🌅</b><small>18:20</small><span>Sunset</span></a>
-      <a href="#bonus"><b>🪂</b><small>Bonus?</small><span>FlyBox</span></a>
+      <a href="#boat"><b>🚤</b><small>12:30</small><span><span class="en">Speedboat</span><span class="he">סירת מרוץ</span></span></a>
+      <a href="#laser"><b>🔫</b><small>13:40</small><span><span class="en">Laser tag</span><span class="he">לייזר טאג</span></span></a>
+      <a href="#kart"><b>🏎️</b><small>14:55</small><span><span class="en">Go-karts</span><span class="he">קארטינג</span></span></a>
+      <a href="#pasta"><b>🍝</b><small>17:00</small><span><span class="en">Pasta</span><span class="he">פסטה</span></span></a>
+      <a href="#sunset"><b>🌅</b><small>18:20</small><span><span class="en">Sunset</span><span class="he">שקיעה</span></span></a>
+      <a href="#bonus"><b>🪂</b><small><span class="en">Bonus?</span><span class="he">בונוס?</span></small><span>FlyBox</span></a>
     </nav>
 
     <article class="stop" id="boat">
       <div class="pics"><img src="images/thursday/02-tornado-speedboat.jpg" alt="Speedboat racing on the sea" /><img src="images/thursday/02-herzliya-marina.jpg" alt="Herzliya Marina" loading="lazy" /></div>
       <div class="body">
-        <span class="when">12:30 · Herzliya Marina</span>
-        <h3>🚤 Speedboat Blast!</h3>
-        <p class="fun">Hold on tight! We zoom out to sea on a super-fast boat, bouncing over the waves for 20 wild minutes. Wheee!</p>
-        <p class="who">👥 Ages 5+ ride · the 3-year-old waves from the pier with ice cream 🍦</p>
-        <p class="tiny"><a href="tel:0523434404">📞 Holiday</a> · <a href="https://wa.me/972509180000">WhatsApp Funtasea</a> · ₪50/person (Funtasea)</p>
+        <span class="when"><span class="en">12:30 · Herzliya Marina</span><span class="he">12:30 · מרינה הרצליה</span></span>
+        <h3><span class="en">🚤 Speedboat Blast!</span><span class="he">🚤 טיל על המים!</span></h3>
+        <p class="fun"><span class="en">Hold on tight! We zoom out to sea on a super-fast boat, bouncing over the waves for 20 wild minutes. Wheee!</span><span class="he">תחזיקו חזק! יוצאים לים בסירה סופר־מהירה וקופצים על הגלים 20 דקות מטורפות. יוהוו!</span></p>
+        <p class="who"><span class="en">👥 Ages 5+ ride · the 3-year-old waves from the pier with ice cream 🍦</span><span class="he">👥 מגיל 5 עולים לסירה · בן ה־3 מנופף מהרציף עם גלידה 🍦</span></p>
+        <p class="tiny"><a href="tel:0523434404">📞 <span class="en">Holiday</span><span class="he">הולידיי</span></a> · <a href="https://wa.me/972509180000"><span class="en">WhatsApp Funtasea</span><span class="he">וואטסאפ Funtasea</span></a> · <span class="en">₪50/person (Funtasea)</span><span class="he">₪50 לאדם (Funtasea)</span></p>
       </div>
     </article>
 
     <article class="stop" id="laser">
       <div class="pics"><img src="images/thursday/03-laser-tag-poleg-player.jpg" alt="Laser tag player in a neon arena" loading="lazy" /><img src="images/thursday/03-laser-tag-poleg-arena.jpg" alt="Neon laser tag maze" loading="lazy" /></div>
       <div class="body">
-        <span class="when">13:40 · Laser Tag Poleg, Netanya</span>
-        <h3>🔫 Laser Battle!</h3>
-        <p class="fun">Vests on, lasers ready! Sneak through a glowing neon maze with tunnels and forts. Team up, tag your siblings, win the war!</p>
-        <p class="who">👥 Big kids + 9 &amp; 7 play (40 min) · 5 &amp; 3 get snacks and cheer, and their turn is next!</p>
-        <p class="tiny"><a href="tel:*5082">📞 *5082</a> · <a href="https://www.lasertag-poleg.co.il/book-double-game">Book</a> · ₪100/player (double game)</p>
+        <span class="when"><span class="en">13:40 · Laser Tag Poleg, Netanya</span><span class="he">13:40 · לייזר טאג פולג, נתניה</span></span>
+        <h3><span class="en">🔫 Laser Battle!</span><span class="he">🔫 קרב לייזרים!</span></h3>
+        <p class="fun"><span class="en">Vests on, lasers ready! Sneak through a glowing neon maze with tunnels and forts. Team up, tag your siblings, win the war!</span><span class="he">לובשים אפודים, לייזרים מוכנים! מתגנבים במבוך ניאון זוהר עם מנהרות ומבצרים. מתחלקים לקבוצות, פוגעים באחים ומנצחים בקרב!</span></p>
+        <p class="who"><span class="en">👥 Big kids + 9 &amp; 7 play (40 min) · 5 &amp; 3 get snacks and cheer, and their turn is next!</span><span class="he">👥 הגדולים + בני 9 ו־7 משחקים (40 דק׳) · בני 5 ו־3 מקבלים חטיף ומעודדים, ומיד אחר כך התור שלהם!</span></p>
+        <p class="tiny"><a href="tel:*5082">📞 <bdi dir="ltr">*5082</bdi></a> · <a href="https://www.lasertag-poleg.co.il/book-double-game"><span class="en">Book</span><span class="he">הזמנה</span></a> · <span class="en">₪100/player (double game)</span><span class="he">₪100 לשחקן (משחק כפול)</span></p>
       </div>
     </article>
 
     <article class="stop" id="kart">
       <div class="pics"><img src="images/thursday/03-dan-karting-track.jpg" alt="Go-karts racing" loading="lazy" /><img src="images/thursday/03-dan-karting-double-kart.jpg" alt="Two-seat kart" loading="lazy" /></div>
       <div class="body">
-        <span class="when">14:55 · Dan Karting Netanya</span>
-        <h3>🏎️ Race Day!</h3>
-        <p class="fun">Helmets on, engines roaring! Real go-karts for the racers, mini electric karts for the little drivers, plus bumper cars. Who takes the checkered flag? 🏁</p>
-        <p class="who">👥 8+ &amp; 1.30 m: go-karts · ages 4–8: kids’ karts · 3yo: rides the two-seat kart with a grown-up</p>
-        <p class="tiny"><a href="tel:048501060">📞 04-850-1060</a> · <a href="https://wa.me/972539314994">WhatsApp</a> · <a href="https://dankart.co.il/branches/netanya/">Info</a></p>
+        <span class="when"><span class="en">14:55 · Dan Karting Netanya</span><span class="he">14:55 · דן קארטינג נתניה</span></span>
+        <h3><span class="en">🏎️ Race Day!</span><span class="he">🏎️ יום מרוצים!</span></h3>
+        <p class="fun"><span class="en">Helmets on, engines roaring! Real go-karts for the racers, mini electric karts for the little drivers, plus bumper cars. Who takes the checkered flag? 🏁</span><span class="he">קסדות על הראש, המנועים שואגים! קארטינג אמיתי לנהגים, קארטים חשמליים קטנים לנהגים הצעירים, וגם מכוניות מתנגשות. מי יגיע ראשון לדגל המשובץ? 🏁</span></p>
+        <p class="who"><span class="en">👥 8+ &amp; 1.30 m: go-karts · ages 4–8: kids’ karts · 3yo: rides the two-seat kart with a grown-up</span><span class="he">👥 מגיל 8 ומגובה 1.30 מ׳: קארטינג · גילאי 4–8: קארטים לילדים · בן 3: נוסע בקארט זוגי עם מבוגר</span></p>
+        <p class="tiny"><a href="tel:048501060">📞 <bdi dir="ltr">04-850-1060</bdi></a> · <a href="https://wa.me/972539314994"><span class="en">WhatsApp</span><span class="he">וואטסאפ</span></a> · <a href="https://dankart.co.il/branches/netanya/"><span class="en">Info</span><span class="he">מידע</span></a></p>
       </div>
     </article>
 
     <article class="stop" id="pasta">
       <div class="pics"><img src="images/thursday/04-alonzo-pasta.jpg" alt="Pasta with tomato sauce" loading="lazy" /><img src="images/thursday/04-alonzo-pizza.jpg" alt="Pizzas" loading="lazy" /></div>
       <div class="body">
-        <span class="when">17:00 · Alonzo, Kikar HaAtzmaut</span>
-        <h3>🍝 Pasta Party!</h3>
-        <p class="fun">Race-winner feast! Handmade pasta and pizza on the big square by the sea. Mehadrin dairy, so everyone orders their favorite.</p>
-        <p class="who">👥 Everyone! Share plates for the little ones 🍕</p>
-        <p class="tiny"><a href="tel:097996267">📞 09-799-6267</a> · <a href="https://ontopo.com/he/il/page/44713986">Reserve</a> · Rabbanut Mehadrin</p>
+        <span class="when"><span class="en">17:00 · Alonzo, Kikar HaAtzmaut</span><span class="he">17:00 · אלונזו, כיכר העצמאות</span></span>
+        <h3><span class="en">🍝 Pasta Party!</span><span class="he">🍝 מסיבת פסטה!</span></h3>
+        <p class="fun"><span class="en">Race-winner feast! Handmade pasta and pizza on the big square by the sea. Mehadrin dairy, so everyone orders their favorite.</span><span class="he">סעודת המנצחים! פסטה טרייה ופיצה בכיכר הגדולה ליד הים. חלבי בהשגחת מהדרין, אז כל אחד מזמין מה שהוא הכי אוהב.</span></p>
+        <p class="who"><span class="en">👥 Everyone! Share plates for the little ones 🍕</span><span class="he">👥 כולם! הקטנים מתחלקים בצלחות 🍕</span></p>
+        <p class="tiny"><a href="tel:097996267">📞 <bdi dir="ltr">09-799-6267</bdi></a> · <a href="https://ontopo.com/he/il/page/44713986"><span class="en">Reserve</span><span class="he">הזמנת מקום</span></a> · <span class="en">Rabbanut Mehadrin</span><span class="he">כשרות רבנות מהדרין</span></p>
       </div>
     </article>
 
     <article class="stop" id="sunset">
       <div class="pics"><img src="images/thursday/05-netanya-promenade.jpg" alt="Netanya cliffs and sea" loading="lazy" /><img src="images/thursday/05-kikar-haatzmaut.jpg" alt="Fountain on Kikar HaAtzmaut" loading="lazy" /></div>
       <div class="body">
-        <span class="when">~18:20 · Netanya cliffs</span>
-        <h3>🌅 Sunset Selfie!</h3>
-        <p class="fun">Watch the sun dive into the sea from the cliffs, splash by the big fountain and snap our family photo. Then home, with sleepy happy faces.</p>
-        <p class="who">👥 Everyone · free!</p>
+        <span class="when"><span class="en">~18:20 · Netanya cliffs</span><span class="he"><bdi dir="ltr">~18:20</bdi> · צוקי נתניה</span></span>
+        <h3><span class="en">🌅 Sunset Selfie!</span><span class="he">🌅 סלפי שקיעה!</span></h3>
+        <p class="fun"><span class="en">Watch the sun dive into the sea from the cliffs, splash by the big fountain and snap our family photo. Then home, with sleepy happy faces.</span><span class="he">מסתכלים מהצוק איך השמש צוללת לים, משתכשכים ליד המזרקה הגדולה ומצטלמים לתמונה משפחתית. ואז הביתה, עם פרצופים עייפים ומאושרים.</span></p>
+        <p class="who"><span class="en">👥 Everyone · free!</span><span class="he">👥 כולם · בחינם!</span></p>
       </div>
     </article>
 
-    <p class="home">🚗 Home around 20:00–20:15</p>
+    <p class="home"><span class="en">🚗 Home around 20:00–20:15</span><span class="he">🚗 בבית בסביבות <bdi dir="ltr">20:00–20:15</bdi></span></p>
 
     <article class="stop bonus" id="bonus">
       <div class="pics"><img src="images/thursday/01-flybox-tunnel.jpg" alt="Flying in the FlyBox wind tunnel" loading="lazy" /><img src="images/thursday/01-flybox-building.jpg" alt="FlyBox building" loading="lazy" /></div>
       <div class="body">
-        <span class="when">Optional bonus · 12:00 · Rishon LeZion</span>
-        <h3>🪂 Fly Like a Superhero?</h3>
-        <p class="fun">Maybe! If we add it, we fly inside a giant wind tunnel with an instructor, like skydiving without a plane. It pushes the whole day later.</p>
-        <p class="who">👥 Ages 4+ fly · the 3-year-old watches through the glass</p>
-        <p class="tiny"><a href="tel:039394840">📞 03-939-4840</a> · <a href="https://www.flybox.co.il/%D7%9E%D7%97%D7%99%D7%A8%D7%95%D7%9F/">Info</a> · family pack ₪1,095 (5 flyers)</p>
+        <span class="when"><span class="en">Optional bonus · 12:00 · Rishon LeZion</span><span class="he">בונוס אופציונלי · 12:00 · ראשון לציון</span></span>
+        <h3><span class="en">🪂 Fly Like a Superhero?</span><span class="he">🪂 לעוף כמו גיבורי־על?</span></h3>
+        <p class="fun"><span class="en">Maybe! If we add it, we fly inside a giant wind tunnel with an instructor, like skydiving without a plane. It pushes the whole day later.</span><span class="he">אולי! אם נוסיף את זה, נעוף בתוך מנהרת רוח ענקית עם מדריך, כמו צניחה חופשית בלי מטוס. זה ידחה את כל היום קצת מאוחר יותר.</span></p>
+        <p class="who"><span class="en">👥 Ages 4+ fly · the 3-year-old watches through the glass</span><span class="he">👥 מגיל 4 עפים · בן ה־3 צופה מבעד לזכוכית</span></p>
+        <p class="tiny"><a href="tel:039394840">📞 <bdi dir="ltr">03-939-4840</bdi></a> · <a href="https://www.flybox.co.il/%D7%9E%D7%97%D7%99%D7%A8%D7%95%D7%9F/"><span class="en">Info</span><span class="he">מידע</span></a> · <span class="en">family pack ₪1,095 (5 flyers)</span><span class="he">חבילה משפחתית ₪1,095 (5 טסים)</span></p>
       </div>
     </article>
 
-    <p class="tiny" style="text-align:center;margin-bottom:8px">Photos: venue websites (Dan Karting, Laser Tag Poleg, Alonzo), the Tal Yam listing (speedboat), Wikimedia Commons (Dr. Avishai Teicher, Nissan Hadary, Deror Avi; CC BY/BY-SA).</p>
+    <p class="tiny" style="text-align:center;margin-bottom:8px"><span class="en">Photos: venue websites (Dan Karting, Laser Tag Poleg, Alonzo), the Tal Yam listing (speedboat), Wikimedia Commons (Dr. Avishai Teicher, Nissan Hadary, Deror Avi; CC BY/BY-SA).</span><span class="he">צילומים: אתרי המקומות (דן קארטינג, לייזר טאג פולג, אלונזו), דף טל ים (סירת המרוץ), ויקישיתוף (ד״ר אבישי טייכר, ניסן הדרי, דרור אבי; CC BY/BY-SA).</span></p>
 
     <div class="older">
     <header>
-      <h1>More family adventure ideas</h1>
-      <p class="sub">Ideas for other days. Each one can get its own playlist.</p>
+      <h1><span class="en">More family adventure ideas</span><span class="he">עוד רעיונות להרפתקאות משפחתיות</span></h1>
+      <p class="sub"><span class="en">Ideas for other days. Each one can get its own playlist.</span><span class="he">רעיונות לימים אחרים. לכל אחד אפשר להכין פלייליסט משלו.</span></p>
     </header>
 
-    <h2>Big wow trips</h2>
+    <h2><span class="en">Big wow trips</span><span class="he">טיולי וואו גדולים</span></h2>
 
     <article class="trip">
-      <h3><span class="emoji">🪂</span>Indoor skydiving</h3>
-      <p class="meta">Fly in a wind tunnel · ages 4+ · little ones can watch</p>
-      <p>Like flying without a plane — FlyBox in Rishon.</p>
+      <h3><span class="emoji">🪂</span><span class="en">Indoor skydiving</span><span class="he">צניחה חופשית בתוך מבנה</span></h3>
+      <p class="meta"><span class="en">Fly in a wind tunnel · ages 4+ · little ones can watch</span><span class="he">טסים במנהרת רוח · מגיל 4 · הקטנים יכולים לצפות</span></p>
+      <p><span class="en">Like flying without a plane — FlyBox in Rishon.</span><span class="he">כמו לעוף בלי מטוס — FlyBox בראשון לציון.</span></p>
       <div class="links">
-        <a href="https://flybox.co.il/" target="_blank" rel="noopener">Website</a>
-        <span class="phone">03-939-4840</span>
+        <a href="https://flybox.co.il/" target="_blank" rel="noopener"><span class="en">Website</span><span class="he">אתר</span></a>
+        <span class="phone" dir="ltr">03-939-4840</span>
       </div>
       <div class="playlist">
-        <strong>Trip playlist</strong>
-        <p class="empty">Songs coming — pick hype “flying” vibes</p>
+        <strong><span class="en">Trip playlist</span><span class="he">פלייליסט לטיול</span></strong>
+        <p class="empty"><span class="en">Songs coming — pick hype “flying” vibes</span><span class="he">שירים בקרוב — בוחרים שירים סוחפים של ״לעוף״</span></p>
       </div>
     </article>
 
     <article class="trip">
-      <h3><span class="emoji">🚁</span>Helicopter ride</h3>
-      <p class="meta">Optional wow · shared Friday flight · confirm for ages 3 &amp; 5</p>
-      <p>See Israel from the sky — Eden Aviation.</p>
+      <h3><span class="emoji">🚁</span><span class="en">Helicopter ride</span><span class="he">טיסה במסוק</span></h3>
+      <p class="meta"><span class="en">Optional wow · shared Friday flight · confirm for ages 3 &amp; 5</span><span class="he">וואו אופציונלי · טיסה משותפת ביום שישי · לברר לגבי בני 3 ו־5</span></p>
+      <p><span class="en">See Israel from the sky — Eden Aviation.</span><span class="he">רואים את ישראל מלמעלה — Eden Aviation.</span></p>
       <div class="links">
-        <a href="https://deaviation.co.il/%D7%A9%D7%99%D7%A9%D7%99-%D7%91%D7%A9%D7%97%D7%A7%D7%99%D7%9D/" target="_blank" rel="noopener">Friday flights</a>
-        <span class="phone">072-395-0464</span>
+        <a href="https://deaviation.co.il/%D7%A9%D7%99%D7%A9%D7%99-%D7%91%D7%A9%D7%97%D7%A7%D7%99%D7%9D/" target="_blank" rel="noopener"><span class="en">Friday flights</span><span class="he">טיסות ביום שישי</span></a>
+        <span class="phone" dir="ltr">072-395-0464</span>
       </div>
       <div class="playlist">
-        <strong>Trip playlist</strong>
-        <p class="empty">Songs coming — sky / adventure vibes</p>
+        <strong><span class="en">Trip playlist</span><span class="he">פלייליסט לטיול</span></strong>
+        <p class="empty"><span class="en">Songs coming — sky / adventure vibes</span><span class="he">שירים בקרוב — אווירת שמיים והרפתקה</span></p>
       </div>
     </article>
 
     <article class="trip">
-      <h3><span class="emoji">🏎️</span>Go-karting</h3>
-      <p class="meta">Drivers about age 8+ · littles hang in the mall</p>
-      <p>Race day at Team Karting, Talpiot Mall.</p>
+      <h3><span class="emoji">🏎️</span><span class="en">Go-karting</span><span class="he">קארטינג</span></h3>
+      <p class="meta"><span class="en">Drivers about age 8+ · littles hang in the mall</span><span class="he">נהגים מגיל 8 בערך · הקטנים מסתובבים בקניון</span></p>
+      <p><span class="en">Race day at Team Karting, Talpiot Mall.</span><span class="he">יום מרוצים בטים קארטינג, קניון תלפיות.</span></p>
       <div class="links">
-        <span class="phone">077-503-0566</span>
+        <span class="phone" dir="ltr">077-503-0566</span>
       </div>
       <div class="playlist">
-        <strong>Trip playlist</strong>
-        <p class="empty">Songs coming — race / speed vibes</p>
+        <strong><span class="en">Trip playlist</span><span class="he">פלייליסט לטיול</span></strong>
+        <p class="empty"><span class="en">Songs coming — race / speed vibes</span><span class="he">שירים בקרוב — אווירת מרוץ ומהירות</span></p>
       </div>
     </article>
 
-    <h2>VR &amp; game trips</h2>
+    <h2><span class="en">VR &amp; game trips</span><span class="he">טיולי VR ומשחקים</span></h2>
 
     <article class="trip">
-      <h3><span class="emoji">🥽</span>VR park</h3>
-      <p class="meta">Space Run or VRZONE · Rishon · great for teens</p>
-      <p>Games, free roam, headsets — digital adventure day.</p>
+      <h3><span class="emoji">🥽</span><span class="en">VR park</span><span class="he">פארק VR</span></h3>
+      <p class="meta"><span class="en">Space Run or VRZONE · Rishon · great for teens</span><span class="he">Space Run או VRZONE · ראשון לציון · מעולה לנוער</span></p>
+      <p><span class="en">Games, free roam, headsets — digital adventure day.</span><span class="he">משחקים, תנועה חופשית, משקפי VR — יום הרפתקה דיגיטלית.</span></p>
       <div class="links">
         <a href="https://spacerunvr.com/" target="_blank" rel="noopener">Space Run</a>
         <a href="https://vrzone.co.il/" target="_blank" rel="noopener">VRZONE</a>
       </div>
       <div class="playlist">
-        <strong>Trip playlist</strong>
-        <p class="empty">Songs coming — game / epic vibes</p>
+        <strong><span class="en">Trip playlist</span><span class="he">פלייליסט לטיול</span></strong>
+        <p class="empty"><span class="en">Songs coming — game / epic vibes</span><span class="he">שירים בקרוב — אווירת גיימינג אפית</span></p>
       </div>
     </article>
 
     <article class="trip">
-      <h3><span class="emoji">🎯</span>Laser tag + trampoline</h3>
-      <p class="meta">Mega Zone Beit Shemesh · toddlers through teens</p>
-      <p>Everyone under one roof — jump, laser, toddler zone.</p>
+      <h3><span class="emoji">🎯</span><span class="en">Laser tag + trampoline</span><span class="he">לייזר טאג + טרמפולינה</span></h3>
+      <p class="meta"><span class="en">Mega Zone Beit Shemesh · toddlers through teens</span><span class="he">מגה זון בית שמש · מפעוטות ועד נוער</span></p>
+      <p><span class="en">Everyone under one roof — jump, laser, toddler zone.</span><span class="he">כולם תחת קורת גג אחת — קפיצות, לייזר ואזור לפעוטות.</span></p>
       <div class="links">
-        <a href="https://megazone.co.il/" target="_blank" rel="noopener">Mega Zone</a>
-        <span class="phone">03-313-0870</span>
+        <a href="https://megazone.co.il/" target="_blank" rel="noopener"><span class="en">Mega Zone</span><span class="he">מגה זון</span></a>
+        <span class="phone" dir="ltr">03-313-0870</span>
       </div>
       <div class="playlist">
-        <strong>Trip playlist</strong>
-        <p class="empty">Songs coming — action / party vibes</p>
+        <strong><span class="en">Trip playlist</span><span class="he">פלייליסט לטיול</span></strong>
+        <p class="empty"><span class="en">Songs coming — action / party vibes</span><span class="he">שירים בקרוב — אווירת אקשן ומסיבה</span></p>
       </div>
     </article>
 
     <article class="trip">
-      <h3><span class="emoji">🤸</span>Trampoline park</h3>
-      <p class="meta">Gravity Park Jerusalem · all ages can bounce</p>
-      <p>Jump, ninja courses, burn energy.</p>
+      <h3><span class="emoji">🤸</span><span class="en">Trampoline park</span><span class="he">פארק טרמפולינות</span></h3>
+      <p class="meta"><span class="en">Gravity Park Jerusalem · all ages can bounce</span><span class="he">גרוויטי פארק ירושלים · כל הגילאים קופצים</span></p>
+      <p><span class="en">Jump, ninja courses, burn energy.</span><span class="he">קופצים, מסלולי נינג׳ה, מוציאים אנרגיה.</span></p>
       <div class="links">
-        <a href="https://gravitypark.co.il/" target="_blank" rel="noopener">Gravity Park</a>
-        <span class="phone">077-362-7570</span>
+        <a href="https://gravitypark.co.il/" target="_blank" rel="noopener"><span class="en">Gravity Park</span><span class="he">גרוויטי פארק</span></a>
+        <span class="phone" dir="ltr">077-362-7570</span>
       </div>
       <div class="playlist">
-        <strong>Trip playlist</strong>
-        <p class="empty">Songs coming — upbeat bounce vibes</p>
+        <strong><span class="en">Trip playlist</span><span class="he">פלייליסט לטיול</span></strong>
+        <p class="empty"><span class="en">Songs coming — upbeat bounce vibes</span><span class="he">שירים בקרוב — שירים קופצניים ושמחים</span></p>
       </div>
     </article>
 
-    <h2>Adventure trips</h2>
+    <h2><span class="en">Adventure trips</span><span class="he">טיולי הרפתקה</span></h2>
 
     <article class="trip">
-      <h3><span class="emoji">🐪</span>Camel ride + desert tent</h3>
-      <p class="meta">Genesis Land · ~25 min · ages ~5+ ride</p>
-      <p>Desert adventure, pita, tent time — feels like a story.</p>
+      <h3><span class="emoji">🐪</span><span class="en">Camel ride + desert tent</span><span class="he">רכיבה על גמלים + אוהל מדברי</span></h3>
+      <p class="meta"><span class="en">Genesis Land · ~25 min · ages ~5+ ride</span><span class="he">ארץ בראשית · כ־25 דק׳ · רוכבים מגיל 5 בערך</span></p>
+      <p><span class="en">Desert adventure, pita, tent time — feels like a story.</span><span class="he">הרפתקה במדבר, פיתות, זמן באוהל — מרגיש כמו סיפור.</span></p>
       <div class="links">
-        <a href="https://genesisland.co.il/" target="_blank" rel="noopener">Genesis Land</a>
-        <span class="phone">02-997-4477</span>
+        <a href="https://genesisland.co.il/" target="_blank" rel="noopener"><span class="en">Genesis Land</span><span class="he">ארץ בראשית</span></a>
+        <span class="phone" dir="ltr">02-997-4477</span>
       </div>
       <div class="playlist">
-        <strong>Trip playlist</strong>
-        <p class="empty">Songs coming — desert / journey vibes</p>
-      </div>
-    </article>
-
-    <article class="trip">
-      <h3><span class="emoji">🧪</span>Science museum</h3>
-      <p class="meta">Bloomfield · everyone joins · under 5 free</p>
-      <p>Hands-on experiments and cool machines — not a quiet-museum day.</p>
-      <div class="links">
-        <a href="https://mada.org.il/en/plan-your-visit" target="_blank" rel="noopener">Bloomfield</a>
-        <span class="phone">02-654-4888</span>
-      </div>
-      <div class="playlist">
-        <strong>Trip playlist</strong>
-        <p class="empty">Songs coming — curious / fun learning vibes</p>
+        <strong><span class="en">Trip playlist</span><span class="he">פלייליסט לטיול</span></strong>
+        <p class="empty"><span class="en">Songs coming — desert / journey vibes</span><span class="he">שירים בקרוב — אווירת מדבר ומסע</span></p>
       </div>
     </article>
 
     <article class="trip">
-      <h3><span class="emoji">🏰</span>Tower of David</h3>
-      <p class="meta">Explore walls &amp; towers in Jerusalem</p>
-      <p>Climb, look out, feel like explorers.</p>
+      <h3><span class="emoji">🧪</span><span class="en">Science museum</span><span class="he">מוזיאון המדע</span></h3>
+      <p class="meta"><span class="en">Bloomfield · everyone joins · under 5 free</span><span class="he">בלומפילד · כולם מצטרפים · עד גיל 5 בחינם</span></p>
+      <p><span class="en">Hands-on experiments and cool machines — not a quiet-museum day.</span><span class="he">ניסויים בידיים ומכונות מגניבות — זה לא יום של מוזיאון שקט.</span></p>
       <div class="links">
-        <a href="https://www.tod.org.il/" target="_blank" rel="noopener">Tower of David</a>
+        <a href="https://mada.org.il/en/plan-your-visit" target="_blank" rel="noopener"><span class="en">Bloomfield</span><span class="he">בלומפילד</span></a>
+        <span class="phone" dir="ltr">02-654-4888</span>
       </div>
       <div class="playlist">
-        <strong>Trip playlist</strong>
-        <p class="empty">Songs coming — Jerusalem / explorer vibes</p>
+        <strong><span class="en">Trip playlist</span><span class="he">פלייליסט לטיול</span></strong>
+        <p class="empty"><span class="en">Songs coming — curious / fun learning vibes</span><span class="he">שירים בקרוב — אווירת סקרנות ולמידה כיפית</span></p>
       </div>
     </article>
 
-    <h2>Adventure for the big kids (19+)</h2>
+    <article class="trip">
+      <h3><span class="emoji">🏰</span><span class="en">Tower of David</span><span class="he">מגדל דוד</span></h3>
+      <p class="meta"><span class="en">Explore walls &amp; towers in Jerusalem</span><span class="he">חוקרים חומות ומגדלים בירושלים</span></p>
+      <p><span class="en">Climb, look out, feel like explorers.</span><span class="he">מטפסים, משקיפים ומרגישים כמו חוקרים.</span></p>
+      <div class="links">
+        <a href="https://www.tod.org.il/" target="_blank" rel="noopener"><span class="en">Tower of David</span><span class="he">מגדל דוד</span></a>
+      </div>
+      <div class="playlist">
+        <strong><span class="en">Trip playlist</span><span class="he">פלייליסט לטיול</span></strong>
+        <p class="empty"><span class="en">Songs coming — Jerusalem / explorer vibes</span><span class="he">שירים בקרוב — אווירת ירושלים וחוקרים</span></p>
+      </div>
+    </article>
+
+    <h2><span class="en">Adventure for the big kids (19+)</span><span class="he">הרפתקאות לגדולים (19+)</span></h2>
 
     <div class="intro">
-      Researched Mon 28 Sep 2026 (Chol HaMoed Sukkot). Green = the venue's own site says it's open today.
-      Orange = call before driving (holiday hours, weather, and booking slots). Drive times from Jerusalem are rough and don't include holiday traffic.
+      <span class="en">Researched Mon 28 Sep 2026 (Chol HaMoed Sukkot). Green = the venue's own site says it's open today. Orange = call before driving (holiday hours, weather, and booking slots). Drive times from Jerusalem are rough and don't include holiday traffic.</span><span class="he">נבדק ביום שני, 28 בספטמבר 2026 (חול המועד סוכות). ירוק = האתר של המקום עצמו אומר שהוא פתוח היום. כתום = להתקשר לפני שנוסעים (שעות חג, מזג אוויר ושעות פנויות). זמני הנסיעה מירושלים משוערים ולא כוללים פקקי חג.</span>
     </div>
 
     <article class="trip">
-      <h3><span class="emoji">🪂</span>Tandem skydive · SkyKef<span class="tag call">Call first</span></h3>
-      <p class="meta">Sde Teiman (~10 min N of Be’er Sheva) · ~1h20 drive · ages 10+ · max 110 kg (extra charge over 90 kg / 1.90 m)</p>
-      <p>Real jump from 10,000 or 12,000 ft with an instructor. Site prices: Tandem 10 ₪1,050, Tandem 12 ₪1,250, video+photos +₪250. Plan on ~3 hours there. Site lists Sun–Thu 9:00–19:00, but its FAQ says jumps happen “Fri, Sat &amp; holidays”, so call to confirm they jump today.</p>
+      <h3><span class="emoji">🪂</span><span class="en">Tandem skydive · SkyKef</span><span class="he">צניחה בטנדם · סקייכיף</span><span class="tag call"><span class="en">Call first</span><span class="he">להתקשר קודם</span></span></h3>
+      <p class="meta"><span class="en">Sde Teiman (~10 min N of Be’er Sheva) · ~1h20 drive · ages 10+ · max 110 kg (extra charge over 90 kg / 1.90 m)</span><span class="he">שדה תימן (כ־10 דק׳ צפונית לבאר שבע) · כשעה ו־20 דק׳ נסיעה · מגיל 10 · עד 110 ק״ג (תוספת מעל 90 ק״ג / 1.90 מ׳)</span></p>
+      <p><span class="en">Real jump from 10,000 or 12,000 ft with an instructor. Site prices: Tandem 10 ₪1,050, Tandem 12 ₪1,250, video+photos +₪250. Plan on ~3 hours there. Site lists Sun–Thu 9:00–19:00, but its FAQ says jumps happen “Fri, Sat &amp; holidays”, so call to confirm they jump today.</span><span class="he">קפיצה אמיתית מ־10,000 או 12,000 רגל עם מדריך. מחירים באתר: טנדם 10 ₪1,050, טנדם 12 ₪1,250, וידאו + תמונות ‎+₪250. כדאי לתכנן כ־3 שעות במקום. באתר רשום א׳–ה׳ <bdi dir="ltr">9:00–19:00</bdi>, אבל בשאלות הנפוצות כתוב שקופצים ״בשישי, שבת וחגים״, אז להתקשר ולוודא שקופצים היום.</span></p>
       <div class="links">
-        <a href="tel:1700705867">📞 1700-705-867</a>
-        <a href="https://skykef.co.il/jump/" target="_blank" rel="noopener">Book online</a>
-        <a href="https://skykef.co.il/pricing/" target="_blank" rel="noopener">Prices</a>
+        <a href="tel:1700705867">📞 <bdi dir="ltr">1700-705-867</bdi></a>
+        <a href="https://skykef.co.il/jump/" target="_blank" rel="noopener"><span class="en">Book online</span><span class="he">הזמנה באתר</span></a>
+        <a href="https://skykef.co.il/pricing/" target="_blank" rel="noopener"><span class="en">Prices</span><span class="he">מחירים</span></a>
       </div>
     </article>
+
     <article class="trip">
-      <h3><span class="emoji">🛩️</span>Powered parachute (“flying ATV”) · Israel Extreme<span class="tag call">Call first</span></h3>
-      <p class="meta">Ein Vered airstrip, Sharon · ~1h10 drive · ages 6+ · pilot + 1 passenger</p>
-      <p>20 min flight over the Sharon fields to the coast: ₪500 (₪650 with photos); 40 min with photos ₪1,050. They fly in the early morning or ~2 hours before sunset, so today’s realistic option is the evening slot. Book by phone.</p>
+      <h3><span class="emoji">🛩️</span><span class="en">Powered parachute (“flying ATV”) · Israel Extreme</span><span class="he">מצנח ממונע (״טרקטורון מעופף״) · Israel Extreme</span><span class="tag call"><span class="en">Call first</span><span class="he">להתקשר קודם</span></span></h3>
+      <p class="meta"><span class="en">Ein Vered airstrip, Sharon · ~1h10 drive · ages 6+ · pilot + 1 passenger</span><span class="he">מנחת עין ורד, השרון · כשעה ו־10 דק׳ נסיעה · מגיל 6 · טייס + נוסע אחד</span></p>
+      <p><span class="en">20 min flight over the Sharon fields to the coast: ₪500 (₪650 with photos); 40 min with photos ₪1,050. They fly in the early morning or ~2 hours before sunset, so today’s realistic option is the evening slot. Book by phone.</span><span class="he">טיסה של 20 דק׳ מעל שדות השרון עד החוף: ₪500 (₪650 עם תמונות); 40 דק׳ עם תמונות ₪1,050. טסים בבוקר מוקדם או כשעתיים לפני השקיעה, אז היום האפשרות הריאלית היא הטיסה של הערב. הזמנה בטלפון.</span></p>
       <div class="links">
-        <a href="tel:0533310639">📞 053-331-0639</a>
-        <a href="tel:0723940984">📞 072-394-0984</a>
-        <a href="https://xn----zhcb4afbwe7a0dnem.co.il/%d7%97%d7%a0%d7%95%d7%aa" target="_blank" rel="noopener">Flights &amp; prices</a>
+        <a href="tel:0533310639">📞 <bdi dir="ltr">053-331-0639</bdi></a>
+        <a href="tel:0723940984">📞 <bdi dir="ltr">072-394-0984</bdi></a>
+        <a href="https://xn----zhcb4afbwe7a0dnem.co.il/%d7%97%d7%a0%d7%95%d7%aa" target="_blank" rel="noopener"><span class="en">Flights &amp; prices</span><span class="he">טיסות ומחירים</span></a>
       </div>
     </article>
+
     <article class="trip">
-      <h3><span class="emoji">🌪️</span>Indoor skydiving · FlyBox<span class="tag ok">✓ Open today</span></h3>
-      <p class="meta">Rishon LeZion (Lake Park) · ~50 min drive · ages 4+ · Chol HaMoed hours 09:00–20:30</p>
-      <p>The safe backup: iFLY wind tunnel. Intro ₪289 (2 min flying), VIP solo ₪399 (4 min + video), VIP couple ₪750. The ₪199 Sukkot deal is only for the 10:00 slot.</p>
+      <h3><span class="emoji">🌪️</span><span class="en">Indoor skydiving · FlyBox</span><span class="he">צניחה חופשית בתוך מבנה · FlyBox</span><span class="tag ok"><span class="en">✓ Open today</span><span class="he">✓ פתוח היום</span></span></h3>
+      <p class="meta"><span class="en">Rishon LeZion (Lake Park) · ~50 min drive · ages 4+ · Chol HaMoed hours 09:00–20:30</span><span class="he">ראשון לציון (פארק האגם) · כ־50 דק׳ נסיעה · מגיל 4 · שעות חול המועד <bdi dir="ltr">09:00–20:30</bdi></span></p>
+      <p><span class="en">The safe backup: iFLY wind tunnel. Intro ₪289 (2 min flying), VIP solo ₪399 (4 min + video), VIP couple ₪750. The ₪199 Sukkot deal is only for the 10:00 slot.</span><span class="he">הגיבוי הבטוח: מנהרת הרוח של iFLY. היכרות ₪289 (2 דק׳ טיסה), VIP יחיד ₪399 (4 דק׳ + וידאו), VIP זוגי ₪750. מבצע סוכות ב־₪199 רק לשעה 10:00.</span></p>
       <div class="links">
-        <a href="tel:039394840">📞 03-939-4840</a>
-        <a href="https://wa.me/972503997725" target="_blank" rel="noopener">WhatsApp</a>
-        <a href="https://www.flybox.co.il/%D7%9E%D7%97%D7%99%D7%A8%D7%95%D7%9F/" target="_blank" rel="noopener">Book / prices</a>
+        <a href="tel:039394840">📞 <bdi dir="ltr">03-939-4840</bdi></a>
+        <a href="https://wa.me/972503997725" target="_blank" rel="noopener"><span class="en">WhatsApp</span><span class="he">וואטסאפ</span></a>
+        <a href="https://www.flybox.co.il/%D7%9E%D7%97%D7%99%D7%A8%D7%95%D7%9F/" target="_blank" rel="noopener"><span class="en">Book / prices</span><span class="he">הזמנה / מחירים</span></a>
       </div>
     </article>
+
     <article class="trip">
-      <h3><span class="emoji">🏜️</span>RZR / Tomcar desert tour · Canaan (Kfar Adumim)<span class="tag call">Call first</span></h3>
-      <p class="meta">Kfar Adumim junction, Judean Desert · ~25 min drive · drivers 18+ with a valid licence · riders 16+ (no licence needed)</p>
-      <p>Guided off-road loops to desert lookouts (Wadi Qelt / St. George area). Tours run 1–4 hours. Weekend.co.il lists ₪700 for 1.5 h and ₪800 for 2 h per 4-seat vehicle (that listing may be old). Pre-booking only.</p>
+      <h3><span class="emoji">🏜️</span><span class="en">RZR / Tomcar desert tour · Canaan (Kfar Adumim)</span><span class="he">סיור RZR / תומקאר במדבר · כנען (כפר אדומים)</span><span class="tag call"><span class="en">Call first</span><span class="he">להתקשר קודם</span></span></h3>
+      <p class="meta"><span class="en">Kfar Adumim junction, Judean Desert · ~25 min drive · drivers 18+ with a valid licence · riders 16+ (no licence needed)</span><span class="he">צומת כפר אדומים, מדבר יהודה · כ־25 דק׳ נסיעה · נהגים מגיל 18 עם רישיון בתוקף · נוסעים מגיל 16 (בלי רישיון)</span></p>
+      <p><span class="en">Guided off-road loops to desert lookouts (Wadi Qelt / St. George area). Tours run 1–4 hours. Weekend.co.il lists ₪700 for 1.5 h and ₪800 for 2 h per 4-seat vehicle (that listing may be old). Pre-booking only.</span><span class="he">מסלולי שטח מודרכים לתצפיות במדבר (אזור ואדי קלט / מנזר סנט ג׳ורג׳). הסיורים נמשכים 1–4 שעות. ב־Weekend.co.il רשום ₪700 לשעה וחצי ו־₪800 לשעתיים לרכב של 4 מושבים (ייתכן שהמידע ישן). בהזמנה מראש בלבד.</span></p>
       <div class="links">
-        <a href="tel:025355351">📞 02-535-5351</a>
-        <a href="https://cnaantours.co.il/" target="_blank" rel="noopener">Website</a>
+        <a href="tel:025355351">📞 <bdi dir="ltr">02-535-5351</bdi></a>
+        <a href="https://cnaantours.co.il/" target="_blank" rel="noopener"><span class="en">Website</span><span class="he">אתר</span></a>
       </div>
     </article>
+
     <article class="trip">
-      <h3><span class="emoji">🚙</span>Tomcar / RZR in the Jerusalem hills · Matzok<span class="tag call">Call first</span></h3>
-      <p class="meta">Moshav Aminadav · ~15–20 min drive · drivers 19+ with a licence held 1+ year</p>
-      <p>Guided off-road drive through Aminadav forest. The price depends on the route (no public price list). Minimum 2 vehicles, or +₪150 to go out alone.</p>
+      <h3><span class="emoji">🚙</span><span class="en">Tomcar / RZR in the Jerusalem hills · Matzok</span><span class="he">תומקאר / RZR בהרי ירושלים · מצוק</span><span class="tag call"><span class="en">Call first</span><span class="he">להתקשר קודם</span></span></h3>
+      <p class="meta"><span class="en">Moshav Aminadav · ~15–20 min drive · drivers 19+ with a licence held 1+ year</span><span class="he">מושב עמינדב · כ־15–20 דק׳ נסיעה · נהגים מגיל 19 עם ותק של שנה לפחות ברישיון</span></p>
+      <p><span class="en">Guided off-road drive through Aminadav forest. The price depends on the route (no public price list). Minimum 2 vehicles, or +₪150 to go out alone.</span><span class="he">נסיעת שטח מודרכת ביער עמינדב. המחיר תלוי במסלול (אין מחירון פומבי). מינימום 2 רכבים, או תוספת ₪150 ליציאה לבד.</span></p>
       <div class="links">
-        <a href="tel:0523865612">📞 052-386-5612</a>
-        <a href="tel:026431342">📞 02-643-1342</a>
-        <a href="https://matzok.co.il/activities/%d7%98%d7%a8%d7%a7%d7%98%d7%95%d7%a8%d7%95%d7%a0%d7%99%d7%9d-%d7%95%d7%92%d7%99%d7%a4%d7%99%d7%9d/" target="_blank" rel="noopener">Website</a>
+        <a href="tel:0523865612">📞 <bdi dir="ltr">052-386-5612</bdi></a>
+        <a href="tel:026431342">📞 <bdi dir="ltr">02-643-1342</bdi></a>
+        <a href="https://matzok.co.il/activities/%d7%98%d7%a8%d7%a7%d7%98%d7%95%d7%a8%d7%95%d7%a0%d7%99%d7%9d-%d7%95%d7%92%d7%99%d7%a4%d7%99%d7%9d/" target="_blank" rel="noopener"><span class="en">Website</span><span class="he">אתר</span></a>
       </div>
-      <p class="fine">Similar option: Top Reizer (Mevo Beitar, ~25 min, Can-Am RZRs, prices on request): <a href="tel:0554524116">055-452-4116</a></p>
+      <p class="fine"><span class="en">Similar option: Top Reizer (Mevo Beitar, ~25 min, Can-Am RZRs, prices on request): </span><span class="he">אפשרות דומה: טופ רייזר (מבוא ביתר, כ־25 דק׳, רכבי Can-Am RZR, מחיר לפי בקשה): </span><a href="tel:0554524116"><bdi dir="ltr">055-452-4116</bdi></a></p>
     </article>
+
     <article class="trip">
-      <h3><span class="emoji">🧗</span>Israel’s longest zipline · Deer Land<span class="tag call">Call first</span></h3>
-      <p class="meta">Opposite Kfar Etzion, Gush Etzion · ~30 min drive</p>
-      <p>400 m zipline, 120 m above a canyon, with a jeep ride back up: ₪100. There’s also a ropes park (₪30) and a 140 m zipline (₪30). Listed hours are 9:30–16:30/17:30 and they ask you to call ahead.</p>
+      <h3><span class="emoji">🧗</span><span class="en">Israel’s longest zipline · Deer Land</span><span class="he">האומגה הארוכה בישראל · ארץ הצבי</span><span class="tag call"><span class="en">Call first</span><span class="he">להתקשר קודם</span></span></h3>
+      <p class="meta"><span class="en">Opposite Kfar Etzion, Gush Etzion · ~30 min drive</span><span class="he">מול כפר עציון, גוש עציון · כ־30 דק׳ נסיעה</span></p>
+      <p><span class="en">400 m zipline, 120 m above a canyon, with a jeep ride back up: ₪100. There’s also a ropes park (₪30) and a 140 m zipline (₪30). Listed hours are 9:30–16:30/17:30 and they ask you to call ahead.</span><span class="he">אומגה של 400 מ׳, בגובה 120 מ׳ מעל קניון, עם נסיעה בג׳יפ חזרה למעלה: ₪100. יש גם פארק חבלים (₪30) ואומגה של 140 מ׳ (₪30). השעות הרשומות הן <bdi dir="ltr">9:30–16:30/17:30</bdi> ומבקשים להתקשר מראש.</span></p>
       <div class="links">
-        <a href="tel:025709768">📞 02-570-9768</a>
-        <a href="https://wa.me/972502041212" target="_blank" rel="noopener">WhatsApp</a>
-        <a href="http://www.deer-land.co.il/מחירון" target="_blank" rel="noopener">Prices</a>
-      </div>
-    </article>
-    <article class="trip">
-      <h3><span class="emoji">🏰</span>Rappel off the Old City walls · PAMI<span class="tag ok">✓ Open today</span></h3>
-      <p class="meta">Southern ramparts walk from Jaffa Gate · ~20 min · ages 9+ · 11:45–16:45</p>
-      <p>A special Sukkot activity: rappel down the wall near Zion Gate with certified guides. ₪45 per person.</p>
-      <div class="links">
-        <a href="tel:026277550">📞 02-627-7550</a>
-        <a href="https://www.pami.co.il" target="_blank" rel="noopener">Tickets</a>
+        <a href="tel:025709768">📞 <bdi dir="ltr">02-570-9768</bdi></a>
+        <a href="https://wa.me/972502041212" target="_blank" rel="noopener"><span class="en">WhatsApp</span><span class="he">וואטסאפ</span></a>
+        <a href="http://www.deer-land.co.il/מחירון" target="_blank" rel="noopener"><span class="en">Prices</span><span class="he">מחירים</span></a>
       </div>
     </article>
+
     <article class="trip">
-      <h3><span class="emoji">🪁</span>Tandem paragliding · Kanfayim<span class="tag call">Call first</span></h3>
-      <p class="meta">Arsuf / Netanya cliffs · ~1h drive · ages 5+ · over 100 kg by arrangement</p>
-      <p>Coastal ridge soaring with a licensed pilot: 10 min ₪300, 20 min ₪450, video +₪100. Wind-dependent.</p>
+      <h3><span class="emoji">🏰</span><span class="en">Rappel off the Old City walls · PAMI</span><span class="he">סנפלינג מחומות העיר העתיקה · פמ״י</span><span class="tag ok"><span class="en">✓ Open today</span><span class="he">✓ פתוח היום</span></span></h3>
+      <p class="meta"><span class="en">Southern ramparts walk from Jaffa Gate · ~20 min · ages 9+ · 11:45–16:45</span><span class="he">טיילת החומות הדרומית משער יפו · כ־20 דק׳ · מגיל 9 · <bdi dir="ltr">11:45–16:45</bdi></span></p>
+      <p><span class="en">A special Sukkot activity: rappel down the wall near Zion Gate with certified guides. ₪45 per person.</span><span class="he">פעילות מיוחדת לסוכות: סנפלינג מהחומה ליד שער ציון עם מדריכים מוסמכים. ₪45 לאדם.</span></p>
       <div class="links">
-        <a href="tel:0543077732">📞 054-307-7732</a>
-        <a href="https://paraglidingil.com/" target="_blank" rel="noopener">Website</a>
+        <a href="tel:026277550">📞 <bdi dir="ltr">02-627-7550</bdi></a>
+        <a href="https://www.pami.co.il" target="_blank" rel="noopener"><span class="en">Tickets</span><span class="he">כרטיסים</span></a>
+      </div>
+    </article>
+
+    <article class="trip">
+      <h3><span class="emoji">🪁</span><span class="en">Tandem paragliding · Kanfayim</span><span class="he">מצנח רחיפה בטנדם · כנפיים</span><span class="tag call"><span class="en">Call first</span><span class="he">להתקשר קודם</span></span></h3>
+      <p class="meta"><span class="en">Arsuf / Netanya cliffs · ~1h drive · ages 5+ · over 100 kg by arrangement</span><span class="he">ארסוף / צוקי נתניה · כשעה נסיעה · מגיל 5 · מעל 100 ק״ג בתיאום</span></p>
+      <p><span class="en">Coastal ridge soaring with a licensed pilot: 10 min ₪300, 20 min ₪450, video +₪100. Wind-dependent.</span><span class="he">ריחוף מעל צוקי החוף עם טייס מוסמך: 10 דק׳ ₪300, 20 דק׳ ₪450, וידאו ‎+₪100. תלוי ברוח.</span></p>
+      <div class="links">
+        <a href="tel:0543077732">📞 <bdi dir="ltr">054-307-7732</bdi></a>
+        <a href="https://paraglidingil.com/" target="_blank" rel="noopener"><span class="en">Website</span><span class="he">אתר</span></a>
       </div>
     </article>
 
     </div>
 
     <footer>
-      Live board for our family · We’ll add songs as you pick them · Same link, always updated
+      <span class="en">Live board for our family · We’ll add songs as you pick them · Same link, always updated</span><span class="he">הלוח החי של המשפחה שלנו · נוסיף שירים כשתבחרו · אותו קישור, תמיד מעודכן</span>
     </footer>
   </div>
+  <script>
+    (function(){
+      var titles={he:"ההרפתקה שלנו ביום חמישי · 1 באוקטובר",en:"Our Thursday Adventure · Oct 1"};
+      function set(l){
+        var h=document.documentElement; h.lang=l; h.dir=l==="he"?"rtl":"ltr"; document.title=titles[l];
+        document.querySelectorAll(".lang button").forEach(function(b){b.setAttribute("aria-pressed",b.dataset.set===l?"true":"false");});
+        try{localStorage.setItem("lang",l);}catch(e){}
+      }
+      document.querySelectorAll(".lang button").forEach(function(b){b.addEventListener("click",function(){set(b.dataset.set);});});
+      var q=(location.search.match(/lang=(he|en)/)||[])[1], s=null;
+      try{s=localStorage.getItem("lang");}catch(e){}
+      set(q||s||"he");
+    })();
+  </script>
 </body>
 </html>
