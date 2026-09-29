@@ -3,7 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Our Family Adventures</title>
+  <title>Our Thursday Adventure · Oct 1</title>
+  <meta property="og:title" content="Our Thursday Adventure · Oct 1 🚤🔫🏎️🍝" />
+  <meta property="og:description" content="Speedboat, laser tag, go-karts, pasta &amp; sunset. The whole gang!" />
   <style>
     :root {
       --bg: #0b1020;
@@ -105,26 +107,140 @@
     a { color: var(--accent); text-decoration: none; font-weight: 600; font-size: 0.9rem; }
     a:hover { text-decoration: underline; }
     .phone { color: var(--muted); font-size: 0.85rem; }
+    .tag {
+      display: inline-block; padding: 2px 8px; border-radius: 999px;
+      font-size: 0.75rem; font-weight: 700; margin-left: 6px; vertical-align: middle;
+    }
+    .tag.ok { background: #13402f; color: var(--ok); }
+    .tag.call { background: #4a3413; color: var(--warm); }
+    .fine { font-size: 0.8rem; color: #7f8fa8; margin: 6px 0 0; }
+    .photos { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 4px 0 10px; }
+    .photos img { width: 100%; height: 170px; object-fit: cover; border-radius: 12px; border: 1px solid var(--line); display: block; }
+    .photos img:only-child { grid-column: 1 / -1; height: 260px; object-fit: contain; background: #10182b; }
     footer {
       margin-top: 36px;
       text-align: center;
       color: var(--muted);
       font-size: 0.85rem;
     }
+    .hero{text-align:center;padding:26px 14px 18px;margin:-24px -16px 18px;background:linear-gradient(160deg,#ff7ab8 0%,#ffb454 45%,#5eb0ff 100%);border-radius:0 0 28px 28px;color:#1a1030}
+    .hero .conf{font-size:1.9rem;letter-spacing:4px}
+    .hero h1{font-size:clamp(2rem,9vw,3rem);line-height:1.05;margin:6px 0;color:#1a1030}
+    .hero .date{display:inline-block;background:#1a1030;color:#ffd36b;font-weight:800;padding:6px 14px;border-radius:999px;font-size:1rem}
+    .hero p{margin:12px auto 0;max-width:30rem;font-weight:600;font-size:1.02rem}
+    .tl{display:flex;gap:8px;overflow-x:auto;padding:4px 2px 12px;margin:0 0 8px;scroll-snap-type:x mandatory}
+    .tl a{flex:0 0 auto;scroll-snap-align:start;background:#162038;border:1px solid var(--line);border-radius:16px;padding:10px 12px;text-align:center;min-width:88px;color:var(--text)}
+    .tl b{display:block;font-size:1.5rem}.tl small{display:block;color:var(--warm);font-weight:800}.tl span{font-size:.8rem;color:var(--muted)}
+    .stop{background:var(--card);border:1px solid var(--line);border-radius:22px;overflow:hidden;margin:0 0 18px;box-shadow:0 12px 30px rgba(0,0,0,.3)}
+    .stop .pics{display:grid;grid-template-columns:2fr 1fr;gap:3px}
+    .stop .pics img{width:100%;height:230px;object-fit:cover;display:block}
+    .stop .pics img:only-child{grid-column:1/-1}
+    .stop .body{padding:14px 16px 16px}
+    .stop .when{display:inline-block;background:var(--warm);color:#1a1030;font-weight:900;border-radius:999px;padding:3px 12px;font-size:.95rem}
+    .stop h3{font-size:1.5rem;margin:8px 0 4px}
+    .stop .fun{font-size:1.08rem;color:var(--text);margin:0 0 10px}
+    .who{font-size:.92rem;color:var(--ok);margin:0 0 10px}
+    .tiny{font-size:.78rem;color:#7f8fa8;margin:0}.tiny a{font-size:.78rem;font-weight:600}
+    .bonus{border:2px dashed var(--pink)}
+    .bonus .when{background:var(--pink)}
+    .home{text-align:center;font-size:1.1rem;font-weight:700;color:var(--warm);margin:4px 0 26px}
+    .older{opacity:.8;border-top:1px dashed var(--line);margin-top:30px;padding-top:6px}
+    .older h1{font-size:1.3rem}
+    @media (max-width:430px){.stop .pics img{height:190px}.stop .pics{grid-template-columns:1fr}.stop .pics img+img{display:none}}
   </style>
 </head>
 <body>
   <div class="wrap">
-    <header>
-      <h1>Our Family Adventures</h1>
-      <p class="sub">Ideas for mom + the kids — pick the trips that sound fun. Each one can get its own playlist.</p>
-      <span class="badge">Show this to the kids · Draft board</span>
-    </header>
+    <section class="hero">
+      <div class="conf">🎉🚤🔫🏎️🍝🌅</div>
+      <h1>Our Thursday Adventure</h1>
+      <span class="date">Thu · Oct 1 · Chol HaMoed Sukkot</span>
+      <p>Boats, lasers, race cars and pasta by the sea. The whole gang, one epic day! We leave at 11:00.</p>
+    </section>
 
-    <div class="intro">
-      This is our adventure board. We’ll add music for each trip so the day feels special —
-      car songs, hype songs, chill songs after. Tell us what you like and we’ll lock it in.
-    </div>
+    <nav class="tl" aria-label="Timeline">
+      <a href="#boat"><b>🚤</b><small>12:30</small><span>Speedboat</span></a>
+      <a href="#laser"><b>🔫</b><small>13:40</small><span>Laser tag</span></a>
+      <a href="#kart"><b>🏎️</b><small>14:55</small><span>Go-karts</span></a>
+      <a href="#pasta"><b>🍝</b><small>17:00</small><span>Pasta</span></a>
+      <a href="#sunset"><b>🌅</b><small>18:20</small><span>Sunset</span></a>
+      <a href="#bonus"><b>🪂</b><small>Bonus?</small><span>FlyBox</span></a>
+    </nav>
+
+    <article class="stop" id="boat">
+      <div class="pics"><img src="images/thursday/02-tornado-speedboat.jpg" alt="Speedboat racing on the sea" /><img src="images/thursday/02-herzliya-marina.jpg" alt="Herzliya Marina" loading="lazy" /></div>
+      <div class="body">
+        <span class="when">12:30 · Herzliya Marina</span>
+        <h3>🚤 Speedboat Blast!</h3>
+        <p class="fun">Hold on tight! We zoom out to sea on a super-fast boat, bouncing over the waves for 20 wild minutes. Wheee!</p>
+        <p class="who">👥 Ages 5+ ride · the 3-year-old waves from the pier with ice cream 🍦</p>
+        <p class="tiny"><a href="tel:0523434404">📞 Holiday</a> · <a href="https://wa.me/972509180000">WhatsApp Funtasea</a> · ₪50/person (Funtasea)</p>
+      </div>
+    </article>
+
+    <article class="stop" id="laser">
+      <div class="pics"><img src="images/thursday/03-laser-tag-poleg-player.jpg" alt="Laser tag player in a neon arena" loading="lazy" /><img src="images/thursday/03-laser-tag-poleg-arena.jpg" alt="Neon laser tag maze" loading="lazy" /></div>
+      <div class="body">
+        <span class="when">13:40 · Laser Tag Poleg, Netanya</span>
+        <h3>🔫 Laser Battle!</h3>
+        <p class="fun">Vests on, lasers ready! Sneak through a glowing neon maze with tunnels and forts. Team up, tag your siblings, win the war!</p>
+        <p class="who">👥 Big kids + 9 &amp; 7 play (40 min) · 5 &amp; 3 get snacks and cheer, and their turn is next!</p>
+        <p class="tiny"><a href="tel:*5082">📞 *5082</a> · <a href="https://www.lasertag-poleg.co.il/book-double-game">Book</a> · ₪100/player (double game)</p>
+      </div>
+    </article>
+
+    <article class="stop" id="kart">
+      <div class="pics"><img src="images/thursday/03-dan-karting-track.jpg" alt="Go-karts racing" loading="lazy" /><img src="images/thursday/03-dan-karting-double-kart.jpg" alt="Two-seat kart" loading="lazy" /></div>
+      <div class="body">
+        <span class="when">14:55 · Dan Karting Netanya</span>
+        <h3>🏎️ Race Day!</h3>
+        <p class="fun">Helmets on, engines roaring! Real go-karts for the racers, mini electric karts for the little drivers, plus bumper cars. Who takes the checkered flag? 🏁</p>
+        <p class="who">👥 8+ &amp; 1.30 m: go-karts · ages 4–8: kids’ karts · 3yo: rides the two-seat kart with a grown-up</p>
+        <p class="tiny"><a href="tel:048501060">📞 04-850-1060</a> · <a href="https://wa.me/972539314994">WhatsApp</a> · <a href="https://dankart.co.il/branches/netanya/">Info</a></p>
+      </div>
+    </article>
+
+    <article class="stop" id="pasta">
+      <div class="pics"><img src="images/thursday/04-alonzo-pasta.jpg" alt="Pasta with tomato sauce" loading="lazy" /><img src="images/thursday/04-alonzo-pizza.jpg" alt="Pizzas" loading="lazy" /></div>
+      <div class="body">
+        <span class="when">17:00 · Alonzo, Kikar HaAtzmaut</span>
+        <h3>🍝 Pasta Party!</h3>
+        <p class="fun">Race-winner feast! Handmade pasta and pizza on the big square by the sea. Mehadrin dairy, so everyone orders their favorite.</p>
+        <p class="who">👥 Everyone! Share plates for the little ones 🍕</p>
+        <p class="tiny"><a href="tel:097996267">📞 09-799-6267</a> · <a href="https://ontopo.com/he/il/page/44713986">Reserve</a> · Rabbanut Mehadrin</p>
+      </div>
+    </article>
+
+    <article class="stop" id="sunset">
+      <div class="pics"><img src="images/thursday/05-netanya-promenade.jpg" alt="Netanya cliffs and sea" loading="lazy" /><img src="images/thursday/05-kikar-haatzmaut.jpg" alt="Fountain on Kikar HaAtzmaut" loading="lazy" /></div>
+      <div class="body">
+        <span class="when">~18:20 · Netanya cliffs</span>
+        <h3>🌅 Sunset Selfie!</h3>
+        <p class="fun">Watch the sun dive into the sea from the cliffs, splash by the big fountain and snap our family photo. Then home, with sleepy happy faces.</p>
+        <p class="who">👥 Everyone · free!</p>
+      </div>
+    </article>
+
+    <p class="home">🚗 Home around 20:00–20:15</p>
+
+    <article class="stop bonus" id="bonus">
+      <div class="pics"><img src="images/thursday/01-flybox-tunnel.jpg" alt="Flying in the FlyBox wind tunnel" loading="lazy" /><img src="images/thursday/01-flybox-building.jpg" alt="FlyBox building" loading="lazy" /></div>
+      <div class="body">
+        <span class="when">Optional bonus · 12:00 · Rishon LeZion</span>
+        <h3>🪂 Fly Like a Superhero?</h3>
+        <p class="fun">Maybe! If we add it, we fly inside a giant wind tunnel with an instructor, like skydiving without a plane. It pushes the whole day later.</p>
+        <p class="who">👥 Ages 4+ fly · the 3-year-old watches through the glass</p>
+        <p class="tiny"><a href="tel:039394840">📞 03-939-4840</a> · <a href="https://www.flybox.co.il/%D7%9E%D7%97%D7%99%D7%A8%D7%95%D7%9F/">Info</a> · family pack ₪1,095 (5 flyers)</p>
+      </div>
+    </article>
+
+    <p class="tiny" style="text-align:center;margin-bottom:8px">Photos: venue websites (Dan Karting, Laser Tag Poleg, Alonzo), the Tal Yam listing (speedboat), Wikimedia Commons (Dr. Avishai Teicher, Nissan Hadary, Deror Avi; CC BY/BY-SA).</p>
+
+    <div class="older">
+    <header>
+      <h1>More family adventure ideas</h1>
+      <p class="sub">Ideas for other days. Each one can get its own playlist.</p>
+    </header>
 
     <h2>Big wow trips</h2>
 
@@ -255,6 +371,94 @@
         <p class="empty">Songs coming — Jerusalem / explorer vibes</p>
       </div>
     </article>
+
+    <h2>Adventure for the big kids (19+)</h2>
+
+    <div class="intro">
+      Researched Mon 28 Sep 2026 (Chol HaMoed Sukkot). Green = the venue's own site says it's open today.
+      Orange = call before driving (holiday hours, weather, and booking slots). Drive times from Jerusalem are rough and don't include holiday traffic.
+    </div>
+
+    <article class="trip">
+      <h3><span class="emoji">🪂</span>Tandem skydive · SkyKef<span class="tag call">Call first</span></h3>
+      <p class="meta">Sde Teiman (~10 min N of Be’er Sheva) · ~1h20 drive · ages 10+ · max 110 kg (extra charge over 90 kg / 1.90 m)</p>
+      <p>Real jump from 10,000 or 12,000 ft with an instructor. Site prices: Tandem 10 ₪1,050, Tandem 12 ₪1,250, video+photos +₪250. Plan on ~3 hours there. Site lists Sun–Thu 9:00–19:00, but its FAQ says jumps happen “Fri, Sat &amp; holidays”, so call to confirm they jump today.</p>
+      <div class="links">
+        <a href="tel:1700705867">📞 1700-705-867</a>
+        <a href="https://skykef.co.il/jump/" target="_blank" rel="noopener">Book online</a>
+        <a href="https://skykef.co.il/pricing/" target="_blank" rel="noopener">Prices</a>
+      </div>
+    </article>
+    <article class="trip">
+      <h3><span class="emoji">🛩️</span>Powered parachute (“flying ATV”) · Israel Extreme<span class="tag call">Call first</span></h3>
+      <p class="meta">Ein Vered airstrip, Sharon · ~1h10 drive · ages 6+ · pilot + 1 passenger</p>
+      <p>20 min flight over the Sharon fields to the coast: ₪500 (₪650 with photos); 40 min with photos ₪1,050. They fly in the early morning or ~2 hours before sunset, so today’s realistic option is the evening slot. Book by phone.</p>
+      <div class="links">
+        <a href="tel:0533310639">📞 053-331-0639</a>
+        <a href="tel:0723940984">📞 072-394-0984</a>
+        <a href="https://xn----zhcb4afbwe7a0dnem.co.il/%d7%97%d7%a0%d7%95%d7%aa" target="_blank" rel="noopener">Flights &amp; prices</a>
+      </div>
+    </article>
+    <article class="trip">
+      <h3><span class="emoji">🌪️</span>Indoor skydiving · FlyBox<span class="tag ok">✓ Open today</span></h3>
+      <p class="meta">Rishon LeZion (Lake Park) · ~50 min drive · ages 4+ · Chol HaMoed hours 09:00–20:30</p>
+      <p>The safe backup: iFLY wind tunnel. Intro ₪289 (2 min flying), VIP solo ₪399 (4 min + video), VIP couple ₪750. The ₪199 Sukkot deal is only for the 10:00 slot.</p>
+      <div class="links">
+        <a href="tel:039394840">📞 03-939-4840</a>
+        <a href="https://wa.me/972503997725" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="https://www.flybox.co.il/%D7%9E%D7%97%D7%99%D7%A8%D7%95%D7%9F/" target="_blank" rel="noopener">Book / prices</a>
+      </div>
+    </article>
+    <article class="trip">
+      <h3><span class="emoji">🏜️</span>RZR / Tomcar desert tour · Canaan (Kfar Adumim)<span class="tag call">Call first</span></h3>
+      <p class="meta">Kfar Adumim junction, Judean Desert · ~25 min drive · drivers 18+ with a valid licence · riders 16+ (no licence needed)</p>
+      <p>Guided off-road loops to desert lookouts (Wadi Qelt / St. George area). Tours run 1–4 hours. Weekend.co.il lists ₪700 for 1.5 h and ₪800 for 2 h per 4-seat vehicle (that listing may be old). Pre-booking only.</p>
+      <div class="links">
+        <a href="tel:025355351">📞 02-535-5351</a>
+        <a href="https://cnaantours.co.il/" target="_blank" rel="noopener">Website</a>
+      </div>
+    </article>
+    <article class="trip">
+      <h3><span class="emoji">🚙</span>Tomcar / RZR in the Jerusalem hills · Matzok<span class="tag call">Call first</span></h3>
+      <p class="meta">Moshav Aminadav · ~15–20 min drive · drivers 19+ with a licence held 1+ year</p>
+      <p>Guided off-road drive through Aminadav forest. The price depends on the route (no public price list). Minimum 2 vehicles, or +₪150 to go out alone.</p>
+      <div class="links">
+        <a href="tel:0523865612">📞 052-386-5612</a>
+        <a href="tel:026431342">📞 02-643-1342</a>
+        <a href="https://matzok.co.il/activities/%d7%98%d7%a8%d7%a7%d7%98%d7%95%d7%a8%d7%95%d7%a0%d7%99%d7%9d-%d7%95%d7%92%d7%99%d7%a4%d7%99%d7%9d/" target="_blank" rel="noopener">Website</a>
+      </div>
+      <p class="fine">Similar option: Top Reizer (Mevo Beitar, ~25 min, Can-Am RZRs, prices on request): <a href="tel:0554524116">055-452-4116</a></p>
+    </article>
+    <article class="trip">
+      <h3><span class="emoji">🧗</span>Israel’s longest zipline · Deer Land<span class="tag call">Call first</span></h3>
+      <p class="meta">Opposite Kfar Etzion, Gush Etzion · ~30 min drive</p>
+      <p>400 m zipline, 120 m above a canyon, with a jeep ride back up: ₪100. There’s also a ropes park (₪30) and a 140 m zipline (₪30). Listed hours are 9:30–16:30/17:30 and they ask you to call ahead.</p>
+      <div class="links">
+        <a href="tel:025709768">📞 02-570-9768</a>
+        <a href="https://wa.me/972502041212" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="http://www.deer-land.co.il/מחירון" target="_blank" rel="noopener">Prices</a>
+      </div>
+    </article>
+    <article class="trip">
+      <h3><span class="emoji">🏰</span>Rappel off the Old City walls · PAMI<span class="tag ok">✓ Open today</span></h3>
+      <p class="meta">Southern ramparts walk from Jaffa Gate · ~20 min · ages 9+ · 11:45–16:45</p>
+      <p>A special Sukkot activity: rappel down the wall near Zion Gate with certified guides. ₪45 per person.</p>
+      <div class="links">
+        <a href="tel:026277550">📞 02-627-7550</a>
+        <a href="https://www.pami.co.il" target="_blank" rel="noopener">Tickets</a>
+      </div>
+    </article>
+    <article class="trip">
+      <h3><span class="emoji">🪁</span>Tandem paragliding · Kanfayim<span class="tag call">Call first</span></h3>
+      <p class="meta">Arsuf / Netanya cliffs · ~1h drive · ages 5+ · over 100 kg by arrangement</p>
+      <p>Coastal ridge soaring with a licensed pilot: 10 min ₪300, 20 min ₪450, video +₪100. Wind-dependent.</p>
+      <div class="links">
+        <a href="tel:0543077732">📞 054-307-7732</a>
+        <a href="https://paraglidingil.com/" target="_blank" rel="noopener">Website</a>
+      </div>
+    </article>
+
+    </div>
 
     <footer>
       Live board for our family · We’ll add songs as you pick them · Same link, always updated
