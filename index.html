@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#f6eee0" />
   <title>ההרפתקה שלנו ביום חמישי · 1 באוקטובר</title>
   <meta property="og:title" content="ההרפתקה שלנו ביום חמישי · Our Thursday Adventure · 1.10" />
-  <meta property="og:description" content="סירת מרוץ, לייזר טאג, קארטינג, פסטה ושקיעה. כל החבורה! · Speedboat, laser tag, go-karts, pasta &amp; sunset." />
+  <meta property="og:description" content="סירת מרוץ, צביעת קרמיקה, קארטינג, פיצה ושקיעה. כל החבורה! · Speedboat, pottery painting, go-karts, pizza &amp; sunset." />
   <meta property="og:image" content="images/thursday/storybook-hero.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -154,6 +154,45 @@
     @media (min-width:600px){ body{font-size:18px} .stop{padding-inline-start:72px} .day::before{inset-inline-start:26px} .stamp{width:62px;height:62px} }
     @media (prefers-reduced-motion:no-preference){ html{scroll-behavior:smooth} }
   </style>
+  <style>
+    /* v3: big photos + videos */
+    .wrap{max-width:720px}
+    .plan li.maybe a{color:var(--soft)}
+    .passport{position:relative;margin:34px 6px 0;padding:20px 18px 16px;background:#e9f1ee;border:2px dashed var(--sea);border-radius:10px;transform:rotate(-.5deg)}
+    .passport h2{font-family:var(--hand);font-weight:700;font-size:calc(1.5rem*var(--hand-size));color:var(--sea);margin:0 0 4px;line-height:1}
+    .passport p{margin:0 0 10px;color:var(--soft)}
+    .passport ol{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+    .passport label{display:flex;gap:10px;align-items:center;cursor:pointer;font-weight:600}
+    .passport input{width:22px;height:22px;accent-color:var(--red);flex:none}
+    .passport input:checked+span{text-decoration:line-through;text-decoration-color:var(--red);color:var(--soft)}
+    .passport .cert{margin:10px 0 0;font-family:var(--hand);font-weight:700;font-size:calc(1.05rem*var(--hand-size));color:var(--red)}
+    .when{margin:-8px 0 12px;font-weight:700;color:var(--soft)}
+    .when .tag{margin-inline-start:6px}
+    .media{margin-block:0 18px;margin-inline:calc(-58px - 6px) -12px;display:grid;gap:14px}
+    .photo{margin:0;background:#fffdf7;padding:6px 6px 0;box-shadow:0 1px 2px rgba(59,46,39,.2),0 10px 22px -10px rgba(59,46,39,.4)}
+    .photo:nth-child(odd){transform:rotate(-.5deg)} .photo:nth-child(even){transform:rotate(.5deg)}
+    .photo a{display:block;cursor:zoom-in}
+    .photo img{display:block;width:100%;height:auto;max-height:78vh;object-fit:cover;background:#eadfca}
+    .photo figcaption{font-family:var(--hand);font-weight:700;font-size:calc(1rem*var(--hand-size));color:var(--soft);text-align:center;padding:6px 8px 8px;line-height:1.15}
+    .photo:not(:has(figcaption)){padding-bottom:6px}
+    .video{margin:0;background:var(--ink);padding:6px;border-radius:4px;box-shadow:0 10px 22px -10px rgba(59,46,39,.5)}
+    .video .frame{position:relative;aspect-ratio:16/9;background:#000}
+    .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+    .video figcaption{color:#e9dcc6;font-size:.85rem;padding:7px 6px 3px;line-height:1.4}
+    .video figcaption a{color:#fbe9b7;text-decoration-color:rgba(251,233,183,.5)}
+    .video .vlabel{display:block;font-family:var(--hand);font-weight:700;font-size:calc(1.02rem*var(--hand-size));color:var(--sun);line-height:1.1;margin-bottom:2px}
+    .video .ch{color:#b9a88f}
+    .mission{display:flex;gap:10px;align-items:center;margin:0 0 12px;padding:9px 12px;background:#fbe9b7;border-radius:4px 10px 6px 12px;font-size:1.02rem;box-shadow:0 1px 2px rgba(59,46,39,.12)}
+    .mission b{color:var(--red)}
+    .mstamp{flex:none;width:34px;height:34px;display:grid;place-items:center;border:2px solid var(--red);border-radius:50%;color:var(--red);font-family:var(--hand);font-weight:700;font-size:calc(1.05rem*var(--hand-size));transform:rotate(-8deg);background:#fffdf7}
+    .road{margin:0 0 10px;padding:10px 12px;background:var(--card);border-inline-start:3px solid var(--sea);font-size:.98rem}
+    .stop.opt .stamp{border-style:dashed}
+    dialog.lb{padding:0;border:0;background:transparent;max-width:100vw;max-height:100vh;width:100vw;height:100vh}
+    dialog.lb::backdrop{background:rgba(20,14,10,.92)}
+    dialog.lb img{display:block;width:100%;height:100%;object-fit:contain;cursor:zoom-out}
+    dialog.lb button{position:fixed;top:12px;inset-inline-end:14px;font:700 28px/1 sans-serif;background:rgba(0,0,0,.5);color:#fff;border:0;border-radius:50%;width:44px;height:44px;cursor:pointer}
+    @media (min-width:600px){ .media{margin-inline:-72px 0} .photo{padding:9px 9px 0} .photo:not(:has(figcaption)){padding-bottom:9px} }
+  </style>
 </head>
 <body>
   <div class="lang" role="group" aria-label="Language / שפה">
@@ -165,7 +204,7 @@
       <p class="kicker"><span class="en">Thu · Oct 1 · Chol HaMoed Sukkot</span><span class="he">יום חמישי&nbsp;· 1&nbsp;באוקטובר&nbsp;· חול&nbsp;המועד&nbsp;סוכות</span></p>
       <h1><span class="en">Our Thursday Adventure</span><span class="he">ההרפתקה שלנו ביום חמישי</span></h1>
       <figure class="hero tape sb"><img src="images/thursday/storybook-hero.jpg" width="1200" height="800" alt="A storybook painting of a bear family setting off on their day by the sea" /></figure>
-      <p class="lede"><span class="en">Boats, lasers, race cars and pasta by the sea. The whole gang, one epic day! We leave at 11:00.</span><span class="he">סירות, לייזרים, מכוניות מרוץ ופסטה ליד הים. כל החבורה, יום אחד מטורף! יוצאים ב־11:00.</span></p>
+      <p class="lede"><span class="en">A speedboat, paint brushes, race cars, pizza and a sunset by the sea. The whole gang, one epic day! We leave at 10:45.</span><span class="he">סירת מרוץ, מכחולים, מכוניות מרוץ, פיצה ושקיעה ליד הים. כל החבורה, יום אחד מטורף! יוצאים ב־<bdi dir="ltr">10:45</bdi>.</span></p>
     </header>
 
     <div class="squiggle" role="presentation"></div>
@@ -174,108 +213,138 @@
       <span class="pin" aria-hidden="true"></span>
       <h2><span class="en">The plan</span><span class="he">התוכנית</span></h2>
       <ol>
-        <li><a href="#top"><time>11:00</time><span><span class="en">We leave home</span><span class="he">יוצאים מהבית</span></span></a></li>
+        <li><a href="#go"><time>10:45</time><span><span class="en">We leave Givat Ze’ev</span><span class="he">יוצאים מגבעת זאב</span></span></a></li>
         <li><a href="#boat"><time>12:30</time><span><span class="en">Speedboat</span><span class="he">סירת מרוץ</span></span></a></li>
-        <li><a href="#laser"><time>13:40</time><span><span class="en">Laser tag</span><span class="he">לייזר טאג</span></span></a></li>
+        <li><a href="#pottery"><time>13:20</time><span><span class="en">Paint our own pottery</span><span class="he">צובעים קרמיקה</span></span></a></li>
         <li><a href="#kart"><time>14:55</time><span><span class="en">Go-karts</span><span class="he">קארטינג</span></span></a></li>
-        <li><a href="#pasta"><time>17:00</time><span><span class="en">Pasta</span><span class="he">פסטה</span></span></a></li>
-        <li><a href="#sunset"><time>~18:20</time><span><span class="en">Sunset</span><span class="he">שקיעה</span></span></a></li>
-        <li class="maybe"><a href="#bonus"><span class="t"><span class="en">Bonus?</span><span class="he">בונוס?</span></span><span>FlyBox</span></a></li>
+        <li class="maybe"><a href="#free"><time>16:00</time><span><span class="en">Free time / laser tag?</span><span class="he">זמן חופשי / לייזר טאג?</span></span></a></li>
+        <li><a href="#pizza"><time>17:00</time><span><span class="en">Pizza dinner</span><span class="he">ארוחת פיצה</span></span></a></li>
+        <li><a href="#sunset"><time>18:15</time><span><span class="en">Sunset on the cliffs</span><span class="he">שקיעה על הצוקים</span></span></a></li>
+        <li><a href="#home"><time>~18:45</time><span><span class="en">Drive home</span><span class="he">נוסעים הביתה</span></span></a></li>
       </ol>
     </nav>
 
-    <section class="storybook sb" aria-labelledby="sb-title">
-      <h2 id="sb-title"><span class="en">Our day, as a storybook</span><span class="he">היום שלנו, כסיפור מצויר</span></h2>
-      <p><span class="en">Boat, lasers, karts, pasta, sunset.</span><span class="he">סירה, לייזרים, קארטים, פסטה, שקיעה.</span></p>
-      <figure class="strip"><a href="images/thursday/storybook-strip.jpg"><img src="images/thursday/storybook-strip.jpg" width="1024" height="576" loading="lazy" alt="Storybook comic strip: a bear family on a speedboat, playing laser tag, racing go-karts, eating pasta and watching the sunset from the sea cliffs" /></a></figure>
+    <section class="passport" id="passport" aria-labelledby="pp-title">
+      <h2 id="pp-title"><span class="en">🛂 Mission passport</span><span class="he">🛂 דרכון המשימות</span></h2>
+      <p><span class="en">At every stop there’s a secret mission. Complete all four and earn your official Adventurer Certificate at sunset!</span><span class="he">בכל תחנה מחכה משימה סודית. מי שמשלים את כל הארבע מקבל תעודת הרפתקן רשמית בשקיעה!</span></p>
+      <ol>
+        <li><label><input type="checkbox" data-m="1" /><span><span class="en">⛵ Steer the boat</span><span class="he">⛵ לנווט את הסירה</span></span></label></li>
+        <li><label><input type="checkbox" data-m="2" /><span><span class="en">🎨 Finish your pottery masterpiece</span><span class="he">🎨 לסיים את יצירת הקרמיקה</span></span></label></li>
+        <li><label><input type="checkbox" data-m="3" /><span><span class="en">🏎️ Beat your lap time</span><span class="he">🏎️ לשבור את זמן ההקפה</span></span></label></li>
+        <li><label><input type="checkbox" data-m="4" /><span><span class="en">🌅 Spot the sunset</span><span class="he">🌅 לזהות את השקיעה</span></span></label></li>
+      </ol>
+      <p class="cert"><span class="en">🏅 Certificates handed out at sunset on the cliffs</span><span class="he">🏅 חלוקת תעודות בשקיעה על הצוקים</span></p>
     </section>
 
     <h2 class="day-title"><span class="en">The day, stop by stop</span><span class="he">היום, תחנה אחרי תחנה</span></h2>
-    <p class="day-sub"><span class="en">Tap a phone number to call.</span><span class="he">לוחצים על מספר כדי להתקשר.</span></p>
+    <p class="day-sub"><span class="en">Tap a photo to see it big · play the videos to see what’s coming</span><span class="he">לוחצים על תמונה כדי להגדיל · מפעילים את הסרטונים כדי לראות מה מחכה לנו</span></p>
 
     <ol class="day">
-      <li class="stop" id="boat">
-        <span class="stamp"><bdi dir="ltr">12:30</bdi></span>
-        <p class="place"><span class="en">Herzliya Marina</span><span class="he">מרינה הרצליה</span></p>
-        <h3><span class="en">Speedboat Blast!</span><span class="he">טיל על המים!</span></h3>
-        <div class="snaps">
-          <figure class="snap one"><img src="images/thursday/02-tornado-speedboat.jpg" width="1000" height="750" alt="Speedboat racing on the sea" /><figcaption><span class="en">zoom!</span><span class="he">זוּם!</span></figcaption></figure>
-          <figure class="snap two"><img src="images/thursday/02-herzliya-marina.jpg" width="1000" height="750" alt="Herzliya Marina" loading="lazy" /></figure>
-        </div>
-        <p class="fun"><span class="en">Hold on tight! We zoom out to sea on a super-fast boat, bouncing over the waves for 20 wild minutes. Wheee!</span><span class="he">תחזיקו חזק! יוצאים לים בסירה סופר־מהירה וקופצים על הגלים 20 דקות מטורפות. יוהוו!</span></p>
-        <p class="who"><span class="en">Ages 5+ ride · the 3-year-old waves from the pier with ice cream</span><span class="he">מגיל 5 עולים לסירה · בן ה־3 מנופף מהרציף עם גלידה</span></p>
-        <p class="info"><a href="tel:0523434404"><span class="en">Holiday</span><span class="he">הולידיי</span></a> · <a href="https://wa.me/972509180000"><span class="en">WhatsApp Funtasea</span><span class="he">וואטסאפ Funtasea</span></a> · <span class="en">₪50/person (Funtasea)</span><span class="he">₪50 לאדם (Funtasea)</span></p>
+      <li class="stop" id="go">
+        <span class="stamp"><bdi dir="ltr">10:45</bdi></span>
+        <p class="place"><span class="en">Givat Ze’ev</span><span class="he">גבעת זאב</span></p>
+        <h3><span class="en">Hit the Road!</span><span class="he">יוצאים לדרך!</span></h3>
+        <p class="road"><span class="en">Route: <b>443 → 1 → 20 (Ayalon) → 2 north</b> to Herzliya Marina. About 55 minutes, plus a buffer for holiday traffic.</span><span class="he">המסלול: <b>443 ← 1 ← 20 (איילון) ← 2 צפונה</b> עד מרינה הרצליה. כ־55 דקות, ועוד זמן רזרבה לפקקי חג.</span></p>
+        <p class="fun"><span class="en">Snacks packed, water bottles full, seatbelts on. First stop: the sea!</span><span class="he">חטיפים ארוזים, בקבוקי מים מלאים, חגורות חגורות. תחנה ראשונה: הים!</span></p>
       </li>
 
-      <li class="stop" id="laser">
-        <span class="stamp"><bdi dir="ltr">13:40</bdi></span>
-        <p class="place"><span class="en">Laser Tag Poleg, Netanya</span><span class="he">לייזר טאג פולג, נתניה</span></p>
-        <h3><span class="en">Laser Battle!</span><span class="he">קרב לייזרים!</span></h3>
-        <div class="snaps">
-          <figure class="snap one"><img src="images/thursday/03-laser-tag-poleg-arena.jpg" width="1000" height="667" alt="Neon laser tag maze" loading="lazy" /><figcaption><span class="en">the neon maze</span><span class="he">מבוך הניאון</span></figcaption></figure>
-          <figure class="snap two"><img src="images/thursday/03-laser-tag-poleg-player.jpg" width="900" height="900" alt="Laser tag player in a neon arena" loading="lazy" /></figure>
+      <li class="stop" id="boat">
+        <span class="stamp"><bdi dir="ltr">12:30</bdi></span>
+        <p class="place"><span class="en">Funtasea · Herzliya Marina</span><span class="he">שייט פנטזי (Funtasea) · מרינה הרצליה</span></p>
+        <h3><span class="en">Speedboat Blast!</span><span class="he">טיל על המים!</span></h3>
+        <p class="when"><bdi dir="ltr">12:30–12:50</bdi></p>
+        <div class="media">
+          <figure class="photo"><a href="images/thursday/02-funtasea-speedboat.jpg" class="zoom"><img src="images/thursday/02-funtasea-speedboat.jpg" width="1280" height="720" alt="Funtasea speedboat racing through the waves off Herzliya" decoding="async" /></a><figcaption><span class="en">zoom over the waves!</span><span class="he">זוּם על הגלים!</span></figcaption></figure>
+          <figure class="photo"><a href="images/thursday/02-tornado-speedboat.jpg" class="zoom"><img src="images/thursday/02-tornado-speedboat.jpg" width="1000" height="750" alt="Speedboat with passengers out at sea" loading="lazy" decoding="async" /></a><figcaption><span class="en">hold on tight!</span><span class="he">תחזיקו חזק!</span></figcaption></figure>
+          <figure class="photo"><a href="images/thursday/02-herzliya-marina.jpg" class="zoom"><img src="images/thursday/02-herzliya-marina.jpg" width="1000" height="750" alt="Boats in Herzliya Marina" loading="lazy" decoding="async" /></a><figcaption><span class="en">Herzliya Marina</span><span class="he">מרינה הרצליה</span></figcaption></figure>
+          <figure class="video"><div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/QlnUICpPA-k?rel=0&amp;playsinline=1" title="שייט פנטזי - שייט אקסטרים מרינה הרצליה" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><figcaption><span class="vlabel"><span class="en">▶ Watch what’s coming</span><span class="he">▶ סרטון: מה מחכה לנו</span></span> <bdi>שייט פנטזי - שייט אקסטרים מרינה הרצליה</bdi> · <a href="https://www.youtube.com/watch?v=QlnUICpPA-k" target="_blank" rel="noopener">YouTube</a> <span class="ch">(<bdi>שייט פנטזי / Funtasea</bdi>)</span></figcaption></figure>
         </div>
-        <p class="fun"><span class="en">Vests on, lasers ready! Sneak through a glowing neon maze with tunnels and forts. Team up, tag your siblings, win the war!</span><span class="he">לובשים אפודים, לייזרים מוכנים! מתגנבים במבוך ניאון זוהר עם מנהרות ומבצרים. מתחלקים לקבוצות, פוגעים באחים ומנצחים בקרב!</span></p>
-        <p class="who"><span class="en">Big kids + 9 &amp; 7 play (40 min) · 5 &amp; 3 get snacks and cheer, and their turn is next!</span><span class="he">הגדולים + בני 9 ו־7 משחקים (40 דק׳) · בני 5 ו־3 מקבלים חטיף ומעודדים, ומיד אחר כך התור שלהם!</span></p>
-        <p class="info"><a href="tel:*5082"><bdi dir="ltr">*5082</bdi></a> · <a href="https://www.lasertag-poleg.co.il/book-double-game"><span class="en">Book</span><span class="he">הזמנה</span></a> · <span class="en">₪100/player (double game)</span><span class="he">₪100 לשחקן (משחק כפול)</span></p>
+        <p class="mission"><span class="mstamp" aria-hidden="true">1</span><span><span class="en"><b>Mission 1:</b> steer the boat! Ask the captain for a turn at the wheel.</span><span class="he"><b>משימה 1:</b> לנווט את הסירה! מבקשים מהקפטן תור ליד ההגה.</span></span></p>
+        <p class="fun"><span class="en">Hold on tight! We zoom out to sea on a super-fast boat, bouncing over the waves for 20 wild minutes. Wheee!</span><span class="he">תחזיקו חזק! יוצאים לים בסירה סופר־מהירה וקופצים על הגלים 20 דקות מטורפות. יוהוו!</span></p>
+        <p class="who"><span class="en">Ages 5+ ride · the 3-year-old waves from the pier with ice cream</span><span class="he">מגיל 5 עולים לסירה · בן ה־3 מנופף מהרציף עם גלידה</span></p>
+        <p class="info"><a href="https://wa.me/972509180000"><span class="en">WhatsApp Funtasea</span><span class="he">וואטסאפ Funtasea</span></a> <bdi dir="ltr">050-918-0000</bdi> · <span class="en">stand opposite Golda &amp; McDonald’s</span><span class="he">הדוכן מול גולדה ומקדונלד׳ס</span> · <a href="https://waze.com/ul?q=%D7%9E%D7%A8%D7%99%D7%A0%D7%94%20%D7%94%D7%A8%D7%A6%D7%9C%D7%99%D7%94&amp;navigate=yes" target="_blank" rel="noopener">Waze</a></p>
+      </li>
+
+      <li class="stop" id="pottery">
+        <span class="stamp"><bdi dir="ltr">13:20</bdi></span>
+        <p class="place"><span class="en">Clay &amp; Kef · Neve Zemer mall, Ra’anana</span><span class="he">קליי אנד כיף · קניון נווה זמר, רעננה</span></p>
+        <h3><span class="en">Paint Your Own Pottery!</span><span class="he">צובעים קרמיקה משלנו!</span></h3>
+        <p class="when"><bdi dir="ltr">13:20–14:30</bdi><span class="tag ok"><span class="en">✓ Booked</span><span class="he">✓ הוזמן</span></span></p>
+        <div class="media">
+          <figure class="photo"><a href="images/thursday/03-clay-kef-painting.jpg" class="zoom"><img src="images/thursday/03-clay-kef-painting.jpg" width="1600" height="1319" alt="A girl painting a ceramic piece at the Clay and Kef studio" loading="lazy" decoding="async" /></a><figcaption><span class="en">every kid paints a piece</span><span class="he">כל ילד צובע כלי משלו</span></figcaption></figure>
+          <figure class="photo"><a href="images/thursday/03-clay-kef-table.jpg" class="zoom"><img src="images/thursday/03-clay-kef-table.jpg" width="1600" height="1323" alt="Painting table at Clay and Kef with brushes, paints and ceramic pieces" loading="lazy" decoding="async" /></a><figcaption><span class="en">brushes, paints &amp; imagination</span><span class="he">מכחולים, צבעים ודמיון</span></figcaption></figure>
+          <figure class="photo"><a href="images/thursday/03-clay-kef-pieces.jpg" class="zoom"><img src="images/thursday/03-clay-kef-pieces.jpg" width="735" height="810" alt="Hand-painted ceramic mug and plate at Clay and Kef" loading="lazy" decoding="async" /></a><figcaption><span class="en">ready in 4–6 weeks!</span><span class="he">מוכן תוך 4–6 שבועות!</span></figcaption></figure>
+          <figure class="video"><div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/1NgSMtAi7RY?rel=0&amp;playsinline=1" title="Paint Your Own Pottery: start to finish!" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><figcaption><span class="vlabel"><span class="en">▶ Watch what’s coming</span><span class="he">▶ סרטון: מה מחכה לנו</span></span> <bdi>Paint Your Own Pottery: start to finish!</bdi> · <a href="https://www.youtube.com/watch?v=1NgSMtAi7RY" target="_blank" rel="noopener">YouTube</a> <span class="ch">(<bdi>Bisque It Pottery Painting Studio</bdi>)</span></figcaption></figure>
+        </div>
+        <p class="mission"><span class="mstamp" aria-hidden="true">2</span><span><span class="en"><b>Mission 2:</b> finish your pottery masterpiece!</span><span class="he"><b>משימה 2:</b> לסיים את יצירת המופת מקרמיקה!</span></span></p>
+        <p class="fun"><span class="en">Each of us picks a real ceramic piece (a mug, a plate, a little animal) and paints it any way we like. Then the studio bakes it in a super-hot kiln, and in 4–6 weeks our masterpieces are ready to take home!</span><span class="he">כל אחד בוחר כלי קרמיקה אמיתי (כוס, צלחת או חיה קטנה) וצובע אותו איך שבא לו. אחר כך הסטודיו שורף אותו בתנור לוהט, ותוך 4–6 שבועות יצירות המופת שלנו מוכנות לאיסוף!</span></p>
+        <p class="who"><span class="en">Everyone paints, even the 3-year-old! Kosher snacks at the studio</span><span class="he">כולם צובעים, גם בן ה־3! הכיבוד בסטודיו כשר</span></p>
+        <p class="info"><a href="tel:0584507746"><bdi dir="ltr">058-450-7746</bdi></a> · <span class="en">Sasha Argov 23, floor 1 · mall parking free for 2 hours</span><span class="he">סשה ארגוב 23, קומה 1 · חניה בקניון חינם לשעתיים</span> · <a href="https://waze.com/ul?q=%D7%A1%D7%A9%D7%94%20%D7%90%D7%A8%D7%92%D7%95%D7%91%2023%20%D7%A8%D7%A2%D7%A0%D7%A0%D7%94&amp;navigate=yes" target="_blank" rel="noopener">Waze</a></p>
       </li>
 
       <li class="stop" id="kart">
         <span class="stamp"><bdi dir="ltr">14:55</bdi></span>
         <p class="place"><span class="en">Dan Karting Netanya</span><span class="he">דן קארטינג נתניה</span></p>
         <h3><span class="en">Race Day!</span><span class="he">יום מרוצים!</span></h3>
-        <div class="snaps">
-          <figure class="snap one"><img src="images/thursday/03-dan-karting-track.jpg" width="1000" height="666" alt="Go-karts racing" loading="lazy" /><figcaption><span class="en">start your engines</span><span class="he">מנועים, להניע!</span></figcaption></figure>
-          <figure class="snap two"><img src="images/thursday/03-dan-karting-double-kart.jpg" width="1000" height="683" alt="Two-seat kart" loading="lazy" /></figure>
+        <p class="when"><bdi dir="ltr">14:55–15:50</bdi></p>
+        <div class="media">
+          <figure class="photo"><a href="images/thursday/04-dan-karting-netanya.jpg" class="zoom"><img src="images/thursday/04-dan-karting-netanya.jpg" width="1181" height="787" alt="Go-kart drivers in helmets on the Dan Karting track" loading="lazy" decoding="async" /></a><figcaption><span class="en">start your engines!</span><span class="he">מנועים, להניע!</span></figcaption></figure>
+          <figure class="video"><div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/T5Ago5GAqZw?rel=0&amp;playsinline=1" title="Dan karting Netanya, indoor karting" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><figcaption><span class="vlabel"><span class="en">▶ Watch what’s coming</span><span class="he">▶ סרטון: מה מחכה לנו</span></span> <bdi>Dan karting Netanya, indoor karting</bdi> · <a href="https://www.youtube.com/watch?v=T5Ago5GAqZw" target="_blank" rel="noopener">YouTube</a> <span class="ch">(<bdi>Elena Vilensky ADVERTA</bdi>)</span></figcaption></figure>
         </div>
+        <p class="mission"><span class="mstamp" aria-hidden="true">3</span><span><span class="en"><b>Mission 3:</b> beat your lap time! Race once, then try to go even faster.</span><span class="he"><b>משימה 3:</b> לשבור את זמן ההקפה! נוסעים פעם אחת ואז מנסים עוד יותר מהר.</span></span></p>
         <p class="fun"><span class="en">Helmets on, engines roaring! Real go-karts for the racers, mini electric karts for the little drivers, plus bumper cars. Who takes the checkered flag?</span><span class="he">קסדות על הראש, המנועים שואגים! קארטינג אמיתי לנהגים, קארטים חשמליים קטנים לנהגים הצעירים, וגם מכוניות מתנגשות. מי יגיע ראשון לדגל המשובץ?</span></p>
         <p class="who"><span class="en">8+ &amp; 1.30 m: go-karts · ages 4–8: kids’ karts · 3yo: rides the two-seat kart with a grown-up</span><span class="he">מגיל 8 ומגובה 1.30 מ׳: קארטינג · גילאי 4–8: קארטים לילדים · בן 3: נוסע בקארט זוגי עם מבוגר</span></p>
-        <p class="info"><a href="tel:048501060"><bdi dir="ltr">04-850-1060</bdi></a> · <a href="https://wa.me/972539314994"><span class="en">WhatsApp</span><span class="he">וואטסאפ</span></a> · <a href="https://dankart.co.il/branches/netanya/"><span class="en">Info</span><span class="he">מידע</span></a></p>
+        <p class="info"><a href="tel:048501060"><bdi dir="ltr">04-850-1060</bdi></a> · <a href="https://wa.me/972539314994"><span class="en">WhatsApp</span><span class="he">וואטסאפ</span></a> · <span class="en">HaMechkar 2</span><span class="he">המחקר 2</span> · <a href="https://waze.com/ul?q=%D7%94%D7%9E%D7%97%D7%A7%D7%A8%202%20%D7%A0%D7%AA%D7%A0%D7%99%D7%94&amp;navigate=yes" target="_blank" rel="noopener">Waze</a></p>
       </li>
 
-      <li class="stop" id="pasta">
-        <span class="stamp"><bdi dir="ltr">17:00</bdi></span>
-        <p class="place"><span class="en">Alonzo, Kikar HaAtzmaut</span><span class="he">אלונזו, כיכר העצמאות</span></p>
-        <h3><span class="en">Pasta Party!</span><span class="he">מסיבת פסטה!</span></h3>
-        <div class="snaps">
-          <figure class="snap one"><img src="images/thursday/04-alonzo-pasta.jpg" width="1000" height="667" alt="Pasta with tomato sauce" loading="lazy" /><figcaption><span class="en">winners’ feast</span><span class="he">סעודת המנצחים</span></figcaption></figure>
-          <figure class="snap two"><img src="images/thursday/04-alonzo-pizza.jpg" width="1000" height="667" alt="Pizzas" loading="lazy" /></figure>
+      <li class="stop opt" id="free">
+        <span class="stamp"><bdi dir="ltr">16:00</bdi></span>
+        <p class="place"><span class="en">Free time · or Laser Tag Poleg (optional)</span><span class="he">זמן חופשי · או לייזר טאג פולג (אופציונלי)</span></p>
+        <h3><span class="en">Laser Battle? Maybe!</span><span class="he">קרב לייזרים? אולי!</span></h3>
+        <p class="when"><bdi dir="ltr">16:00–16:50</bdi></p>
+        <div class="media">
+          <figure class="photo"><a href="images/thursday/03-laser-tag-poleg-arena.jpg" class="zoom"><img src="images/thursday/03-laser-tag-poleg-arena.jpg" width="1000" height="667" alt="Neon laser tag maze at Laser Tag Poleg" loading="lazy" decoding="async" /></a><figcaption><span class="en">the neon maze</span><span class="he">מבוך הניאון</span></figcaption></figure>
+          <figure class="photo"><a href="images/thursday/03-laser-tag-poleg-player.jpg" class="zoom"><img src="images/thursday/03-laser-tag-poleg-player.jpg" width="900" height="900" alt="Laser tag player in a neon arena" loading="lazy" decoding="async" /></a></figure>
+          <figure class="video"><div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/wDYbhHg13lc?rel=0&amp;playsinline=1" title="לייזר טאג פולג נתניה - לוחמה אורבנית" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><figcaption><span class="vlabel"><span class="en">▶ Watch what’s coming</span><span class="he">▶ סרטון: מה מחכה לנו</span></span> <bdi>לייזר טאג פולג נתניה - לוחמה אורבנית</bdi> · <a href="https://www.youtube.com/watch?v=wDYbhHg13lc" target="_blank" rel="noopener">YouTube</a> <span class="ch">(<bdi>לגדול</bdi>)</span></figcaption></figure>
         </div>
-        <p class="fun"><span class="en">Race-winner feast! Handmade pasta and pizza on the big square by the sea. Mehadrin dairy, so everyone orders their favorite.</span><span class="he">סעודת המנצחים! פסטה טרייה ופיצה בכיכר הגדולה ליד הים. חלבי בהשגחת מהדרין, אז כל אחד מזמין מה שהוא הכי אוהב.</span></p>
-        <p class="who"><span class="en">Everyone! Share plates for the little ones</span><span class="he">כולם! הקטנים מתחלקים בצלחות</span></p>
-        <p class="info"><a href="tel:097996267"><bdi dir="ltr">09-799-6267</bdi></a> · <a href="https://ontopo.com/he/il/page/44713986"><span class="en">Reserve</span><span class="he">הזמנת מקום</span></a> · <span class="en">Rabbanut Mehadrin</span><span class="he">כשרות רבנות מהדרין</span></p>
+        <p class="fun"><span class="en">A little free time to rest, snack and stretch. If we still have energy: vests on, lasers ready, and sneak through a glowing neon maze!</span><span class="he">קצת זמן חופשי לנוח, לאכול משהו ולהתמתח. ואם עוד יש כוח: לובשים אפודים, לייזרים מוכנים, ומתגנבים במבוך ניאון זוהר!</span></p>
+        <p class="who"><span class="en">If we go: big kids + 9 &amp; 7 play · 5 &amp; 3 get snacks and cheer</span><span class="he">אם הולכים: הגדולים + בני 9 ו־7 משחקים · בני 5 ו־3 מקבלים חטיף ומעודדים</span></p>
+        <p class="info"><a href="tel:*5082"><bdi dir="ltr">*5082</bdi></a> · <a href="https://www.lasertag-poleg.co.il/book-double-game"><span class="en">Book</span><span class="he">הזמנה</span></a> · <span class="en">HaBonim 4</span><span class="he">הבונים 4</span> · <a href="https://waze.com/ul?q=%D7%94%D7%91%D7%95%D7%A0%D7%99%D7%9D%204%20%D7%A0%D7%AA%D7%A0%D7%99%D7%94&amp;navigate=yes" target="_blank" rel="noopener">Waze</a></p>
+      </li>
+
+      <li class="stop" id="pizza">
+        <span class="stamp"><bdi dir="ltr">17:00</bdi></span>
+        <p class="place"><span class="en">Pizza Hut Mehadrin · Kikar HaAtzmaut 3, Netanya</span><span class="he">פיצה האט מהדרין · כיכר העצמאות 3, נתניה</span></p>
+        <h3><span class="en">Pizza Party!</span><span class="he">מסיבת פיצה!</span></h3>
+        <div class="media">
+          <figure class="photo"><a href="images/thursday/06-pizza-hut-netanya.jpg" class="zoom"><img src="images/thursday/06-pizza-hut-netanya.jpg" width="1200" height="1000" alt="Pizza Hut Mehadrin storefront at Kikar HaAtzmaut 3, Netanya" loading="lazy" decoding="async" /></a><figcaption><span class="en">our pizza place on the square</span><span class="he">הפיצריה שלנו בכיכר</span></figcaption></figure>
+          <figure class="photo"><a href="images/thursday/05-kikar-haatzmaut.jpg" class="zoom"><img src="images/thursday/05-kikar-haatzmaut.jpg" width="750" height="1000" alt="The fountain on Kikar HaAtzmaut, Netanya" loading="lazy" decoding="async" /></a><figcaption><span class="en">the big fountain</span><span class="he">המזרקה הגדולה</span></figcaption></figure>
+          <figure class="video"><div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/dPRqvh2sKVM?rel=0&amp;playsinline=1" title="Netanya  Promenade &amp; Independence Square 4K Israel 2021" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><figcaption><span class="vlabel"><span class="en">▶ Watch what’s coming</span><span class="he">▶ סרטון: מה מחכה לנו</span></span> <bdi>Netanya  Promenade &amp; Independence Square 4K Israel 2021</bdi> · <a href="https://www.youtube.com/watch?v=dPRqvh2sKVM" target="_blank" rel="noopener">YouTube</a> <span class="ch">(<bdi>Discovering Israel</bdi>)</span></figcaption></figure>
+        </div>
+        <p class="fun"><span class="en">Race-winners’ feast! Hot pizza right on the big square by the sea, next to the fountain. Everyone picks their favorite topping.</span><span class="he">סעודת המנצחים! פיצה חמה ממש בכיכר הגדולה ליד הים, ליד המזרקה. כל אחד בוחר את התוספת האהובה עליו.</span></p>
+        <p class="who"><span class="en">Everyone! Kosher Mehadrin · Badatz Beit Yosef</span><span class="he">כולם! כשר למהדרין · בד״ץ בית יוסף</span></p>
+        <p class="info"><a href="tel:1700506070"><bdi dir="ltr">1-700-50-60-70</bdi></a> · <a href="https://waze.com/ul?q=%D7%9B%D7%99%D7%9B%D7%A8%20%D7%94%D7%A2%D7%A6%D7%9E%D7%90%D7%95%D7%AA%203%20%D7%A0%D7%AA%D7%A0%D7%99%D7%94&amp;navigate=yes" target="_blank" rel="noopener">Waze</a></p>
       </li>
 
       <li class="stop" id="sunset">
-        <span class="stamp long"><bdi dir="ltr">~18:20</bdi></span>
+        <span class="stamp"><bdi dir="ltr">18:15</bdi></span>
         <p class="place"><span class="en">Netanya cliffs</span><span class="he">צוקי נתניה</span></p>
-        <h3><span class="en">Sunset Selfie!</span><span class="he">סלפי שקיעה!</span></h3>
-        <div class="snaps">
-          <figure class="snap one tall"><img src="images/thursday/05-netanya-promenade.jpg" width="750" height="1000" alt="Netanya cliffs and sea" loading="lazy" /><figcaption><span class="en">golden hour</span><span class="he">שעת הזהב</span></figcaption></figure>
-          <figure class="snap two"><img src="images/thursday/05-kikar-haatzmaut.jpg" width="750" height="1000" alt="Fountain on Kikar HaAtzmaut" loading="lazy" /></figure>
+        <h3><span class="en">Sunset &amp; Certificates!</span><span class="he">שקיעה ותעודות!</span></h3>
+        <div class="media">
+          <figure class="photo"><a href="images/thursday/07-netanya-sunset.jpg" class="zoom"><img src="images/thursday/07-netanya-sunset.jpg" width="1600" height="1200" alt="The sun setting into the Mediterranean Sea at Netanya" loading="lazy" decoding="async" /></a><figcaption><span class="en">the sun dives into the sea</span><span class="he">השמש צוללת לים</span></figcaption></figure>
+          <figure class="photo"><a href="images/thursday/05-netanya-promenade.jpg" class="zoom"><img src="images/thursday/05-netanya-promenade.jpg" width="750" height="1000" alt="Netanya cliffs and promenade above the sea" loading="lazy" decoding="async" /></a><figcaption><span class="en">our cliff lookout</span><span class="he">התצפית שלנו על הצוק</span></figcaption></figure>
+          <figure class="video"><div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/7kF7232Lf0c?rel=0&amp;playsinline=1" title="TimeLapse, Sunset Mediterranean Sea, Netanya Israel" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><figcaption><span class="vlabel"><span class="en">▶ Watch what’s coming</span><span class="he">▶ סרטון: מה מחכה לנו</span></span> <bdi>TimeLapse, Sunset Mediterranean Sea, Netanya Israel</bdi> · <a href="https://www.youtube.com/watch?v=7kF7232Lf0c" target="_blank" rel="noopener">YouTube</a> <span class="ch">(<bdi>Relaxing WALKER</bdi>)</span></figcaption></figure>
         </div>
-        <p class="fun"><span class="en">Watch the sun dive into the sea from the cliffs, splash by the big fountain and snap our family photo. Then home, with sleepy happy faces.</span><span class="he">מסתכלים מהצוק איך השמש צוללת לים, משתכשכים ליד המזרקה הגדולה ומצטלמים לתמונה משפחתית. ואז הביתה, עם פרצופים עייפים ומאושרים.</span></p>
+        <p class="mission"><span class="mstamp" aria-hidden="true">4</span><span><span class="en"><b>Mission 4:</b> spot the exact moment the sun touches the sea!</span><span class="he"><b>משימה 4:</b> לזהות את הרגע המדויק שבו השמש נוגעת בים!</span></span></p>
+        <p class="fun"><span class="en">A short walk from the square to the cliffs. We watch the sun dive into the sea, snap our family photo, and every adventurer gets a certificate!</span><span class="he">הליכה קצרה מהכיכר אל הצוקים. מסתכלים איך השמש צוללת לים, מצטלמים לתמונה משפחתית, וכל הרפתקן מקבל תעודה!</span></p>
         <p class="who"><span class="en">Everyone · free!</span><span class="he">כולם · בחינם!</span></p>
       </li>
     </ol>
 
-    <p class="home"><span class="en">Home around 20:00–20:15</span><span class="he">בבית בסביבות <bdi dir="ltr">20:00–20:15</bdi></span></p>
+    <p class="home" id="home"><span class="en">~18:45 drive home (about 1h15) · home around 20:00</span><span class="he">בסביבות <bdi dir="ltr">18:45</bdi> נוסעים הביתה (כשעה ורבע) · בבית בסביבות <bdi dir="ltr">20:00</bdi></span></p>
 
-    <article class="bonus" id="bonus">
-      <span class="pin" aria-hidden="true"></span>
-      <p class="maybe"><span class="en">Optional bonus · 12:00 · Rishon LeZion</span><span class="he">בונוס אופציונלי · 12:00 · ראשון לציון</span></p>
-      <h3><span class="en">Fly Like a Superhero?</span><span class="he">לעוף כמו גיבורי־על?</span></h3>
-      <div class="snaps">
-        <figure class="snap one"><img src="images/thursday/01-flybox-tunnel.jpg" width="1000" height="705" alt="Flying in the FlyBox wind tunnel" loading="lazy" /><figcaption><span class="en">maybe…</span><span class="he">אולי…</span></figcaption></figure>
-        <figure class="snap two"><img src="images/thursday/01-flybox-building.jpg" width="1000" height="750" alt="FlyBox building" loading="lazy" /></figure>
-      </div>
-      <p class="fun"><span class="en">Maybe! If we add it, we fly inside a giant wind tunnel with an instructor, like skydiving without a plane. It pushes the whole day later.</span><span class="he">אולי! אם נוסיף את זה, נעוף בתוך מנהרת רוח ענקית עם מדריך, כמו צניחה חופשית בלי מטוס. זה ידחה את כל היום קצת מאוחר יותר.</span></p>
-      <p class="who"><span class="en">Ages 4+ fly · the 3-year-old watches through the glass</span><span class="he">מגיל 4 עפים · בן ה־3 צופה מבעד לזכוכית</span></p>
-      <p class="info"><a href="tel:039394840"><bdi dir="ltr">03-939-4840</bdi></a> · <a href="https://www.flybox.co.il/%D7%9E%D7%97%D7%99%D7%A8%D7%95%D7%9F/"><span class="en">Info</span><span class="he">מידע</span></a> · <span class="en">family pack ₪1,095 (5 flyers)</span><span class="he">חבילה משפחתית ₪1,095 (5 טסים)</span></p>
-    </article>
-
-    <p class="credits"><span class="en">Photos: venue websites (Dan Karting, Laser Tag Poleg, Alonzo), the Tal Yam listing (speedboat), Wikimedia Commons (Dr. Avishai Teicher, Nissan Hadary, Deror Avi; CC BY/BY-SA).</span><span class="he">צילומים: אתרי המקומות (דן קארטינג, לייזר טאג פולג, אלונזו), דף טל ים (סירת המרוץ), ויקישיתוף (ד״ר אבישי טייכר, ניסן הדרי, דרור אבי; CC BY/BY-SA).</span></p>
-    <p class="credits sb"><span class="en">Bear illustrations: original storybook art made for this page.</span><span class="he">איורי הדובים: איורים מקוריים שנוצרו לדף הזה.</span></p>
+    <p class="credits"><span class="en">Photos: Funtasea (frame from their YouTube video), Clay &amp; Kef, Dan Karting, Laser Tag Poleg and Pizza Hut Israel websites, the Tal Yam listing (speedboat), Wikimedia Commons (Dr. Avishai Teicher, Nissan Hadary, Deror Avi, James Emery; CC BY/BY-SA). Videos: YouTube, credited under each video.</span><span class="he">צילומים: שייט פנטזי (פריים מהסרטון שלהם ביוטיוב), אתרי קליי אנד כיף, דן קארטינג, לייזר טאג פולג ופיצה האט, דף טל ים (סירת המרוץ), ויקישיתוף (ד״ר אבישי טייכר, ניסן הדרי, דרור אבי, James Emery; CC BY/BY-SA). סרטונים: יוטיוב, הקרדיט מתחת לכל סרטון.</span></p>
+    <p class="credits sb"><span class="en">Bear illustration: original storybook art made for this page.</span><span class="he">איור הדובים: איור מקורי שנוצר לדף הזה.</span></p>
 
     <div class="older">
     <header>
@@ -511,6 +580,7 @@
       <span class="en">Live board for our family · We’ll add songs as you pick them · Same link, always updated</span><span class="he">הלוח החי של המשפחה שלנו · נוסיף שירים כשתבחרו · אותו קישור, תמיד מעודכן</span>
     </footer>
   </div>
+  <dialog class="lb" id="lb" aria-label="Photo"><button type="button" aria-label="Close">×</button><img alt="" /></dialog>
   <script>
     (function(){
       var titles={he:"ההרפתקה שלנו ביום חמישי · 1 באוקטובר",en:"Our Thursday Adventure · Oct 1"};
@@ -526,6 +596,20 @@
       document.querySelectorAll(".sb img").forEach(function(i){
         function hide(){var c=i.closest(".sb"); if(c) c.hidden=true;}
         if(i.complete && i.naturalWidth===0) hide(); else i.addEventListener("error",hide);
+      });
+      /* tap photo -> full screen */
+      var lb=document.getElementById("lb"), li=lb.querySelector("img");
+      if(lb.showModal){
+        document.querySelectorAll("a.zoom").forEach(function(a){a.addEventListener("click",function(e){
+          e.preventDefault(); li.src=a.getAttribute("href"); li.alt=(a.querySelector("img")||{}).alt||""; lb.showModal();
+        });});
+        lb.addEventListener("click",function(){lb.close();});
+      }
+      /* mission passport ticks, remembered on this phone */
+      document.querySelectorAll(".passport input").forEach(function(c){
+        var k="mission"+c.dataset.m;
+        try{c.checked=localStorage.getItem(k)==="1";}catch(e){}
+        c.addEventListener("change",function(){try{localStorage.setItem(k,c.checked?"1":"0");}catch(e){}});
       });
     })();
   </script>
