@@ -255,7 +255,7 @@ html[lang=he] .b-n{letter-spacing:0;text-transform:none;font-size:12.5px}
 
 /* ---------- bottom tab bar ---------- */
 .tabbar{position:fixed;bottom:0;left:0;right:0;z-index:45;background:rgba(255,255,255,.98);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
-.tabbar ul{list-style:none;margin:0 auto;padding:0;display:grid;grid-template-columns:repeat(4,1fr);max-width:560px;height:var(--tab-h)}
+.tabbar ul{list-style:none;margin:0 auto;padding:0;display:grid;grid-template-columns:repeat(5,1fr);max-width:560px;height:var(--tab-h)}
 .tabbar a{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;text-decoration:none;color:var(--faint);font-size:11px;font-weight:600}
 .tabbar .ico{width:23px;height:23px;stroke-width:1.7}
 .tabbar a.active{color:var(--brand)}
@@ -320,6 +320,26 @@ dialog.lb::backdrop{background:#000}
 
 @media (min-width:1100px){.older .grid{grid-template-columns:repeat(3,1fr)}}
 .stop .count{display:none}.hero .dots{display:none}
+
+/* ---------- v6 maps, songs and next-stop guide ---------- */
+.btn.maps{background:#4285F4;border-color:#4285F4;color:#fff;box-shadow:0 3px 10px rgba(66,133,244,.22)}
+.btn.maps:hover{background:#2f6fce;border-color:#2f6fce}
+.route-map{margin-top:18px;border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;background:var(--bg-2);box-shadow:var(--sh-1)}
+.route-map-head{display:flex;align-items:center;gap:10px;padding:13px 15px;background:#fff;border-bottom:1px solid var(--line)}
+.route-map-head .ico{color:#4285F4}.route-map-head b{font:600 16px/1.25 var(--display)}
+.route-map-head small{display:block;color:var(--muted);font-size:12.5px;font-weight:500}.route-map iframe{display:block;width:100%;height:260px;border:0}
+.song-slot{display:flex;align-items:center;gap:10px;margin-top:16px;padding:11px 13px;border:1px solid color-mix(in srgb,var(--acc,#222) 22%,#fff);border-radius:var(--r-md);background:color-mix(in srgb,var(--acc,#222) 5%,#fff);color:var(--ink)}
+.song-slot .song-icon{font-size:20px;line-height:1;flex:none}.song-slot .song-copy{min-width:0;display:flex;flex-direction:column;gap:1px}
+.song-slot b{font:600 14px/1.3 var(--display);color:var(--acc,var(--ink))}.song-slot small{font-size:13px;color:var(--muted)}
+.song-slot audio{width:100%;max-width:320px;height:34px;margin-inline-start:auto}.song-slot a{font-size:12.5px;font-weight:700;color:var(--acc,var(--ink));white-space:nowrap}
+.endpoint-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.endpoint-actions .btn{min-height:38px}
+.stop.is-current,.endpoint.is-current{outline:3px solid color-mix(in srgb,var(--acc,var(--brand)) 42%,transparent);outline-offset:4px}
+.stop.is-current .stop-body{position:relative}.stop.is-current .stop-body::before,.endpoint.is-current::before{content:"";position:absolute;inset-inline-end:0;top:0;width:9px;height:9px;border-radius:50%;background:var(--acc,var(--brand));box-shadow:0 0 0 5px color-mix(in srgb,var(--acc,var(--brand)) 16%,transparent)}
+.endpoint{position:relative}.stop.is-next{border-color:color-mix(in srgb,var(--acc,var(--brand)) 45%,var(--line))}
+.nextbar{position:fixed;left:12px;right:12px;bottom:calc(var(--tab-h) + env(safe-area-inset-bottom) + 10px);z-index:44;display:flex;gap:8px;max-width:560px;margin:auto;padding:8px;background:rgba(255,255,255,.97);border:1px solid var(--line);border-radius:16px;box-shadow:0 8px 28px rgba(0,0,0,.16);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.nextbar button{min-height:43px;border-radius:10px;border:1px solid var(--brand);font:600 14px/1 var(--font);cursor:pointer}.nextbar .next-scroll{flex:1;background:var(--brand);color:#fff}.nextbar .next-map{padding:0 14px;background:#4285F4;border-color:#4285F4;color:#fff;white-space:nowrap}.nextbar button:disabled{opacity:.55;cursor:not-allowed}.nextbar small{display:block;font-size:11px;font-weight:500;opacity:.86;margin-top:3px}
+.songs-grid{display:grid;gap:12px}.song-card{display:flex;flex-direction:column;gap:7px;padding:16px;border:1px solid var(--line);border-radius:var(--r-lg);background:#fff;box-shadow:var(--sh-1)}.song-card h3{font:600 18px/1.25 var(--display);color:var(--acc,var(--ink))}.song-card .song-time{font-size:13px;color:var(--muted);font-weight:600;direction:ltr}.song-card p{font-size:14px;color:var(--ink-2);line-height:1.5}.song-card audio{width:100%;height:36px}.song-card a{font-size:13px;font-weight:700;color:var(--acc,var(--brand))}
+@media (min-width:600px){.nextbar{left:auto;right:20px}.songs-grid{grid-template-columns:1fr 1fr}}@media (min-width:960px){.nextbar{bottom:20px;right:28px;left:auto}.route-map iframe{height:300px}}@media (max-width:599px){.song-slot audio{margin-inline-start:0;flex-basis:100%}.song-slot{flex-wrap:wrap}.song-slot .song-copy{flex:1}.endpoint-actions .btn{flex:1 1 0}.nextbar{font-size:13px}}
 
 /* ================= v5: fun layer ================= */
 :root{
@@ -449,6 +469,7 @@ html[lang=he] .cd-num small{text-transform:none;letter-spacing:0;font-size:11px}
         <a href="#top" data-tab="top"><span class="en">Overview</span><span class="he">סקירה</span></a>
         <a href="#itinerary" data-tab="itinerary"><span class="en">Itinerary</span><span class="he">מסלול</span></a>
         <a href="#passport" data-tab="passport"><span class="en">Missions</span><span class="he">משימות</span></a>
+        <a href="#songs" data-tab="songs"><span class="en">Songs</span><span class="he">שירים</span></a>
         <a href="#ideas" data-tab="ideas"><span class="en">More ideas</span><span class="he">עוד רעיונות</span></a>
       </nav>
       <div class="lang" role="group" aria-label="Language / שפה">
@@ -485,6 +506,7 @@ html[lang=he] .cd-num small{text-transform:none;letter-spacing:0;font-size:11px}
             <h2 id="it-title"><span class="en">The day, stop by stop</span><span class="he">היום, תחנה אחרי תחנה</span></h2>
             <p><span class="en">Tap a photo to see it big · play the videos to see what’s coming</span><span class="he">לוחצים על תמונה כדי להגדיל · מפעילים את הסרטונים כדי לראות מה מחכה לנו</span></p>
           </div>
+          <div class="route-map" aria-label="Trip route map"><div class="route-map-head"><svg class="ico" aria-hidden="true"><use href="#i-route"/></svg><div><b><span class="en">The whole route</span><span class="he">כל המסלול</span></b><small><span class="en">Givat Ze’ev → farm → sea → Netanya</span><span class="he">גבעת זאב ← החווה ← הים ← נתניה</span></small></div></div><iframe title="Google Maps route for the family trip" loading="lazy" src="https://www.google.com/maps?q=Givat%20Ze%27ev%20Israel%20Meshek%20Berger%20Kfar%20Hess%20Funtasea%20Herzliya%20Marina%20Dan%20Karting%20HaMechkar%202%20Netanya%20Laser%20Tag%20Poleg%20HaBonim%204%20Netanya%20Pizza%20Hut%20Kikar%20HaAtzmaut%203%20Netanya%20Netanya%20cliffs&amp;output=embed" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
           <ol class="stops">
 <li class="endpoint" id="go">
   <span class="ep-ico"><svg class="ico" aria-hidden="true"><use href="#i-home"/></svg></span>
@@ -493,6 +515,8 @@ html[lang=he] .cd-num small{text-transform:none;letter-spacing:0;font-size:11px}
     <h3><span class="en">Hit the Road!</span><span class="he">יוצאים לדרך!</span></h3>
     <p><span class="en">Waze to <b>Meshek Berger, Kfar Hess</b>. About 65 minutes, plus a buffer for holiday traffic.</span><span class="he">Waze אל <b>משק ברגר, כפר הס</b>. כ־65 דקות, ועוד זמן רזרבה לפקקי חג.</span></p>
     <p><span class="en">Snacks packed, water bottles full, seatbelts on. First stop: the farm!</span><span class="he">חטיפים ארוזים, בקבוקי מים מלאים, חגורות חגורות. תחנה ראשונה: החווה!</span></p>
+    <div class="song-slot" data-song-id="go"><span class="song-icon" aria-hidden="true">🎵</span><span class="song-copy"><b><span class="en">Stop song</span><span class="he">השיר של התחנה</span></b><small><span class="en">Song coming soon…</span><span class="he">שיר בדרך…</span></small></span></div>
+    <div class="endpoint-actions"><a class="btn maps" href="https://www.google.com/maps/dir/?api=1&amp;destination=Givat%20Ze%27ev%20Israel&amp;travelmode=driving" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg><span class="en">Google Maps</span><span class="he">Google Maps</span></a></div>
   </div>
 </li>
 <li class="conn" aria-hidden="false"><span><svg class="ico" aria-hidden="true"><use href="#i-car"/></svg><span class="en">~65 min drive</span><span class="he">כ־65 דק׳ נסיעה</span></span></li>
@@ -509,7 +533,8 @@ html[lang=he] .cd-num small{text-transform:none;letter-spacing:0;font-size:11px}
     <ul class="facts"><li><svg class="ico" aria-hidden="true"><use href="#i-users"/></svg><span><span class="en">Everyone joins, 3-year-old included · ~₪35 per person (price from a third-party guide) · walk-in, no booking</span><span class="he">כולם משתתפים, כולל בן ה־3 · כ־₪35 לאדם (מחיר מאתר מדריך חיצוני) · מגיעים בלי הזמנה</span></span></li><li><svg class="ico" aria-hidden="true"><use href="#i-clock"/></svg><span><span class="en">Cow milking show 11:15–12:30, so we catch it right when we arrive</span><span class="he">צפייה בחליבת הפרות <bdi dir="ltr">11:15–12:30</bdi>, תופסים אותה ממש כשמגיעים</span></span></li><li><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg><span><span class="en">Derech HaChorsha, Kfar Hess</span><span class="he">דרך החורשה, כפר הס</span></span></li></ul>
     <p class="note"><svg class="ico" aria-hidden="true"><use href="#i-info"/></svg><span><span class="en">Call to confirm open today and ask about kashrut</span><span class="he">להתקשר לוודא שפתוח היום ולשאול על הכשרות</span></span></p>
     <p class="mission"><span class="mnum"><svg class="ico" aria-hidden="true"><use href="#i-flame"/></svg></span><span><span class="en"><b>Mission 1:</b> bake your own pita and feed a calf!</span><span class="he"><b>משימה 1:</b> לאפות פיתה משלך ולהאכיל עגל!</span></span></p>
-    <div class="actions"><a class="btn primary" href="tel:0534332144"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg><span class="en"><bdi dir="ltr">053-433-2144</bdi></span><span class="he"><bdi dir="ltr">053-433-2144</bdi></span></a><a class="btn" href="https://waze.com/ul?q=%D7%9E%D7%A9%D7%A7%20%D7%91%D7%A8%D7%92%D7%A8%20%D7%9B%D7%A4%D7%A8%20%D7%94%D7%A1&amp;navigate=yes" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-nav"/></svg><span class="en">Waze</span><span class="he">Waze</span></a></div>
+    <div class="song-slot" data-song-id="farm"><span class="song-icon" aria-hidden="true">🎵</span><span class="song-copy"><b><span class="en">Stop song</span><span class="he">השיר של התחנה</span></b><small><span class="en">Song coming soon…</span><span class="he">שיר בדרך…</span></small></span></div>
+    <div class="actions"><a class="btn primary" href="tel:0534332144"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg><span class="en"><bdi dir="ltr">053-433-2144</bdi></span><span class="he"><bdi dir="ltr">053-433-2144</bdi></span></a><a class="btn" href="https://waze.com/ul?q=%D7%9E%D7%A9%D7%A7%20%D7%91%D7%A8%D7%92%D7%A8%20%D7%9B%D7%A4%D7%A8%20%D7%94%D7%A1&amp;navigate=yes" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-nav"/></svg><span class="en">Waze</span><span class="he">Waze</span></a><a class="btn maps" href="https://www.google.com/maps/dir/?api=1&amp;destination=Meshek%20Berger%20Kfar%20Hess%20Derech%20HaChorsha&amp;travelmode=driving" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg><span class="en">Google Maps</span><span class="he">Google Maps</span></a></div>
     <details class="watch"><summary><span class="play"><svg class="ico" aria-hidden="true"><use href="#i-play"/></svg></span><span class="w-txt"><b><span class="en">Watch what’s coming</span><span class="he">סרטון: מה מחכה לנו</span></b><small><bdi>משק ברגר - הכנת פיתות בטאבון</bdi></small></span><svg class="ico chev" aria-hidden="true"><use href="#i-chev"/></svg></summary><div class="frame"><iframe data-src="https://www.youtube-nocookie.com/embed/Z0H7OqQ0Ps4?rel=0&amp;playsinline=1" title="משק ברגר - הכנת פיתות בטאבון" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><p class="vcap"><bdi>משק ברגר - הכנת פיתות בטאבון</bdi> · <a href="https://www.youtube.com/watch?v=Z0H7OqQ0Ps4" target="_blank" rel="noopener">YouTube</a> (<bdi>meshekb</bdi>)</p></details>
   </div>
 </li>
@@ -527,7 +552,8 @@ html[lang=he] .cd-num small{text-transform:none;letter-spacing:0;font-size:11px}
     <ul class="facts"><li><svg class="ico" aria-hidden="true"><use href="#i-users"/></svg><span><span class="en">Ages 5+ ride · the 3-year-old waves from the pier with ice cream</span><span class="he">מגיל 5 עולים לסירה · בן ה־3 מנופף מהרציף עם גלידה</span></span></li><li><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg><span><span class="en">Stand opposite Golda &amp; McDonald’s</span><span class="he">הדוכן מול גולדה ומקדונלד׳ס</span></span></li></ul>
     <p class="note"><svg class="ico" aria-hidden="true"><use href="#i-info"/></svg><span><span class="en">Confirm the 13:15 slot with Funtasea</span><span class="he">לאשר עם שייט פנטזי את השעה <bdi dir="ltr">13:15</bdi></span></span></p>
     <p class="mission"><span class="mnum"><svg class="ico" aria-hidden="true"><use href="#i-boat"/></svg></span><span><span class="en"><b>Mission 2:</b> steer the boat! Ask the captain for a turn at the wheel.</span><span class="he"><b>משימה 2:</b> לנווט את הסירה! מבקשים מהקפטן תור ליד ההגה.</span></span></p>
-    <div class="actions"><a class="btn primary" href="https://wa.me/972509180000" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-chat"/></svg><span class="en">WhatsApp to book</span><span class="he">וואטסאפ להזמנה</span></a><a class="btn" href="tel:0509180000"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg><span class="en"><bdi dir="ltr">050-918-0000</bdi></span><span class="he"><bdi dir="ltr">050-918-0000</bdi></span></a><a class="btn" href="https://waze.com/ul?q=%D7%9E%D7%A8%D7%99%D7%A0%D7%94%20%D7%94%D7%A8%D7%A6%D7%9C%D7%99%D7%94&amp;navigate=yes" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-nav"/></svg><span class="en">Waze</span><span class="he">Waze</span></a></div>
+    <div class="song-slot" data-song-id="boat"><span class="song-icon" aria-hidden="true">🎵</span><span class="song-copy"><b><span class="en">Stop song</span><span class="he">השיר של התחנה</span></b><small><span class="en">Song coming soon…</span><span class="he">שיר בדרך…</span></small></span></div>
+    <div class="actions"><a class="btn primary" href="https://wa.me/972509180000" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-chat"/></svg><span class="en">WhatsApp to book</span><span class="he">וואטסאפ להזמנה</span></a><a class="btn" href="tel:0509180000"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg><span class="en"><bdi dir="ltr">050-918-0000</bdi></span><span class="he"><bdi dir="ltr">050-918-0000</bdi></span></a><a class="btn" href="https://waze.com/ul?q=%D7%9E%D7%A8%D7%99%D7%A0%D7%94%20%D7%94%D7%A8%D7%A6%D7%9C%D7%99%D7%94&amp;navigate=yes" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-nav"/></svg><span class="en">Waze</span><span class="he">Waze</span></a><a class="btn maps" href="https://www.google.com/maps/dir/?api=1&amp;destination=Funtasea%20Herzliya%20Marina&amp;travelmode=driving" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg><span class="en">Google Maps</span><span class="he">Google Maps</span></a></div>
     <details class="watch"><summary><span class="play"><svg class="ico" aria-hidden="true"><use href="#i-play"/></svg></span><span class="w-txt"><b><span class="en">Watch what’s coming</span><span class="he">סרטון: מה מחכה לנו</span></b><small><bdi>שייט פנטזי - שייט אקסטרים מרינה הרצליה</bdi></small></span><svg class="ico chev" aria-hidden="true"><use href="#i-chev"/></svg></summary><div class="frame"><iframe data-src="https://www.youtube-nocookie.com/embed/QlnUICpPA-k?rel=0&amp;playsinline=1" title="שייט פנטזי - שייט אקסטרים מרינה הרצליה" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><p class="vcap"><bdi>שייט פנטזי - שייט אקסטרים מרינה הרצליה</bdi> · <a href="https://www.youtube.com/watch?v=QlnUICpPA-k" target="_blank" rel="noopener">YouTube</a> (<bdi>שייט פנטזי / Funtasea</bdi>)</p></details>
   </div>
 </li>
@@ -544,7 +570,8 @@ html[lang=he] .cd-num small{text-transform:none;letter-spacing:0;font-size:11px}
     <p class="kid"><span class="en"><b>Helmet on, visor down…</b> who will be crowned the Bernshtein racing champion?</span><span class="he"><b>קסדה על הראש, מגן למטה...</b> מי יוכתר לאלוף המרוצים של משפחת ברנשטיין?</span></p>
     <ul class="facts"><li><svg class="ico" aria-hidden="true"><use href="#i-users"/></svg><span><span class="en">8+ &amp; 1.30 m: go-karts · ages 4–8: kids’ karts · 3yo: rides the two-seat kart with a grown-up</span><span class="he">מגיל 8 ומגובה 1.30 מ׳: קארטינג · גילאי 4–8: קארטים לילדים · בן 3: נוסע בקארט זוגי עם מבוגר</span></span></li><li><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg><span><span class="en">HaMechkar 2, Netanya</span><span class="he">המחקר 2, נתניה</span></span></li></ul>
     <p class="mission"><span class="mnum"><svg class="ico" aria-hidden="true"><use href="#i-flag"/></svg></span><span><span class="en"><b>Mission 3:</b> beat your lap time! Race once, then try to go even faster.</span><span class="he"><b>משימה 3:</b> לשבור את זמן ההקפה! נוסעים פעם אחת ואז מנסים עוד יותר מהר.</span></span></p>
-    <div class="actions"><a class="btn primary" href="tel:048501060"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg><span class="en"><bdi dir="ltr">04-850-1060</bdi></span><span class="he"><bdi dir="ltr">04-850-1060</bdi></span></a><a class="btn" href="https://wa.me/972539314994" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-chat"/></svg><span class="en">WhatsApp</span><span class="he">וואטסאפ</span></a><a class="btn" href="https://waze.com/ul?q=%D7%94%D7%9E%D7%97%D7%A7%D7%A8%202%20%D7%A0%D7%AA%D7%A0%D7%99%D7%94&amp;navigate=yes" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-nav"/></svg><span class="en">Waze</span><span class="he">Waze</span></a></div>
+    <div class="song-slot" data-song-id="kart"><span class="song-icon" aria-hidden="true">🎵</span><span class="song-copy"><b><span class="en">Stop song</span><span class="he">השיר של התחנה</span></b><small><span class="en">Song coming soon…</span><span class="he">שיר בדרך…</span></small></span></div>
+    <div class="actions"><a class="btn primary" href="tel:048501060"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg><span class="en"><bdi dir="ltr">04-850-1060</bdi></span><span class="he"><bdi dir="ltr">04-850-1060</bdi></span></a><a class="btn" href="https://wa.me/972539314994" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-chat"/></svg><span class="en">WhatsApp</span><span class="he">וואטסאפ</span></a><a class="btn" href="https://waze.com/ul?q=%D7%94%D7%9E%D7%97%D7%A7%D7%A8%202%20%D7%A0%D7%AA%D7%A0%D7%99%D7%94&amp;navigate=yes" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-nav"/></svg><span class="en">Waze</span><span class="he">Waze</span></a><a class="btn maps" href="https://www.google.com/maps/dir/?api=1&amp;destination=Dan%20Karting%20HaMechkar%202%20Netanya&amp;travelmode=driving" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg><span class="en">Google Maps</span><span class="he">Google Maps</span></a></div>
     <details class="watch"><summary><span class="play"><svg class="ico" aria-hidden="true"><use href="#i-play"/></svg></span><span class="w-txt"><b><span class="en">Watch what’s coming</span><span class="he">סרטון: מה מחכה לנו</span></b><small><bdi>Dan karting Netanya, indoor karting</bdi></small></span><svg class="ico chev" aria-hidden="true"><use href="#i-chev"/></svg></summary><div class="frame"><iframe data-src="https://www.youtube-nocookie.com/embed/T5Ago5GAqZw?rel=0&amp;playsinline=1" title="Dan karting Netanya, indoor karting" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><p class="vcap"><bdi>Dan karting Netanya, indoor karting</bdi> · <a href="https://www.youtube.com/watch?v=T5Ago5GAqZw" target="_blank" rel="noopener">YouTube</a> (<bdi>Elena Vilensky ADVERTA</bdi>)</p></details>
   </div>
 </li>
@@ -561,7 +588,8 @@ html[lang=he] .cd-num small{text-transform:none;letter-spacing:0;font-size:11px}
     <p class="kid"><span class="en"><b>Power-up time!</b> Snack, stretch… or sneak through the glowing maze like a secret agent.</span><span class="he"><b>זמן לטעון כוח!</b> חטיף, מתיחות... או התגנבות במבוך הזוהר כמו סוכנים חשאיים.</span></p>
     <ul class="facts"><li><svg class="ico" aria-hidden="true"><use href="#i-users"/></svg><span><span class="en">If we go: big kids + 9 &amp; 7 play · 5 &amp; 3 get snacks and cheer</span><span class="he">אם הולכים: הגדולים + בני 9 ו־7 משחקים · בני 5 ו־3 מקבלים חטיף ומעודדים</span></span></li><li><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg><span><span class="en">HaBonim 4, Netanya</span><span class="he">הבונים 4, נתניה</span></span></li></ul>
     
-    <div class="actions"><a class="btn primary" href="https://www.lasertag-poleg.co.il/book-double-game" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-cal"/></svg><span class="en">Book</span><span class="he">הזמנה</span></a><a class="btn" href="tel:*5082"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg><span class="en"><bdi dir="ltr">*5082</bdi></span><span class="he"><bdi dir="ltr">*5082</bdi></span></a><a class="btn" href="https://waze.com/ul?q=%D7%94%D7%91%D7%95%D7%A0%D7%99%D7%9D%204%20%D7%A0%D7%AA%D7%A0%D7%99%D7%94&amp;navigate=yes" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-nav"/></svg><span class="en">Waze</span><span class="he">Waze</span></a></div>
+    <div class="song-slot" data-song-id="free"><span class="song-icon" aria-hidden="true">🎵</span><span class="song-copy"><b><span class="en">Stop song</span><span class="he">השיר של התחנה</span></b><small><span class="en">Song coming soon…</span><span class="he">שיר בדרך…</span></small></span></div>
+    <div class="actions"><a class="btn primary" href="https://www.lasertag-poleg.co.il/book-double-game" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-cal"/></svg><span class="en">Book</span><span class="he">הזמנה</span></a><a class="btn" href="tel:*5082"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg><span class="en"><bdi dir="ltr">*5082</bdi></span><span class="he"><bdi dir="ltr">*5082</bdi></span></a><a class="btn" href="https://waze.com/ul?q=%D7%94%D7%91%D7%95%D7%A0%D7%99%D7%9D%204%20%D7%A0%D7%AA%D7%A0%D7%99%D7%94&amp;navigate=yes" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-nav"/></svg><span class="en">Waze</span><span class="he">Waze</span></a><a class="btn maps" href="https://www.google.com/maps/dir/?api=1&amp;destination=Laser%20Tag%20Poleg%20HaBonim%204%20Netanya&amp;travelmode=driving" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg><span class="en">Google Maps</span><span class="he">Google Maps</span></a></div>
     <details class="watch"><summary><span class="play"><svg class="ico" aria-hidden="true"><use href="#i-play"/></svg></span><span class="w-txt"><b><span class="en">Watch what’s coming</span><span class="he">סרטון: מה מחכה לנו</span></b><small><bdi>לייזר טאג פולג נתניה - לוחמה אורבנית</bdi></small></span><svg class="ico chev" aria-hidden="true"><use href="#i-chev"/></svg></summary><div class="frame"><iframe data-src="https://www.youtube-nocookie.com/embed/wDYbhHg13lc?rel=0&amp;playsinline=1" title="לייזר טאג פולג נתניה - לוחמה אורבנית" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><p class="vcap"><bdi>לייזר טאג פולג נתניה - לוחמה אורבנית</bdi> · <a href="https://www.youtube.com/watch?v=wDYbhHg13lc" target="_blank" rel="noopener">YouTube</a> (<bdi>לגדול</bdi>)</p></details>
   </div>
 </li>
@@ -578,7 +606,8 @@ html[lang=he] .cd-num small{text-transform:none;letter-spacing:0;font-size:11px}
     <p class="kid"><span class="en"><b>Champions eat first!</b> Choose your topping and race for the cheesiest slice.</span><span class="he"><b>האלופים אוכלים ראשונים!</b> בוחרים תוספת ומתחרים על המשולש הכי גבינתי.</span></p>
     <ul class="facts"><li><svg class="ico" aria-hidden="true"><use href="#i-seal"/></svg><span><span class="en">Everyone! Kosher Mehadrin · Badatz Beit Yosef</span><span class="he">כולם! כשר למהדרין · בד״ץ בית יוסף</span></span></li><li><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg><span><span class="en">Kikar HaAtzmaut 3, Netanya</span><span class="he">כיכר העצמאות 3, נתניה</span></span></li></ul>
     
-    <div class="actions"><a class="btn primary" href="tel:1700506070"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg><span class="en"><bdi dir="ltr">1-700-50-60-70</bdi></span><span class="he"><bdi dir="ltr">1-700-50-60-70</bdi></span></a><a class="btn" href="https://waze.com/ul?q=%D7%9B%D7%99%D7%9B%D7%A8%20%D7%94%D7%A2%D7%A6%D7%9E%D7%90%D7%95%D7%AA%203%20%D7%A0%D7%AA%D7%A0%D7%99%D7%94&amp;navigate=yes" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-nav"/></svg><span class="en">Waze</span><span class="he">Waze</span></a></div>
+    <div class="song-slot" data-song-id="pizza"><span class="song-icon" aria-hidden="true">🎵</span><span class="song-copy"><b><span class="en">Stop song</span><span class="he">השיר של התחנה</span></b><small><span class="en">Song coming soon…</span><span class="he">שיר בדרך…</span></small></span></div>
+    <div class="actions"><a class="btn primary" href="tel:1700506070"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg><span class="en"><bdi dir="ltr">1-700-50-60-70</bdi></span><span class="he"><bdi dir="ltr">1-700-50-60-70</bdi></span></a><a class="btn" href="https://waze.com/ul?q=%D7%9B%D7%99%D7%9B%D7%A8%20%D7%94%D7%A2%D7%A6%D7%9E%D7%90%D7%95%D7%AA%203%20%D7%A0%D7%AA%D7%A0%D7%99%D7%94&amp;navigate=yes" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-nav"/></svg><span class="en">Waze</span><span class="he">Waze</span></a><a class="btn maps" href="https://www.google.com/maps/dir/?api=1&amp;destination=Pizza%20Hut%20Mehadrin%20Kikar%20HaAtzmaut%203%20Netanya&amp;travelmode=driving" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg><span class="en">Google Maps</span><span class="he">Google Maps</span></a><a class="btn maps ghost" href="https://www.google.com/maps/dir/?api=1&amp;destination=Mucha%20HaBonim%207%20Poleg%20Netanya&amp;travelmode=driving" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg><span class="en">Maps · Mucha</span><span class="he">מפות · מוצ׳ה</span></a></div>
     <details class="watch"><summary><span class="play"><svg class="ico" aria-hidden="true"><use href="#i-play"/></svg></span><span class="w-txt"><b><span class="en">Watch what’s coming</span><span class="he">סרטון: מה מחכה לנו</span></b><small><bdi>Netanya  Promenade &amp; Independence Square 4K Israel 2021</bdi></small></span><svg class="ico chev" aria-hidden="true"><use href="#i-chev"/></svg></summary><div class="frame"><iframe data-src="https://www.youtube-nocookie.com/embed/dPRqvh2sKVM?rel=0&amp;playsinline=1" title="Netanya  Promenade &amp; Independence Square 4K Israel 2021" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><p class="vcap"><bdi>Netanya  Promenade &amp; Independence Square 4K Israel 2021</bdi> · <a href="https://www.youtube.com/watch?v=dPRqvh2sKVM" target="_blank" rel="noopener">YouTube</a> (<bdi>Discovering Israel</bdi>)</p></details>
   </div>
 </li>
@@ -596,6 +625,8 @@ html[lang=he] .cd-num small{text-transform:none;letter-spacing:0;font-size:11px}
     <ul class="facts"><li><svg class="ico" aria-hidden="true"><use href="#i-users"/></svg><span><span class="en">Everyone · free!</span><span class="he">כולם · בחינם!</span></span></li></ul>
     <p class="mission"><span class="mnum"><svg class="ico" aria-hidden="true"><use href="#i-sun"/></svg></span><span><span class="en"><b>Mission 4:</b> spot the exact moment the sun touches the sea!</span><span class="he"><b>משימה 4:</b> לזהות את הרגע המדויק שבו השמש נוגעת בים!</span></span></p>
     
+    <div class="song-slot" data-song-id="sunset"><span class="song-icon" aria-hidden="true">🎵</span><span class="song-copy"><b><span class="en">Stop song</span><span class="he">השיר של התחנה</span></b><small><span class="en">Song coming soon…</span><span class="he">שיר בדרך…</span></small></span></div>
+    <div class="actions"><a class="btn maps" href="https://www.google.com/maps/dir/?api=1&amp;destination=Netanya%20cliffs%20Israel&amp;travelmode=driving" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg><span class="en">Google Maps</span><span class="he">Google Maps</span></a></div>
     <details class="watch"><summary><span class="play"><svg class="ico" aria-hidden="true"><use href="#i-play"/></svg></span><span class="w-txt"><b><span class="en">Watch what’s coming</span><span class="he">סרטון: מה מחכה לנו</span></b><small><bdi>TimeLapse, Sunset Mediterranean Sea, Netanya Israel</bdi></small></span><svg class="ico chev" aria-hidden="true"><use href="#i-chev"/></svg></summary><div class="frame"><iframe data-src="https://www.youtube-nocookie.com/embed/7kF7232Lf0c?rel=0&amp;playsinline=1" title="TimeLapse, Sunset Mediterranean Sea, Netanya Israel" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><p class="vcap"><bdi>TimeLapse, Sunset Mediterranean Sea, Netanya Israel</bdi> · <a href="https://www.youtube.com/watch?v=7kF7232Lf0c" target="_blank" rel="noopener">YouTube</a> (<bdi>Relaxing WALKER</bdi>)</p></details>
   </div>
 </li>
@@ -603,9 +634,11 @@ html[lang=he] .cd-num small{text-transform:none;letter-spacing:0;font-size:11px}
 <li class="endpoint" id="home">
   <span class="ep-ico"><svg class="ico" aria-hidden="true"><use href="#i-home"/></svg></span>
   <div class="ep-body">
-    <p class="ep-top"><time><bdi dir="ltr">~18:45</bdi></time> · <span class="en">Netanya</span><span class="he">נתניה</span></p>
+    <p class="ep-top"><time><bdi dir="ltr">~18:45</bdi></time> · <span class="en">Givat Ze’ev</span><span class="he">גבעת זאב</span></p>
     <h3><span class="en">Drive home</span><span class="he">נוסעים הביתה</span></h3>
     <p><span class="en">~18:45 drive home (about 1h15) · home around 20:00</span><span class="he">בסביבות <bdi dir="ltr">18:45</bdi> נוסעים הביתה (כשעה ורבע) · בבית בסביבות <bdi dir="ltr">20:00</bdi></span></p>
+    <div class="song-slot" data-song-id="home"><span class="song-icon" aria-hidden="true">🎵</span><span class="song-copy"><b><span class="en">Stop song</span><span class="he">השיר של התחנה</span></b><small><span class="en">Song coming soon…</span><span class="he">שיר בדרך…</span></small></span></div>
+    <div class="endpoint-actions"><a class="btn maps" href="https://www.google.com/maps/dir/?api=1&amp;destination=Givat%20Ze%27ev%20Israel&amp;travelmode=driving" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg><span class="en">Google Maps</span><span class="he">Google Maps</span></a></div>
   </div>
 </li>
           </ol>
@@ -640,6 +673,8 @@ html[lang=he] .cd-num small{text-transform:none;letter-spacing:0;font-size:11px}
         </nav>
       </aside>
     </div>
+
+    <section class="section" id="songs" aria-labelledby="songs-title"><div class="sec-head"><h2 id="songs-title"><span class="en">Songs for the road</span><span class="he">שירים לדרך</span></h2><p><span class="en">Every stop gets its own soundtrack. We’ll drop the real songs in here soon.</span><span class="he">לכל תחנה יש פסקול משלה. בקרוב נוסיף כאן את השירים האמיתיים.</span></p></div><div class="songs-grid" id="songs-list"></div></section>
 
     <hr class="div" />
     <section class="section older" id="ideas" aria-labelledby="ideas-title">
@@ -887,9 +922,12 @@ html[lang=he] .cd-num small{text-transform:none;letter-spacing:0;font-size:11px}
       <li><a href="#top" data-tab="top"><svg class="ico" aria-hidden="true"><use href="#i-compass"/></svg><span class="en">Trip</span><span class="he">הטיול</span></a></li>
       <li><a href="#itinerary" data-tab="itinerary"><svg class="ico" aria-hidden="true"><use href="#i-route"/></svg><span class="en">Itinerary</span><span class="he">מסלול</span></a></li>
       <li><a href="#passport" data-tab="passport"><svg class="ico" aria-hidden="true"><use href="#i-award"/></svg><span class="en">Missions</span><span class="he">משימות</span></a></li>
+      <li><a href="#songs" data-tab="songs"><svg class="ico" aria-hidden="true"><use href="#i-images"/></svg><span class="en">Songs</span><span class="he">שירים</span></a></li>
       <li><a href="#ideas" data-tab="ideas"><svg class="ico" aria-hidden="true"><use href="#i-grid"/></svg><span class="en">Ideas</span><span class="he">רעיונות</span></a></li>
     </ul>
   </nav>
+
+  <div class="nextbar" id="nextbar" aria-label="Next stop navigation"><button type="button" class="next-scroll" id="next-scroll"><span class="he">לתחנה הבאה ←</span><span class="en">Next stop →</span><small id="next-label"></small></button><button type="button" class="next-map" id="next-map"><span class="he">נווט</span><span class="en">Navigate</span></button></div>
 
   <dialog class="lb" id="lb" aria-label="Photos">
     <div class="lb-bar"><button type="button" class="lb-close" aria-label="Close"><svg class="ico" aria-hidden="true"><use href="#i-x"/></svg></button><span class="lb-count" id="lb-count"></span><span style="width:40px"></span></div>
@@ -1021,11 +1059,60 @@ html[lang=he] .cd-num small{text-transform:none;letter-spacing:0;font-size:11px}
   boxes.forEach(function(c){c.addEventListener("change",won);});
   won();
 
+  /* songs: keep the data drop-in friendly for titles, lyrics, audio and Suno links */
+  var songs=[
+    {id:"go",time:"10:15",title:{he:"יוצאים לדרך!",en:"Hit the road!"},lyrics:{he:"שיר בדרך…",en:"Song coming soon…"},audio:null,suno:null},
+    {id:"farm",time:"11:20",title:{he:"פיתות, עגלים וליטופים",en:"Pita, calves & cuddles"},lyrics:{he:"שיר בדרך…",en:"Song coming soon…"},audio:null,suno:null},
+    {id:"boat",time:"13:15",title:{he:"טיל על המים",en:"Speedboat blast"},lyrics:{he:"שיר בדרך…",en:"Song coming soon…"},audio:null,suno:null},
+    {id:"kart",time:"14:15",title:{he:"יום מרוצים",en:"Race day"},lyrics:{he:"שיר בדרך…",en:"Song coming soon…"},audio:null,suno:null},
+    {id:"free",time:"15:30",title:{he:"קרב לייזרים? אולי!",en:"Laser battle? Maybe!"},lyrics:{he:"שיר בדרך…",en:"Song coming soon…"},audio:null,suno:null},
+    {id:"pizza",time:"17:00",title:{he:"מסיבת פיצה",en:"Pizza party"},lyrics:{he:"שיר בדרך…",en:"Song coming soon…"},audio:null,suno:null},
+    {id:"sunset",time:"18:15",title:{he:"שקיעה ותעודות",en:"Sunset & certificates"},lyrics:{he:"שיר בדרך…",en:"Song coming soon…"},audio:null,suno:null},
+    {id:"home",time:"18:45",title:{he:"נוסעים הביתה",en:"Drive home"},lyrics:{he:"שיר בדרך…",en:"Song coming soon…"},audio:null,suno:null}
+  ];
+  function songMarkup(song,card){
+    var out=card?'':'<span class="song-icon" aria-hidden="true">🎵</span>';
+    out+=(card?'<div class="song-card-head">':'<span class="song-copy">')+'<b><span class="en">'+(card?song.title.en:'Stop song')+'</span><span class="he">'+(card?song.title.he:'השיר של התחנה')+'</span></b><small><span class="en">'+(card?song.lyrics.en:song.title.en+' · Song coming soon…')+'</span><span class="he">'+(card?song.lyrics.he:song.title.he+' · שיר בדרך…')+'</span></small>'+(card?'</div>':'</span>');
+    if(song.audio) out+='<audio controls preload="none" src="'+song.audio+'"></audio>';
+    if(song.suno) out+='<a href="'+song.suno+'" target="_blank" rel="noopener"><span class="en">Open in Suno</span><span class="he">פתיחה ב־Suno</span></a>';
+    return out;
+  }
+  var songById={}; songs.forEach(function(song){songById[song.id]=song; var slot=document.querySelector('.song-slot[data-song-id="'+song.id+'"]'); if(slot) slot.innerHTML=songMarkup(song,false);});
+  var songList=document.getElementById("songs-list");
+  if(songList) songs.forEach(function(song){var card=document.createElement("article");card.className="song-card";card.dataset.songId=song.id;card.style.setProperty("--acc","var(--c-boat)");card.innerHTML='<span class="song-time"><bdi dir="ltr">'+song.time+'</bdi></span><h3><span class="en">'+song.title.en+'</span><span class="he">'+song.title.he+'</span></h3><p><span class="en">'+song.lyrics.en+'</span><span class="he">'+song.lyrics.he+'</span></p>'+(song.audio?'<audio controls preload="none" src="'+song.audio+'"></audio>':'')+(song.suno?'<a href="'+song.suno+'" target="_blank" rel="noopener"><span class="en">Open in Suno</span><span class="he">פתיחה ב־Suno</span></a>':'');songList.appendChild(card);});
+
+  /* schedule-aware next stop, using Israel clock */
+  var schedule=[
+    {id:"go",time:615,destination:"Givat Ze'ev Israel",name:{he:"גבעת זאב",en:"Givat Ze’ev"}},
+    {id:"farm",time:680,destination:"Meshek Berger Kfar Hess Derech HaChorsha",name:{he:"משק ברגר · כפר הס",en:"Meshek Berger · Kfar Hess"}},
+    {id:"boat",time:795,destination:"Funtasea Herzliya Marina",name:{he:"שייט פנטזי · מרינה הרצליה",en:"Funtasea · Herzliya Marina"}},
+    {id:"kart",time:855,destination:"Dan Karting HaMechkar 2 Netanya",name:{he:"דן קארטינג · המחקר 2",en:"Dan Karting · HaMechkar 2"}},
+    {id:"free",time:930,destination:"Laser Tag Poleg HaBonim 4 Netanya",name:{he:"לייזר טאג פולג · הבונים 4",en:"Laser Tag Poleg · HaBonim 4"}},
+    {id:"pizza",time:1020,destination:"Pizza Hut Mehadrin Kikar HaAtzmaut 3 Netanya",name:{he:"פיצה האט · כיכר העצמאות 3",en:"Pizza Hut · Kikar HaAtzmaut 3"}},
+    {id:"sunset",time:1095,destination:"Netanya cliffs Israel",name:{he:"צוקי נתניה",en:"Netanya cliffs"}},
+    {id:"home",time:1125,destination:"Givat Ze'ev Israel",name:{he:"גבעת זאב",en:"Givat Ze’ev"}}
+  ];
+  function israelMinutes(){try{var parts=new Intl.DateTimeFormat("en-US",{timeZone:"Asia/Jerusalem",hour:"2-digit",minute:"2-digit",hour12:false}).formatToParts(new Date()),h=0,m=0;parts.forEach(function(p){if(p.type==="hour")h=+p.value;if(p.type==="minute")m=+p.value;});return (h===24?0:h)*60+m;}catch(e){var d=new Date();return d.getHours()*60+d.getMinutes();}}
+  function mapsUrl(stop){return "https://www.google.com/maps/dir/?api=1&destination="+encodeURIComponent(stop.destination)+"&travelmode=driving";}
+  var nextScroll=document.getElementById("next-scroll"),nextMap=document.getElementById("next-map"),nextLabel=document.getElementById("next-label");
+  function updateNextStop(){
+    var now=israelMinutes(),current=0; schedule.forEach(function(stop,i){if(now>=stop.time)current=i;});
+    var next=Math.min(current+1,schedule.length-1);
+    schedule.forEach(function(stop,i){var el=document.getElementById(stop.id);if(!el)return;el.classList.toggle("is-current",i===current);el.classList.toggle("is-next",i===next&&next!==current);if(i===current)el.setAttribute("aria-current","step");else el.removeAttribute("aria-current");});
+    var target=schedule[next],done=next===current;
+    if(nextLabel)nextLabel.innerHTML='<span class="en">'+(done?'Final stop · ':'Next: ')+target.name.en+'</span><span class="he">'+(done?'תחנה אחרונה · ':'הבאה: ')+target.name.he+'</span>';
+    if(nextScroll){nextScroll.disabled=done;nextScroll.setAttribute("aria-label",done?"Final stop":"Next stop: "+target.name.en);}
+    if(nextMap){nextMap.disabled=done;nextMap.dataset.href=mapsUrl(target);}
+  }
+  if(nextScroll)nextScroll.addEventListener("click",function(){var now=israelMinutes(),current=0;schedule.forEach(function(stop,i){if(now>=stop.time)current=i;});var target=schedule[Math.min(current+1,schedule.length-1)];var el=document.getElementById(target.id);if(el)el.scrollIntoView({behavior:"smooth",block:"start"});});
+  if(nextMap)nextMap.addEventListener("click",function(){if(!nextMap.disabled)window.open(nextMap.dataset.href,"_blank","noopener,noreferrer");});
+  updateNextStop();setInterval(updateNextStop,30000);
+
   /* app bar + active tab */
   var bar=document.getElementById("appbar");
   function onScroll(){bar.classList.toggle("scrolled",window.scrollY>8);}
   window.addEventListener("scroll",onScroll,{passive:true}); onScroll();
-  var secs=["ideas","passport","itinerary"].map(function(id){return document.getElementById(id);});
+  var secs=["ideas","songs","passport","itinerary"].map(function(id){return document.getElementById(id);});
   function active(){
     var y=window.innerHeight*0.35, cur="top";
     for(var i=0;i<secs.length;i++){ if(secs[i] && secs[i].getBoundingClientRect().top<y){cur=secs[i].id;break;} }
