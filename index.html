@@ -2,359 +2,557 @@
 <html lang="he" dir="rtl">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#f6eee0" />
-  <title>ההרפתקה שלנו ביום חמישי · 1 באוקטובר</title>
-  <meta property="og:title" content="ההרפתקה שלנו ביום חמישי · Our Thursday Adventure · 1.10" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#ffffff" />
+  <title>טיול משפחת הדובים · יום חמישי 1.10</title>
+  <meta name="description" content="סירת מרוץ, צביעת קרמיקה, קארטינג, פיצה ושקיעה · Speedboat, pottery painting, go-karts, pizza &amp; sunset." />
+  <meta property="og:title" content="טיול משפחת הדובים · The Bear Family Trip · 1.10" />
   <meta property="og:description" content="סירת מרוץ, צביעת קרמיקה, קארטינג, פיצה ושקיעה. כל החבורה! · Speedboat, pottery painting, go-karts, pizza &amp; sunset." />
   <meta property="og:image" content="images/thursday/storybook-hero.jpg" />
+  <link rel="icon" type="image/svg+xml" href="images/brand-mark.svg" />
+  <link rel="apple-touch-icon" href="images/brand-mark.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&amp;family=Caveat:wght@600;700&amp;family=Fraunces:opsz,wght@9..144,600;9..144,700&amp;family=Karantina:wght@400;700&amp;family=Nunito:wght@400;600;700&amp;family=Secular+One&amp;display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" />
   <link rel="preload" as="image" href="images/thursday/storybook-hero.jpg" />
   <style>
-    :root{
-      --paper:#f6eee0; --card:#fffaf1; --ink:#3b2e27; --soft:#6f5d50; --faint:#9a8776;
-      --red:#b9523a; --sea:#2f6a6c; --sun:#dc9a3a; --tape:rgba(233,214,160,.78); --rule:#e4d5bc;
-      --head:"Secular One","Assistant",sans-serif; --body:"Assistant","Heebo",system-ui,sans-serif; --hand:"Karantina","Secular One",sans-serif;
-      --hand-size:1.45;
-    }
-    html[lang=en]{--head:"Fraunces",Georgia,serif; --body:"Nunito",system-ui,sans-serif; --hand:"Caveat","Comic Sans MS",cursive; --hand-size:1.3}
-    *{box-sizing:border-box}
-    html{-webkit-text-size-adjust:100%}
-    body{
-      margin:0; color:var(--ink); font-family:var(--body); font-size:17px; line-height:1.55;
-      background-color:var(--paper);
-      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .35 0 0 0 0 .25 0 0 0 0 .15 0 0 0 .06 0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
-      padding:0 18px 64px;
-    }
-    .wrap{max-width:640px;margin:0 auto}
-    a{color:var(--sea);font-weight:700;text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:3px;text-decoration-color:rgba(47,106,108,.4)}
-    a:hover{text-decoration-color:currentColor}
-    a[href^="tel:"]::before{content:"\260E\FE0E";margin-inline-end:4px;font-weight:400;text-decoration:none;display:inline-block}
-    bdi,.ltr{unicode-bidi:isolate}
-    html[lang=he] .en,html[lang=en] .he{display:none}
-    .hand{font-family:var(--hand);font-weight:700;line-height:1}
-    [hidden]{display:none!important}
+:root{
+  --brand:#E2483D; --brand-ink:#C23328; --brand-soft:#FDF0EE;
+  --ink:#222222; --ink-2:#484848; --muted:#6A6A6A; --faint:#8C8C8C;
+  --line:#EBEBEB; --line-2:#DDDDDD; --bg:#FFFFFF; --bg-2:#F7F7F7;
+  --ok:#0F7B4B; --ok-bg:#E7F6EE; --warn:#9A5B00; --warn-bg:#FFF4DC; --opt:#555; --opt-bg:#F0F0F0;
+  --r-lg:16px; --r-md:12px; --r-sm:8px;
+  --sh-1:0 1px 2px rgba(0,0,0,.06),0 2px 8px rgba(0,0,0,.06);
+  --sh-2:0 6px 20px rgba(0,0,0,.08),0 1px 3px rgba(0,0,0,.06);
+  --bar-h:64px; --tab-h:64px;
+  --font:"Inter","Heebo",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+}
+html[lang=he]{--font:"Heebo","Inter",system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:calc(var(--bar-h) + 12px)}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased;
+  padding-bottom:calc(var(--tab-h) + env(safe-area-inset-bottom));overflow-x:hidden}
+html[lang=he] .en,html[lang=en] .he{display:none!important}
+[hidden]{display:none!important}
+bdi,.ltr{unicode-bidi:isolate}
+img{max-width:100%}
+a{color:inherit}
+h1,h2,h3,h4{margin:0;font-weight:700;letter-spacing:-.01em;color:var(--ink)}
+html[lang=en] h1,html[lang=en] h2{letter-spacing:-.022em}
+p{margin:0}
+.ico{width:18px;height:18px;flex:none;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.ico.fill{fill:currentColor;stroke:none}
+.sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.wrap{width:100%;max-width:1160px;margin:0 auto;padding:0 20px}
 
-    /* language tab */
-    .lang{position:fixed;top:0;inset-inline-end:14px;z-index:50;display:flex;gap:2px;background:var(--ink);padding:8px 10px 7px;border-radius:0 0 6px 6px;box-shadow:0 3px 10px rgba(59,46,39,.25)}
-    .lang button{font:700 14px/1 "Assistant","Nunito",sans-serif;border:0;background:none;color:#e9dcc6;padding:3px 6px;cursor:pointer;border-bottom:2px solid transparent}
-    .lang button[aria-pressed=true]{color:#fff;border-bottom-color:var(--sun)}
+/* ---------- top app bar ---------- */
+.appbar{position:sticky;top:0;z-index:40;height:var(--bar-h);background:rgba(255,255,255,.96);backdrop-filter:saturate(180%) blur(12px);-webkit-backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid transparent;transition:border-color .2s,box-shadow .2s}
+.appbar.scrolled{border-bottom-color:var(--line);box-shadow:0 1px 6px rgba(0,0,0,.04)}
+.appbar .wrap{height:100%;display:flex;align-items:center;gap:12px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;min-width:0;margin-inline-end:auto}
+.brand svg{width:36px;height:36px;flex:none}
+.brand-name{display:flex;flex-direction:column;min-width:0;line-height:1.15}
+.brand-name b{font-size:16px;font-weight:700;letter-spacing:-.01em;white-space:nowrap}
+.brand-name small{font-size:12px;color:var(--muted);font-weight:500;white-space:nowrap}
+.topnav{display:none;gap:4px}
+.topnav a{font-size:14px;font-weight:600;color:var(--ink-2);text-decoration:none;padding:9px 14px;border-radius:999px}
+.topnav a:hover{background:var(--bg-2)}
+.topnav a.active{color:var(--ink);background:var(--bg-2)}
+.lang{display:inline-flex;padding:3px;border:1px solid var(--line-2);border-radius:999px;background:#fff;flex:none}
+.lang button{font:600 13px/1 var(--font);border:0;background:none;color:var(--muted);padding:8px 12px;border-radius:999px;cursor:pointer;min-width:44px}
+.lang button[aria-pressed=true]{background:var(--ink);color:#fff}
 
-    /* masthead */
-    .mast{padding:52px 0 6px;text-align:center}
-    .kicker,.lede,.fun{text-wrap:pretty}
-    .kicker{text-wrap:balance;font-size:calc(1.05rem*var(--hand-size));color:var(--red);margin:0 0 4px;font-weight:700}
-    h1{text-wrap:balance;font-family:var(--head);font-weight:400;font-size:clamp(2.3rem,10.5vw,3.3rem);line-height:1.02;margin:0 auto 18px;max-width:12ch;letter-spacing:-.01em}
-    html[lang=en] h1{font-weight:700;letter-spacing:-.02em;font-variation-settings:"SOFT" 100}
-    .hero{position:relative;margin:0 4px 18px;padding:10px 10px 12px;background:#fffdf7;transform:rotate(-1.2deg);box-shadow:0 1px 2px rgba(59,46,39,.18),0 10px 24px -8px rgba(59,46,39,.28)}
-    .hero img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;background:#eadfca}
-    .tape::before,.tape::after{content:"";position:absolute;width:86px;height:24px;background:var(--tape);top:-11px;box-shadow:0 1px 1px rgba(0,0,0,.05);z-index:2}
-    .tape::before{inset-inline-start:18px;transform:rotate(-7deg)}
-    .tape::after{inset-inline-end:18px;transform:rotate(6deg)}
-    .lede{font-size:1.12rem;max-width:30rem;margin:0 auto;color:var(--ink)}
-    .leave{display:block;margin-top:8px;font-family:var(--hand);font-weight:700;font-size:calc(1.15rem*var(--hand-size));color:var(--red)}
+/* ---------- hero ---------- */
+.hero{padding-top:0}
+.hero-title{display:none}
+.gallery{position:relative}
+.track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
+.track::-webkit-scrollbar{display:none}
+.slide{flex:0 0 100%;scroll-snap-align:start;scroll-snap-stop:always;margin:0;position:relative;background:var(--bg-2)}
+.slide button{all:unset;display:block;width:100%;height:100%;cursor:zoom-in}
+.slide img{display:block;width:100%;height:100%;object-fit:cover}
+.count{position:absolute;bottom:12px;inset-inline-end:12px;background:rgba(34,34,34,.72);color:#fff;font-size:12px;font-weight:600;padding:4px 10px;border-radius:999px;direction:ltr;pointer-events:none;letter-spacing:.02em}
+.dots{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);display:flex;gap:5px;pointer-events:none}
+.dots i{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.6);transition:transform .2s,background .2s}
+.dots i.on{background:#fff;transform:scale(1.2)}
+.nav-btn{position:absolute;top:50%;transform:translateY(-50%);width:32px;height:32px;border-radius:50%;border:0;background:rgba(255,255,255,.94);box-shadow:0 1px 4px rgba(0,0,0,.18);display:none;place-items:center;cursor:pointer;color:var(--ink);opacity:0;transition:opacity .2s}
+.nav-btn .ico{width:16px;height:16px;stroke-width:2.4}
+.nav-btn.prev{inset-inline-start:12px}.nav-btn.next{inset-inline-end:12px}
+html[dir=rtl] .nav-btn .ico{transform:scaleX(-1)}
+@media (hover:hover){.nav-btn{display:grid}.gallery:hover .nav-btn{opacity:1}.nav-btn[disabled]{opacity:0!important;pointer-events:none}}
+.hero .slide{aspect-ratio:4/3}
+.hero .gallery{margin:0 -20px}
+.sheet{position:relative;background:#fff;margin:-20px -20px 0;padding:24px 20px 0;border-radius:24px 24px 0 0;z-index:2}
+.eyebrow{font-size:13px;font-weight:600;color:var(--brand-ink);letter-spacing:.01em;margin-bottom:6px;display:flex;align-items:center;gap:6px}
+.hero h1{font-size:28px;line-height:1.15;font-weight:800;text-wrap:balance}
+.where{margin-top:6px;color:var(--ink-2);font-size:15px;display:flex;align-items:center;gap:6px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.chip{display:inline-flex;align-items:center;gap:7px;padding:8px 12px;border:1px solid var(--line-2);border-radius:999px;font-size:14px;font-weight:500;color:var(--ink);background:#fff;white-space:nowrap}
+.chip .ico{width:16px;height:16px;color:var(--ink-2)}
+.chip b{font-weight:700}
+.lede{margin-top:20px;padding-top:20px;border-top:1px solid var(--line);color:var(--ink-2);font-size:16px;line-height:1.6;text-wrap:pretty}
+.sb-credit{margin-top:8px;font-size:12px;color:var(--faint)}
 
-    /* squiggle divider */
-    .squiggle{height:14px;margin:26px auto;width:140px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 140 14'%3E%3Cpath d='M2 8 C 14 1, 22 13, 34 7 S 56 2, 68 8 S 90 13, 102 7 S 126 2, 138 8' fill='none' stroke='%23b9523a' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center/contain}
+/* ---------- layout ---------- */
+.layout{display:flex;flex-direction:column}
+.layout .aside{order:-1}
+.plan-sum{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 10px}
+.plan-foot{display:flex;align-items:center;gap:12px;margin:4px -20px -12px;padding:14px 20px;border-top:1px solid var(--line);text-decoration:none;font-size:14px;font-weight:600;border-radius:0 0 var(--r-lg) var(--r-lg)}
+.plan-foot:hover{background:var(--bg-2)}
+.plan-foot .ico{color:var(--brand)}
+.plan-foot .pf-n{margin-inline-start:auto;color:var(--muted);font-weight:600;direction:ltr}
+.section{padding:32px 0 0}
+.sec-head{margin-bottom:18px}
+.sec-head h2{font-size:22px;line-height:1.25;font-weight:700}
+.sec-head p{margin-top:4px;color:var(--muted);font-size:14px}
+hr.div{border:0;border-top:1px solid var(--line);margin:32px 0 0}
 
-    /* plan note */
-    .plan{position:relative;background:var(--card);padding:22px 20px 16px;margin:6px 6px 0;transform:rotate(.6deg);
-      background-image:repeating-linear-gradient(to bottom,transparent 0 33px,var(--rule) 33px 34px);background-position:0 44px;
-      box-shadow:0 1px 2px rgba(59,46,39,.14),0 8px 18px -10px rgba(59,46,39,.3)}
-    .plan h2{font-family:var(--hand);font-size:calc(1.6rem*var(--hand-size));font-weight:700;margin:0 0 6px;color:var(--red);line-height:1}
-    .plan ol{list-style:none;margin:0;padding:0}
-    .plan li a{display:flex;gap:14px;align-items:baseline;color:var(--ink);text-decoration:none;font-weight:600;line-height:34px}
-    .plan time,.plan .t{font-family:var(--hand);font-weight:700;font-size:calc(1.1rem*var(--hand-size));color:var(--sea);min-width:3.4em;direction:ltr;text-align:end}
-    html[lang=en] .plan time,html[lang=en] .plan .t{text-align:start}
-    .plan li.maybe a{color:var(--soft);font-weight:400;font-style:italic}
-    .pin{position:absolute;top:-8px;left:50%;width:16px;height:16px;margin-left:-8px;border-radius:50%;background:var(--red);box-shadow:inset -2px -3px 0 rgba(0,0,0,.18),0 2px 3px rgba(0,0,0,.25)}
+/* plan card */
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--sh-2)}
+.plan{padding:20px 20px 12px;margin-top:28px}
+.plan-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:6px}
+.plan-head h2{font-size:18px}
+.plan-head span{font-size:13px;color:var(--muted);font-weight:500}
+.plan ol{list-style:none;margin:0;padding:0}
+.plan li a{display:grid;grid-template-columns:64px 1fr auto;align-items:center;gap:8px;text-decoration:none;padding:11px 0;border-top:1px solid var(--line);font-size:15px;font-weight:500}
+.plan li:first-child a{border-top:0}
+.plan time{font-weight:700;font-variant-numeric:tabular-nums;direction:ltr;text-align:start;font-size:14px;color:var(--ink)}
+.plan li.maybe a{color:var(--muted)}
+.plan .chev{color:var(--faint);width:16px;height:16px}
+html[dir=rtl] .plan .chev{transform:scaleX(-1)}
+.plan li a:hover span{text-decoration:underline;text-underline-offset:3px}
 
-    /* storybook strip */
-    .storybook{margin:34px 0 8px;text-align:center}
-    .storybook h2,.day-title{font-family:var(--head);font-weight:400;font-size:1.6rem;margin:0 0 2px}
-    html[lang=en] .storybook h2,html[lang=en] .day-title{font-weight:700}
-    .storybook p{margin:0 0 14px;color:var(--soft)}
-    .strip{position:relative;margin:0;padding:8px;background:#fffdf7;box-shadow:0 1px 2px rgba(59,46,39,.18),0 10px 22px -10px rgba(59,46,39,.3);transform:rotate(.5deg)}
-    .strip img{display:block;width:100%;height:auto;background:#eadfca}
-    .strip a{display:block}
+/* ---------- itinerary ---------- */
+.stops{list-style:none;margin:0;padding:0}
+.endpoint{display:flex;gap:14px;align-items:flex-start;padding:18px;border:1px solid var(--line);border-radius:var(--r-lg);background:var(--bg-2)}
+.ep-ico{flex:none;width:44px;height:44px;border-radius:50%;background:#fff;border:1px solid var(--line);display:grid;place-items:center;color:var(--ink)}
+.ep-ico .ico{width:20px;height:20px}
+.ep-body{min-width:0}
+.ep-top{font-size:13px;color:var(--muted);font-weight:500}
+.ep-top time,.ep-top bdi{font-weight:700;color:var(--ink)}
+.endpoint h3{font-size:17px;margin:2px 0 6px}
+.endpoint p{font-size:14.5px;color:var(--ink-2);line-height:1.55}
+.endpoint p+p{margin-top:6px}
+.route{display:inline;font-weight:600;color:var(--ink)}
+.conn{display:flex;align-items:center;gap:10px;padding:14px 0;margin-inline-start:21px;position:relative;color:var(--muted);font-size:13px;font-weight:500}
+.conn::before{content:"";position:absolute;inset-inline-start:0;top:0;bottom:0;border-inline-start:2px dotted var(--line-2)}
+.conn span{display:inline-flex;align-items:center;gap:6px;margin-inline-start:18px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:4px 10px 4px 10px}
+.conn .ico{width:15px;height:15px}
 
-    /* the day: timeline */
-    .day-title{text-align:center;margin-top:40px}
-    .day-sub{text-align:center;color:var(--soft);margin:0 0 18px}
-    .day{list-style:none;margin:0;padding:0;position:relative}
-    .day::before{content:"";position:absolute;top:10px;bottom:30px;inset-inline-start:21px;width:12px;
-      background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 120'%3E%3Cpath d='M6 0 C 9 15, 3 25, 6 40 S 9 65, 5 80 S 3 105, 6 120' fill='none' stroke='%236f5d50' stroke-width='1.8' stroke-linecap='round' stroke-dasharray='7 6'/%3E%3C/svg%3E") repeat-y center/12px 120px}
-    .stop{position:relative;padding-inline-start:58px;margin:0 0 44px}
-    .stamp{position:absolute;inset-inline-start:0;top:-4px;width:54px;height:54px;display:grid;place-items:center;background:var(--paper);
-      border:2.2px solid var(--red);border-radius:54% 46% 51% 49% / 47% 55% 45% 53%;color:var(--red);
-      font-family:var(--hand);font-weight:700;font-size:calc(.98rem*var(--hand-size));line-height:1;transform:rotate(-6deg)}
-    .stamp.long{font-size:calc(.8rem*var(--hand-size))}
-    .stop:nth-child(even) .stamp{transform:rotate(5deg);border-radius:48% 52% 45% 55% / 54% 46% 54% 46%}
-    .place{margin:0;font-family:var(--hand);font-weight:700;font-size:calc(1.02rem*var(--hand-size));color:var(--sea);line-height:1.1}
-    .stop h3{font-family:var(--head);font-weight:400;font-size:1.75rem;line-height:1.1;margin:2px 0 14px}
-    html[lang=en] .stop h3{font-weight:700;font-size:1.6rem}
-    .snaps{position:relative;margin:0 0 16px;padding-bottom:30px}
-    .snap{position:relative;margin:0;background:#fffdf7;padding:7px 7px 30px;box-shadow:0 1px 2px rgba(59,46,39,.2),0 8px 18px -8px rgba(59,46,39,.35)}
-    .snap img{display:block;width:100%;height:auto;object-fit:cover;background:#eadfca}
-    .snap figcaption{position:absolute;bottom:4px;inset-inline:8px;text-align:center;font-family:var(--hand);font-weight:700;font-size:calc(.95rem*var(--hand-size));color:var(--soft);line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-    .snap.one figcaption{text-align:start;inset-inline-end:32%;inset-inline-start:12px}
-    .snap.one{width:74%;transform:rotate(-2.2deg);z-index:1}
-    .snap.one img{aspect-ratio:4/3}
-    .snap.two{position:absolute;width:47%;inset-inline-end:0;bottom:0;transform:rotate(3.4deg);z-index:2}
-    .snap.two img{aspect-ratio:1/1}
-    .snap.one.tall img{aspect-ratio:4/5}
-    .snap.two::before{content:"";position:absolute;width:64px;height:20px;background:var(--tape);top:-9px;left:50%;margin-left:-32px;transform:rotate(-4deg)}
-    .stop:nth-child(even) .snap.one{transform:rotate(1.8deg)}
-    .stop:nth-child(even) .snap.two{transform:rotate(-3deg)}
-    .fun{margin:0 0 10px;font-size:1.08rem}
-    .who{margin:0 0 10px;color:var(--soft);font-size:.98rem;padding-inline-start:12px;border-inline-start:2.5px solid var(--sun)}
-    .info{margin:0;font-size:.92rem;color:var(--soft);line-height:1.9}
-    .info a{font-size:.92rem}
-    .home{position:relative;padding-inline-start:58px;margin:-14px 0 40px;font-family:var(--hand);font-weight:700;font-size:calc(1.2rem*var(--hand-size));color:var(--red);line-height:1.2}
-    .home::before{content:"";position:absolute;inset-inline-start:17px;top:.25em;width:20px;height:20px;border-radius:50%;background:var(--red)}
+.stop{border-radius:var(--r-lg)}
+.stop .gallery{border-radius:var(--r-lg);overflow:hidden;isolation:isolate}
+.stop .slide{aspect-ratio:4/3}
+.status{position:absolute;top:12px;inset-inline-start:12px;z-index:2;display:inline-flex;align-items:center;gap:6px;background:#fff;border-radius:999px;padding:6px 11px;font-size:12.5px;font-weight:700;box-shadow:0 2px 8px rgba(0,0,0,.14);color:var(--ink)}
+.status i{width:8px;height:8px;border-radius:50%;background:currentColor}
+.status.ok i{background:var(--ok)}.status.warn i{background:#E0A100}.status.opt i{background:#9A9A9A}.status.free i{background:var(--brand)}
+.badge{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:700;padding:3px 9px;border-radius:999px;white-space:nowrap}
+.badge.ok{color:var(--ok);background:var(--ok-bg)}.badge.warn{color:var(--warn);background:var(--warn-bg)}.badge.opt{color:var(--opt);background:var(--opt-bg)}
+.badge .ico{width:13px;height:13px;stroke-width:2.4}
+.stop-body{padding:16px 2px 0}
+.stop-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.stop h3{font-size:18px;line-height:1.3;font-weight:700;min-width:0}
+.time{flex:none;font-size:14px;font-weight:700;direction:ltr;font-variant-numeric:tabular-nums;padding-top:2px}
+.tagline{margin-top:2px;color:var(--muted);font-size:15px}
+.meta{display:flex;flex-wrap:wrap;align-items:center;gap:6px 16px;margin-top:8px;font-size:14px;color:var(--ink);font-weight:500}
+.meta>span{display:inline-flex;align-items:center;gap:5px}
+.meta .ico{width:15px;height:15px;color:var(--ink)}
+.desc{margin-top:14px;padding-top:14px;border-top:1px solid var(--line);color:var(--ink-2);font-size:15.5px;line-height:1.6;text-wrap:pretty}
+.facts{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:10px}
+.facts li{display:flex;gap:12px;align-items:flex-start;font-size:14.5px;color:var(--ink-2);line-height:1.5}
+.facts .ico{margin-top:1px;color:var(--ink)}
+.mission{display:flex;gap:12px;align-items:center;margin-top:16px;padding:12px 14px;border-radius:var(--r-md);background:var(--brand-soft);font-size:14.5px;color:var(--ink);line-height:1.45}
+.mission .mnum{flex:none;width:32px;height:32px;border-radius:50%;background:var(--brand);color:#fff;display:grid;place-items:center}
+.mission .mnum .ico{width:17px;height:17px}
+.mission b{font-weight:700}
+.actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:42px;padding:0 16px;border-radius:10px;border:1px solid var(--ink);background:#fff;color:var(--ink);font:600 14px/1 var(--font);text-decoration:none;white-space:nowrap;cursor:pointer;transition:background .15s,transform .1s}
+.btn:hover{background:var(--bg-2)}
+.btn:active{transform:scale(.98)}
+.btn .ico{width:17px;height:17px}
+@media (max-width:599px){.actions .btn{flex:1 1 0}.actions .btn.primary{flex-basis:100%}}
+.btn.primary{background:var(--brand);border-color:var(--brand);color:#fff}
+.btn.primary:hover{background:var(--brand-ink);border-color:var(--brand-ink)}
+.btn.ghost{border-color:var(--line-2)}
+.watch{margin-top:16px;border:1px solid var(--line);border-radius:var(--r-md);overflow:hidden}
+.watch summary{list-style:none;display:flex;align-items:center;gap:12px;padding:12px 14px;cursor:pointer}
+.watch summary::-webkit-details-marker{display:none}
+.play{flex:none;width:36px;height:36px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center}
+.play .ico{width:14px;height:14px}
+.w-txt{min-width:0;flex:1;display:flex;flex-direction:column;line-height:1.3}
+.w-txt b{font-size:14.5px;font-weight:600}
+.w-txt small{font-size:13px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.watch .chev{color:var(--muted);transition:transform .2s;transform:rotate(90deg)}
+.watch[open] .chev{transform:rotate(-90deg)}
+.watch .frame{position:relative;aspect-ratio:16/9;background:#000}
+.watch iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.watch .vcap{padding:10px 14px 12px;font-size:12.5px;color:var(--muted);line-height:1.5}
+.watch .vcap a{color:var(--ink);font-weight:600}
 
-    /* bonus sticky note */
-    .bonus{position:relative;background:#fbe9b7;padding:24px 18px 18px;margin:0 8px 30px;transform:rotate(-1deg);box-shadow:0 1px 2px rgba(59,46,39,.14),0 12px 20px -12px rgba(59,46,39,.4)}
-    .bonus .maybe{font-family:var(--hand);font-weight:700;font-size:calc(1rem*var(--hand-size));color:var(--red);margin:0}
-    .bonus h3{font-family:var(--head);font-weight:400;font-size:1.55rem;margin:2px 0 12px;line-height:1.15}
-    html[lang=en] .bonus h3{font-weight:700;font-size:1.45rem}
-    .bonus .snaps{padding-bottom:26px}
-    .bonus .snap.one{width:68%}
-    .bonus .who{border-color:var(--red)}
+/* ---------- passport ---------- */
+.passport{padding:22px 20px 20px;overflow:hidden}
+.pp-head{display:flex;align-items:center;gap:14px}
+.pp-seal{flex:none;width:52px;height:52px;border-radius:14px;background:var(--ink);color:#fff;display:grid;place-items:center}
+.pp-seal .ico{width:26px;height:26px;stroke-width:1.6}
+.pp-head h2{font-size:19px}
+.pp-head p{color:var(--muted);font-size:13.5px;margin-top:2px}
+.pp-count{margin-inline-start:auto;text-align:end;flex:none}
+.pp-count b{display:block;font-size:22px;font-weight:800;line-height:1;direction:ltr}
+.pp-count>span{font-size:12px;color:var(--muted)}
+.pp-bar{height:6px;border-radius:999px;background:var(--line);margin:18px 0 6px;overflow:hidden}
+.pp-bar i{display:block;height:100%;width:0;background:var(--brand);border-radius:inherit;transition:width .35s}
+.pp-intro{font-size:14.5px;color:var(--ink-2);margin-top:12px;line-height:1.55}
+.badges{list-style:none;margin:16px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.badges label{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:10px;padding:14px;border:1px solid var(--line);border-radius:var(--r-md);cursor:pointer;height:100%;transition:border-color .15s,box-shadow .15s,background .15s}
+.badges label:hover{border-color:var(--line-2);box-shadow:var(--sh-1)}
+.badges input{position:absolute;opacity:0;pointer-events:none}
+.bdg{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:var(--bg-2);color:var(--ink-2);border:1.5px dashed var(--line-2);transition:all .2s}
+.bdg .ico{width:21px;height:21px}
+.bdg .tick{display:none}
+.b-n{font-size:11.5px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+html[lang=he] .b-n{letter-spacing:0;text-transform:none;font-size:12.5px}
+.b-t{font-size:14px;font-weight:600;line-height:1.35;color:var(--ink)}
+.badges input:checked+label{border-color:var(--brand);background:var(--brand-soft)}
+.badges input:checked+label .bdg{background:var(--brand);border:1.5px solid var(--brand);color:#fff}
+.badges input:checked+label .bdg .i{display:none}
+.badges input:checked+label .bdg .tick{display:block}
+.badges input:focus-visible+label{outline:2px solid var(--ink);outline-offset:2px}
+.cert{display:flex;align-items:center;gap:10px;margin-top:16px;padding-top:16px;border-top:1px solid var(--line);font-size:14px;font-weight:600;color:var(--ink)}
+.cert .ico{color:var(--brand)}
 
-    .credits{font-size:.78rem;color:var(--faint);text-align:center;margin:0 0 8px;line-height:1.5}
+/* ---------- ideas ---------- */
+.older header{margin-bottom:6px}
+.older .h{font-size:22px;line-height:1.25}
+.older .sub{margin-top:4px;color:var(--muted);font-size:14px}
+.older h2{font-size:17px;font-weight:700;margin:28px 0 12px}
+.older .grid{display:grid;gap:12px}
+.trip{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:18px;display:flex;flex-direction:column;gap:8px;transition:box-shadow .2s}
+.trip:hover{box-shadow:var(--sh-2)}
+.trip h3{font-size:16px;line-height:1.35;font-weight:700;display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px}
+.trip .meta{margin:0;display:block;font-size:13.5px;color:var(--muted);font-weight:500;line-height:1.5}
+.trip p{font-size:14.5px;color:var(--ink-2);line-height:1.55}
+.trip .links{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px;margin-bottom:4px}
+.trip .links a,.trip .links .phone{display:inline-flex;align-items:center;gap:6px;min-height:36px;padding:0 12px;border:1px solid var(--line-2);border-radius:999px;font-size:13.5px;font-weight:600;text-decoration:none;color:var(--ink);white-space:nowrap}
+.trip .links .phone{border-style:dashed;color:var(--ink-2);direction:ltr}
+.trip .links a:hover{border-color:var(--ink)}
+.trip .links a[href^="tel:"]::before{content:"";width:14px;height:14px;background:currentColor;-webkit-mask:var(--m-phone) center/contain no-repeat;mask:var(--m-phone) center/contain no-repeat}
+.tag{display:inline-flex;align-items:center;font-size:12px;font-weight:700;padding:3px 9px;border-radius:999px;white-space:nowrap}
+.tag.call{color:var(--warn);background:var(--warn-bg)}
+.tag.ok{color:var(--ok);background:var(--ok-bg)}
+.playlist{margin-top:auto;padding:10px 12px;border-radius:var(--r-sm);background:var(--bg-2);display:flex;flex-direction:column;gap:2px}
+.playlist strong{font-size:12px;font-weight:700;color:var(--ink);letter-spacing:.02em}
+.playlist .empty{margin:0;font-size:13px;color:var(--muted)}
+.fine{font-size:13px!important;color:var(--muted)!important}
+.fine a{font-weight:600}
+.intro{padding:14px 16px;border-radius:var(--r-md);background:var(--bg-2);color:var(--ink-2);font-size:14px;line-height:1.55;margin:0 0 12px}
 
-    /* more ideas: index cards */
-    .older{margin-top:50px;padding-top:6px}
-    .older header{text-align:center;margin-bottom:10px}
-    .older h1{font-size:1.9rem;max-width:none;margin:0 0 4px}
-    .sub{color:var(--soft);margin:0 auto;max-width:30rem}
-    .older h2{font-family:var(--hand);font-weight:700;font-size:calc(1.3rem*var(--hand-size));color:var(--red);margin:34px 0 12px;line-height:1.1}
-    .trip{position:relative;background:var(--card);padding:16px 18px 14px;margin:0 0 14px;border-top:3px solid var(--sea);box-shadow:0 1px 2px rgba(59,46,39,.12),0 6px 14px -8px rgba(59,46,39,.25)}
-    .trip:nth-of-type(3n+2){border-top-color:var(--sun)}
-    .trip:nth-of-type(3n){border-top-color:var(--red)}
-    .trip h3{font-family:var(--head);font-weight:400;font-size:1.22rem;margin:0 0 4px;line-height:1.25}
-    html[lang=en] .trip h3{font-weight:600}
-    .meta{font-size:.9rem;color:var(--sea);font-weight:600;margin:0 0 8px}
-    .trip p{margin:0 0 8px}
-    .links{display:flex;flex-wrap:wrap;gap:4px 16px;margin-top:6px;font-size:.92rem}
-    .phone{color:var(--soft)}
-    .tag{display:inline-block;margin-inline-start:8px;font-family:var(--hand);font-weight:700;font-size:calc(.9rem*var(--hand-size));line-height:1;vertical-align:middle;transform:rotate(-3deg);padding:1px 6px 2px;border:1.6px solid currentColor;border-radius:4px 7px 5px 8px}
-    .tag.call{color:var(--red)}
-    .tag.ok{color:var(--sea)}
-    .playlist{margin-top:10px;padding:8px 12px;border:1.5px dashed #cdbba0;border-radius:3px}
-    .playlist strong{display:block;font-family:var(--hand);font-weight:700;font-size:calc(.95rem*var(--hand-size));color:var(--sun);line-height:1.2}
-    .playlist .empty{margin:0;color:var(--faint);font-size:.9rem}
-    .fine{font-size:.85rem;color:var(--soft);margin:6px 0 0}
-    .intro{background:#efe3cc;padding:14px 16px;margin:0 0 16px;color:var(--soft);font-size:.95rem}
-    footer{margin-top:40px;text-align:center;color:var(--soft);font-family:var(--hand);font-weight:700;font-size:calc(1rem*var(--hand-size));line-height:1.3}
+/* ---------- footer ---------- */
+.foot{margin-top:40px;padding:28px 0 32px;border-top:1px solid var(--line);background:var(--bg-2)}
+.foot-brand{display:flex;align-items:center;gap:10px;font-weight:700;margin-bottom:10px}
+.foot-brand svg{width:28px;height:28px}
+.foot p{font-size:12.5px;color:var(--muted);line-height:1.6;max-width:760px}
+.foot p+p{margin-top:8px}
 
-    @media (min-width:600px){ body{font-size:18px} .stop{padding-inline-start:72px} .day::before{inset-inline-start:26px} .stamp{width:62px;height:62px} }
-    @media (prefers-reduced-motion:no-preference){ html{scroll-behavior:smooth} }
-  </style>
-  <style>
-    /* v3: big photos + videos */
-    .wrap{max-width:720px}
-    .plan li.maybe a{color:var(--soft)}
-    .passport{position:relative;margin:34px 6px 0;padding:20px 18px 16px;background:#e9f1ee;border:2px dashed var(--sea);border-radius:10px;transform:rotate(-.5deg)}
-    .passport h2{font-family:var(--hand);font-weight:700;font-size:calc(1.5rem*var(--hand-size));color:var(--sea);margin:0 0 4px;line-height:1}
-    .passport p{margin:0 0 10px;color:var(--soft)}
-    .passport ol{list-style:none;margin:0;padding:0;display:grid;gap:6px}
-    .passport label{display:flex;gap:10px;align-items:center;cursor:pointer;font-weight:600}
-    .passport input{width:22px;height:22px;accent-color:var(--red);flex:none}
-    .passport input:checked+span{text-decoration:line-through;text-decoration-color:var(--red);color:var(--soft)}
-    .passport .cert{margin:10px 0 0;font-family:var(--hand);font-weight:700;font-size:calc(1.05rem*var(--hand-size));color:var(--red)}
-    .when{margin:-8px 0 12px;font-weight:700;color:var(--soft)}
-    .when .tag{margin-inline-start:6px}
-    .media{margin-block:0 18px;margin-inline:calc(-58px - 6px) -12px;display:grid;gap:14px}
-    .photo{margin:0;background:#fffdf7;padding:6px 6px 0;box-shadow:0 1px 2px rgba(59,46,39,.2),0 10px 22px -10px rgba(59,46,39,.4)}
-    .photo:nth-child(odd){transform:rotate(-.5deg)} .photo:nth-child(even){transform:rotate(.5deg)}
-    .photo a{display:block;cursor:zoom-in}
-    .photo img{display:block;width:100%;height:auto;max-height:78vh;object-fit:cover;background:#eadfca}
-    .photo figcaption{font-family:var(--hand);font-weight:700;font-size:calc(1rem*var(--hand-size));color:var(--soft);text-align:center;padding:6px 8px 8px;line-height:1.15}
-    .photo:not(:has(figcaption)){padding-bottom:6px}
-    .video{margin:0;background:var(--ink);padding:6px;border-radius:4px;box-shadow:0 10px 22px -10px rgba(59,46,39,.5)}
-    .video .frame{position:relative;aspect-ratio:16/9;background:#000}
-    .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-    .video figcaption{color:#e9dcc6;font-size:.85rem;padding:7px 6px 3px;line-height:1.4}
-    .video figcaption a{color:#fbe9b7;text-decoration-color:rgba(251,233,183,.5)}
-    .video .vlabel{display:block;font-family:var(--hand);font-weight:700;font-size:calc(1.02rem*var(--hand-size));color:var(--sun);line-height:1.1;margin-bottom:2px}
-    .video .ch{color:#b9a88f}
-    .mission{display:flex;gap:10px;align-items:center;margin:0 0 12px;padding:9px 12px;background:#fbe9b7;border-radius:4px 10px 6px 12px;font-size:1.02rem;box-shadow:0 1px 2px rgba(59,46,39,.12)}
-    .mission b{color:var(--red)}
-    .mstamp{flex:none;width:34px;height:34px;display:grid;place-items:center;border:2px solid var(--red);border-radius:50%;color:var(--red);font-family:var(--hand);font-weight:700;font-size:calc(1.05rem*var(--hand-size));transform:rotate(-8deg);background:#fffdf7}
-    .road{margin:0 0 10px;padding:10px 12px;background:var(--card);border-inline-start:3px solid var(--sea);font-size:.98rem}
-    .stop.opt .stamp{border-style:dashed}
-    dialog.lb{padding:0;border:0;background:transparent;max-width:100vw;max-height:100vh;width:100vw;height:100vh}
-    dialog.lb::backdrop{background:rgba(20,14,10,.92)}
-    dialog.lb img{display:block;width:100%;height:100%;object-fit:contain;cursor:zoom-out}
-    dialog.lb button{position:fixed;top:12px;inset-inline-end:14px;font:700 28px/1 sans-serif;background:rgba(0,0,0,.5);color:#fff;border:0;border-radius:50%;width:44px;height:44px;cursor:pointer}
-    @media (min-width:600px){ .media{margin-inline:-72px 0} .photo{padding:9px 9px 0} .photo:not(:has(figcaption)){padding-bottom:9px} }
+/* ---------- bottom tab bar ---------- */
+.tabbar{position:fixed;bottom:0;left:0;right:0;z-index:45;background:rgba(255,255,255,.98);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.tabbar ul{list-style:none;margin:0 auto;padding:0;display:grid;grid-template-columns:repeat(4,1fr);max-width:560px;height:var(--tab-h)}
+.tabbar a{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;text-decoration:none;color:var(--faint);font-size:11px;font-weight:600}
+.tabbar .ico{width:23px;height:23px;stroke-width:1.7}
+.tabbar a.active{color:var(--brand)}
+
+/* ---------- lightbox ---------- */
+dialog.lb{padding:0;border:0;margin:0;max-width:none;max-height:none;width:100vw;height:100dvh;background:#000;color:#fff}
+dialog.lb::backdrop{background:#000}
+.lb-bar{position:absolute;top:0;left:0;right:0;z-index:2;display:flex;align-items:center;justify-content:space-between;padding:12px 14px;background:linear-gradient(rgba(0,0,0,.5),transparent)}
+.lb-close{width:40px;height:40px;border-radius:50%;border:0;background:rgba(255,255,255,.16);color:#fff;display:grid;place-items:center;cursor:pointer}
+.lb-close .ico{width:20px;height:20px;stroke-width:2.2}
+.lb-count{font-size:14px;font-weight:600;direction:ltr}
+.lb .track{height:100%}
+.lb .slide{flex:0 0 100%;height:100%;display:flex;flex-direction:column;justify-content:center;background:#000}
+.lb .slide img{height:auto;max-height:calc(100dvh - 120px);object-fit:contain}
+.lb .slide p{padding:12px 20px 0;text-align:center;font-size:14px;color:rgba(255,255,255,.85)}
+
+/* ---------- responsive ---------- */
+@media (min-width:600px){
+  .badges{grid-template-columns:repeat(4,1fr)}
+  .older .grid{grid-template-columns:1fr 1fr}
+  .stop .slide{aspect-ratio:3/2}
+}
+@media (min-width:960px){
+  :root{--bar-h:76px}
+  body{padding-bottom:0}
+  .wrap{padding:0 40px}
+  .tabbar{display:none}
+  .topnav{display:flex}
+  .brand svg{width:40px;height:40px}
+  .brand-name b{font-size:17px}
+  .hero{padding-top:28px}
+  .hero-title{display:block;margin-bottom:20px}
+  .hero-title .eyebrow{margin-bottom:6px}
+  .hero-title h1{font-size:30px}
+  .sheet .eyebrow,.sheet h1{display:none}
+  .hero .gallery{margin:0;border-radius:var(--r-lg);overflow:hidden}
+  .hero .track{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:1fr 1fr;gap:8px;height:440px;overflow:hidden}
+  .hero .slide{aspect-ratio:auto;height:100%}
+  .hero .slide:first-child{grid-row:1/3}
+  .hero .slide img{transition:filter .2s}
+  .hero .slide button:hover img{filter:brightness(.9)}
+  .hero .count,.hero .dots,.hero .nav-btn{display:none}
+  .show-all{display:inline-flex!important}
+  .sheet{margin:0;padding:24px 0 0;border-radius:0}
+  .where{margin-top:0}
+  .layout .aside{order:0}
+  .layout{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:72px;align-items:start}
+  .aside{position:sticky;top:calc(var(--bar-h) + 24px);padding-top:32px}
+  .plan{margin-top:0}
+  .section{padding-top:40px}
+  .sec-head h2{font-size:24px}
+  .stop h3{font-size:20px}
+}
+.show-all{display:none;position:absolute;bottom:16px;inset-inline-end:16px;align-items:center;gap:8px;background:#fff;border:1px solid var(--ink);border-radius:8px;padding:8px 14px;font:600 14px/1 var(--font);cursor:pointer;z-index:2}
+.show-all .ico{width:16px;height:16px}
+@media (max-width:959px){.aside{display:block}}
+@media (max-width:360px){.brand-name small{display:none}.chip{font-size:13px;padding:7px 10px}}
+:root{--m-phone:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z'/%3E%3C/svg%3E")}
+.sec-note{display:flex;align-items:center;gap:8px;margin-top:14px;font-size:12.5px;color:var(--faint)}
+.sec-note .ico{width:15px;height:15px}
+.foot .credits{font-size:12px}
+
+@media (min-width:1100px){.older .grid{grid-template-columns:repeat(3,1fr)}}
+.stop .count{display:none}.hero .dots{display:none}
+
   </style>
 </head>
 <body>
-  <div class="lang" role="group" aria-label="Language / שפה">
-    <button type="button" data-set="he" aria-pressed="true">עברית</button>
-    <button type="button" data-set="en" aria-pressed="false">English</button>
-  </div>
-  <div class="wrap">
-    <header class="mast" id="top">
-      <p class="kicker"><span class="en">Thu · Oct 1 · Chol HaMoed Sukkot</span><span class="he">יום חמישי&nbsp;· 1&nbsp;באוקטובר&nbsp;· חול&nbsp;המועד&nbsp;סוכות</span></p>
-      <h1><span class="en">Our Thursday Adventure</span><span class="he">ההרפתקה שלנו ביום חמישי</span></h1>
-      <figure class="hero tape sb"><img src="images/thursday/storybook-hero.jpg" width="1200" height="800" alt="A storybook painting of a bear family setting off on their day by the sea" /></figure>
-      <p class="lede"><span class="en">A speedboat, paint brushes, race cars, pizza and a sunset by the sea. The whole gang, one epic day! We leave at 10:45.</span><span class="he">סירת מרוץ, מכחולים, מכוניות מרוץ, פיצה ושקיעה ליד הים. כל החבורה, יום אחד מטורף! יוצאים ב־<bdi dir="ltr">10:45</bdi>.</span></p>
-    </header>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="logo" viewBox="0 0 64 64"><g fill="#E2483D"><circle cx="14.5" cy="15.5" r="8"/><circle cx="49.5" cy="15.5" r="8"/><circle cx="32" cy="35" r="24"/></g><g fill="#fff" opacity=".22"><circle cx="14.5" cy="15.5" r="3.4"/><circle cx="49.5" cy="15.5" r="3.4"/></g><circle cx="32" cy="35" r="19.5" fill="none" stroke="#fff" stroke-opacity=".35" stroke-width="1.2"/><g fill="none" stroke="#fff" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 26v18M22 26h5.5a4.5 4.5 0 0 1 0 9H22M22 35h6.5a4.5 4.5 0 0 1 0 9H22"/><path d="M35 44V26h8M35 34.5h6"/></g></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/><path d="M9 10.5c.5 2 2.5 4 4.5 4.5l1.3-1.3 1.7.8c0 1-.8 1.8-1.8 1.8A6.9 6.9 0 0 1 7.7 9.3c0-1 .8-1.8 1.8-1.8l.8 1.7Z" stroke-width="1.2"/></symbol>
+    <symbol id="i-nav" viewBox="0 0 24 24"><path d="M3 11l19-9-9 19-2-8-8-2z"/></symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M9 16l2 2 4-4"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+    <symbol id="i-car" viewBox="0 0 24 24"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></symbol>
+    <symbol id="i-walk" viewBox="0 0 24 24"><circle cx="13" cy="4" r="2"/><path d="M10 21l2-6 3 3v3M7 12l3-4 3 1 2 3 3 1M10 8l2 7"/></symbol>
+    <symbol id="i-flag" viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1zM4 22v-7"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><path d="M12 10V2M4.9 10.9l1.4 1.4M2 18h2M20 18h2M19.1 10.9l-1.4 1.4M22 22H2M16 18a4 4 0 0 0-8 0M16 6l-4 4-4-4"/></symbol>
+    <symbol id="i-boat" viewBox="0 0 24 24"><path d="M2 21c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1s1.2 1 2.5 1c2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M19.4 20A11.6 11.6 0 0 0 21 14l-9-4-9 4c0 2.9.9 5.3 2.8 7.8M19 13V7a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v6M12 10v4M12 2v3"/></symbol>
+    <symbol id="i-brush" viewBox="0 0 24 24"><path d="M9.1 11.9l8-8.1a2.9 2.9 0 1 1 4 4l-8 8.1"/><path d="M7.1 14.9c-1.7 0-3 1.4-3 3 0 1.3-2.5 1.5-2 2 1.1 1.1 2.5 2 4 2 2.2 0 4-1.8 4-4a3 3 0 0 0-3-3z"/></symbol>
+    <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.5 12.9 17 22l-5-3-5 3 1.5-9.1"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-chev" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="M7 4.5v15l12.5-7.5z" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+    <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M16.2 7.8l-2.1 6.3-6.3 2.1 2.1-6.3z"/></symbol>
+    <symbol id="i-route" viewBox="0 0 24 24"><circle cx="6" cy="19" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/><circle cx="18" cy="5" r="3"/></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+    <symbol id="i-food" viewBox="0 0 24 24"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2M7 2v20M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></symbol>
+    <symbol id="i-images" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.1-3.1a2 2 0 0 0-2.8 0L6 21"/></symbol>
+    <symbol id="i-seal" viewBox="0 0 24 24"><path d="M12 2l2.4 1.8 3-.2 1 2.8 2.6 1.6-.8 2.9.8 2.9-2.6 1.6-1 2.8-3-.2L12 22l-2.4-1.8-3 .2-1-2.8L3 16l.8-2.9L3 10.2l2.6-1.6 1-2.8 3 .2z"/><path d="M9 12l2 2 4-4"/></symbol>
+    <symbol id="i-park" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M9 17V7h4a3 3 0 0 1 0 6H9"/></symbol>
+    <symbol id="i-ruler" viewBox="0 0 24 24"><path d="M12 3v18M8 7l4-4 4 4M8 17l4 4 4-4"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></symbol>
+    <symbol id="i-cal0" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
+    <symbol id="i-gift" viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7M7.5 8a2.5 2.5 0 0 1 0-5C11 3 12 8 12 8s1-5 4.5-5a2.5 2.5 0 0 1 0 5"/></symbol>
+    <symbol id="i-hour" viewBox="0 0 24 24"><path d="M5 22h14M5 2h14M17 22v-4.2a2 2 0 0 0-.6-1.4L12 12l-4.4 4.4a2 2 0 0 0-.6 1.4V22M7 2v4.2a2 2 0 0 0 .6 1.4L12 12l4.4-4.4a2 2 0 0 0 .6-1.4V2"/></symbol>
+  </defs>
+</svg>
 
-    <div class="squiggle" role="presentation"></div>
+  <header class="appbar" id="appbar">
+    <div class="wrap">
+      <a class="brand" href="#top" aria-label="The Bear Family Trip">
+        <svg viewBox="0 0 64 64" aria-hidden="true"><use href="#logo"/></svg>
+        <span class="brand-name"><b><span class="en">The Bear Family Trip</span><span class="he">טיול משפחת הדובים</span></b><small><span class="en">Thu 1.10 · Chol HaMoed</span><span class="he">יום חמישי 1.10 · חול המועד</span></small></span>
+      </a>
+      <nav class="topnav" aria-label="Sections">
+        <a href="#top" data-tab="top"><span class="en">Overview</span><span class="he">סקירה</span></a>
+        <a href="#itinerary" data-tab="itinerary"><span class="en">Itinerary</span><span class="he">מסלול</span></a>
+        <a href="#passport" data-tab="passport"><span class="en">Missions</span><span class="he">משימות</span></a>
+        <a href="#ideas" data-tab="ideas"><span class="en">More ideas</span><span class="he">עוד רעיונות</span></a>
+      </nav>
+      <div class="lang" role="group" aria-label="Language / שפה">
+        <button type="button" data-set="he" aria-pressed="true" lang="he">עב</button>
+        <button type="button" data-set="en" aria-pressed="false" lang="en">EN</button>
+      </div>
+    </div>
+  </header>
 
-    <nav class="plan" aria-label="Timeline">
-      <span class="pin" aria-hidden="true"></span>
-      <h2><span class="en">The plan</span><span class="he">התוכנית</span></h2>
-      <ol>
-        <li><a href="#go"><time>10:45</time><span><span class="en">We leave Givat Ze’ev</span><span class="he">יוצאים מגבעת זאב</span></span></a></li>
-        <li><a href="#boat"><time>12:30</time><span><span class="en">Speedboat</span><span class="he">סירת מרוץ</span></span></a></li>
-        <li><a href="#pottery"><time>13:20</time><span><span class="en">Paint our own pottery</span><span class="he">צובעים קרמיקה</span></span></a></li>
-        <li><a href="#kart"><time>14:55</time><span><span class="en">Go-karts</span><span class="he">קארטינג</span></span></a></li>
-        <li class="maybe"><a href="#free"><time>16:00</time><span><span class="en">Free time / laser tag?</span><span class="he">זמן חופשי / לייזר טאג?</span></span></a></li>
-        <li><a href="#pizza"><time>17:00</time><span><span class="en">Pizza dinner</span><span class="he">ארוחת פיצה</span></span></a></li>
-        <li><a href="#sunset"><time>18:15</time><span><span class="en">Sunset on the cliffs</span><span class="he">שקיעה על הצוקים</span></span></a></li>
-        <li><a href="#home"><time>~18:45</time><span><span class="en">Drive home</span><span class="he">נוסעים הביתה</span></span></a></li>
-      </ol>
-    </nav>
-
-    <section class="passport" id="passport" aria-labelledby="pp-title">
-      <h2 id="pp-title"><span class="en">🛂 Mission passport</span><span class="he">🛂 דרכון המשימות</span></h2>
-      <p><span class="en">At every stop there’s a secret mission. Complete all four and earn your official Adventurer Certificate at sunset!</span><span class="he">בכל תחנה מחכה משימה סודית. מי שמשלים את כל הארבע מקבל תעודת הרפתקן רשמית בשקיעה!</span></p>
-      <ol>
-        <li><label><input type="checkbox" data-m="1" /><span><span class="en">⛵ Steer the boat</span><span class="he">⛵ לנווט את הסירה</span></span></label></li>
-        <li><label><input type="checkbox" data-m="2" /><span><span class="en">🎨 Finish your pottery masterpiece</span><span class="he">🎨 לסיים את יצירת הקרמיקה</span></span></label></li>
-        <li><label><input type="checkbox" data-m="3" /><span><span class="en">🏎️ Beat your lap time</span><span class="he">🏎️ לשבור את זמן ההקפה</span></span></label></li>
-        <li><label><input type="checkbox" data-m="4" /><span><span class="en">🌅 Spot the sunset</span><span class="he">🌅 לזהות את השקיעה</span></span></label></li>
-      </ol>
-      <p class="cert"><span class="en">🏅 Certificates handed out at sunset on the cliffs</span><span class="he">🏅 חלוקת תעודות בשקיעה על הצוקים</span></p>
+  <main class="wrap" id="top">
+    <section class="hero" aria-label="Overview">
+      <div class="hero-title"><p class="eyebrow"><svg class="ico" aria-hidden="true"><use href="#i-cal0"/></svg><span class="en">Thu · Oct 1 · Chol HaMoed Sukkot</span><span class="he">יום חמישי&nbsp;· 1&nbsp;באוקטובר&nbsp;· חול&nbsp;המועד&nbsp;סוכות</span></p>
+      <h1><span class="en">Thursday 1.10&nbsp;· Chol&nbsp;HaMoed</span><span class="he">יום חמישי 1.10&nbsp;· חול&nbsp;המועד</span></h1></div>
+      <div class="gallery" aria-label="Trip photos"><div class="track"><figure class="slide sb"><button type="button" class="zoom" aria-label="A storybook painting of a bear family setting off on their day by the sea"><img src="images/thursday/storybook-hero.jpg" width="1200" height="800" alt="A storybook painting of a bear family setting off on their day by the sea" decoding="async" /></button></figure><figure class="slide"><button type="button" class="zoom" data-cap-en="zoom over the waves!" data-cap-he="זוּם על הגלים!" aria-label="Funtasea speedboat racing through the waves off Herzliya"><img src="images/thursday/02-funtasea-speedboat.jpg" width="1280" height="720" alt="Funtasea speedboat racing through the waves off Herzliya" loading="lazy" decoding="async" /></button></figure><figure class="slide"><button type="button" class="zoom" data-cap-en="every kid paints a piece" data-cap-he="כל ילד צובע כלי משלו" aria-label="A girl painting a ceramic piece at the Clay and Kef studio"><img src="images/thursday/03-clay-kef-painting.jpg" width="1600" height="1319" alt="A girl painting a ceramic piece at the Clay and Kef studio" loading="lazy" decoding="async" /></button></figure><figure class="slide"><button type="button" class="zoom" data-cap-en="start your engines!" data-cap-he="מנועים, להניע!" aria-label="Go-kart drivers in helmets on the Dan Karting track"><img src="images/thursday/04-dan-karting-netanya.jpg" width="1181" height="787" alt="Go-kart drivers in helmets on the Dan Karting track" loading="lazy" decoding="async" /></button></figure><figure class="slide"><button type="button" class="zoom" data-cap-en="the sun dives into the sea" data-cap-he="השמש צוללת לים" aria-label="The sun setting into the Mediterranean Sea at Netanya"><img src="images/thursday/07-netanya-sunset.jpg" width="1600" height="1200" alt="The sun setting into the Mediterranean Sea at Netanya" loading="lazy" decoding="async" /></button></figure></div><button type="button" class="nav-btn prev" aria-label="Previous"><svg class="ico" aria-hidden="true" style="transform:scaleX(-1)"><use href="#i-chev"/></svg></button><button type="button" class="nav-btn next" aria-label="Next"><svg class="ico" aria-hidden="true"><use href="#i-chev"/></svg></button><span class="count"><b class="c-i">1</b> / 5</span><button type="button" class="show-all"><svg class="ico" aria-hidden="true"><use href="#i-images"/></svg><span class="en">Show all photos</span><span class="he">הצגת כל התמונות</span></button><span class="dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span></div>
+      <div class="sheet">
+        <p class="eyebrow"><svg class="ico" aria-hidden="true"><use href="#i-cal0"/></svg><span class="en">Thu · Oct 1 · Chol HaMoed Sukkot</span><span class="he">יום חמישי&nbsp;· 1&nbsp;באוקטובר&nbsp;· חול&nbsp;המועד&nbsp;סוכות</span></p>
+      <h1><span class="en">Thursday 1.10&nbsp;· Chol&nbsp;HaMoed</span><span class="he">יום חמישי 1.10&nbsp;· חול&nbsp;המועד</span></h1>
+        <p class="where"><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg><span class="en">Herzliya · Ra’anana · Netanya</span><span class="he">הרצליה · רעננה · נתניה</span></p>
+        <div class="chips">
+          <span class="chip"><svg class="ico" aria-hidden="true"><use href="#i-users"/></svg><span class="en"><b>8</b> guests</span><span class="he"><b>8</b> משתתפים</span></span>
+          <span class="chip"><svg class="ico" aria-hidden="true"><use href="#i-route"/></svg><span class="en"><b>6</b> stops</span><span class="he"><b>6</b> תחנות</span></span>
+          <span class="chip"><svg class="ico" aria-hidden="true"><use href="#i-clock"/></svg><span class="en">Leave <b>10:45</b></span><span class="he">יציאה <b><bdi dir="ltr">10:45</bdi></b></span></span>
+          <span class="chip"><svg class="ico" aria-hidden="true"><use href="#i-home"/></svg><span class="en">Home <b>~20:00</b></span><span class="he">בבית <b><bdi dir="ltr">~20:00</bdi></b></span></span>
+        </div>
+        <p class="lede"><span class="en">A speedboat, paint brushes, race cars, pizza and a sunset by the sea. The whole gang, one epic day! We leave at 10:45.</span><span class="he">סירת מרוץ, מכחולים, מכוניות מרוץ, פיצה ושקיעה ליד הים. כל החבורה, יום אחד מטורף! יוצאים ב־<bdi dir="ltr">10:45</bdi>.</span></p>
+      </div>
     </section>
 
-    <h2 class="day-title"><span class="en">The day, stop by stop</span><span class="he">היום, תחנה אחרי תחנה</span></h2>
-    <p class="day-sub"><span class="en">Tap a photo to see it big · play the videos to see what’s coming</span><span class="he">לוחצים על תמונה כדי להגדיל · מפעילים את הסרטונים כדי לראות מה מחכה לנו</span></p>
+    <div class="layout">
+      <div class="main">
+        <section class="section" id="itinerary" aria-labelledby="it-title">
+          <div class="sec-head">
+            <h2 id="it-title"><span class="en">The day, stop by stop</span><span class="he">היום, תחנה אחרי תחנה</span></h2>
+            <p><span class="en">Tap a photo to see it big · play the videos to see what’s coming</span><span class="he">לוחצים על תמונה כדי להגדיל · מפעילים את הסרטונים כדי לראות מה מחכה לנו</span></p>
+          </div>
+          <ol class="stops">
+<li class="endpoint" id="go">
+  <span class="ep-ico"><svg class="ico" aria-hidden="true"><use href="#i-home"/></svg></span>
+  <div class="ep-body">
+    <p class="ep-top"><time>10:45</time> · <span class="en">Givat Ze’ev</span><span class="he">גבעת זאב</span></p>
+    <h3><span class="en">Hit the Road!</span><span class="he">יוצאים לדרך!</span></h3>
+    <p><span class="en">Route: <b>443 → 1 → 20 (Ayalon) → 2 north</b> to Herzliya Marina. About 55 minutes, plus a buffer for holiday traffic.</span><span class="he">המסלול: <b>443 ← 1 ← 20 (איילון) ← 2 צפונה</b> עד מרינה הרצליה. כ־55 דקות, ועוד זמן רזרבה לפקקי חג.</span></p>
+    <p><span class="en">Snacks packed, water bottles full, seatbelts on. First stop: the sea!</span><span class="he">חטיפים ארוזים, בקבוקי מים מלאים, חגורות חגורות. תחנה ראשונה: הים!</span></p>
+  </div>
+</li>
+<li class="conn" aria-hidden="false"><span><svg class="ico" aria-hidden="true"><use href="#i-car"/></svg><span class="en">~55 min drive</span><span class="he">כ־55 דק׳ נסיעה</span></span></li>
+<li class="stop" id="boat">
+  <div class="gallery" aria-label="Funtasea · Herzliya Marina"><span class="status warn"><i></i><span class="en">To book</span><span class="he">להזמין</span></span><div class="track"><figure class="slide"><button type="button" class="zoom" data-cap-en="zoom over the waves!" data-cap-he="זוּם על הגלים!" aria-label="Funtasea speedboat racing through the waves off Herzliya"><img src="images/thursday/02-funtasea-speedboat.jpg" width="1280" height="720" alt="Funtasea speedboat racing through the waves off Herzliya" loading="lazy" decoding="async" /></button></figure><figure class="slide"><button type="button" class="zoom" data-cap-en="hold on tight!" data-cap-he="תחזיקו חזק!" aria-label="Speedboat with passengers out at sea"><img src="images/thursday/02-tornado-speedboat.jpg" width="1000" height="750" alt="Speedboat with passengers out at sea" loading="lazy" decoding="async" /></button></figure><figure class="slide"><button type="button" class="zoom" data-cap-en="Herzliya Marina" data-cap-he="מרינה הרצליה" aria-label="Boats in Herzliya Marina"><img src="images/thursday/02-herzliya-marina.jpg" width="1000" height="750" alt="Boats in Herzliya Marina" loading="lazy" decoding="async" /></button></figure></div><button type="button" class="nav-btn prev" aria-label="Previous"><svg class="ico" aria-hidden="true" style="transform:scaleX(-1)"><use href="#i-chev"/></svg></button><button type="button" class="nav-btn next" aria-label="Next"><svg class="ico" aria-hidden="true"><use href="#i-chev"/></svg></button><span class="count"><b class="c-i">1</b> / 3</span><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
+  <div class="stop-body">
+    <div class="stop-top"><h3><span class="en">Funtasea · Herzliya Marina</span><span class="he">שייט פנטזי (Funtasea) · מרינה הרצליה</span></h3><span class="time"><bdi dir="ltr">12:30–12:50</bdi></span></div>
+    <p class="tagline"><span class="en">Speedboat Blast!</span><span class="he">טיל על המים!</span></p>
+    <p class="meta"><span><svg class="ico" aria-hidden="true"><use href="#i-users"/></svg><span class="en">Ages 5+</span><span class="he">מגיל 5</span></span><span><svg class="ico" aria-hidden="true"><use href="#i-hour"/></svg><span class="en">20 min</span><span class="he">20 דקות</span></span></p>
+    <p class="desc"><span class="en">Hold on tight! We zoom out to sea on a super-fast boat, bouncing over the waves for 20 wild minutes. Wheee!</span><span class="he">תחזיקו חזק! יוצאים לים בסירה סופר־מהירה וקופצים על הגלים 20 דקות מטורפות. יוהוו!</span></p>
+    <ul class="facts"><li><svg class="ico" aria-hidden="true"><use href="#i-users"/></svg><span><span class="en">Ages 5+ ride · the 3-year-old waves from the pier with ice cream</span><span class="he">מגיל 5 עולים לסירה · בן ה־3 מנופף מהרציף עם גלידה</span></span></li><li><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg><span><span class="en">Stand opposite Golda &amp; McDonald’s</span><span class="he">הדוכן מול גולדה ומקדונלד׳ס</span></span></li></ul>
+    <p class="mission"><span class="mnum"><svg class="ico" aria-hidden="true"><use href="#i-boat"/></svg></span><span><span class="en"><b>Mission 1:</b> steer the boat! Ask the captain for a turn at the wheel.</span><span class="he"><b>משימה 1:</b> לנווט את הסירה! מבקשים מהקפטן תור ליד ההגה.</span></span></p>
+    <div class="actions"><a class="btn primary" href="https://wa.me/972509180000" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-chat"/></svg><span class="en">WhatsApp to book</span><span class="he">וואטסאפ להזמנה</span></a><a class="btn" href="tel:0509180000"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg><span class="en"><bdi dir="ltr">050-918-0000</bdi></span><span class="he"><bdi dir="ltr">050-918-0000</bdi></span></a><a class="btn" href="https://waze.com/ul?q=%D7%9E%D7%A8%D7%99%D7%A0%D7%94%20%D7%94%D7%A8%D7%A6%D7%9C%D7%99%D7%94&amp;navigate=yes" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-nav"/></svg><span class="en">Waze</span><span class="he">Waze</span></a></div>
+    <details class="watch"><summary><span class="play"><svg class="ico" aria-hidden="true"><use href="#i-play"/></svg></span><span class="w-txt"><b><span class="en">Watch what’s coming</span><span class="he">סרטון: מה מחכה לנו</span></b><small><bdi>שייט פנטזי - שייט אקסטרים מרינה הרצליה</bdi></small></span><svg class="ico chev" aria-hidden="true"><use href="#i-chev"/></svg></summary><div class="frame"><iframe data-src="https://www.youtube-nocookie.com/embed/QlnUICpPA-k?rel=0&amp;playsinline=1" title="שייט פנטזי - שייט אקסטרים מרינה הרצליה" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><p class="vcap"><bdi>שייט פנטזי - שייט אקסטרים מרינה הרצליה</bdi> · <a href="https://www.youtube.com/watch?v=QlnUICpPA-k" target="_blank" rel="noopener">YouTube</a> (<bdi>שייט פנטזי / Funtasea</bdi>)</p></details>
+  </div>
+</li>
+<li class="conn" aria-hidden="false"><span><svg class="ico" aria-hidden="true"><use href="#i-car"/></svg><span class="en">~14 min drive</span><span class="he">כ־14 דק׳ נסיעה</span></span></li>
+<li class="stop" id="pottery">
+  <div class="gallery" aria-label="Clay &amp;amp; Kef · Neve Zemer mall, Ra’anana"><span class="status ok"><i></i><span class="en">Booked</span><span class="he">הוזמן</span></span><div class="track"><figure class="slide"><button type="button" class="zoom" data-cap-en="every kid paints a piece" data-cap-he="כל ילד צובע כלי משלו" aria-label="A girl painting a ceramic piece at the Clay and Kef studio"><img src="images/thursday/03-clay-kef-painting.jpg" width="1600" height="1319" alt="A girl painting a ceramic piece at the Clay and Kef studio" loading="lazy" decoding="async" /></button></figure><figure class="slide"><button type="button" class="zoom" data-cap-en="brushes, paints &amp; imagination" data-cap-he="מכחולים, צבעים ודמיון" aria-label="Painting table at Clay and Kef with brushes, paints and ceramic pieces"><img src="images/thursday/03-clay-kef-table.jpg" width="1600" height="1323" alt="Painting table at Clay and Kef with brushes, paints and ceramic pieces" loading="lazy" decoding="async" /></button></figure><figure class="slide"><button type="button" class="zoom" data-cap-en="ready in 4–6 weeks!" data-cap-he="מוכן תוך 4–6 שבועות!" aria-label="Hand-painted ceramic mug and plate at Clay and Kef"><img src="images/thursday/03-clay-kef-pieces.jpg" width="735" height="810" alt="Hand-painted ceramic mug and plate at Clay and Kef" loading="lazy" decoding="async" /></button></figure></div><button type="button" class="nav-btn prev" aria-label="Previous"><svg class="ico" aria-hidden="true" style="transform:scaleX(-1)"><use href="#i-chev"/></svg></button><button type="button" class="nav-btn next" aria-label="Next"><svg class="ico" aria-hidden="true"><use href="#i-chev"/></svg></button><span class="count"><b class="c-i">1</b> / 3</span><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
+  <div class="stop-body">
+    <div class="stop-top"><h3><span class="en">Clay &amp; Kef · Neve Zemer mall, Ra’anana</span><span class="he">קליי אנד כיף · קניון נווה זמר, רעננה</span></h3><span class="time"><bdi dir="ltr">13:20–14:30</bdi></span></div>
+    <p class="tagline"><span class="en">Paint Your Own Pottery!</span><span class="he">צובעים קרמיקה משלנו!</span></p>
+    <p class="meta"><span><svg class="ico" aria-hidden="true"><use href="#i-users"/></svg><span class="en">All ages</span><span class="he">כל הגילאים</span></span><span><svg class="ico" aria-hidden="true"><use href="#i-seal"/></svg><span class="en">Kosher snacks</span><span class="he">כיבוד כשר</span></span><span><svg class="ico" aria-hidden="true"><use href="#i-park"/></svg><span class="en">Free parking 2 h</span><span class="he">חניה חינם לשעתיים</span></span></p>
+    <p class="desc"><span class="en">Each of us picks a real ceramic piece (a mug, a plate, a little animal) and paints it any way we like. Then the studio bakes it in a super-hot kiln, and in 4–6 weeks our masterpieces are ready to take home!</span><span class="he">כל אחד בוחר כלי קרמיקה אמיתי (כוס, צלחת או חיה קטנה) וצובע אותו איך שבא לו. אחר כך הסטודיו שורף אותו בתנור לוהט, ותוך 4–6 שבועות יצירות המופת שלנו מוכנות לאיסוף!</span></p>
+    <ul class="facts"><li><svg class="ico" aria-hidden="true"><use href="#i-users"/></svg><span><span class="en">Everyone paints, even the 3-year-old! Kosher snacks at the studio</span><span class="he">כולם צובעים, גם בן ה־3! הכיבוד בסטודיו כשר</span></span></li><li><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg><span><span class="en">Sasha Argov 23, floor 1 · mall parking free for 2 hours</span><span class="he">סשה ארגוב 23, קומה 1 · חניה בקניון חינם לשעתיים</span></span></li></ul>
+    <p class="mission"><span class="mnum"><svg class="ico" aria-hidden="true"><use href="#i-brush"/></svg></span><span><span class="en"><b>Mission 2:</b> finish your pottery masterpiece!</span><span class="he"><b>משימה 2:</b> לסיים את יצירת המופת מקרמיקה!</span></span></p>
+    <div class="actions"><a class="btn primary" href="tel:0584507746"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg><span class="en"><bdi dir="ltr">058-450-7746</bdi></span><span class="he"><bdi dir="ltr">058-450-7746</bdi></span></a><a class="btn" href="https://waze.com/ul?q=%D7%A1%D7%A9%D7%94%20%D7%90%D7%A8%D7%92%D7%95%D7%91%2023%20%D7%A8%D7%A2%D7%A0%D7%A0%D7%94&amp;navigate=yes" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-nav"/></svg><span class="en">Waze</span><span class="he">Waze</span></a></div>
+    <details class="watch"><summary><span class="play"><svg class="ico" aria-hidden="true"><use href="#i-play"/></svg></span><span class="w-txt"><b><span class="en">Watch what’s coming</span><span class="he">סרטון: מה מחכה לנו</span></b><small><bdi>Paint Your Own Pottery: start to finish!</bdi></small></span><svg class="ico chev" aria-hidden="true"><use href="#i-chev"/></svg></summary><div class="frame"><iframe data-src="https://www.youtube-nocookie.com/embed/1NgSMtAi7RY?rel=0&amp;playsinline=1" title="Paint Your Own Pottery: start to finish!" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><p class="vcap"><bdi>Paint Your Own Pottery: start to finish!</bdi> · <a href="https://www.youtube.com/watch?v=1NgSMtAi7RY" target="_blank" rel="noopener">YouTube</a> (<bdi>Bisque It Pottery Painting Studio</bdi>)</p></details>
+  </div>
+</li>
+<li class="conn" aria-hidden="false"><span><svg class="ico" aria-hidden="true"><use href="#i-car"/></svg><span class="en">~16 min drive</span><span class="he">כ־16 דק׳ נסיעה</span></span></li>
+<li class="stop" id="kart">
+  <div class="gallery" aria-label="Dan Karting Netanya"><span class="status warn"><i></i><span class="en">To book</span><span class="he">להזמין</span></span><div class="track"><figure class="slide"><button type="button" class="zoom" data-cap-en="start your engines!" data-cap-he="מנועים, להניע!" aria-label="Go-kart drivers in helmets on the Dan Karting track"><img src="images/thursday/04-dan-karting-netanya.jpg" width="1181" height="787" alt="Go-kart drivers in helmets on the Dan Karting track" loading="lazy" decoding="async" /></button></figure></div><span class="dots" aria-hidden="true"></span></div>
+  <div class="stop-body">
+    <div class="stop-top"><h3><span class="en">Dan Karting Netanya</span><span class="he">דן קארטינג נתניה</span></h3><span class="time"><bdi dir="ltr">14:55–15:50</bdi></span></div>
+    <p class="tagline"><span class="en">Race Day!</span><span class="he">יום מרוצים!</span></p>
+    <p class="meta"><span><svg class="ico" aria-hidden="true"><use href="#i-flag"/></svg><span class="en">8+ &amp; 1.30 m</span><span class="he">מגיל 8 ומ־1.30 מ׳</span></span><span><svg class="ico" aria-hidden="true"><use href="#i-users"/></svg><span class="en">Kids’ karts 4–8</span><span class="he">קארטים לילדים 4–8</span></span></p>
+    <p class="desc"><span class="en">Helmets on, engines roaring! Real go-karts for the racers, mini electric karts for the little drivers, plus bumper cars. Who takes the checkered flag?</span><span class="he">קסדות על הראש, המנועים שואגים! קארטינג אמיתי לנהגים, קארטים חשמליים קטנים לנהגים הצעירים, וגם מכוניות מתנגשות. מי יגיע ראשון לדגל המשובץ?</span></p>
+    <ul class="facts"><li><svg class="ico" aria-hidden="true"><use href="#i-users"/></svg><span><span class="en">8+ &amp; 1.30 m: go-karts · ages 4–8: kids’ karts · 3yo: rides the two-seat kart with a grown-up</span><span class="he">מגיל 8 ומגובה 1.30 מ׳: קארטינג · גילאי 4–8: קארטים לילדים · בן 3: נוסע בקארט זוגי עם מבוגר</span></span></li><li><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg><span><span class="en">HaMechkar 2, Netanya</span><span class="he">המחקר 2, נתניה</span></span></li></ul>
+    <p class="mission"><span class="mnum"><svg class="ico" aria-hidden="true"><use href="#i-flag"/></svg></span><span><span class="en"><b>Mission 3:</b> beat your lap time! Race once, then try to go even faster.</span><span class="he"><b>משימה 3:</b> לשבור את זמן ההקפה! נוסעים פעם אחת ואז מנסים עוד יותר מהר.</span></span></p>
+    <div class="actions"><a class="btn primary" href="tel:048501060"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg><span class="en"><bdi dir="ltr">04-850-1060</bdi></span><span class="he"><bdi dir="ltr">04-850-1060</bdi></span></a><a class="btn" href="https://wa.me/972539314994" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-chat"/></svg><span class="en">WhatsApp</span><span class="he">וואטסאפ</span></a><a class="btn" href="https://waze.com/ul?q=%D7%94%D7%9E%D7%97%D7%A7%D7%A8%202%20%D7%A0%D7%AA%D7%A0%D7%99%D7%94&amp;navigate=yes" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-nav"/></svg><span class="en">Waze</span><span class="he">Waze</span></a></div>
+    <details class="watch"><summary><span class="play"><svg class="ico" aria-hidden="true"><use href="#i-play"/></svg></span><span class="w-txt"><b><span class="en">Watch what’s coming</span><span class="he">סרטון: מה מחכה לנו</span></b><small><bdi>Dan karting Netanya, indoor karting</bdi></small></span><svg class="ico chev" aria-hidden="true"><use href="#i-chev"/></svg></summary><div class="frame"><iframe data-src="https://www.youtube-nocookie.com/embed/T5Ago5GAqZw?rel=0&amp;playsinline=1" title="Dan karting Netanya, indoor karting" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><p class="vcap"><bdi>Dan karting Netanya, indoor karting</bdi> · <a href="https://www.youtube.com/watch?v=T5Ago5GAqZw" target="_blank" rel="noopener">YouTube</a> (<bdi>Elena Vilensky ADVERTA</bdi>)</p></details>
+  </div>
+</li>
+<li class="conn" aria-hidden="false"><span><svg class="ico" aria-hidden="true"><use href="#i-car"/></svg><span class="en">~4 min drive</span><span class="he">כ־4 דק׳ נסיעה</span></span></li>
+<li class="stop" id="free">
+  <div class="gallery" aria-label="Free time · or Laser Tag Poleg (optional)"><span class="status opt"><i></i><span class="en">Optional</span><span class="he">אופציונלי</span></span><div class="track"><figure class="slide"><button type="button" class="zoom" data-cap-en="the neon maze" data-cap-he="מבוך הניאון" aria-label="Neon laser tag maze at Laser Tag Poleg"><img src="images/thursday/03-laser-tag-poleg-arena.jpg" width="1000" height="667" alt="Neon laser tag maze at Laser Tag Poleg" loading="lazy" decoding="async" /></button></figure><figure class="slide"><button type="button" class="zoom" aria-label="Laser tag player in a neon arena"><img src="images/thursday/03-laser-tag-poleg-player.jpg" width="900" height="900" alt="Laser tag player in a neon arena" loading="lazy" decoding="async" /></button></figure></div><button type="button" class="nav-btn prev" aria-label="Previous"><svg class="ico" aria-hidden="true" style="transform:scaleX(-1)"><use href="#i-chev"/></svg></button><button type="button" class="nav-btn next" aria-label="Next"><svg class="ico" aria-hidden="true"><use href="#i-chev"/></svg></button><span class="count"><b class="c-i">1</b> / 2</span><span class="dots" aria-hidden="true"><i></i><i></i></span></div>
+  <div class="stop-body">
+    <div class="stop-top"><h3><span class="en">Free time · or Laser Tag Poleg (optional)</span><span class="he">זמן חופשי · או לייזר טאג פולג (אופציונלי)</span></h3><span class="time"><bdi dir="ltr">16:00–16:50</bdi></span></div>
+    <p class="tagline"><span class="en">Laser Battle? Maybe!</span><span class="he">קרב לייזרים? אולי!</span></p>
+    <p class="meta"><span><svg class="ico" aria-hidden="true"><use href="#i-target"/></svg><span class="en">Big kids + 9 &amp; 7</span><span class="he">הגדולים + בני 9 ו־7</span></span><span><svg class="ico" aria-hidden="true"><use href="#i-hour"/></svg><span class="en">50 min</span><span class="he">50 דקות</span></span></p>
+    <p class="desc"><span class="en">A little free time to rest, snack and stretch. If we still have energy: vests on, lasers ready, and sneak through a glowing neon maze!</span><span class="he">קצת זמן חופשי לנוח, לאכול משהו ולהתמתח. ואם עוד יש כוח: לובשים אפודים, לייזרים מוכנים, ומתגנבים במבוך ניאון זוהר!</span></p>
+    <ul class="facts"><li><svg class="ico" aria-hidden="true"><use href="#i-users"/></svg><span><span class="en">If we go: big kids + 9 &amp; 7 play · 5 &amp; 3 get snacks and cheer</span><span class="he">אם הולכים: הגדולים + בני 9 ו־7 משחקים · בני 5 ו־3 מקבלים חטיף ומעודדים</span></span></li><li><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg><span><span class="en">HaBonim 4, Netanya</span><span class="he">הבונים 4, נתניה</span></span></li></ul>
+    
+    <div class="actions"><a class="btn primary" href="https://www.lasertag-poleg.co.il/book-double-game" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-cal"/></svg><span class="en">Book</span><span class="he">הזמנה</span></a><a class="btn" href="tel:*5082"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg><span class="en"><bdi dir="ltr">*5082</bdi></span><span class="he"><bdi dir="ltr">*5082</bdi></span></a><a class="btn" href="https://waze.com/ul?q=%D7%94%D7%91%D7%95%D7%A0%D7%99%D7%9D%204%20%D7%A0%D7%AA%D7%A0%D7%99%D7%94&amp;navigate=yes" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-nav"/></svg><span class="en">Waze</span><span class="he">Waze</span></a></div>
+    <details class="watch"><summary><span class="play"><svg class="ico" aria-hidden="true"><use href="#i-play"/></svg></span><span class="w-txt"><b><span class="en">Watch what’s coming</span><span class="he">סרטון: מה מחכה לנו</span></b><small><bdi>לייזר טאג פולג נתניה - לוחמה אורבנית</bdi></small></span><svg class="ico chev" aria-hidden="true"><use href="#i-chev"/></svg></summary><div class="frame"><iframe data-src="https://www.youtube-nocookie.com/embed/wDYbhHg13lc?rel=0&amp;playsinline=1" title="לייזר טאג פולג נתניה - לוחמה אורבנית" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><p class="vcap"><bdi>לייזר טאג פולג נתניה - לוחמה אורבנית</bdi> · <a href="https://www.youtube.com/watch?v=wDYbhHg13lc" target="_blank" rel="noopener">YouTube</a> (<bdi>לגדול</bdi>)</p></details>
+  </div>
+</li>
+<li class="conn" aria-hidden="false"><span><svg class="ico" aria-hidden="true"><use href="#i-car"/></svg><span class="en">~10 min drive</span><span class="he">כ־10 דק׳ נסיעה</span></span></li>
+<li class="stop" id="pizza">
+  <div class="gallery" aria-label="Pizza Hut Mehadrin · Kikar HaAtzmaut 3, Netanya"><span class="status warn"><i></i><span class="en">To book</span><span class="he">להזמין</span></span><div class="track"><figure class="slide"><button type="button" class="zoom" data-cap-en="our pizza place on the square" data-cap-he="הפיצריה שלנו בכיכר" aria-label="Pizza Hut Mehadrin storefront at Kikar HaAtzmaut 3, Netanya"><img src="images/thursday/06-pizza-hut-netanya.jpg" width="1200" height="1000" alt="Pizza Hut Mehadrin storefront at Kikar HaAtzmaut 3, Netanya" loading="lazy" decoding="async" /></button></figure><figure class="slide"><button type="button" class="zoom" data-cap-en="the big fountain" data-cap-he="המזרקה הגדולה" aria-label="The fountain on Kikar HaAtzmaut, Netanya"><img src="images/thursday/05-kikar-haatzmaut.jpg" width="750" height="1000" alt="The fountain on Kikar HaAtzmaut, Netanya" loading="lazy" decoding="async" /></button></figure></div><button type="button" class="nav-btn prev" aria-label="Previous"><svg class="ico" aria-hidden="true" style="transform:scaleX(-1)"><use href="#i-chev"/></svg></button><button type="button" class="nav-btn next" aria-label="Next"><svg class="ico" aria-hidden="true"><use href="#i-chev"/></svg></button><span class="count"><b class="c-i">1</b> / 2</span><span class="dots" aria-hidden="true"><i></i><i></i></span></div>
+  <div class="stop-body">
+    <div class="stop-top"><h3><span class="en">Pizza Hut Mehadrin · Kikar HaAtzmaut 3, Netanya</span><span class="he">פיצה האט מהדרין · כיכר העצמאות 3, נתניה</span></h3><span class="time"><bdi dir="ltr">17:00</bdi></span></div>
+    <p class="tagline"><span class="en">Pizza Party!</span><span class="he">מסיבת פיצה!</span></p>
+    <p class="meta"><span><svg class="ico" aria-hidden="true"><use href="#i-seal"/></svg><span class="en">Kosher Mehadrin</span><span class="he">כשר למהדרין</span></span><span><svg class="ico" aria-hidden="true"><use href="#i-food"/></svg><span class="en">Badatz Beit Yosef</span><span class="he">בד״ץ בית יוסף</span></span><span><svg class="ico" aria-hidden="true"><use href="#i-users"/></svg><span class="en">Everyone</span><span class="he">כולם</span></span></p>
+    <p class="desc"><span class="en">Race-winners’ feast! Hot pizza right on the big square by the sea, next to the fountain. Everyone picks their favorite topping.</span><span class="he">סעודת המנצחים! פיצה חמה ממש בכיכר הגדולה ליד הים, ליד המזרקה. כל אחד בוחר את התוספת האהובה עליו.</span></p>
+    <ul class="facts"><li><svg class="ico" aria-hidden="true"><use href="#i-seal"/></svg><span><span class="en">Everyone! Kosher Mehadrin · Badatz Beit Yosef</span><span class="he">כולם! כשר למהדרין · בד״ץ בית יוסף</span></span></li><li><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg><span><span class="en">Kikar HaAtzmaut 3, Netanya</span><span class="he">כיכר העצמאות 3, נתניה</span></span></li></ul>
+    
+    <div class="actions"><a class="btn primary" href="tel:1700506070"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg><span class="en"><bdi dir="ltr">1-700-50-60-70</bdi></span><span class="he"><bdi dir="ltr">1-700-50-60-70</bdi></span></a><a class="btn" href="https://waze.com/ul?q=%D7%9B%D7%99%D7%9B%D7%A8%20%D7%94%D7%A2%D7%A6%D7%9E%D7%90%D7%95%D7%AA%203%20%D7%A0%D7%AA%D7%A0%D7%99%D7%94&amp;navigate=yes" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-nav"/></svg><span class="en">Waze</span><span class="he">Waze</span></a></div>
+    <details class="watch"><summary><span class="play"><svg class="ico" aria-hidden="true"><use href="#i-play"/></svg></span><span class="w-txt"><b><span class="en">Watch what’s coming</span><span class="he">סרטון: מה מחכה לנו</span></b><small><bdi>Netanya  Promenade &amp; Independence Square 4K Israel 2021</bdi></small></span><svg class="ico chev" aria-hidden="true"><use href="#i-chev"/></svg></summary><div class="frame"><iframe data-src="https://www.youtube-nocookie.com/embed/dPRqvh2sKVM?rel=0&amp;playsinline=1" title="Netanya  Promenade &amp; Independence Square 4K Israel 2021" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><p class="vcap"><bdi>Netanya  Promenade &amp; Independence Square 4K Israel 2021</bdi> · <a href="https://www.youtube.com/watch?v=dPRqvh2sKVM" target="_blank" rel="noopener">YouTube</a> (<bdi>Discovering Israel</bdi>)</p></details>
+  </div>
+</li>
+<li class="conn" aria-hidden="false"><span><svg class="ico" aria-hidden="true"><use href="#i-walk"/></svg><span class="en">Short walk to the cliffs</span><span class="he">הליכה קצרה אל הצוקים</span></span></li>
+<li class="stop" id="sunset">
+  <div class="gallery" aria-label="Netanya cliffs"><span class="status free"><i></i><span class="en">Free</span><span class="he">חינם</span></span><div class="track"><figure class="slide"><button type="button" class="zoom" data-cap-en="the sun dives into the sea" data-cap-he="השמש צוללת לים" aria-label="The sun setting into the Mediterranean Sea at Netanya"><img src="images/thursday/07-netanya-sunset.jpg" width="1600" height="1200" alt="The sun setting into the Mediterranean Sea at Netanya" loading="lazy" decoding="async" /></button></figure><figure class="slide"><button type="button" class="zoom" data-cap-en="our cliff lookout" data-cap-he="התצפית שלנו על הצוק" aria-label="Netanya cliffs and promenade above the sea"><img src="images/thursday/05-netanya-promenade.jpg" width="750" height="1000" alt="Netanya cliffs and promenade above the sea" loading="lazy" decoding="async" /></button></figure></div><button type="button" class="nav-btn prev" aria-label="Previous"><svg class="ico" aria-hidden="true" style="transform:scaleX(-1)"><use href="#i-chev"/></svg></button><button type="button" class="nav-btn next" aria-label="Next"><svg class="ico" aria-hidden="true"><use href="#i-chev"/></svg></button><span class="count"><b class="c-i">1</b> / 2</span><span class="dots" aria-hidden="true"><i></i><i></i></span></div>
+  <div class="stop-body">
+    <div class="stop-top"><h3><span class="en">Netanya cliffs</span><span class="he">צוקי נתניה</span></h3><span class="time"><bdi dir="ltr">18:15</bdi></span></div>
+    <p class="tagline"><span class="en">Sunset &amp; Certificates!</span><span class="he">שקיעה ותעודות!</span></p>
+    <p class="meta"><span><svg class="ico" aria-hidden="true"><use href="#i-users"/></svg><span class="en">Everyone</span><span class="he">כולם</span></span><span><svg class="ico" aria-hidden="true"><use href="#i-gift"/></svg><span class="en">Free</span><span class="he">בחינם</span></span><span><svg class="ico" aria-hidden="true"><use href="#i-award"/></svg><span class="en">Certificates</span><span class="he">תעודות</span></span></p>
+    <p class="desc"><span class="en">A short walk from the square to the cliffs. We watch the sun dive into the sea, snap our family photo, and every adventurer gets a certificate!</span><span class="he">הליכה קצרה מהכיכר אל הצוקים. מסתכלים איך השמש צוללת לים, מצטלמים לתמונה משפחתית, וכל הרפתקן מקבל תעודה!</span></p>
+    <ul class="facts"><li><svg class="ico" aria-hidden="true"><use href="#i-users"/></svg><span><span class="en">Everyone · free!</span><span class="he">כולם · בחינם!</span></span></li></ul>
+    <p class="mission"><span class="mnum"><svg class="ico" aria-hidden="true"><use href="#i-sun"/></svg></span><span><span class="en"><b>Mission 4:</b> spot the exact moment the sun touches the sea!</span><span class="he"><b>משימה 4:</b> לזהות את הרגע המדויק שבו השמש נוגעת בים!</span></span></p>
+    
+    <details class="watch"><summary><span class="play"><svg class="ico" aria-hidden="true"><use href="#i-play"/></svg></span><span class="w-txt"><b><span class="en">Watch what’s coming</span><span class="he">סרטון: מה מחכה לנו</span></b><small><bdi>TimeLapse, Sunset Mediterranean Sea, Netanya Israel</bdi></small></span><svg class="ico chev" aria-hidden="true"><use href="#i-chev"/></svg></summary><div class="frame"><iframe data-src="https://www.youtube-nocookie.com/embed/7kF7232Lf0c?rel=0&amp;playsinline=1" title="TimeLapse, Sunset Mediterranean Sea, Netanya Israel" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><p class="vcap"><bdi>TimeLapse, Sunset Mediterranean Sea, Netanya Israel</bdi> · <a href="https://www.youtube.com/watch?v=7kF7232Lf0c" target="_blank" rel="noopener">YouTube</a> (<bdi>Relaxing WALKER</bdi>)</p></details>
+  </div>
+</li>
+<li class="conn" aria-hidden="false"><span><svg class="ico" aria-hidden="true"><use href="#i-car"/></svg><span class="en">~1h15 drive home</span><span class="he">כשעה ורבע נסיעה הביתה</span></span></li>
+<li class="endpoint" id="home">
+  <span class="ep-ico"><svg class="ico" aria-hidden="true"><use href="#i-home"/></svg></span>
+  <div class="ep-body">
+    <p class="ep-top"><time><bdi dir="ltr">~18:45</bdi></time> · <span class="en">Netanya</span><span class="he">נתניה</span></p>
+    <h3><span class="en">Drive home</span><span class="he">נוסעים הביתה</span></h3>
+    <p><span class="en">~18:45 drive home (about 1h15) · home around 20:00</span><span class="he">בסביבות <bdi dir="ltr">18:45</bdi> נוסעים הביתה (כשעה ורבע) · בבית בסביבות <bdi dir="ltr">20:00</bdi></span></p>
+  </div>
+</li>
+          </ol>
+          <p class="sec-note"><svg class="ico" aria-hidden="true"><use href="#i-info"/></svg><span class="en">Drive times between stops are rough estimates without traffic.</span><span class="he">זמני הנסיעה בין התחנות משוערים ולא כוללים פקקים.</span></p>
+        </section>
 
-    <ol class="day">
-      <li class="stop" id="go">
-        <span class="stamp"><bdi dir="ltr">10:45</bdi></span>
-        <p class="place"><span class="en">Givat Ze’ev</span><span class="he">גבעת זאב</span></p>
-        <h3><span class="en">Hit the Road!</span><span class="he">יוצאים לדרך!</span></h3>
-        <p class="road"><span class="en">Route: <b>443 → 1 → 20 (Ayalon) → 2 north</b> to Herzliya Marina. About 55 minutes, plus a buffer for holiday traffic.</span><span class="he">המסלול: <b>443 ← 1 ← 20 (איילון) ← 2 צפונה</b> עד מרינה הרצליה. כ־55 דקות, ועוד זמן רזרבה לפקקי חג.</span></p>
-        <p class="fun"><span class="en">Snacks packed, water bottles full, seatbelts on. First stop: the sea!</span><span class="he">חטיפים ארוזים, בקבוקי מים מלאים, חגורות חגורות. תחנה ראשונה: הים!</span></p>
-      </li>
+        <section class="section" aria-labelledby="pp-title">
+          <div class="card passport" id="passport">
+            <div class="pp-head">
+              <span class="pp-seal"><svg class="ico" aria-hidden="true"><use href="#i-award"/></svg></span>
+              <div><h2 id="pp-title"><span class="en">Mission passport</span><span class="he">דרכון המשימות</span></h2><p><span class="en">4 secret missions · 1 certificate</span><span class="he">4 משימות סודיות · תעודה אחת</span></p></div>
+              <div class="pp-count"><b><span id="pp-n">0</span>/4</b><span><span class="en">completed</span><span class="he">הושלמו</span></span></div>
+            </div>
+            <div class="pp-bar" aria-hidden="true"><i id="pp-bar"></i></div>
+            <p class="pp-intro"><span class="en">At every stop there’s a secret mission. Complete all four and earn your official Adventurer Certificate at sunset!</span><span class="he">בכל תחנה מחכה משימה סודית. מי שמשלים את כל הארבע מקבל תעודת הרפתקן רשמית בשקיעה!</span></p>
+            <ol class="badges">
+              <li><input type="checkbox" id="m1" data-m="1" /><label for="m1"><span class="bdg"><svg class="ico i" aria-hidden="true"><use href="#i-boat"/></svg><svg class="ico tick" aria-hidden="true"><use href="#i-check"/></svg></span><span class="b-n"><span class="en">Mission 1</span><span class="he">משימה 1</span></span><span class="b-t"><span class="en">Steer the boat</span><span class="he">לנווט את הסירה</span></span></label></li><li><input type="checkbox" id="m2" data-m="2" /><label for="m2"><span class="bdg"><svg class="ico i" aria-hidden="true"><use href="#i-brush"/></svg><svg class="ico tick" aria-hidden="true"><use href="#i-check"/></svg></span><span class="b-n"><span class="en">Mission 2</span><span class="he">משימה 2</span></span><span class="b-t"><span class="en">Finish your pottery masterpiece</span><span class="he">לסיים את יצירת הקרמיקה</span></span></label></li><li><input type="checkbox" id="m3" data-m="3" /><label for="m3"><span class="bdg"><svg class="ico i" aria-hidden="true"><use href="#i-flag"/></svg><svg class="ico tick" aria-hidden="true"><use href="#i-check"/></svg></span><span class="b-n"><span class="en">Mission 3</span><span class="he">משימה 3</span></span><span class="b-t"><span class="en">Beat your lap time</span><span class="he">לשבור את זמן ההקפה</span></span></label></li><li><input type="checkbox" id="m4" data-m="4" /><label for="m4"><span class="bdg"><svg class="ico i" aria-hidden="true"><use href="#i-sun"/></svg><svg class="ico tick" aria-hidden="true"><use href="#i-check"/></svg></span><span class="b-n"><span class="en">Mission 4</span><span class="he">משימה 4</span></span><span class="b-t"><span class="en">Spot the sunset</span><span class="he">לזהות את השקיעה</span></span></label></li>
+            </ol>
+            <p class="cert"><svg class="ico" aria-hidden="true"><use href="#i-seal"/></svg><span class="en">Certificates handed out at sunset on the cliffs</span><span class="he">חלוקת תעודות בשקיעה על הצוקים</span></p>
+          </div>
+        </section>
+      </div>
 
-      <li class="stop" id="boat">
-        <span class="stamp"><bdi dir="ltr">12:30</bdi></span>
-        <p class="place"><span class="en">Funtasea · Herzliya Marina</span><span class="he">שייט פנטזי (Funtasea) · מרינה הרצליה</span></p>
-        <h3><span class="en">Speedboat Blast!</span><span class="he">טיל על המים!</span></h3>
-        <p class="when"><bdi dir="ltr">12:30–12:50</bdi></p>
-        <div class="media">
-          <figure class="photo"><a href="images/thursday/02-funtasea-speedboat.jpg" class="zoom"><img src="images/thursday/02-funtasea-speedboat.jpg" width="1280" height="720" alt="Funtasea speedboat racing through the waves off Herzliya" decoding="async" /></a><figcaption><span class="en">zoom over the waves!</span><span class="he">זוּם על הגלים!</span></figcaption></figure>
-          <figure class="photo"><a href="images/thursday/02-tornado-speedboat.jpg" class="zoom"><img src="images/thursday/02-tornado-speedboat.jpg" width="1000" height="750" alt="Speedboat with passengers out at sea" loading="lazy" decoding="async" /></a><figcaption><span class="en">hold on tight!</span><span class="he">תחזיקו חזק!</span></figcaption></figure>
-          <figure class="photo"><a href="images/thursday/02-herzliya-marina.jpg" class="zoom"><img src="images/thursday/02-herzliya-marina.jpg" width="1000" height="750" alt="Boats in Herzliya Marina" loading="lazy" decoding="async" /></a><figcaption><span class="en">Herzliya Marina</span><span class="he">מרינה הרצליה</span></figcaption></figure>
-          <figure class="video"><div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/QlnUICpPA-k?rel=0&amp;playsinline=1" title="שייט פנטזי - שייט אקסטרים מרינה הרצליה" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><figcaption><span class="vlabel"><span class="en">▶ Watch what’s coming</span><span class="he">▶ סרטון: מה מחכה לנו</span></span> <bdi>שייט פנטזי - שייט אקסטרים מרינה הרצליה</bdi> · <a href="https://www.youtube.com/watch?v=QlnUICpPA-k" target="_blank" rel="noopener">YouTube</a> <span class="ch">(<bdi>שייט פנטזי / Funtasea</bdi>)</span></figcaption></figure>
-        </div>
-        <p class="mission"><span class="mstamp" aria-hidden="true">1</span><span><span class="en"><b>Mission 1:</b> steer the boat! Ask the captain for a turn at the wheel.</span><span class="he"><b>משימה 1:</b> לנווט את הסירה! מבקשים מהקפטן תור ליד ההגה.</span></span></p>
-        <p class="fun"><span class="en">Hold on tight! We zoom out to sea on a super-fast boat, bouncing over the waves for 20 wild minutes. Wheee!</span><span class="he">תחזיקו חזק! יוצאים לים בסירה סופר־מהירה וקופצים על הגלים 20 דקות מטורפות. יוהוו!</span></p>
-        <p class="who"><span class="en">Ages 5+ ride · the 3-year-old waves from the pier with ice cream</span><span class="he">מגיל 5 עולים לסירה · בן ה־3 מנופף מהרציף עם גלידה</span></p>
-        <p class="info"><a href="https://wa.me/972509180000"><span class="en">WhatsApp Funtasea</span><span class="he">וואטסאפ Funtasea</span></a> <bdi dir="ltr">050-918-0000</bdi> · <span class="en">stand opposite Golda &amp; McDonald’s</span><span class="he">הדוכן מול גולדה ומקדונלד׳ס</span> · <a href="https://waze.com/ul?q=%D7%9E%D7%A8%D7%99%D7%A0%D7%94%20%D7%94%D7%A8%D7%A6%D7%9C%D7%99%D7%94&amp;navigate=yes" target="_blank" rel="noopener">Waze</a></p>
-      </li>
+      <aside class="aside" aria-label="Timeline">
+        <nav class="card plan" aria-labelledby="plan-title">
+          <div class="plan-head"><h2 id="plan-title"><span class="en">The plan</span><span class="he">התוכנית</span></h2><span><span class="en">Thu 1.10</span><span class="he">יום ה׳ 1.10</span></span></div>
+          <div class="plan-sum"><span class="badge ok"><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span class="en">1 booked</span><span class="he">1 הוזמן</span></span><span class="badge warn"><span class="en">3 to book</span><span class="he">3 להזמין</span></span><span class="badge opt"><span class="en">1 optional</span><span class="he">1 אופציונלי</span></span></div>
+          <ol>
+            <li><a href="#go"><time><bdi dir="ltr">10:45</bdi></time><span><span class="en">We leave Givat Ze’ev</span><span class="he">יוצאים מגבעת זאב</span></span><svg class="ico chev" aria-hidden="true"><use href="#i-chev"/></svg></a></li><li><a href="#boat"><time><bdi dir="ltr">12:30</bdi></time><span><span class="en">Speedboat</span><span class="he">סירת מרוץ</span></span><svg class="ico chev" aria-hidden="true"><use href="#i-chev"/></svg></a></li><li><a href="#pottery"><time><bdi dir="ltr">13:20</bdi></time><span><span class="en">Paint our own pottery</span><span class="he">צובעים קרמיקה</span></span><svg class="ico chev" aria-hidden="true"><use href="#i-chev"/></svg></a></li><li><a href="#kart"><time><bdi dir="ltr">14:55</bdi></time><span><span class="en">Go-karts</span><span class="he">קארטינג</span></span><svg class="ico chev" aria-hidden="true"><use href="#i-chev"/></svg></a></li><li class=maybe><a href="#free"><time><bdi dir="ltr">16:00</bdi></time><span><span class="en">Free time / laser tag?</span><span class="he">זמן חופשי / לייזר טאג?</span></span><svg class="ico chev" aria-hidden="true"><use href="#i-chev"/></svg></a></li><li><a href="#pizza"><time><bdi dir="ltr">17:00</bdi></time><span><span class="en">Pizza dinner</span><span class="he">ארוחת פיצה</span></span><svg class="ico chev" aria-hidden="true"><use href="#i-chev"/></svg></a></li><li><a href="#sunset"><time><bdi dir="ltr">18:15</bdi></time><span><span class="en">Sunset on the cliffs</span><span class="he">שקיעה על הצוקים</span></span><svg class="ico chev" aria-hidden="true"><use href="#i-chev"/></svg></a></li><li><a href="#home"><time><bdi dir="ltr">~18:45</bdi></time><span><span class="en">Drive home</span><span class="he">נוסעים הביתה</span></span><svg class="ico chev" aria-hidden="true"><use href="#i-chev"/></svg></a></li>
+          </ol>
+          <a class="plan-foot" href="#passport"><svg class="ico" aria-hidden="true"><use href="#i-award"/></svg><span class="en">Mission passport</span><span class="he">דרכון המשימות</span><span class="pf-n"><span id="pf-n">0</span>/4</span></a>
+        </nav>
+      </aside>
+    </div>
 
-      <li class="stop" id="pottery">
-        <span class="stamp"><bdi dir="ltr">13:20</bdi></span>
-        <p class="place"><span class="en">Clay &amp; Kef · Neve Zemer mall, Ra’anana</span><span class="he">קליי אנד כיף · קניון נווה זמר, רעננה</span></p>
-        <h3><span class="en">Paint Your Own Pottery!</span><span class="he">צובעים קרמיקה משלנו!</span></h3>
-        <p class="when"><bdi dir="ltr">13:20–14:30</bdi><span class="tag ok"><span class="en">✓ Booked</span><span class="he">✓ הוזמן</span></span></p>
-        <div class="media">
-          <figure class="photo"><a href="images/thursday/03-clay-kef-painting.jpg" class="zoom"><img src="images/thursday/03-clay-kef-painting.jpg" width="1600" height="1319" alt="A girl painting a ceramic piece at the Clay and Kef studio" loading="lazy" decoding="async" /></a><figcaption><span class="en">every kid paints a piece</span><span class="he">כל ילד צובע כלי משלו</span></figcaption></figure>
-          <figure class="photo"><a href="images/thursday/03-clay-kef-table.jpg" class="zoom"><img src="images/thursday/03-clay-kef-table.jpg" width="1600" height="1323" alt="Painting table at Clay and Kef with brushes, paints and ceramic pieces" loading="lazy" decoding="async" /></a><figcaption><span class="en">brushes, paints &amp; imagination</span><span class="he">מכחולים, צבעים ודמיון</span></figcaption></figure>
-          <figure class="photo"><a href="images/thursday/03-clay-kef-pieces.jpg" class="zoom"><img src="images/thursday/03-clay-kef-pieces.jpg" width="735" height="810" alt="Hand-painted ceramic mug and plate at Clay and Kef" loading="lazy" decoding="async" /></a><figcaption><span class="en">ready in 4–6 weeks!</span><span class="he">מוכן תוך 4–6 שבועות!</span></figcaption></figure>
-          <figure class="video"><div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/1NgSMtAi7RY?rel=0&amp;playsinline=1" title="Paint Your Own Pottery: start to finish!" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><figcaption><span class="vlabel"><span class="en">▶ Watch what’s coming</span><span class="he">▶ סרטון: מה מחכה לנו</span></span> <bdi>Paint Your Own Pottery: start to finish!</bdi> · <a href="https://www.youtube.com/watch?v=1NgSMtAi7RY" target="_blank" rel="noopener">YouTube</a> <span class="ch">(<bdi>Bisque It Pottery Painting Studio</bdi>)</span></figcaption></figure>
-        </div>
-        <p class="mission"><span class="mstamp" aria-hidden="true">2</span><span><span class="en"><b>Mission 2:</b> finish your pottery masterpiece!</span><span class="he"><b>משימה 2:</b> לסיים את יצירת המופת מקרמיקה!</span></span></p>
-        <p class="fun"><span class="en">Each of us picks a real ceramic piece (a mug, a plate, a little animal) and paints it any way we like. Then the studio bakes it in a super-hot kiln, and in 4–6 weeks our masterpieces are ready to take home!</span><span class="he">כל אחד בוחר כלי קרמיקה אמיתי (כוס, צלחת או חיה קטנה) וצובע אותו איך שבא לו. אחר כך הסטודיו שורף אותו בתנור לוהט, ותוך 4–6 שבועות יצירות המופת שלנו מוכנות לאיסוף!</span></p>
-        <p class="who"><span class="en">Everyone paints, even the 3-year-old! Kosher snacks at the studio</span><span class="he">כולם צובעים, גם בן ה־3! הכיבוד בסטודיו כשר</span></p>
-        <p class="info"><a href="tel:0584507746"><bdi dir="ltr">058-450-7746</bdi></a> · <span class="en">Sasha Argov 23, floor 1 · mall parking free for 2 hours</span><span class="he">סשה ארגוב 23, קומה 1 · חניה בקניון חינם לשעתיים</span> · <a href="https://waze.com/ul?q=%D7%A1%D7%A9%D7%94%20%D7%90%D7%A8%D7%92%D7%95%D7%91%2023%20%D7%A8%D7%A2%D7%A0%D7%A0%D7%94&amp;navigate=yes" target="_blank" rel="noopener">Waze</a></p>
-      </li>
-
-      <li class="stop" id="kart">
-        <span class="stamp"><bdi dir="ltr">14:55</bdi></span>
-        <p class="place"><span class="en">Dan Karting Netanya</span><span class="he">דן קארטינג נתניה</span></p>
-        <h3><span class="en">Race Day!</span><span class="he">יום מרוצים!</span></h3>
-        <p class="when"><bdi dir="ltr">14:55–15:50</bdi></p>
-        <div class="media">
-          <figure class="photo"><a href="images/thursday/04-dan-karting-netanya.jpg" class="zoom"><img src="images/thursday/04-dan-karting-netanya.jpg" width="1181" height="787" alt="Go-kart drivers in helmets on the Dan Karting track" loading="lazy" decoding="async" /></a><figcaption><span class="en">start your engines!</span><span class="he">מנועים, להניע!</span></figcaption></figure>
-          <figure class="video"><div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/T5Ago5GAqZw?rel=0&amp;playsinline=1" title="Dan karting Netanya, indoor karting" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><figcaption><span class="vlabel"><span class="en">▶ Watch what’s coming</span><span class="he">▶ סרטון: מה מחכה לנו</span></span> <bdi>Dan karting Netanya, indoor karting</bdi> · <a href="https://www.youtube.com/watch?v=T5Ago5GAqZw" target="_blank" rel="noopener">YouTube</a> <span class="ch">(<bdi>Elena Vilensky ADVERTA</bdi>)</span></figcaption></figure>
-        </div>
-        <p class="mission"><span class="mstamp" aria-hidden="true">3</span><span><span class="en"><b>Mission 3:</b> beat your lap time! Race once, then try to go even faster.</span><span class="he"><b>משימה 3:</b> לשבור את זמן ההקפה! נוסעים פעם אחת ואז מנסים עוד יותר מהר.</span></span></p>
-        <p class="fun"><span class="en">Helmets on, engines roaring! Real go-karts for the racers, mini electric karts for the little drivers, plus bumper cars. Who takes the checkered flag?</span><span class="he">קסדות על הראש, המנועים שואגים! קארטינג אמיתי לנהגים, קארטים חשמליים קטנים לנהגים הצעירים, וגם מכוניות מתנגשות. מי יגיע ראשון לדגל המשובץ?</span></p>
-        <p class="who"><span class="en">8+ &amp; 1.30 m: go-karts · ages 4–8: kids’ karts · 3yo: rides the two-seat kart with a grown-up</span><span class="he">מגיל 8 ומגובה 1.30 מ׳: קארטינג · גילאי 4–8: קארטים לילדים · בן 3: נוסע בקארט זוגי עם מבוגר</span></p>
-        <p class="info"><a href="tel:048501060"><bdi dir="ltr">04-850-1060</bdi></a> · <a href="https://wa.me/972539314994"><span class="en">WhatsApp</span><span class="he">וואטסאפ</span></a> · <span class="en">HaMechkar 2</span><span class="he">המחקר 2</span> · <a href="https://waze.com/ul?q=%D7%94%D7%9E%D7%97%D7%A7%D7%A8%202%20%D7%A0%D7%AA%D7%A0%D7%99%D7%94&amp;navigate=yes" target="_blank" rel="noopener">Waze</a></p>
-      </li>
-
-      <li class="stop opt" id="free">
-        <span class="stamp"><bdi dir="ltr">16:00</bdi></span>
-        <p class="place"><span class="en">Free time · or Laser Tag Poleg (optional)</span><span class="he">זמן חופשי · או לייזר טאג פולג (אופציונלי)</span></p>
-        <h3><span class="en">Laser Battle? Maybe!</span><span class="he">קרב לייזרים? אולי!</span></h3>
-        <p class="when"><bdi dir="ltr">16:00–16:50</bdi></p>
-        <div class="media">
-          <figure class="photo"><a href="images/thursday/03-laser-tag-poleg-arena.jpg" class="zoom"><img src="images/thursday/03-laser-tag-poleg-arena.jpg" width="1000" height="667" alt="Neon laser tag maze at Laser Tag Poleg" loading="lazy" decoding="async" /></a><figcaption><span class="en">the neon maze</span><span class="he">מבוך הניאון</span></figcaption></figure>
-          <figure class="photo"><a href="images/thursday/03-laser-tag-poleg-player.jpg" class="zoom"><img src="images/thursday/03-laser-tag-poleg-player.jpg" width="900" height="900" alt="Laser tag player in a neon arena" loading="lazy" decoding="async" /></a></figure>
-          <figure class="video"><div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/wDYbhHg13lc?rel=0&amp;playsinline=1" title="לייזר טאג פולג נתניה - לוחמה אורבנית" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><figcaption><span class="vlabel"><span class="en">▶ Watch what’s coming</span><span class="he">▶ סרטון: מה מחכה לנו</span></span> <bdi>לייזר טאג פולג נתניה - לוחמה אורבנית</bdi> · <a href="https://www.youtube.com/watch?v=wDYbhHg13lc" target="_blank" rel="noopener">YouTube</a> <span class="ch">(<bdi>לגדול</bdi>)</span></figcaption></figure>
-        </div>
-        <p class="fun"><span class="en">A little free time to rest, snack and stretch. If we still have energy: vests on, lasers ready, and sneak through a glowing neon maze!</span><span class="he">קצת זמן חופשי לנוח, לאכול משהו ולהתמתח. ואם עוד יש כוח: לובשים אפודים, לייזרים מוכנים, ומתגנבים במבוך ניאון זוהר!</span></p>
-        <p class="who"><span class="en">If we go: big kids + 9 &amp; 7 play · 5 &amp; 3 get snacks and cheer</span><span class="he">אם הולכים: הגדולים + בני 9 ו־7 משחקים · בני 5 ו־3 מקבלים חטיף ומעודדים</span></p>
-        <p class="info"><a href="tel:*5082"><bdi dir="ltr">*5082</bdi></a> · <a href="https://www.lasertag-poleg.co.il/book-double-game"><span class="en">Book</span><span class="he">הזמנה</span></a> · <span class="en">HaBonim 4</span><span class="he">הבונים 4</span> · <a href="https://waze.com/ul?q=%D7%94%D7%91%D7%95%D7%A0%D7%99%D7%9D%204%20%D7%A0%D7%AA%D7%A0%D7%99%D7%94&amp;navigate=yes" target="_blank" rel="noopener">Waze</a></p>
-      </li>
-
-      <li class="stop" id="pizza">
-        <span class="stamp"><bdi dir="ltr">17:00</bdi></span>
-        <p class="place"><span class="en">Pizza Hut Mehadrin · Kikar HaAtzmaut 3, Netanya</span><span class="he">פיצה האט מהדרין · כיכר העצמאות 3, נתניה</span></p>
-        <h3><span class="en">Pizza Party!</span><span class="he">מסיבת פיצה!</span></h3>
-        <div class="media">
-          <figure class="photo"><a href="images/thursday/06-pizza-hut-netanya.jpg" class="zoom"><img src="images/thursday/06-pizza-hut-netanya.jpg" width="1200" height="1000" alt="Pizza Hut Mehadrin storefront at Kikar HaAtzmaut 3, Netanya" loading="lazy" decoding="async" /></a><figcaption><span class="en">our pizza place on the square</span><span class="he">הפיצריה שלנו בכיכר</span></figcaption></figure>
-          <figure class="photo"><a href="images/thursday/05-kikar-haatzmaut.jpg" class="zoom"><img src="images/thursday/05-kikar-haatzmaut.jpg" width="750" height="1000" alt="The fountain on Kikar HaAtzmaut, Netanya" loading="lazy" decoding="async" /></a><figcaption><span class="en">the big fountain</span><span class="he">המזרקה הגדולה</span></figcaption></figure>
-          <figure class="video"><div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/dPRqvh2sKVM?rel=0&amp;playsinline=1" title="Netanya  Promenade &amp; Independence Square 4K Israel 2021" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><figcaption><span class="vlabel"><span class="en">▶ Watch what’s coming</span><span class="he">▶ סרטון: מה מחכה לנו</span></span> <bdi>Netanya  Promenade &amp; Independence Square 4K Israel 2021</bdi> · <a href="https://www.youtube.com/watch?v=dPRqvh2sKVM" target="_blank" rel="noopener">YouTube</a> <span class="ch">(<bdi>Discovering Israel</bdi>)</span></figcaption></figure>
-        </div>
-        <p class="fun"><span class="en">Race-winners’ feast! Hot pizza right on the big square by the sea, next to the fountain. Everyone picks their favorite topping.</span><span class="he">סעודת המנצחים! פיצה חמה ממש בכיכר הגדולה ליד הים, ליד המזרקה. כל אחד בוחר את התוספת האהובה עליו.</span></p>
-        <p class="who"><span class="en">Everyone! Kosher Mehadrin · Badatz Beit Yosef</span><span class="he">כולם! כשר למהדרין · בד״ץ בית יוסף</span></p>
-        <p class="info"><a href="tel:1700506070"><bdi dir="ltr">1-700-50-60-70</bdi></a> · <a href="https://waze.com/ul?q=%D7%9B%D7%99%D7%9B%D7%A8%20%D7%94%D7%A2%D7%A6%D7%9E%D7%90%D7%95%D7%AA%203%20%D7%A0%D7%AA%D7%A0%D7%99%D7%94&amp;navigate=yes" target="_blank" rel="noopener">Waze</a></p>
-      </li>
-
-      <li class="stop" id="sunset">
-        <span class="stamp"><bdi dir="ltr">18:15</bdi></span>
-        <p class="place"><span class="en">Netanya cliffs</span><span class="he">צוקי נתניה</span></p>
-        <h3><span class="en">Sunset &amp; Certificates!</span><span class="he">שקיעה ותעודות!</span></h3>
-        <div class="media">
-          <figure class="photo"><a href="images/thursday/07-netanya-sunset.jpg" class="zoom"><img src="images/thursday/07-netanya-sunset.jpg" width="1600" height="1200" alt="The sun setting into the Mediterranean Sea at Netanya" loading="lazy" decoding="async" /></a><figcaption><span class="en">the sun dives into the sea</span><span class="he">השמש צוללת לים</span></figcaption></figure>
-          <figure class="photo"><a href="images/thursday/05-netanya-promenade.jpg" class="zoom"><img src="images/thursday/05-netanya-promenade.jpg" width="750" height="1000" alt="Netanya cliffs and promenade above the sea" loading="lazy" decoding="async" /></a><figcaption><span class="en">our cliff lookout</span><span class="he">התצפית שלנו על הצוק</span></figcaption></figure>
-          <figure class="video"><div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/7kF7232Lf0c?rel=0&amp;playsinline=1" title="TimeLapse, Sunset Mediterranean Sea, Netanya Israel" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><figcaption><span class="vlabel"><span class="en">▶ Watch what’s coming</span><span class="he">▶ סרטון: מה מחכה לנו</span></span> <bdi>TimeLapse, Sunset Mediterranean Sea, Netanya Israel</bdi> · <a href="https://www.youtube.com/watch?v=7kF7232Lf0c" target="_blank" rel="noopener">YouTube</a> <span class="ch">(<bdi>Relaxing WALKER</bdi>)</span></figcaption></figure>
-        </div>
-        <p class="mission"><span class="mstamp" aria-hidden="true">4</span><span><span class="en"><b>Mission 4:</b> spot the exact moment the sun touches the sea!</span><span class="he"><b>משימה 4:</b> לזהות את הרגע המדויק שבו השמש נוגעת בים!</span></span></p>
-        <p class="fun"><span class="en">A short walk from the square to the cliffs. We watch the sun dive into the sea, snap our family photo, and every adventurer gets a certificate!</span><span class="he">הליכה קצרה מהכיכר אל הצוקים. מסתכלים איך השמש צוללת לים, מצטלמים לתמונה משפחתית, וכל הרפתקן מקבל תעודה!</span></p>
-        <p class="who"><span class="en">Everyone · free!</span><span class="he">כולם · בחינם!</span></p>
-      </li>
-    </ol>
-
-    <p class="home" id="home"><span class="en">~18:45 drive home (about 1h15) · home around 20:00</span><span class="he">בסביבות <bdi dir="ltr">18:45</bdi> נוסעים הביתה (כשעה ורבע) · בבית בסביבות <bdi dir="ltr">20:00</bdi></span></p>
-
-    <p class="credits"><span class="en">Photos: Funtasea (frame from their YouTube video), Clay &amp; Kef, Dan Karting, Laser Tag Poleg and Pizza Hut Israel websites, the Tal Yam listing (speedboat), Wikimedia Commons (Dr. Avishai Teicher, Nissan Hadary, Deror Avi, James Emery; CC BY/BY-SA). Videos: YouTube, credited under each video.</span><span class="he">צילומים: שייט פנטזי (פריים מהסרטון שלהם ביוטיוב), אתרי קליי אנד כיף, דן קארטינג, לייזר טאג פולג ופיצה האט, דף טל ים (סירת המרוץ), ויקישיתוף (ד״ר אבישי טייכר, ניסן הדרי, דרור אבי, James Emery; CC BY/BY-SA). סרטונים: יוטיוב, הקרדיט מתחת לכל סרטון.</span></p>
-    <p class="credits sb"><span class="en">Bear illustration: original storybook art made for this page.</span><span class="he">איור הדובים: איור מקורי שנוצר לדף הזה.</span></p>
-
-    <div class="older">
+    <hr class="div" />
+    <section class="section older" id="ideas" aria-labelledby="ideas-title">
     <header>
-      <h1><span class="en">More family adventure ideas</span><span class="he">עוד רעיונות להרפתקאות משפחתיות</span></h1>
+      <h2 class="h" id="ideas-title"><span class="en">More family adventure ideas</span><span class="he">עוד רעיונות להרפתקאות משפחתיות</span></h2>
       <p class="sub"><span class="en">Ideas for other days. Each one can get its own playlist.</span><span class="he">רעיונות לימים אחרים. לכל אחד אפשר להכין פלייליסט משלו.</span></p>
     </header>
 
     <h2><span class="en">Big wow trips</span><span class="he">טיולי וואו גדולים</span></h2>
 
-    <article class="trip">
+    <div class="grid"><article class="trip">
       <h3><span class="en">Indoor skydiving</span><span class="he">צניחה חופשית בתוך מבנה</span></h3>
       <p class="meta"><span class="en">Fly in a wind tunnel · ages 4+ · little ones can watch</span><span class="he">טסים במנהרת רוח · מגיל 4 · הקטנים יכולים לצפות</span></p>
       <p><span class="en">Like flying without a plane — FlyBox in Rishon.</span><span class="he">כמו לעוף בלי מטוס — FlyBox בראשון לציון.</span></p>
@@ -393,11 +591,11 @@
         <strong><span class="en">Trip playlist</span><span class="he">פלייליסט לטיול</span></strong>
         <p class="empty"><span class="en">Songs coming — race / speed vibes</span><span class="he">שירים בקרוב — אווירת מרוץ ומהירות</span></p>
       </div>
-    </article>
+    </article></div>
 
     <h2><span class="en">VR &amp; game trips</span><span class="he">טיולי VR ומשחקים</span></h2>
 
-    <article class="trip">
+    <div class="grid"><article class="trip">
       <h3><span class="en">VR park</span><span class="he">פארק VR</span></h3>
       <p class="meta"><span class="en">Space Run or VRZONE · Rishon · great for teens</span><span class="he">Space Run או VRZONE · ראשון לציון · מעולה לנוער</span></p>
       <p><span class="en">Games, free roam, headsets — digital adventure day.</span><span class="he">משחקים, תנועה חופשית, משקפי VR — יום הרפתקה דיגיטלית.</span></p>
@@ -437,11 +635,11 @@
         <strong><span class="en">Trip playlist</span><span class="he">פלייליסט לטיול</span></strong>
         <p class="empty"><span class="en">Songs coming — upbeat bounce vibes</span><span class="he">שירים בקרוב — שירים קופצניים ושמחים</span></p>
       </div>
-    </article>
+    </article></div>
 
     <h2><span class="en">Adventure trips</span><span class="he">טיולי הרפתקה</span></h2>
 
-    <article class="trip">
+    <div class="grid"><article class="trip">
       <h3><span class="en">Camel ride + desert tent</span><span class="he">רכיבה על גמלים + אוהל מדברי</span></h3>
       <p class="meta"><span class="en">Genesis Land · ~25 min · ages ~5+ ride</span><span class="he">ארץ בראשית · כ־25 דק׳ · רוכבים מגיל 5 בערך</span></p>
       <p><span class="en">Desert adventure, pita, tent time — feels like a story.</span><span class="he">הרפתקה במדבר, פיתות, זמן באוהל — מרגיש כמו סיפור.</span></p>
@@ -480,7 +678,7 @@
         <strong><span class="en">Trip playlist</span><span class="he">פלייליסט לטיול</span></strong>
         <p class="empty"><span class="en">Songs coming — Jerusalem / explorer vibes</span><span class="he">שירים בקרוב — אווירת ירושלים וחוקרים</span></p>
       </div>
-    </article>
+    </article></div>
 
     <h2><span class="en">Adventure for the big kids (19+)</span><span class="he">הרפתקאות לגדולים (19+)</span></h2>
 
@@ -488,7 +686,7 @@
       <span class="en">Researched Mon 28 Sep 2026 (Chol HaMoed Sukkot). Green = the venue's own site says it's open today. Orange = call before driving (holiday hours, weather, and booking slots). Drive times from Jerusalem are rough and don't include holiday traffic.</span><span class="he">נבדק ביום שני, 28 בספטמבר 2026 (חול המועד סוכות). ירוק = האתר של המקום עצמו אומר שהוא פתוח היום. כתום = להתקשר לפני שנוסעים (שעות חג, מזג אוויר ושעות פנויות). זמני הנסיעה מירושלים משוערים ולא כוללים פקקי חג.</span>
     </div>
 
-    <article class="trip">
+    <div class="grid"><article class="trip">
       <h3><span class="en">Tandem skydive · SkyKef</span><span class="he">צניחה בטנדם · סקייכיף</span><span class="tag call"><span class="en">Call first</span><span class="he">להתקשר קודם</span></span></h3>
       <p class="meta"><span class="en">Sde Teiman (~10 min N of Be’er Sheva) · ~1h20 drive · ages 10+ · max 110 kg (extra charge over 90 kg / 1.90 m)</span><span class="he">שדה תימן (כ־10 דק׳ צפונית לבאר שבע) · כשעה ו־20 דק׳ נסיעה · מגיל 10 · עד 110 ק״ג (תוספת מעל 90 ק״ג / 1.90 מ׳)</span></p>
       <p><span class="en">Real jump from 10,000 or 12,000 ft with an instructor. Site prices: Tandem 10 ₪1,050, Tandem 12 ₪1,250, video+photos +₪250. Plan on ~3 hours there. Site lists Sun–Thu 9:00–19:00, but its FAQ says jumps happen “Fri, Sat &amp; holidays”, so call to confirm they jump today.</span><span class="he">קפיצה אמיתית מ־10,000 או 12,000 רגל עם מדריך. מחירים באתר: טנדם 10 ₪1,050, טנדם 12 ₪1,250, וידאו + תמונות ‎+₪250. כדאי לתכנן כ־3 שעות במקום. באתר רשום א׳–ה׳ <bdi dir="ltr">9:00–19:00</bdi>, אבל בשאלות הנפוצות כתוב שקופצים ״בשישי, שבת וחגים״, אז להתקשר ולוודא שקופצים היום.</span></p>
@@ -572,46 +770,127 @@
         <a href="tel:0543077732"><bdi dir="ltr">054-307-7732</bdi></a>
         <a href="https://paraglidingil.com/" target="_blank" rel="noopener"><span class="en">Website</span><span class="he">אתר</span></a>
       </div>
-    </article>
+    </article></div>
 
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <div class="foot-brand"><svg viewBox="0 0 64 64" aria-hidden="true"><use href="#logo"/></svg><span class="en">The Bear Family Trip</span><span class="he">טיול משפחת הדובים</span></div>
+      <p><span class="en">Live board for our family · We’ll add songs as you pick them · Same link, always updated</span><span class="he">הלוח החי של המשפחה שלנו · נוסיף שירים כשתבחרו · אותו קישור, תמיד מעודכן</span></p>
+      <p class="credits"><span class="en">Photos: Funtasea (frame from their YouTube video), Clay &amp; Kef, Dan Karting, Laser Tag Poleg and Pizza Hut Israel websites, the Tal Yam listing (speedboat), Wikimedia Commons (Dr. Avishai Teicher, Nissan Hadary, Deror Avi, James Emery; CC BY/BY-SA). Videos: YouTube, credited under each video.</span><span class="he">צילומים: שייט פנטזי (פריים מהסרטון שלהם ביוטיוב), אתרי קליי אנד כיף, דן קארטינג, לייזר טאג פולג ופיצה האט, דף טל ים (סירת המרוץ), ויקישיתוף (ד״ר אבישי טייכר, ניסן הדרי, דרור אבי, James Emery; CC BY/BY-SA). סרטונים: יוטיוב, הקרדיט מתחת לכל סרטון.</span></p>
+    <p class="credits"><span class="en">Bear illustration: original storybook art made for this page.</span><span class="he">איור הדובים: איור מקורי שנוצר לדף הזה.</span></p>
     </div>
+  </footer>
 
-    <footer>
-      <span class="en">Live board for our family · We’ll add songs as you pick them · Same link, always updated</span><span class="he">הלוח החי של המשפחה שלנו · נוסיף שירים כשתבחרו · אותו קישור, תמיד מעודכן</span>
-    </footer>
-  </div>
-  <dialog class="lb" id="lb" aria-label="Photo"><button type="button" aria-label="Close">×</button><img alt="" /></dialog>
-  <script>
-    (function(){
-      var titles={he:"ההרפתקה שלנו ביום חמישי · 1 באוקטובר",en:"Our Thursday Adventure · Oct 1"};
-      function set(l){
-        var h=document.documentElement; h.lang=l; h.dir=l==="he"?"rtl":"ltr"; document.title=titles[l];
-        document.querySelectorAll(".lang button").forEach(function(b){b.setAttribute("aria-pressed",b.dataset.set===l?"true":"false");});
-        try{localStorage.setItem("lang",l);}catch(e){}
-      }
-      document.querySelectorAll(".lang button").forEach(function(b){b.addEventListener("click",function(){set(b.dataset.set);});});
-      var q=(location.search.match(/lang=(he|en)/)||[])[1], s=null;
-      try{s=localStorage.getItem("lang");}catch(e){}
-      set(q||s||"he");
-      document.querySelectorAll(".sb img").forEach(function(i){
-        function hide(){var c=i.closest(".sb"); if(c) c.hidden=true;}
-        if(i.complete && i.naturalWidth===0) hide(); else i.addEventListener("error",hide);
-      });
-      /* tap photo -> full screen */
-      var lb=document.getElementById("lb"), li=lb.querySelector("img");
-      if(lb.showModal){
-        document.querySelectorAll("a.zoom").forEach(function(a){a.addEventListener("click",function(e){
-          e.preventDefault(); li.src=a.getAttribute("href"); li.alt=(a.querySelector("img")||{}).alt||""; lb.showModal();
-        });});
-        lb.addEventListener("click",function(){lb.close();});
-      }
-      /* mission passport ticks, remembered on this phone */
-      document.querySelectorAll(".passport input").forEach(function(c){
-        var k="mission"+c.dataset.m;
-        try{c.checked=localStorage.getItem(k)==="1";}catch(e){}
-        c.addEventListener("change",function(){try{localStorage.setItem(k,c.checked?"1":"0");}catch(e){}});
-      });
-    })();
-  </script>
+  <nav class="tabbar" aria-label="Sections">
+    <ul>
+      <li><a href="#top" data-tab="top"><svg class="ico" aria-hidden="true"><use href="#i-compass"/></svg><span class="en">Trip</span><span class="he">הטיול</span></a></li>
+      <li><a href="#itinerary" data-tab="itinerary"><svg class="ico" aria-hidden="true"><use href="#i-route"/></svg><span class="en">Itinerary</span><span class="he">מסלול</span></a></li>
+      <li><a href="#passport" data-tab="passport"><svg class="ico" aria-hidden="true"><use href="#i-award"/></svg><span class="en">Missions</span><span class="he">משימות</span></a></li>
+      <li><a href="#ideas" data-tab="ideas"><svg class="ico" aria-hidden="true"><use href="#i-grid"/></svg><span class="en">Ideas</span><span class="he">רעיונות</span></a></li>
+    </ul>
+  </nav>
+
+  <dialog class="lb" id="lb" aria-label="Photos">
+    <div class="lb-bar"><button type="button" class="lb-close" aria-label="Close"><svg class="ico" aria-hidden="true"><use href="#i-x"/></svg></button><span class="lb-count" id="lb-count"></span><span style="width:40px"></span></div>
+    <div class="track" id="lb-track"></div>
+  </dialog>
+<script>
+(function(){
+  var titles={he:"טיול משפחת הדובים · יום חמישי 1.10",en:"The Bear Family Trip · Thursday 1.10"};
+  var lang="he";
+  function set(l){
+    lang=l; var h=document.documentElement; h.lang=l; h.dir=l==="he"?"rtl":"ltr"; document.title=titles[l];
+    document.querySelectorAll(".lang button").forEach(function(b){b.setAttribute("aria-pressed",b.dataset.set===l?"true":"false");});
+    try{localStorage.setItem("lang",l);}catch(e){}
+    document.querySelectorAll(".gallery .track").forEach(function(t){t.scrollLeft=0;});
+    document.querySelectorAll(".gallery").forEach(update);
+  }
+  document.querySelectorAll(".lang button").forEach(function(b){b.addEventListener("click",function(){set(b.dataset.set);});});
+
+  /* storybook art fallback */
+  document.querySelectorAll(".sb img").forEach(function(i){
+    function hide(){var c=i.closest(".sb"); if(c) c.remove(); document.querySelectorAll(".gallery").forEach(update);}
+    if(i.complete && i.naturalWidth===0) hide(); else i.addEventListener("error",hide);
+  });
+
+  /* galleries: counter, dots, arrows */
+  function idx(track){var w=track.clientWidth||1; return Math.round(Math.abs(track.scrollLeft)/w);}
+  function update(g){
+    var t=g.querySelector(".track"), n=t.children.length, i=Math.min(idx(t),n-1);
+    var c=g.querySelector(".c-i"); if(c) c.textContent=i+1;
+    g.querySelectorAll(".dots i").forEach(function(d,k){d.classList.toggle("on",k===i);});
+    var p=g.querySelector(".nav-btn.prev"), nx=g.querySelector(".nav-btn.next");
+    if(p) p.disabled=i<=0; if(nx) nx.disabled=i>=n-1;
+  }
+  function go(t,i){var s=t.children[i]; if(s) t.scrollTo({left:s.offsetLeft-t.children[0].offsetLeft+(document.documentElement.dir==="rtl"?0:0),behavior:"smooth"});}
+  document.querySelectorAll(".gallery").forEach(function(g){
+    var t=g.querySelector(".track"), raf;
+    t.addEventListener("scroll",function(){cancelAnimationFrame(raf);raf=requestAnimationFrame(function(){update(g);});},{passive:true});
+    g.querySelectorAll(".nav-btn").forEach(function(b){b.addEventListener("click",function(){
+      var i=idx(t)+(b.classList.contains("next")?1:-1); var s=t.children[i]; if(s) s.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"});
+    });});
+    update(g);
+  });
+
+  /* lightbox */
+  var lb=document.getElementById("lb"), lt=document.getElementById("lb-track"), lc=document.getElementById("lb-count");
+  function lbCount(){var n=lt.children.length; lc.textContent=(Math.min(idx(lt),n-1)+1)+" / "+n;}
+  lt.addEventListener("scroll",function(){requestAnimationFrame(lbCount);},{passive:true});
+  function openLb(g,start){
+    if(!lb.showModal) return;
+    lt.innerHTML="";
+    g.querySelectorAll(".zoom").forEach(function(b){
+      var im=b.querySelector("img"), f=document.createElement("figure"); f.className="slide";
+      var i2=document.createElement("img"); i2.src=im.currentSrc||im.src; i2.alt=im.alt; f.appendChild(i2);
+      var cap=b.getAttribute("data-cap-"+lang); if(cap){var p=document.createElement("p"); p.innerHTML=cap; f.appendChild(p);}
+      lt.appendChild(f);
+    });
+    lb.showModal();
+    var s=lt.children[start]; if(s) s.scrollIntoView({block:"nearest",inline:"start"});
+    lbCount();
+  }
+  document.querySelectorAll(".gallery").forEach(function(g){
+    g.querySelectorAll(".zoom").forEach(function(b,k){b.addEventListener("click",function(){openLb(g,k);});});
+    var sa=g.querySelector(".show-all"); if(sa) sa.addEventListener("click",function(){openLb(g,0);});
+  });
+  lb.querySelector(".lb-close").addEventListener("click",function(){lb.close();});
+  lb.addEventListener("click",function(e){if(e.target.tagName!=="IMG" && !e.target.closest(".lb-bar")) lb.close();});
+
+  /* videos load only when opened */
+  document.querySelectorAll("details.watch").forEach(function(d){
+    d.addEventListener("toggle",function(){var f=d.querySelector("iframe"); if(d.open && f && !f.src) f.src=f.dataset.src;});
+  });
+
+  /* mission passport, remembered on this phone */
+  var boxes=document.querySelectorAll(".badges input");
+  function prog(){var n=0; boxes.forEach(function(c){if(c.checked)n++;}); document.getElementById("pp-n").textContent=n; var pf=document.getElementById("pf-n"); if(pf) pf.textContent=n; document.getElementById("pp-bar").style.width=(n/boxes.length*100)+"%";}
+  boxes.forEach(function(c){
+    var k="mission"+c.dataset.m;
+    try{c.checked=localStorage.getItem(k)==="1";}catch(e){}
+    c.addEventListener("change",function(){try{localStorage.setItem(k,c.checked?"1":"0");}catch(e){} prog();});
+  });
+  prog();
+
+  /* app bar + active tab */
+  var bar=document.getElementById("appbar");
+  function onScroll(){bar.classList.toggle("scrolled",window.scrollY>8);}
+  window.addEventListener("scroll",onScroll,{passive:true}); onScroll();
+  var secs=["ideas","passport","itinerary"].map(function(id){return document.getElementById(id);});
+  function active(){
+    var y=window.innerHeight*0.35, cur="top";
+    for(var i=0;i<secs.length;i++){ if(secs[i] && secs[i].getBoundingClientRect().top<y){cur=secs[i].id;break;} }
+    document.querySelectorAll("[data-tab]").forEach(function(a){a.classList.toggle("active",a.dataset.tab===cur); if(a.dataset.tab===cur) a.setAttribute("aria-current","true"); else a.removeAttribute("aria-current");});
+  }
+  window.addEventListener("scroll",function(){requestAnimationFrame(active);},{passive:true}); active();
+
+  var q=(location.search.match(/lang=(he|en)/)||[])[1], s=null;
+  try{s=localStorage.getItem("lang");}catch(e){}
+  set(q||s||"he");
+})();
+
+</script>
 </body>
 </html>
