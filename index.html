@@ -341,30 +341,108 @@ dialog.lb::backdrop{background:#000}
 .songs-grid{display:grid;gap:12px}.song-card{display:flex;flex-direction:column;gap:7px;padding:16px;border:1px solid var(--line);border-radius:var(--r-lg);background:#fff;box-shadow:var(--sh-1)}.song-card h3{font:600 18px/1.25 var(--display);color:var(--acc,var(--ink))}.song-card .song-time{font-size:13px;color:var(--muted);font-weight:600;direction:ltr}.song-card p{font-size:14px;color:var(--ink-2);line-height:1.5}.song-card audio{width:100%;height:36px}.song-card a{font-size:13px;font-weight:700;color:var(--acc,var(--brand))}
 @media (min-width:600px){.nextbar{left:auto;right:20px}.songs-grid{grid-template-columns:1fr 1fr}}@media (min-width:960px){.nextbar{bottom:20px;right:28px;left:auto}.route-map iframe{height:300px}}@media (max-width:599px){.song-slot audio{margin-inline-start:0;flex-basis:100%}.song-slot{flex-wrap:wrap}.song-slot .song-copy{flex:1}.endpoint-actions .btn{flex:1 1 0}.nextbar{font-size:13px}}
 
-<<<<<<< HEAD
-=======
-/* ---------- v7 songs: lyrics, style, copy + Suno ---------- */
-.songs-grid{grid-template-columns:1fr!important;max-width:760px}
-.song-card{gap:10px;border-top:4px solid var(--acc,var(--brand))}
+/* ---------- v8 songs: Bernshtein Radio ---------- */
+.radio .radio-head{position:relative;overflow:hidden;margin-bottom:16px;padding:18px 18px 16px;border-radius:24px;color:#fff;
+  background:radial-gradient(circle at 12% 0%,rgba(255,255,255,.22) 0 60px,transparent 61px),linear-gradient(125deg,#6B4FD8 0%,#C445C9 38%,#FF5A6E 68%,#FFB13D 100%);box-shadow:0 16px 32px -18px rgba(107,79,216,.9)}
+.radio .radio-head::after{content:"♪ ♫ ♪";position:absolute;inset-inline-end:14px;bottom:8px;font-size:34px;opacity:.16;letter-spacing:6px;pointer-events:none}
+.radio-top{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.onair{display:inline-flex;align-items:center;gap:7px;padding:5px 11px;border-radius:999px;background:rgba(0,0,0,.22);font:700 12px/1 var(--display);letter-spacing:.08em;text-transform:uppercase}
+html[lang=he] .onair{letter-spacing:0;font-size:13px}
+.onair i{width:9px;height:9px;border-radius:50%;background:#FF2D2D;box-shadow:0 0 0 3px rgba(255,45,45,.3)}
+.radio-ant{font-size:40px;line-height:1;filter:drop-shadow(0 4px 6px rgba(0,0,0,.2))}
+.radio .radio-head h2{margin:8px 0 4px;color:#fff;font:700 32px/1.1 var(--display);text-shadow:0 2px 0 rgba(0,0,0,.12)}
+.radio-sub{margin:0;font:500 15px/1.45 var(--display);color:rgba(255,255,255,.95);max-width:560px}
+.radio-ctrl{margin-top:14px;display:flex;gap:8px}
+.play-all{display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:0 20px 0 8px;border:0;border-radius:999px;background:#fff;color:#6B4FD8;font:700 17px/1 var(--display);cursor:pointer;box-shadow:0 6px 0 rgba(0,0,0,.14);transition:transform .12s}
+html[dir=rtl] .play-all{padding:0 8px 0 20px}
+.play-all:active{transform:translateY(3px);box-shadow:0 3px 0 rgba(0,0,0,.14)}
+.pa-ico{display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#FF5A6E,#FFB13D);color:#fff;font-size:15px}
+.play-all.on{background:#FFF3B0}
+.radio-now{display:flex;align-items:center;gap:8px;margin-top:12px;padding:8px 8px 8px 12px;border-radius:16px;background:rgba(255,255,255,.18);font:600 14px/1.35 var(--display)}
+.radio-now:empty{display:none}
+.rn-txt{flex:1;min-width:0}
+.rn-play{flex:none;display:grid;place-items:center;width:40px;height:40px;border:0;border-radius:50%;background:#fff;color:#C445C9;cursor:pointer}
+.rn-play svg{width:20px;height:20px}
+.np{display:flex;align-items:center;gap:10px;margin-top:10px;font:600 14px/1.3 var(--display)}
+.np[hidden]{display:none}
+.np .eq i{background:#fff}
+.songs-grid{grid-template-columns:1fr!important;gap:16px!important;align-items:start}
+@media (min-width:960px){.songs-grid{grid-template-columns:1fr 1fr!important}}
+.song-card{position:relative;gap:12px!important;padding:16px!important;border:2px solid color-mix(in srgb,var(--acc) 28%,#fff)!important;border-radius:24px!important;
+  background:linear-gradient(165deg,color-mix(in srgb,var(--acc) 15%,#fff) 0%,#fff 58%)!important;box-shadow:0 10px 22px -16px color-mix(in srgb,var(--acc) 80%,transparent)!important;transition:transform .2s,box-shadow .2s}
+.song-card.playing{box-shadow:0 0 0 3px color-mix(in srgb,var(--acc) 45%,transparent),0 16px 28px -16px var(--acc)!important}
+.now-badge{display:none;position:absolute;top:-11px;inset-inline-end:14px;padding:4px 10px;border-radius:999px;background:#FFC23D;color:#4A2A00;font:700 12.5px/1.2 var(--display);box-shadow:0 3px 8px rgba(0,0,0,.15)}
+.song-card.is-now .now-badge{display:block}
+.song-card.is-now{border-color:#FFC23D!important}
+.sc-top{display:flex;align-items:center;gap:14px}
+.sc-info{min-width:0;flex:1;display:flex;flex-direction:column;gap:6px}
+.vinyl{flex:none;position:relative;width:86px;height:86px;border-radius:50%;display:grid;place-items:center;
+  background:repeating-radial-gradient(circle at 50% 50%,#1c1c22 0 2px,#2c2c35 2px 3.5px);box-shadow:0 8px 16px -8px rgba(0,0,0,.6),inset 0 0 0 3px #111}
+.vinyl::before{content:"";position:absolute;inset:0;border-radius:50%;background:conic-gradient(from 20deg,transparent 0 30deg,rgba(255,255,255,.22) 50deg,transparent 75deg 200deg,rgba(255,255,255,.14) 225deg,transparent 250deg)}
+.vinyl-label{position:relative;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:var(--acc);font-size:19px;line-height:1;letter-spacing:-4px;box-shadow:0 0 0 3px rgba(255,255,255,.25)}
+.vinyl-label::after{content:"";position:absolute;width:6px;height:6px;border-radius:50%;background:#1c1c22;top:50%;left:50%;transform:translate(-50%,-50%);opacity:.0}
 .song-meta{display:flex;align-items:center;gap:8px}
-.song-num{flex:none;display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--acc,var(--brand));color:#fff;font:700 14px/1 var(--display,var(--font))}
-.song-card .song-time{direction:inherit}
-.song-card h3{margin:0;display:flex;flex-direction:column;gap:2px}.song-card h3 .he-title{font:700 21px/1.3 "Heebo",var(--font);color:var(--acc,var(--ink))}.song-card h3 small{font:500 13px/1.3 "Inter",var(--font);color:var(--muted);text-align:start}
-.song-actions{display:flex;flex-wrap:wrap;gap:6px;width:100%}
-.song-btn{display:inline-flex;align-items:center;justify-content:center;gap:5px;min-height:38px;padding:0 12px;border:1px solid color-mix(in srgb,var(--acc,#222) 40%,#fff);border-radius:999px;background:#fff;color:var(--acc,var(--ink))!important;font:600 13px/1 var(--font);text-decoration:none;cursor:pointer;flex:1 1 auto;white-space:nowrap}
-.song-btn:hover{background:color-mix(in srgb,var(--acc,#222) 8%,#fff)}.song-btn.ok{background:var(--ok-bg);border-color:var(--ok);color:var(--ok)!important}
-.song-btn.suno{background:var(--acc,var(--brand));border-color:var(--acc,var(--brand));color:#fff!important}
-.song-card details{border:1px solid var(--line);border-radius:var(--r-md);background:var(--bg-2)}
-.song-card summary{cursor:pointer;padding:10px 12px;font:600 14px/1.2 var(--font);color:var(--ink);list-style:none}.song-card summary::-webkit-details-marker{display:none}
-.song-card summary::after{content:"＋";float:inline-end;color:var(--muted)}.song-card details[open] summary::after{content:"－"}
-.song-style p{margin:0;padding:0 12px 12px;font:400 13px/1.55 "Inter",var(--font);color:var(--ink-2);text-align:left}
-.lyrics{display:flex;flex-direction:column;padding:4px 14px 14px;font:500 16px/1.7 "Heebo",var(--font);color:var(--ink);text-align:right}
-.lyrics .lyr-line{display:block;text-align:start}.lyrics .lyr-gap{display:block;height:8px}
-.lyrics .lyr-tag{align-self:flex-start;margin:6px 0 2px;padding:2px 9px;border-radius:999px;background:color-mix(in srgb,var(--acc,#222) 14%,#fff);color:var(--acc,var(--ink));font:700 12px/1.6 "Inter","Heebo",sans-serif}
-.song-slot{flex-wrap:wrap}.song-slot .song-copy{flex:1}.song-slot .song-actions{margin-top:4px}.song-slot .song-btn{min-height:34px;font-size:12.5px;padding:0 10px}
+.song-num{flex:none;display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--acc);color:#fff;font:700 14px/1 var(--display)}
+.song-card .song-time{direction:inherit;font-size:13px;color:var(--muted);font-weight:600}
+.song-card h3{margin:0;display:flex;flex-direction:column;gap:2px}
+.song-card h3 .he-title{font:800 22px/1.25 "Heebo",var(--font);color:var(--acc)}
+.song-card h3 small{font:600 13px/1.3 var(--display);color:var(--muted);text-align:start}
+.song-card p.teaser{position:relative;margin:0;padding:10px 13px;border-radius:16px;background:#fff;border:2px dashed color-mix(in srgb,var(--acc) 40%,#fff);font:600 15px/1.4 var(--display);color:var(--ink)}
+.player{display:flex;align-items:center;gap:12px;padding:10px;border-radius:20px;background:#fff;box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--acc) 18%,#fff)}
+.pbtn{flex:none;display:grid;place-items:center;width:64px;height:64px;border:0;border-radius:50%;background:var(--acc);color:#fff;cursor:pointer;
+  box-shadow:0 5px 0 color-mix(in srgb,var(--acc) 70%,#000),0 10px 18px -8px var(--acc);transition:transform .1s,box-shadow .1s}
+.pbtn svg{width:30px;height:30px}
+.pbtn:active{transform:translateY(3px);box-shadow:0 2px 0 color-mix(in srgb,var(--acc) 70%,#000)}
+.pbtn:focus-visible,.play-all:focus-visible,.rn-play:focus-visible{outline:3px solid #FFC23D;outline-offset:3px}
+.pbtn.sm{width:46px;height:46px;box-shadow:0 3px 0 color-mix(in srgb,var(--acc) 70%,#000)}
+.pbtn.sm svg{width:22px;height:22px}
+.pmain{flex:1;min-width:0;display:flex;flex-direction:column;gap:6px}
+.prow{display:flex;align-items:center;gap:8px}
+.pstate{font:600 13px/1.2 var(--display);color:var(--acc)}
+.player .pstate{direction:rtl}html[lang=en] .player .pstate{direction:ltr}
+.eq{display:inline-flex;align-items:flex-end;gap:3px;height:18px;flex:none}
+.eq i{display:block;width:4px;height:25%;border-radius:2px;background:var(--acc);opacity:.45}
+.playing .eq i,.np.playing .eq i{opacity:1;height:70%}
+.playing .eq i:nth-child(2),.np.playing .eq i:nth-child(2){height:100%}.playing .eq i:nth-child(4),.np.playing .eq i:nth-child(4){height:45%}
+.prog{-webkit-appearance:none;appearance:none;width:100%;height:12px;margin:0;border-radius:999px;cursor:pointer;
+  background:linear-gradient(90deg,var(--acc) 0 var(--p,0%),color-mix(in srgb,var(--acc) 16%,#fff) var(--p,0%) 100%)}
+.prog::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:#fff;border:4px solid var(--acc);box-shadow:0 2px 5px rgba(0,0,0,.25)}
+.prog::-moz-range-thumb{width:16px;height:16px;border-radius:50%;background:#fff;border:4px solid var(--acc)}
+.ptime{display:flex;justify-content:space-between;font:600 12px/1 var(--display);color:var(--muted);font-variant-numeric:tabular-nums}
+.song-card p.cheer{margin:0;font:700 15px/1.3 var(--display);text-align:center}.song-card p.cheer:empty{display:none}
+.cheer.yay{color:var(--acc)}.cheer.err{color:var(--warn)}
+.song-card details{border:0;border-radius:18px;background:color-mix(in srgb,var(--acc) 7%,#fff)}
+.song-card summary{cursor:pointer;padding:12px 14px;font:700 15px/1.2 var(--display);color:var(--acc);list-style:none;border-radius:18px}
+.song-card summary::-webkit-details-marker{display:none}
+.song-card summary::after{content:"👇";float:inline-end}.song-card details[open] summary::after{content:"👆"}
+.lyrics{display:flex;flex-direction:column;gap:10px;padding:2px 14px 16px;font:500 17px/1.7 "Heebo",var(--font);color:var(--ink);text-align:right}
+.lyr-block{display:flex;flex-direction:column}
+.lyr-block.chorus{padding:8px 12px;border-radius:14px;background:#fff;border-inline-start:4px solid var(--acc);font-weight:700}
+.lyr-line{display:block;text-align:start}
+.lyr-tag{align-self:flex-start;margin:0 0 4px;padding:3px 11px;border-radius:999px;background:var(--acc);color:#fff;font:700 13px/1.6 var(--display)}
+.song-slot{flex-wrap:nowrap!important;align-items:center}.song-slot .song-copy{flex:1;min-width:0}
+.song-slot .song-icon{font-size:24px}
 .song-slot small a{color:var(--acc,var(--ink));font-weight:700;text-decoration:none}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes eqb{0%,100%{height:20%}50%{height:100%}}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
+@keyframes cheer{0%{transform:scale(1)}30%{transform:scale(1.035) rotate(-1deg)}60%{transform:scale(.99) rotate(1deg)}100%{transform:scale(1)}}
+@keyframes wob{0%,100%{transform:rotate(-6deg)}50%{transform:rotate(6deg)}}
+@media (prefers-reduced-motion:no-preference){
+  .song-card.playing .vinyl{animation:spin 2.2s linear infinite}
+  .song-card.paused .vinyl{animation:spin 2.2s linear infinite;animation-play-state:paused}
+  .playing .eq i,.np.playing .eq i{animation:eqb .9s ease-in-out infinite}
+  .playing .eq i:nth-child(2),.np.playing .eq i:nth-child(2){animation-duration:.7s;animation-delay:-.2s}
+  .playing .eq i:nth-child(3),.np.playing .eq i:nth-child(3){animation-duration:1.1s;animation-delay:-.5s}
+  .playing .eq i:nth-child(4),.np.playing .eq i:nth-child(4){animation-duration:.8s;animation-delay:-.35s}
+  .playing .eq i:nth-child(5),.np.playing .eq i:nth-child(5){animation-duration:1s;animation-delay:-.1s}
+  .onair i{animation:blink 1.4s ease-in-out infinite}
+  .radio-ant{animation:wob 3s ease-in-out infinite}
+  .song-card.cheered{animation:cheer .7s ease-out}
+  .song-card.is-now .now-badge{animation:bob 2.4s ease-in-out infinite}
+  .song-card:hover{transform:translateY(-2px)}
+}
 
->>>>>>> c56e28e (v7: trip songs in Songs tab)
 /* ================= v5: fun layer ================= */
 :root{
   --display:"Fredoka","Varela Round","Inter",system-ui,sans-serif;
@@ -550,11 +628,11 @@ html[lang=he] .cd-num small{text-transform:none;letter-spacing:0;font-size:11px}
     <p class="s-eye"><i>1</i><span class="en">Stop 1</span><span class="he">תחנה 1</span></p>
     <div class="stop-top"><h3><span class="en">Meshek Berger (“Chavaya BaKfar”) · Kfar Hess</span><span class="he">משק ברגר (״חוויה בכפר״) · כפר הס</span></h3><span class="time"><bdi dir="ltr">11:20–12:45</bdi></span></div>
     <p class="tagline"><span class="en">Pita, Calves &amp; Cuddles!</span><span class="he">פיתות, עגלים וליטופים!</span></p>
-    <p class="meta"><span><svg class="ico" aria-hidden="true"><use href="#i-users"/></svg><span class="en">All ages, even the 3-year-old</span><span class="he">כל הגילאים, גם בן ה־3</span></span><span><svg class="ico" aria-hidden="true"><use href="#i-gift"/></svg><span class="en">~₪35 per person</span><span class="he">כ־₪35 לאדם</span></span><span><svg class="ico" aria-hidden="true"><use href="#i-walk"/></svg><span class="en">Walk-in</span><span class="he">בלי הזמנה</span></span></p>
+    <p class="meta"><span><svg class="ico" aria-hidden="true"><use href="#i-users"/></svg><span class="en">All ages, even the 3-year-old</span><span class="he">כל הגילאים, גם בן ה־3</span></span><span><svg class="ico" aria-hidden="true"><use href="#i-walk"/></svg><span class="en">Walk-in</span><span class="he">בלי הזמנה</span></span></p>
     <div class="fun"><span><svg class="ico" aria-hidden="true"><use href="#i-flame"/></svg><span class="en">Hot pita</span><span class="he">פיתה חמה</span></span><span><svg class="ico" aria-hidden="true"><use href="#i-heart"/></svg><span class="en">Baby animals</span><span class="he">חיות קטנות</span></span><span><svg class="ico" aria-hidden="true"><use href="#i-brush"/></svg><span class="en">Craft corner</span><span class="he">פינת יצירה</span></span></div>
     <p class="desc"><span class="en">A real working family farm! We knead our own dough, bake pita in a hot taboon oven and eat it straight away with chocolate or labaneh. Then we bottle-feed the baby calves, cuddle bunnies in the petting corner and make something at the craft corner.</span><span class="he">משק משפחתי אמיתי! לשים בצק בעצמנו, אופים פיתה בטאבון לוהט ואוכלים אותה מיד עם שוקולד או לבנה. אחר כך מגמיעים את העגלים הקטנים, מלטפים ארנבים בפינת הליטוף ויוצרים משהו בפינת היצירה.</span></p>
     <p class="kid"><span class="en"><b>Chef and farmer in one hour:</b> roll your dough, pop it in the fire, then give a thirsty calf its bottle!</span><span class="he"><b>שף וחקלאי בשעה אחת:</b> מרדדים בצק, מכניסים לאש, ואז נותנים לעגל צמא את הבקבוק!</span></p>
-    <ul class="facts"><li><svg class="ico" aria-hidden="true"><use href="#i-users"/></svg><span><span class="en">Everyone joins, 3-year-old included · ~₪35 per person (price from a third-party guide) · walk-in, no booking</span><span class="he">כולם משתתפים, כולל בן ה־3 · כ־₪35 לאדם (מחיר מאתר מדריך חיצוני) · מגיעים בלי הזמנה</span></span></li><li><svg class="ico" aria-hidden="true"><use href="#i-clock"/></svg><span><span class="en">Cow milking show 11:15–12:30, so we catch it right when we arrive</span><span class="he">צפייה בחליבת הפרות <bdi dir="ltr">11:15–12:30</bdi>, תופסים אותה ממש כשמגיעים</span></span></li><li><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg><span><span class="en">Derech HaChorsha, Kfar Hess</span><span class="he">דרך החורשה, כפר הס</span></span></li></ul>
+    <ul class="facts"><li><svg class="ico" aria-hidden="true"><use href="#i-users"/></svg><span><span class="en">Everyone joins, 3-year-old included · walk-in, no booking</span><span class="he">כולם משתתפים, כולל בן ה־3 · מגיעים בלי הזמנה</span></span></li><li><svg class="ico" aria-hidden="true"><use href="#i-clock"/></svg><span><span class="en">Cow milking show 11:15–12:30, so we catch it right when we arrive</span><span class="he">צפייה בחליבת הפרות <bdi dir="ltr">11:15–12:30</bdi>, תופסים אותה ממש כשמגיעים</span></span></li><li><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg><span><span class="en">Derech HaChorsha, Kfar Hess</span><span class="he">דרך החורשה, כפר הס</span></span></li></ul>
     <p class="note"><svg class="ico" aria-hidden="true"><use href="#i-info"/></svg><span><span class="en">Call to confirm open today and ask about kashrut</span><span class="he">להתקשר לוודא שפתוח היום ולשאול על הכשרות</span></span></p>
     <p class="mission"><span class="mnum"><svg class="ico" aria-hidden="true"><use href="#i-flame"/></svg></span><span><span class="en"><b>Mission 1:</b> bake your own pita and feed a calf!</span><span class="he"><b>משימה 1:</b> לאפות פיתה משלך ולהאכיל עגל!</span></span></p>
     <div class="song-slot" data-song-id="farm"><span class="song-icon" aria-hidden="true">🎵</span><span class="song-copy"><b><span class="en">Stop song</span><span class="he">השיר של התחנה</span></b><small><span class="en">Song coming soon…</span><span class="he">שיר בדרך…</span></small></span></div>
@@ -637,16 +715,16 @@ html[lang=he] .cd-num small{text-transform:none;letter-spacing:0;font-size:11px}
 </li>
 <li class="conn" aria-hidden="false"><span><svg class="ico" aria-hidden="true"><use href="#i-walk"/></svg><span class="en">Short walk to the cliffs</span><span class="he">הליכה קצרה אל הצוקים</span></span></li>
 <li class="stop" id="sunset">
-  <div class="gallery" aria-label="Netanya cliffs"><span class="status free"><i></i><span class="en">Free</span><span class="he">חינם</span></span><div class="track"><figure class="slide"><button type="button" class="zoom" data-cap-en="the sun dives into the sea" data-cap-he="השמש צוללת לים" aria-label="The sun setting into the Mediterranean Sea at Netanya"><img src="https://cdn.jsdelivr.net/gh/Yehudakugel/israel-family-treat-menu@1881fa2d803b22ac41acae1c9f602f6010fff0d0/images/thursday/07-netanya-sunset.jpg" width="1600" height="1200" alt="The sun setting into the Mediterranean Sea at Netanya" loading="lazy" decoding="async" /></button></figure><figure class="slide"><button type="button" class="zoom" data-cap-en="our cliff lookout" data-cap-he="התצפית שלנו על הצוק" aria-label="Netanya cliffs and promenade above the sea"><img src="https://cdn.jsdelivr.net/gh/Yehudakugel/israel-family-treat-menu@1881fa2d803b22ac41acae1c9f602f6010fff0d0/images/thursday/05-netanya-promenade.jpg" width="750" height="1000" alt="Netanya cliffs and promenade above the sea" loading="lazy" decoding="async" /></button></figure></div><button type="button" class="nav-btn prev" aria-label="Previous"><svg class="ico" aria-hidden="true" style="transform:scaleX(-1)"><use href="#i-chev"/></svg></button><button type="button" class="nav-btn next" aria-label="Next"><svg class="ico" aria-hidden="true"><use href="#i-chev"/></svg></button><span class="count"><b class="c-i">1</b> / 2</span><span class="dots" aria-hidden="true"><i></i><i></i></span></div>
+  <div class="gallery" aria-label="Netanya cliffs"><span class="status free"><i></i><span class="en">Walk-in</span><span class="he">בלי הזמנה</span></span><div class="track"><figure class="slide"><button type="button" class="zoom" data-cap-en="the sun dives into the sea" data-cap-he="השמש צוללת לים" aria-label="The sun setting into the Mediterranean Sea at Netanya"><img src="https://cdn.jsdelivr.net/gh/Yehudakugel/israel-family-treat-menu@1881fa2d803b22ac41acae1c9f602f6010fff0d0/images/thursday/07-netanya-sunset.jpg" width="1600" height="1200" alt="The sun setting into the Mediterranean Sea at Netanya" loading="lazy" decoding="async" /></button></figure><figure class="slide"><button type="button" class="zoom" data-cap-en="our cliff lookout" data-cap-he="התצפית שלנו על הצוק" aria-label="Netanya cliffs and promenade above the sea"><img src="https://cdn.jsdelivr.net/gh/Yehudakugel/israel-family-treat-menu@1881fa2d803b22ac41acae1c9f602f6010fff0d0/images/thursday/05-netanya-promenade.jpg" width="750" height="1000" alt="Netanya cliffs and promenade above the sea" loading="lazy" decoding="async" /></button></figure></div><button type="button" class="nav-btn prev" aria-label="Previous"><svg class="ico" aria-hidden="true" style="transform:scaleX(-1)"><use href="#i-chev"/></svg></button><button type="button" class="nav-btn next" aria-label="Next"><svg class="ico" aria-hidden="true"><use href="#i-chev"/></svg></button><span class="count"><b class="c-i">1</b> / 2</span><span class="dots" aria-hidden="true"><i></i><i></i></span></div>
   <div class="stop-body">
     <p class="s-eye"><i>6</i><span class="en">Stop 6</span><span class="he">תחנה 6</span></p>
     <div class="stop-top"><h3><span class="en">Netanya cliffs</span><span class="he">צוקי נתניה</span></h3><span class="time"><bdi dir="ltr">18:15</bdi></span></div>
     <p class="tagline"><span class="en">Sunset &amp; Certificates!</span><span class="he">שקיעה ותעודות!</span></p>
-    <p class="meta"><span><svg class="ico" aria-hidden="true"><use href="#i-users"/></svg><span class="en">Everyone</span><span class="he">כולם</span></span><span><svg class="ico" aria-hidden="true"><use href="#i-gift"/></svg><span class="en">Free</span><span class="he">בחינם</span></span><span><svg class="ico" aria-hidden="true"><use href="#i-award"/></svg><span class="en">Certificates</span><span class="he">תעודות</span></span></p>
+    <p class="meta"><span><svg class="ico" aria-hidden="true"><use href="#i-users"/></svg><span class="en">Everyone</span><span class="he">כולם</span></span><span><svg class="ico" aria-hidden="true"><use href="#i-award"/></svg><span class="en">Certificates</span><span class="he">תעודות</span></span></p>
     <div class="fun"><span><svg class="ico" aria-hidden="true"><use href="#i-sun"/></svg><span class="en">Golden hour</span><span class="he">שעת הזהב</span></span><span><svg class="ico" aria-hidden="true"><use href="#i-award"/></svg><span class="en">Certificates</span><span class="he">תעודות</span></span></div>
     <p class="desc"><span class="en">A short walk from the square to the cliffs. We watch the sun dive into the sea, snap our family photo, and every adventurer gets a certificate!</span><span class="he">הליכה קצרה מהכיכר אל הצוקים. מסתכלים איך השמש צוללת לים, מצטלמים לתמונה משפחתית, וכל הרפתקן מקבל תעודה!</span></p>
     <p class="kid"><span class="en"><b>Final countdown:</b> 3… 2… 1… splash! Watch the sun dive into the sea.</span><span class="he"><b>ספירה לאחור:</b> 3... 2... 1... שפלאש! מסתכלים איך השמש צוללת לים.</span></p>
-    <ul class="facts"><li><svg class="ico" aria-hidden="true"><use href="#i-users"/></svg><span><span class="en">Everyone · free!</span><span class="he">כולם · בחינם!</span></span></li></ul>
+    <ul class="facts"><li><svg class="ico" aria-hidden="true"><use href="#i-users"/></svg><span><span class="en">Everyone!</span><span class="he">כולם!</span></span></li></ul>
     <p class="mission"><span class="mnum"><svg class="ico" aria-hidden="true"><use href="#i-sun"/></svg></span><span><span class="en"><b>Mission 4:</b> spot the exact moment the sun touches the sea!</span><span class="he"><b>משימה 4:</b> לזהות את הרגע המדויק שבו השמש נוגעת בים!</span></span></p>
     
     <div class="song-slot" data-song-id="sunset"><span class="song-icon" aria-hidden="true">🎵</span><span class="song-copy"><b><span class="en">Stop song</span><span class="he">השיר של התחנה</span></b><small><span class="en">Song coming soon…</span><span class="he">שיר בדרך…</span></small></span></div>
@@ -698,11 +776,17 @@ html[lang=he] .cd-num small{text-transform:none;letter-spacing:0;font-size:11px}
       </aside>
     </div>
 
-<<<<<<< HEAD
-    <section class="section" id="songs" aria-labelledby="songs-title"><div class="sec-head"><h2 id="songs-title"><span class="en">Songs for the road</span><span class="he">שירים לדרך</span></h2><p><span class="en">Every stop gets its own soundtrack. We’ll drop the real songs in here soon.</span><span class="he">לכל תחנה יש פסקול משלה. בקרוב נוסיף כאן את השירים האמיתיים.</span></p></div><div class="songs-grid" id="songs-list"></div></section>
-=======
-    <section class="section" id="songs" aria-labelledby="songs-title"><div class="sec-head"><h2 id="songs-title"><span class="en">Songs for the road</span><span class="he">שירים לדרך</span></h2><p><span class="en">6 original songs, one per stop. Tap “Copy style” and “Copy lyrics”, then “Make it on Suno” (Custom mode) and paste.</span><span class="he">6 שירים מקוריים, שיר לכל תחנה. לוחצים ״העתקת סטייל״ ו״העתקת מילים״, ואז ״ליצור ב־Suno״ (מצב Custom) ומדביקים.</span></p></div><div class="songs-grid" id="songs-list"></div></section>
->>>>>>> c56e28e (v7: trip songs in Songs tab)
+    <section class="section radio" id="songs" aria-labelledby="songs-title">
+      <div class="radio-head">
+        <div class="radio-top"><span class="onair"><i></i><span class="en">On air</span><span class="he">בשידור</span></span><span class="radio-ant" aria-hidden="true">📻</span></div>
+        <h2 id="songs-title"><span class="en">Bernshtein Radio</span><span class="he">רדיו ברנשטיין</span></h2>
+        <p class="radio-sub"><span class="en">6 brand-new songs all about us, one for every stop. Press play, read the words and sing LOUD (Shevy, you know what to do 🥜).</span><span class="he">6 שירים חדשים לגמרי עלינו, שיר לכל תחנה. לוחצים פליי, קוראים את המילים ושרים בקול (שֶׁעוִוי, את יודעת מה לעשות 🥜).</span></p>
+        <div class="radio-ctrl"><button type="button" class="play-all" id="play-all" aria-pressed="false"><span class="pa-ico" aria-hidden="true">▶</span><span class="pa-txt"><span class="en">Play the whole trip</span><span class="he">מנגנים את כל הטיול</span></span></button></div>
+        <div class="radio-now" id="radio-now" aria-live="polite"></div>
+        <div class="np" id="np" hidden><span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><span class="np-txt" id="np-txt"></span></div>
+      </div>
+      <div class="songs-grid" id="songs-list"></div>
+    </section>
 
     <hr class="div" />
     <section class="section older" id="ideas" aria-labelledby="ideas-title">
@@ -816,7 +900,7 @@ html[lang=he] .cd-num small{text-transform:none;letter-spacing:0;font-size:11px}
 
     <article class="trip">
       <h3><span class="en">Science museum</span><span class="he">מוזיאון המדע</span></h3>
-      <p class="meta"><span class="en">Bloomfield · everyone joins · under 5 free</span><span class="he">בלומפילד · כולם מצטרפים · עד גיל 5 בחינם</span></p>
+      <p class="meta"><span class="en">Bloomfield · everyone joins</span><span class="he">בלומפילד · כולם מצטרפים</span></p>
       <p><span class="en">Hands-on experiments and cool machines — not a quiet-museum day.</span><span class="he">ניסויים בידיים ומכונות מגניבות — זה לא יום של מוזיאון שקט.</span></p>
       <div class="links">
         <a href="https://mada.org.il/en/plan-your-visit" target="_blank" rel="noopener"><span class="en">Bloomfield</span><span class="he">בלומפילד</span></a>
@@ -850,40 +934,40 @@ html[lang=he] .cd-num small{text-transform:none;letter-spacing:0;font-size:11px}
     <div class="grid"><article class="trip">
       <h3><span class="en">Tandem skydive · SkyKef</span><span class="he">צניחה בטנדם · סקייכיף</span><span class="tag call"><span class="en">Call first</span><span class="he">להתקשר קודם</span></span></h3>
       <p class="meta"><span class="en">Sde Teiman (~10 min N of Be’er Sheva) · ~1h20 drive · ages 10+ · max 110 kg (extra charge over 90 kg / 1.90 m)</span><span class="he">שדה תימן (כ־10 דק׳ צפונית לבאר שבע) · כשעה ו־20 דק׳ נסיעה · מגיל 10 · עד 110 ק״ג (תוספת מעל 90 ק״ג / 1.90 מ׳)</span></p>
-      <p><span class="en">Real jump from 10,000 or 12,000 ft with an instructor. Site prices: Tandem 10 ₪1,050, Tandem 12 ₪1,250, video+photos +₪250. Plan on ~3 hours there. Site lists Sun–Thu 9:00–19:00, but its FAQ says jumps happen “Fri, Sat &amp; holidays”, so call to confirm they jump today.</span><span class="he">קפיצה אמיתית מ־10,000 או 12,000 רגל עם מדריך. מחירים באתר: טנדם 10 ₪1,050, טנדם 12 ₪1,250, וידאו + תמונות ‎+₪250. כדאי לתכנן כ־3 שעות במקום. באתר רשום א׳–ה׳ <bdi dir="ltr">9:00–19:00</bdi>, אבל בשאלות הנפוצות כתוב שקופצים ״בשישי, שבת וחגים״, אז להתקשר ולוודא שקופצים היום.</span></p>
+      <p><span class="en">Real jump from 10,000 or 12,000 ft with an instructor. Video + photos available. Plan on ~3 hours there. Site lists Sun–Thu 9:00–19:00, but its FAQ says jumps happen “Fri, Sat &amp; holidays”, so call to confirm they jump today.</span><span class="he">קפיצה אמיתית מ־10,000 או 12,000 רגל עם מדריך. אפשר להוסיף וידאו ותמונות. כדאי לתכנן כ־3 שעות במקום. באתר רשום א׳–ה׳ <bdi dir="ltr">9:00–19:00</bdi>, אבל בשאלות הנפוצות כתוב שקופצים ״בשישי, שבת וחגים״, אז להתקשר ולוודא שקופצים היום.</span></p>
       <div class="links">
         <a href="tel:1700705867"><bdi dir="ltr">1700-705-867</bdi></a>
         <a href="https://skykef.co.il/jump/" target="_blank" rel="noopener"><span class="en">Book online</span><span class="he">הזמנה באתר</span></a>
-        <a href="https://skykef.co.il/pricing/" target="_blank" rel="noopener"><span class="en">Prices</span><span class="he">מחירים</span></a>
+        <a href="https://skykef.co.il/" target="_blank" rel="noopener"><span class="en">Website</span><span class="he">לאתר</span></a>
       </div>
     </article>
 
     <article class="trip">
       <h3><span class="en">Powered parachute (“flying ATV”) · Israel Extreme</span><span class="he">מצנח ממונע (״טרקטורון מעופף״) · Israel Extreme</span><span class="tag call"><span class="en">Call first</span><span class="he">להתקשר קודם</span></span></h3>
       <p class="meta"><span class="en">Ein Vered airstrip, Sharon · ~1h10 drive · ages 6+ · pilot + 1 passenger</span><span class="he">מנחת עין ורד, השרון · כשעה ו־10 דק׳ נסיעה · מגיל 6 · טייס + נוסע אחד</span></p>
-      <p><span class="en">20 min flight over the Sharon fields to the coast: ₪500 (₪650 with photos); 40 min with photos ₪1,050. They fly in the early morning or ~2 hours before sunset, so today’s realistic option is the evening slot. Book by phone.</span><span class="he">טיסה של 20 דק׳ מעל שדות השרון עד החוף: ₪500 (₪650 עם תמונות); 40 דק׳ עם תמונות ₪1,050. טסים בבוקר מוקדם או כשעתיים לפני השקיעה, אז היום האפשרות הריאלית היא הטיסה של הערב. הזמנה בטלפון.</span></p>
+      <p><span class="en">20- or 40-minute flights over the Sharon fields to the coast, with a photos option. They fly in the early morning or ~2 hours before sunset, so today’s realistic option is the evening slot. Book by phone.</span><span class="he">טיסות של 20 או 40 דק׳ מעל שדות השרון עד החוף, עם אפשרות לתמונות. טסים בבוקר מוקדם או כשעתיים לפני השקיעה, אז היום האפשרות הריאלית היא הטיסה של הערב. הזמנה בטלפון.</span></p>
       <div class="links">
         <a href="tel:0533310639"><bdi dir="ltr">053-331-0639</bdi></a>
         <a href="tel:0723940984"><bdi dir="ltr">072-394-0984</bdi></a>
-        <a href="https://xn----zhcb4afbwe7a0dnem.co.il/%d7%97%d7%a0%d7%95%d7%aa" target="_blank" rel="noopener"><span class="en">Flights &amp; prices</span><span class="he">טיסות ומחירים</span></a>
+        <a href="https://xn----zhcb4afbwe7a0dnem.co.il/%d7%97%d7%a0%d7%95%d7%aa" target="_blank" rel="noopener"><span class="en">Flights</span><span class="he">טיסות</span></a>
       </div>
     </article>
 
     <article class="trip">
       <h3><span class="en">Indoor skydiving · FlyBox</span><span class="he">צניחה חופשית בתוך מבנה · FlyBox</span><span class="tag ok"><span class="en">✓ Open today</span><span class="he">✓ פתוח היום</span></span></h3>
       <p class="meta"><span class="en">Rishon LeZion (Lake Park) · ~50 min drive · ages 4+ · Chol HaMoed hours 09:00–20:30</span><span class="he">ראשון לציון (פארק האגם) · כ־50 דק׳ נסיעה · מגיל 4 · שעות חול המועד <bdi dir="ltr">09:00–20:30</bdi></span></p>
-      <p><span class="en">The safe backup: iFLY wind tunnel. Intro ₪289 (2 min flying), VIP solo ₪399 (4 min + video), VIP couple ₪750. The ₪199 Sukkot deal is only for the 10:00 slot.</span><span class="he">הגיבוי הבטוח: מנהרת הרוח של iFLY. היכרות ₪289 (2 דק׳ טיסה), VIP יחיד ₪399 (4 דק׳ + וידאו), VIP זוגי ₪750. מבצע סוכות ב־₪199 רק לשעה 10:00.</span></p>
+      <p><span class="en">The safe backup: iFLY wind tunnel. Intro (2 min flying) or VIP (4 min + video). There’s a special Sukkot deal on the 10:00 slot.</span><span class="he">הגיבוי הבטוח: מנהרת הרוח של iFLY. היכרות (2 דק׳ טיסה) או VIP (4 דק׳ + וידאו). יש מבצע סוכות לשעה 10:00.</span></p>
       <div class="links">
         <a href="tel:039394840"><bdi dir="ltr">03-939-4840</bdi></a>
         <a href="https://wa.me/972503997725" target="_blank" rel="noopener"><span class="en">WhatsApp</span><span class="he">וואטסאפ</span></a>
-        <a href="https://www.flybox.co.il/%D7%9E%D7%97%D7%99%D7%A8%D7%95%D7%9F/" target="_blank" rel="noopener"><span class="en">Book / prices</span><span class="he">הזמנה / מחירים</span></a>
+        <a href="https://www.flybox.co.il/" target="_blank" rel="noopener"><span class="en">Book</span><span class="he">הזמנה</span></a>
       </div>
     </article>
 
     <article class="trip">
       <h3><span class="en">RZR / Tomcar desert tour · Canaan (Kfar Adumim)</span><span class="he">סיור RZR / תומקאר במדבר · כנען (כפר אדומים)</span><span class="tag call"><span class="en">Call first</span><span class="he">להתקשר קודם</span></span></h3>
       <p class="meta"><span class="en">Kfar Adumim junction, Judean Desert · ~25 min drive · drivers 18+ with a valid licence · riders 16+ (no licence needed)</span><span class="he">צומת כפר אדומים, מדבר יהודה · כ־25 דק׳ נסיעה · נהגים מגיל 18 עם רישיון בתוקף · נוסעים מגיל 16 (בלי רישיון)</span></p>
-      <p><span class="en">Guided off-road loops to desert lookouts (Wadi Qelt / St. George area). Tours run 1–4 hours. Weekend.co.il lists ₪700 for 1.5 h and ₪800 for 2 h per 4-seat vehicle (that listing may be old). Pre-booking only.</span><span class="he">מסלולי שטח מודרכים לתצפיות במדבר (אזור ואדי קלט / מנזר סנט ג׳ורג׳). הסיורים נמשכים 1–4 שעות. ב־Weekend.co.il רשום ₪700 לשעה וחצי ו־₪800 לשעתיים לרכב של 4 מושבים (ייתכן שהמידע ישן). בהזמנה מראש בלבד.</span></p>
+      <p><span class="en">Guided off-road loops to desert lookouts (Wadi Qelt / St. George area). Tours run 1–4 hours. 4-seat vehicles. Pre-booking only.</span><span class="he">מסלולי שטח מודרכים לתצפיות במדבר (אזור ואדי קלט / מנזר סנט ג׳ורג׳). הסיורים נמשכים 1–4 שעות. רכבים של 4 מושבים. בהזמנה מראש בלבד.</span></p>
       <div class="links">
         <a href="tel:025355351"><bdi dir="ltr">02-535-5351</bdi></a>
         <a href="https://cnaantours.co.il/" target="_blank" rel="noopener"><span class="en">Website</span><span class="he">אתר</span></a>
@@ -893,30 +977,30 @@ html[lang=he] .cd-num small{text-transform:none;letter-spacing:0;font-size:11px}
     <article class="trip">
       <h3><span class="en">Tomcar / RZR in the Jerusalem hills · Matzok</span><span class="he">תומקאר / RZR בהרי ירושלים · מצוק</span><span class="tag call"><span class="en">Call first</span><span class="he">להתקשר קודם</span></span></h3>
       <p class="meta"><span class="en">Moshav Aminadav · ~15–20 min drive · drivers 19+ with a licence held 1+ year</span><span class="he">מושב עמינדב · כ־15–20 דק׳ נסיעה · נהגים מגיל 19 עם ותק של שנה לפחות ברישיון</span></p>
-      <p><span class="en">Guided off-road drive through Aminadav forest. The price depends on the route (no public price list). Minimum 2 vehicles, or +₪150 to go out alone.</span><span class="he">נסיעת שטח מודרכת ביער עמינדב. המחיר תלוי במסלול (אין מחירון פומבי). מינימום 2 רכבים, או תוספת ₪150 ליציאה לבד.</span></p>
+      <p><span class="en">Guided off-road drive through Aminadav forest. Usually goes out with at least 2 vehicles, so ask about going alone.</span><span class="he">נסיעת שטח מודרכת ביער עמינדב. בדרך כלל יוצאים עם 2 רכבים לפחות, אז כדאי לשאול על יציאה לבד.</span></p>
       <div class="links">
         <a href="tel:0523865612"><bdi dir="ltr">052-386-5612</bdi></a>
         <a href="tel:026431342"><bdi dir="ltr">02-643-1342</bdi></a>
         <a href="https://matzok.co.il/activities/%d7%98%d7%a8%d7%a7%d7%98%d7%95%d7%a8%d7%95%d7%a0%d7%99%d7%9d-%d7%95%d7%92%d7%99%d7%a4%d7%99%d7%9d/" target="_blank" rel="noopener"><span class="en">Website</span><span class="he">אתר</span></a>
       </div>
-      <p class="fine"><span class="en">Similar option: Top Reizer (Mevo Beitar, ~25 min, Can-Am RZRs, prices on request): </span><span class="he">אפשרות דומה: טופ רייזר (מבוא ביתר, כ־25 דק׳, רכבי Can-Am RZR, מחיר לפי בקשה): </span><a href="tel:0554524116"><bdi dir="ltr">055-452-4116</bdi></a></p>
+      <p class="fine"><span class="en">Similar option: Top Reizer (Mevo Beitar, ~25 min, Can-Am RZRs): </span><span class="he">אפשרות דומה: טופ רייזר (מבוא ביתר, כ־25 דק׳, רכבי Can-Am RZR): </span><a href="tel:0554524116"><bdi dir="ltr">055-452-4116</bdi></a></p>
     </article>
 
     <article class="trip">
       <h3><span class="en">Israel’s longest zipline · Deer Land</span><span class="he">האומגה הארוכה בישראל · ארץ הצבי</span><span class="tag call"><span class="en">Call first</span><span class="he">להתקשר קודם</span></span></h3>
       <p class="meta"><span class="en">Opposite Kfar Etzion, Gush Etzion · ~30 min drive</span><span class="he">מול כפר עציון, גוש עציון · כ־30 דק׳ נסיעה</span></p>
-      <p><span class="en">400 m zipline, 120 m above a canyon, with a jeep ride back up: ₪100. There’s also a ropes park (₪30) and a 140 m zipline (₪30). Listed hours are 9:30–16:30/17:30 and they ask you to call ahead.</span><span class="he">אומגה של 400 מ׳, בגובה 120 מ׳ מעל קניון, עם נסיעה בג׳יפ חזרה למעלה: ₪100. יש גם פארק חבלים (₪30) ואומגה של 140 מ׳ (₪30). השעות הרשומות הן <bdi dir="ltr">9:30–16:30/17:30</bdi> ומבקשים להתקשר מראש.</span></p>
+      <p><span class="en">400 m zipline, 120 m above a canyon, with a jeep ride back up. There’s also a ropes park and a 140 m zipline. Listed hours are 9:30–16:30/17:30 and they ask you to call ahead.</span><span class="he">אומגה של 400 מ׳, בגובה 120 מ׳ מעל קניון, עם נסיעה בג׳יפ חזרה למעלה. יש גם פארק חבלים ואומגה של 140 מ׳. השעות הרשומות הן <bdi dir="ltr">9:30–16:30/17:30</bdi> ומבקשים להתקשר מראש.</span></p>
       <div class="links">
         <a href="tel:025709768"><bdi dir="ltr">02-570-9768</bdi></a>
         <a href="https://wa.me/972502041212" target="_blank" rel="noopener"><span class="en">WhatsApp</span><span class="he">וואטסאפ</span></a>
-        <a href="http://www.deer-land.co.il/מחירון" target="_blank" rel="noopener"><span class="en">Prices</span><span class="he">מחירים</span></a>
+        <a href="http://www.deer-land.co.il/" target="_blank" rel="noopener"><span class="en">Website</span><span class="he">לאתר</span></a>
       </div>
     </article>
 
     <article class="trip">
       <h3><span class="en">Rappel off the Old City walls · PAMI</span><span class="he">סנפלינג מחומות העיר העתיקה · פמ״י</span><span class="tag ok"><span class="en">✓ Open today</span><span class="he">✓ פתוח היום</span></span></h3>
       <p class="meta"><span class="en">Southern ramparts walk from Jaffa Gate · ~20 min · ages 9+ · 11:45–16:45</span><span class="he">טיילת החומות הדרומית משער יפו · כ־20 דק׳ · מגיל 9 · <bdi dir="ltr">11:45–16:45</bdi></span></p>
-      <p><span class="en">A special Sukkot activity: rappel down the wall near Zion Gate with certified guides. ₪45 per person.</span><span class="he">פעילות מיוחדת לסוכות: סנפלינג מהחומה ליד שער ציון עם מדריכים מוסמכים. ₪45 לאדם.</span></p>
+      <p><span class="en">A special Sukkot activity: rappel down the wall near Zion Gate with certified guides.</span><span class="he">פעילות מיוחדת לסוכות: סנפלינג מהחומה ליד שער ציון עם מדריכים מוסמכים.</span></p>
       <div class="links">
         <a href="tel:026277550"><bdi dir="ltr">02-627-7550</bdi></a>
         <a href="https://www.pami.co.il" target="_blank" rel="noopener"><span class="en">Tickets</span><span class="he">כרטיסים</span></a>
@@ -926,7 +1010,7 @@ html[lang=he] .cd-num small{text-transform:none;letter-spacing:0;font-size:11px}
     <article class="trip">
       <h3><span class="en">Tandem paragliding · Kanfayim</span><span class="he">מצנח רחיפה בטנדם · כנפיים</span><span class="tag call"><span class="en">Call first</span><span class="he">להתקשר קודם</span></span></h3>
       <p class="meta"><span class="en">Arsuf / Netanya cliffs · ~1h drive · ages 5+ · over 100 kg by arrangement</span><span class="he">ארסוף / צוקי נתניה · כשעה נסיעה · מגיל 5 · מעל 100 ק״ג בתיאום</span></p>
-      <p><span class="en">Coastal ridge soaring with a licensed pilot: 10 min ₪300, 20 min ₪450, video +₪100. Wind-dependent.</span><span class="he">ריחוף מעל צוקי החוף עם טייס מוסמך: 10 דק׳ ₪300, 20 דק׳ ₪450, וידאו ‎+₪100. תלוי ברוח.</span></p>
+      <p><span class="en">Coastal ridge soaring with a licensed pilot: 10- or 20-minute flights, video available. Wind-dependent.</span><span class="he">ריחוף מעל צוקי החוף עם טייס מוסמך: טיסות של 10 או 20 דק׳, אפשר להוסיף וידאו. תלוי ברוח.</span></p>
       <div class="links">
         <a href="tel:0543077732"><bdi dir="ltr">054-307-7732</bdi></a>
         <a href="https://paraglidingil.com/" target="_blank" rel="noopener"><span class="en">Website</span><span class="he">אתר</span></a>
@@ -963,6 +1047,8 @@ html[lang=he] .cd-num small{text-transform:none;letter-spacing:0;font-size:11px}
   </dialog>
 <canvas id="confetti" aria-hidden="true" hidden></canvas>
 <script>
+/* Audio base: a deployer replaces the placeholder below with the real CDN base, e.g. https://cdn.jsdelivr.net/gh/Yehudakugel/israel-family-treat-menu@<commit> (no trailing slash). Left as-is, audio loads relative to this page. */
+var AUDIO_BASE = '__AUDIO_BASE__';
 (function(){
   var titles={he:"הטיול של משפחת ברנשטיין · יום חמישי 1.10",en:"The Bernshtein Family Trip · Thursday 1.10"};
   var lang="he";
@@ -1087,184 +1173,98 @@ html[lang=he] .cd-num small{text-transform:none;letter-spacing:0;font-size:11px}
   boxes.forEach(function(c){c.addEventListener("change",won);});
   won();
 
-<<<<<<< HEAD
-  /* songs: keep the data drop-in friendly for titles, lyrics, audio and Suno links */
-  var songs=[
-    {id:"go",time:"10:15",title:{he:"יוצאים לדרך!",en:"Hit the road!"},lyrics:{he:"שיר בדרך…",en:"Song coming soon…"},audio:null,suno:null},
-    {id:"farm",time:"11:20",title:{he:"פיתות, עגלים וליטופים",en:"Pita, calves & cuddles"},lyrics:{he:"שיר בדרך…",en:"Song coming soon…"},audio:null,suno:null},
-    {id:"boat",time:"13:15",title:{he:"טיל על המים",en:"Speedboat blast"},lyrics:{he:"שיר בדרך…",en:"Song coming soon…"},audio:null,suno:null},
-    {id:"kart",time:"14:15",title:{he:"יום מרוצים",en:"Race day"},lyrics:{he:"שיר בדרך…",en:"Song coming soon…"},audio:null,suno:null},
-    {id:"free",time:"15:30",title:{he:"קרב לייזרים? אולי!",en:"Laser battle? Maybe!"},lyrics:{he:"שיר בדרך…",en:"Song coming soon…"},audio:null,suno:null},
-    {id:"pizza",time:"17:00",title:{he:"מסיבת פיצה",en:"Pizza party"},lyrics:{he:"שיר בדרך…",en:"Song coming soon…"},audio:null,suno:null},
-    {id:"sunset",time:"18:15",title:{he:"שקיעה ותעודות",en:"Sunset & certificates"},lyrics:{he:"שיר בדרך…",en:"Song coming soon…"},audio:null,suno:null},
-    {id:"home",time:"18:45",title:{he:"נוסעים הביתה",en:"Drive home"},lyrics:{he:"שיר בדרך…",en:"Song coming soon…"},audio:null,suno:null}
-  ];
-  function songMarkup(song,card){
-    var out=card?'':'<span class="song-icon" aria-hidden="true">🎵</span>';
-    out+=(card?'<div class="song-card-head">':'<span class="song-copy">')+'<b><span class="en">'+(card?song.title.en:'Stop song')+'</span><span class="he">'+(card?song.title.he:'השיר של התחנה')+'</span></b><small><span class="en">'+(card?song.lyrics.en:song.title.en+' · Song coming soon…')+'</span><span class="he">'+(card?song.lyrics.he:song.title.he+' · שיר בדרך…')+'</span></small>'+(card?'</div>':'</span>');
-    if(song.audio) out+='<audio controls preload="none" src="'+song.audio+'"></audio>';
-    if(song.suno) out+='<a href="'+song.suno+'" target="_blank" rel="noopener"><span class="en">Open in Suno</span><span class="he">פתיחה ב־Suno</span></a>';
-    return out;
-  }
-  var songById={}; songs.forEach(function(song){songById[song.id]=song; var slot=document.querySelector('.song-slot[data-song-id="'+song.id+'"]'); if(slot) slot.innerHTML=songMarkup(song,false);});
-  var songList=document.getElementById("songs-list");
-  if(songList) songs.forEach(function(song){var card=document.createElement("article");card.className="song-card";card.dataset.songId=song.id;card.style.setProperty("--acc","var(--c-boat)");card.innerHTML='<span class="song-time"><bdi dir="ltr">'+song.time+'</bdi></span><h3><span class="en">'+song.title.en+'</span><span class="he">'+song.title.he+'</span></h3><p><span class="en">'+song.lyrics.en+'</span><span class="he">'+song.lyrics.he+'</span></p>'+(song.audio?'<audio controls preload="none" src="'+song.audio+'"></audio>':'')+(song.suno?'<a href="'+song.suno+'" target="_blank" rel="noopener"><span class="en">Open in Suno</span><span class="he">פתיחה ב־Suno</span></a>':'');songList.appendChild(card);});
-=======
-  /* songs v7: six Suno-ready songs (title, style, lyrics, audio, suno). Drop an mp3 URL into "audio" later. */
-  var songs=[
-{
-"id": "song1",
-"n": 1,
-"stops": [
-"go"
-],
-"time": "10:15",
-"acc": "var(--brand)",
-"stop": {
-"he": "יוצאים מגבעת זאב",
-"en": "Leaving Givat Ze’ev"
-},
-"title": {
-"he": "כּוּלָם בִּפְנִים?!",
-"en": "Kulam Bifnim?! (Everyone In?!)"
-},
-"style": "Sung by a Hasidic Jewish singer with an authentic heimish accent, warm and joyful, Israeli Hebrew with heimish Yiddish flavor. Upbeat Israeli Chassidish pop car anthem, 126 BPM, major key, bright brass section, clarinet runs, bouncy bass, hand claps, festive Chol HaMoed simcha energy. One male solo lead; a small group of kids shouts the call-and-answer replies (\"כן!\", \"עכשיו!\", \"הכל!\"). Huge shout-along chorus, key change up for the final chorus, clear Hebrew diction, car-horn and seatbelt-click accents.",
-"lyrics": "[Intro]\nיאללה, יאללה, חול המועד!\nגבעת זאב — יוצאים לדרך!\nמשפחת בֶּרְנְשְׁטַיין — סבבה, נוסעים!\n\n[Verse 1 – Mami]\nמַאמִי סוחבת עשרה תיקים בכוח,\nמים, חטיפים, ועוד תיק \"למקרה\".\nעומדת ליד האוטו, מחייכת,\nושואלת את השאלות הגדולות:\n\n[Chorus]\nכולם בפנים? — כן!\nכולם חגורים? — כן!\nכולם עשו פיפי? — כן! (אֶהֶם...)\nקליק, קליק, קליק — כל החגורות!\nבלי קליק לא זזים — זה החוק של מַאמִי!\nיאללה, נוסעים — געשמאק, מחיה!\n\n[Verse 2 – Gitty]\nגִּיטִי עוזרת, גִּיטִי מסדרת,\n\"עוד תמונה! אל תזוזו! עוד אחת!\"\nעוד לא יצאנו — הטלפון כבר מלא!\n\"גִּיטִי, יש לך דרכון?\" — \"מאאאמי!!! זה היה פעם אחת!!!\"\nחחח! גִּיטִי, לא נשכח לך את זה!\n\n[Verse 3 – Henny]\nהֶענִי המפקדת בודקת תיקים,\nסופרת: אחת, שתיים... שש! \"חסר מישהו!!!\"\nהֶענִי, תסתכלי במראה — זאת את!\n\"הֶענִי! וואו! תירגעי!\" — \"אני רגועה!\"\n\n[Verse 4 – Shevy]\nשֶׁעוִוי שרה בקול, הכי חזק בעולם,\n\"שֶׁעוִוי, קצת שקט?\" — היא שרה עוד יותר!\n\"שֶׁעוִוי, מה שלומך?\" — OH MY PEANUT BUTTER!\nשֶׁעוִוי, תירגעי... טוב, אחרי הפזמון!\n\n[Verse 5 – Faigy]\nפַייגִי שקטה, רואה הכל מהחלון,\n\"מאמי, הכובע של חַנִי על הגג של האוטו.\"\n\"פַייגִי, איך ראית?\" — היא רק מרימה גבה,\nבלי פַייגִי היינו שוכחים חצי בית!\n\n[Verse 6 – Zalmy]\nזַלְמִי קופץ, זַלְמִי רוקד, אף פעם לא עייף,\n\"מאמי, אפשר לקחת את האופניים?\" — \"לא.\"\n\"...אפשר לחשוב על זה?\" — \"זַלְמִי, איפה הגרב?\"\nגרב אחת ברגל, והשנייה — בטיול משלה!\n\n[Verse 7 – Itty]\nאִיטִי המלאך — ראשונה באוטו, חגורה, קליק!\nמחזיקה לחַנִי את היד, בלי שביקשו.\n\"אִיטִי, מי אמר לך?\" — \"אף אחד.\"\nוואו, אִיטִי, איזה לב של זהב!\n\n[Verse 8 – Chani]\nחַנִי: \"אני גדולה! אני חוגרת לבד!\"\n(קליק... כמעט... קליק!) — \"אני גדולה!\"\nכולם מוכנים, המנוע כבר דולק —\n\"מאמי, אני צריכה!!!\"\nכולם: \"עכשיו?!\" — חַנִי: \"עכשיו!\"\nרצים, חוזרים, ועוד פעם מההתחלה!\n\n[Chorus]\n\n[Bridge – call and answer]\n\"מתי מגיעים?\" — עוד רגע, חַנִי!\n\"מתי אוכלים?\" — עוד שנייה, חַנִי!\n\"מה בא לך היום?\" — \"הכל!!!\"\n\"מאמי, נקנה גלידה?\" — \"נראה...\"\nכולם: \"נראה\" זה כן! יֶשְׁשְׁשׁ!\n\n[Final Chorus – key up]\n\n[Outro – soft]\nדאנק השם על חול המועד,\nעל כולנו ביחד באוטו אחד.\nהסוכה מחכה לנו בבית...\nועכשיו — יאללה, נוסעים!",
-"audio": null,
-"suno": "https://suno.com/create"
-},
-{
-"id": "song2",
-"n": 2,
-"stops": [
-"farm"
-],
-"time": "11:20",
-"acc": "var(--c-farm)",
-"stop": {
-"he": "משק ברגר · כפר הס",
-"en": "Meshek Berger · Kfar Hess"
-},
-"title": {
-"he": "פִּיתָה בַּטָּאבּוּן",
-"en": "Pita BaTaboon (Farm Day)"
-},
-"style": "Sung by a Hasidic Jewish singer with an authentic heimish accent, playful and bright, Israeli Hebrew with heimish Yiddish words. Heimish kids song meets Israeli Chassidish pop with a farmyard bounce: fiddle, clarinet, accordion, acoustic guitar strums, stomps and hand claps, 116 BPM, major key, cheerful oom-pah bass. One male solo lead; kids answer the call-and-answer lines. Fun spoken moo and baa shouts, big sing-along chorus, clean Hebrew diction.",
-"lyrics": "[Intro]\nמווווו! בוקר טוב, כפר הס!\nמשק ברגר — הגענו! געשמאק!\n\n[Verse 1 – Mami]\nמַאמִי פורקת תיקים, כובעים ומים,\n\"ילדים, ידיים לשטוף, ואז לבצק!\"\nעשרה ילדים? לא — שבעה, אבל נשמע כמו מאה,\nוהעגלים כבר מסתכלים: \"מי אלה?!\"\n\n[Chorus]\nפיתה בטאבון — חם, חם, חם!\nעגל עם בקבוק — שלום, שלום, שלום!\nחולבים את הפרה — שפריץ! טְפוּ, איזה כיף!\nארנב קטן — ליטוף, ליטוף!\nחול המועד בחווה — מחיה, מחיה!\n\n[Verse 2 – Gitty]\nגִּיטִי מצלמת את העגל: \"אל תזוז! עוד אחת!\"\nהעגל זז. העגל מלקק את הטלפון.\n\"גִּיטִי, יש מקום בטלפון?\" — \"תמחקו לי משהו!\"\nשלושים תמונות של אוזן אחת של עגל!\n\n[Verse 3 – Henny]\nהֶענִי המפקדת מסדרת את הארנבים בשורה,\n\"אחד, שתיים, שלוש... חסר ארנב!\"\nהארנב בידיים שלה. הֶענִי, וואו!\n\"הֶענִי! תירגעי!\" — \"אני רגועה!\"\n\n[Verse 4 – Shevy]\nשֶׁעוִוי שרה לפרות שיר עם עשרים בתים,\nהפרות עונות לה: \"מווו!\" — היא עונה חזק יותר!\n\"שֶׁעוִוי, איך הפיתה?\" — OH MY PEANUT BUTTER!\nהיא אפילו לא שמה חמאת בוטנים!\n\n[Verse 5 – Faigy]\nפַייגִי חולבת ברצינות, כמו מדענית,\nשפריץ ראשון — בדיוק לתוך הדלי.\n\"פַייגִי, איך ידעת?\" — \"הסתכלתי.\"\nהפרה נותנת לה חצי קריצה!\n\n[Verse 6 – Zalmy]\nזַלְמִי מאכיל עגל, והעגל מושך חזק,\n\"מאמי, אפשר לקחת עגל הביתה?\" — \"לא.\"\n\"...אפשר לחשוב על זה? יש לי כבר דגים!\"\nוהגרב? העגל אכל אותה! (סתם, היא הלכה עוד בבוקר.)\n\n[Verse 7 – Itty]\nאִיטִי מלטפת ארנב ברכות, לאט לאט,\nונותנת לחַנִי ללטף ראשונה.\n\"אִיטִי, מי אמר לך?\" — \"אף אחד.\"\nגם הארנב יודע: יש פה מלאך!\n\n[Verse 8 – Chani]\nחַנִי לשה בצק: \"אני גדולה! אני לבד!\"\nקמח באף, קמח בשיער, קמח על מאמי!\n\"חַנִי, מה לשים על הפיתה?\" — \"הכל!!!\"\nזעתר, שמן, גבינה — \"הכל!!!\"\n\n[Chorus]\n\n[Bridge – call and answer]\nאיך עושה העגל? — מווו!\nאיך עושה הכבשה? — מֶעֶה!\nאיך עושה חַנִי? — \"מאמי, אני צריכה!\"\nואיך עושה מאמי? — \"תאכלו! יש עוד!\"\n\n[Outro]\nפיתה חמה ביד, ריח של חג,\nדאנק השם על כל ברייה קטנה.\nיאללה, לאוטו — כולם חגורים?\nכן! לים, לים, לים!",
-"audio": null,
-"suno": "https://suno.com/create"
-},
-{
-"id": "song3",
-"n": 3,
-"stops": [
-"boat"
-],
-"time": "13:15",
-"acc": "var(--c-boat)",
-"stop": {
-"he": "סירת מרוץ · מרינה הרצליה",
-"en": "Speedboat · Herzliya Marina"
-},
-"title": {
-"he": "יוֹתֵר חָזָק מֵהַמָּנוֹעַ!",
-"en": "Louder Than the Engine!"
-},
-"style": "Sung by a Hasidic Jewish singer with an authentic heimish accent, explosive and joyful, Israeli Hebrew with heimish Yiddish words. High-energy Israeli Chassidish pop-rock, 140 BPM, driving drums, electric guitar riffs, punchy brass stabs, fast clarinet runs, synth whooshes like waves, motorboat revving sound effects. One male solo lead; kids scream \"וויייי!\" on the drops and answer the call-and-answer lines. Build-ups and big drops, shout-along chorus, clean Hebrew diction.",
-"lyrics": "[Intro]\nוררררום! מרינה הרצליה!\nאפודים כתומים — סגורים? סגורים!\nמחזיקים חזק? מחזיקים!\n3... 2... 1... ווייייי!\n\n[Verse 1 – Mami]\nמַאמִי בודקת אפודים, אחד-אחד בכוח,\n\"כולם סגורים? כולם יושבים? כולם מחזיקים?\"\nעל המים אותו חוק כמו באוטו, מותק:\nבלי אפוד סגור — לא זזים!\n\n[Chorus]\nגלים! (בום!) גלים! (בום!)\nהסירה קופצת — ואנחנו צועקים!\nווייייי! עוד פעם! ווייייי!\nאבל מי יותר חזקה מהמנוע?\nשֶׁעוִוי! שֶׁעוִוי! שֶׁעוִוי!\n\n[Verse 2 – Shevy]\nהמנוע עושה \"ררררר\", שֶׁעוִוי עושה \"לה-לה-לה!\"\n\"שֶׁעוִוי, קצת שקט!\" — עכשיו גם הדגים שומעים!\nפעם נסעה לפארק מים עם אקווריום על הברכיים,\nהיום — כל הים שלה! \"שֶׁעוִוי, זה כיף?\" — OH MY PEANUT BUTTER!\n\n[Verse 3 – Gitty]\nגִּיטִי מצלמת: \"אל תזוזו! עוד אחת!\"\n\"גִּיטִי, אנחנו בסירה! הכל זז!\"\nחמישים תמונות של שמיים ושל טיפה,\n\"גִּיטִי, הדרכון בכיס?\" — \"מאאאמי!!!\" — חחח!\n\n[Verse 4 – Henny]\nהֶענִי סופרת אפודים: \"שש! חסר אחד!!!\"\n\"הקפטן, תעצור! מישהו נפל!\"\nהקפטן מסתכל: \"את לובשת אותו.\"\n\"הֶענִי! וואו! תירגעי!\" — \"אני רגועה!\"\n\n[Verse 5 – Faigy]\nפַייגִי יושבת שקטה, רצינית, עם עיניים גדולות,\nסופרת גלים — \"שלושה-עשר. היה גם דולפין? לא, שקית.\"\nכולם צועקים, פַייגִי רק מהנהנת,\nאבל הלב שלה — גם הוא עושה ווייייי!\n\n[Verse 6 – Zalmy]\nזַלְמִי קם לרקוד — \"זַלְמִי, לשבת!\" — יושב, רוקד בישיבה,\n\"קפטן, אפשר עוד סיבוב?\" — \"לא.\"\n\"...אפשר לחשוב על זה? שני סיבובים? חצי?\"\nוהגרב? היא נשארה בבית — חכמה!\n\n[Verse 7 – Itty]\nאִיטִי יושבת בדיוק איפה שמאמי אמרה,\nמחזיקה לחַנִי את היד חזק-חזק.\n\"אִיטִי, מי אמר לך?\" — \"אף אחד.\"\nגל ענק! — והיד של אִיטִי לא עוזבת!\n\n[Verse 8 – Chani]\nחַנִי: \"אני גדולה! אני נוהגת בסירה!\"\nבאמצע הים: \"מאמי, מתי מגיעים?\"\n\"חַנִי, הגענו! זה הים!\" — \"אה. מתי אוכלים?\"\n\"מה הכי כיף, חַנִי?\" — \"הכל!!!\"\n\n[Chorus]\n\n[Bridge – call and answer]\nמי צועק? — אנחנו!\nמי יותר חזק? — שֶׁעוִוי!\nמי רגועה? — הֶענִי! (\"אני רגועה!!!\")\nמי חגורים? — כולם!\n\n[Outro]\nחוזרים למזח, רטובים ומאושרים,\nדאנק השם על הים ועל השמש של החג.\nיאללה, לאוטו — כולם חגורים?\nכן! לקארטינג!",
-"audio": null,
-"suno": "https://suno.com/create"
-},
-{
-"id": "song4",
-"n": 4,
-"stops": [
-"kart"
-],
-"time": "14:15",
-"acc": "var(--c-kart)",
-"stop": {
-"he": "דן קארטינג · נתניה",
-"en": "Dan Karting · Netanya"
-},
-"title": {
-"he": "הַמְּפַקֶּדֶת בַּמַּסְלוּל",
-"en": "The Commander on the Track"
-},
-"style": "Sung by a Hasidic Jewish singer with an authentic heimish accent, confident and funny, Israeli Hebrew with heimish Yiddish words. Race-day Israeli Chassidish pop anthem, 132 BPM, pumping synth bass, four-on-the-floor drums, bold brass hits, fast clarinet riff hook, engine revs, tire screeches and a start-light countdown. One male solo lead; kids shout the countdown and call-and-answer replies. Stadium-style chant chorus, key change for the last chorus, clean Hebrew diction.",
-"lyrics": "[Intro]\nקסדות על הראש? — כן!\nחגורות סגורות? — כן!\nאור אדום... אור צהוב... אור ירוק — סע!\n\n[Verse 1 – Henny]\nהֶענִי המפקדת עומדת בקו הזינוק,\nבודקת קסדות, בודקת שרוכים, בודקת את המדריך.\nסופרת נהגים: \"שש! מישהו נעלם!!!\"\n\"הֶענִי, את בתוך הקארט.\" — \"אה. אני רגועה!\"\n\n[Chorus]\nוררררום! סיבוב, סיבוב!\nהֶענִי נותנת פקודות — כולם מקשיבים (בערך)!\nקסדה, חגורה, ורגל על הגז,\nדן קארטינג נתניה — יאללה, יאללה, סבבה!\n\n[Verse 2 – Zalmy]\nזַלְמִי: \"מאמי, אפשר לנהוג לבד?\" — \"לא.\"\n\"...אפשר לחשוב על זה?\" — \"נוסעים ביחד בקארט הכפול.\"\n\"אפשר מהר?\" — \"נראה.\" — \"נראה זה כן!!!\"\nגרב אחת ברגל, והגרב השנייה — מנצחת בבית!\n\n[Verse 3 – Gitty]\nגִּיטִי ליד הגדר: \"אל תזוזו! עוד אחת!\"\n\"גִּיטִי, זה מרוץ! כולם זזים!\"\n\"אין מקום בטלפון!\" — מוחקת את העגל מהבוקר,\n\"גִּיטִי, דרכון?\" — \"מאאאמי!!! זה היה פעם אחת!!!\"\n\n[Verse 4 – Shevy]\nשֶׁעוִוי שרה בתוך הקסדה, הקסדה רועדת,\n\"שֶׁעוִוי, איך המרוץ?\" — OH MY PEANUT BUTTER!\nהיא מנופפת לכל קארט שעובר,\n\"שֶׁעוִוי, שתי ידיים על ההגה!\" — \"אה, נכון!\" (שתיים!)\n\n[Verse 5 – Faigy]\nפַייגִי נוהגת שקט, שקט, בדיוק על הקו,\nיודעת כל פנייה, רואה כל קונוס.\n\"פַייגִי, את נהנית?\" — מהנהנת פעם אחת,\nפעם אחת של פַייגִי — שווה אלף!\n\n[Verse 6 – Itty]\nאִיטִי מחכה בתור, בסבלנות, בלי לדחוף,\nמריעה לכל אחד: \"יפה! יאללה! כל הכבוד!\"\n\"אִיטִי, מי אמר לך?\" — \"אף אחד.\"\nהיא מנצחת בלב, בלי שום מדליה!\n\n[Verse 7 – Chani]\nחַנִי ליד הגדר: \"אני גדולה! אני רוצה לנהוג!\"\nקיבלה דגל — מנופפת כמו אלופה!\nדקה לפני הזינוק: \"מאמי, אני צריכה!!!\"\n\"עכשיו?!\" — \"עכשיו!\" — וכולם מחכים, מחייכים.\n\n[Verse 8 – Mami]\nמַאמִי מחזיקה תיקים, קסדות וחטיפים,\n\"שותים מים! חגורים! נוסעים בזהירות!\"\nוכשכולם יוצאים מהמסלול בשלום,\nמאמי לוחשת: \"ברוך השם — כולם פה!\"\n\n[Chorus]\n\n[Bridge – call and answer]\nמי המפקדת? — הֶענִי!\nמי שואל \"אפשר?\" — זַלְמִי!\nמי מצלמת? — גִּיטִי!\nמי שרה? — שֶׁעוִוי!\nמי רואה הכל? — פַייגִי!\nמי המלאך? — אִיטִי!\nמי גדולה? — חַנִי! (\"אני גדולה!!!\")\n\n[Final Chorus – key up]\n\n[Outro]\nדגל משובץ — כולם ניצחו היום!\nדאנק השם, חול המועד — יאללה, לפיצה!",
-"audio": null,
-"suno": "https://suno.com/create"
-},
-{
-"id": "song5",
-"n": 5,
-"stops": [
-"pizza",
-"sunset"
-],
-"time": "17:00",
-"acc": "var(--c-sun)",
-"stop": {
-"he": "פיצה + שקיעה על צוקי נתניה",
-"en": "Pizza + sunset · Netanya cliffs"
-},
-"title": {
-"he": "פַייגִי חִיְּכָה!",
-"en": "Faigy Smiled! (Pizza & Sunset)"
-},
-"style": "Sung by a Hasidic Jewish singer with an authentic heimish accent, heartfelt then bursting with joy, Israeli Hebrew with heimish Yiddish words. Opens as a slow Stolin-Karlin style niggun: rubato, soft piano and warm strings, sea waves, soulful \"ai-yai-yai\" melody; then accelerates into fast, joyful Israeli Chassidish pop dance at 138 BPM with brass, clarinet, driving drums and claps. One male solo lead; kids shout the call-and-answer lines. Slow-then-fast arc, huge final chorus, clean Hebrew diction.",
-"lyrics": "[Intro – slow niggun]\nאַי-יַאי-יַאי, אַי-יַאי-יַאי...\nהשמש יורדת על נתניה,\nצוקים, ים, ורוח של חג...\nאַי-יַאי-יַאי...\n\n[Verse 1 – Mami, faster]\nכיכר העצמאות, מזרקה, והפיצה חמה!\nמַאמִי מחלקת משולשים בכוח, בשמחה:\n\"תאכלו! יש עוד!\" — \"מאמי, אכלנו!\" — \"יש עוד!\"\nעוד מגש, ועוד מגש, ועוד... ברוך השם!\n\n[Chorus]\nתאכלו! יש עוד! — יש עוד!\nפיצה על הים — מחיה, מחיה!\nוכשהשמש נוגעת במים,\nקרה משהו היסטורי — פַייגִי חייכה!\n\n[Verse 2 – Chani]\n\"חַנִי, איזו תוספת?\" — \"הכל!!!\"\nזיתים, תירס, פטריות — \"הכל!!!\"\n\"אני גדולה! אני אוכלת לבד!\" — גבינה עד האוזניים,\nביס אחרון: \"מאמי, אני צריכה!\" — נו, ברור!\n\n[Verse 3 – Zalmy]\nזַלְמִי: \"מאמי, אפשר עוד משולש?\" — \"כן.\"\n\"...אפשר שלושה?\" — \"נראה.\" — \"נראה זה כן!!!\"\nרוקד ליד המזרקה, אף פעם לא עייף,\nושוב גרב אחת — הים לקח את השנייה? לא, היא בכלל לא באה!\n\n[Verse 4 – Gitty]\nגִּיטִי: \"כולם לשקיעה! אל תזוזו! עוד אחת!\"\n\"גִּיטִי, השמש זזה!\" — \"שמש, חכי רגע!\"\nהטלפון מלא — מוחקת שלושים אוזניים של עגל,\nכדי שיהיה מקום לתמונה הכי חשובה!\n\n[Verse 5 – Henny]\nהֶענִי סופרת על הצוק: \"שש! מישהו חסר!\"\n\"הֶענִי...\" — \"אני! שוב אני! אני רגועה!\"\nואז גם היא צוחקת, עם כל המשפחה,\nהמפקדת נותנת פקודה: \"כולם ליהנות!\"\n\n[Verse 6 – Shevy]\nשֶׁעוִוי שרה לשקיעה, והשחפים בורחים,\n\"שֶׁעוִוי, השמש שוקעת!\" — OH MY PEANUT BUTTER!\nהיא צריכה להירגע... היא מנסה... שנייה אחת...\nושוב שרה! אבל הפעם — כולם שרים איתה!\n\n[Verse 7 – Itty]\nאִיטִי מחלקת מפיות לכולם, בשקט,\nשומרת לחַנִי משולש, מחזיקה לה את היד.\n\"אִיטִי, מי אמר לך?\" — \"אף אחד.\"\nגם השמש מחייכת אלייך, אִיטִי!\n\n[Verse 8 – Faigy]\nפַייגִי שקטה, מסתכלת על הים,\nהשמש נוגעת במים — וּ... רגע... מה זה?!\nפַייגִי חייכה!!! תצלמו! זה היסטורי!\n\"עצרו את האוטו!\" — \"אנחנו לא באוטו!\" — \"אז עצרו את השמש!\"\n\n[Chorus]\n\n[Bridge – slow, then fast]\nאַי-יַאי-יַאי... דאנק השם,\nעל יום של שמחה, על כולנו ביחד,\nחול המועד, ים, ושבעה חיוכים —\nואחד מהם היסטורי!\nמי בסוכה הערב? — כולם בסוכה!\n(faster!) מי בסוכה?! — כולם בסוכה!\n\n[Final Chorus – fast]",
-"audio": null,
-"suno": "https://suno.com/create"
-},
-{
-"id": "song6",
-"n": 6,
-"stops": [
-"home"
-],
-"time": "18:45",
-"acc": "#6B4FD8",
-"stop": {
-"he": "נוסעים הביתה",
-"en": "Drive home"
-},
-"title": {
-"he": "דַּאנְק הַשֵּׁם, אַ גֶעשְׁמַאקֶער טָאג",
-"en": "Dank Hashem, a Geshmake Tog (Drive-Home Lullaby)"
-},
-"style": "Sung by a Hasidic Jewish singer with an authentic heimish accent, soft, tender and smiling, Israeli Hebrew with heimish Yiddish words. Gentle heimish lullaby in 3/4 waltz, 72 BPM, soft felt piano, fingerpicked acoustic guitar, warm low strings, a quiet clarinet answering the melody, faint night-road ambience. One intimate male solo voice, sung close and hushed, playful little smiles in the delivery. Slow, dreamy, a slight Stolin-Karlin niggun feel in the humming sections, fading out softly.",
-"lyrics": "[Intro – humming]\nמממ... יַאי-דַּאי-דַּאי...\nהכביש שקט, הפנסים זורמים,\nהאוטו מלא... ושקט. שקט?!\n\n[Verse 1 – Mami]\nמַאמִי נוהגת לאט, חגורה, רגועה,\nמסתכלת במראה — איזה מראה!\nשבעה ילדים, שבעה חלומות,\nולוחשת: \"כולם חגורים?\" — קליק, קליק... כולם.\n\n[Chorus]\nלילה טוב, חול המועד,\nדאנק השם, א געשמאקער טאג!\nפיתות, גלים, קארטים ושקיעה,\nעיניים נעצמות — עוד מעט בבית.\nנוּמִי, נוּמִי, משפחה מתוקה...\n\n[Verse 2 – Gitty]\nגִּיטִי גוללת אלף תמונות מהיום,\nתמונה של עגל, תמונה של גל, תמונה של אוזן,\nבתמונה שמונה מאות — העיניים נעצמות,\nהטלפון מלא... והלב — עוד יותר.\n\n[Verse 3 – Henny]\nהֶענִי סופרת בלחש: \"אחת... שתיים... שש...\"\nנרדמת לפני שהיא סופרת את עצמה.\nמחר בבוקר היא תקום ותגיד:\n\"חסר מישהו?\" — לא, מתוקה. כולנו פה.\n\n[Verse 4 – Shevy]\nשֶׁעוִוי סוף סוף שקטה... כמעט:\nשרה בשינה, בלחש, שיר של עשרים בתים.\n\"שֶׁעוִוי, את ישנה?\" — ממלמלת:\n\"...oh my peanut butter...\" — חחח, בשקט!\n\n[Verse 5 – Faigy]\nפַייגִי נרדמת עם חיוך קטן על הפנים,\n\"גִּיטִי, תצלמי! זה היסטורי!\"\nאבל גִּיטִי ישנה, והטלפון מלא...\nלא נורא — את החיוך הזה נזכור בלב.\n\n[Verse 6 – Zalmy]\nזַלְמִי: \"אני לא עייף! אני לא עייף!\"\n\"מאמי, אפשר להישאר ער?\" — \"נראה...\"\n\"...אפשר לחשוב על ז...\" — זזזז...\nגרב אחת ברגל, והשנייה — חולמת גם היא.\n\n[Verse 7 – Itty]\nאִיטִי נרדמת כשהיד של חַנִי בידה,\nאף אחד לא ביקש, אף אחד לא אמר,\n\"אִיטִי, מי אמר לך?\" — בחצי חלום:\n\"אף אחד...\" — מלאך קטן, לילה טוב.\n\n[Verse 8 – Chani]\nחַנִי פוקחת עין: \"מתי מגיעים?\"\n\"עוד מעט, חַנִי.\" — \"מתי אוכלים?\"\n\"אכלת פיצה, מותק.\" — \"מה היה הכי כיף?\"\n\"הכל...\" — וזהו. היא ישנה.\n\n[Chorus]\n\n[Bridge – very soft]\nמַאמִי סוחבת אותם הביתה, אחד-אחד, בכוח,\nדרך הסוכה, מתחת לקישוטים,\nולוחשת לשמיים: \"דאנק השם,\nעל כל הילדים, על כל היום הזה.\"\n\n[Outro – humming, fading]\nמחר בבוקר — מי בסוכה? (לחש) כולם בסוכה...\nיַאי-דַּאי-דַּאי... לילה טוב... געשמאק...\nמממ...",
-"audio": null,
-"suno": "https://suno.com/create"
-}
-];
+  /* songs v8: Bernshtein Radio. Real mp3s; src = AUDIO_BASE + "/audio/songN.mp3" */
+  var songs=[{"id":"song1","n":1,"stops":["go"],"time":"10:15","acc":"#E2483D","emo":"🚗","dur":223,"stop":{"he":"יוצאים מגבעת זאב","en":"Leaving Givat Ze’ev"},"title":{"he":"כּוּלָם בִּפְנִים?!","en":"Kulam Bifnim?! (Everyone In?!)"},"tease":{"he":"הֶענִי ספרה את כולם… חוץ מעצמה! 🙃","en":"Henny counted everyone… except herself! 🙃"},"audio":"__AUDIO_BASE__/audio/song1.mp3","lyrics":[{"t":{"e":"🎬","he":"פתיחה","en":"Intro"},"l":["יאללה, יאללה, חול המועד!","גבעת זאב — יוצאים לדרך!","משפחת בֶּרְנְשְׁטַיין — סבבה, נוסעים!"]},{"t":{"e":"🎤","he":"הבית של מַאמִי","en":"Mami’s verse"},"l":["מַאמִי סוחבת עשרה תיקים בכוח,","מים, חטיפים, ועוד תיק \"למקרה\".","עומדת ליד האוטו, מחייכת,","ושואלת את השאלות הגדולות:"]},{"t":{"e":"🎶","he":"פזמון · כולם שרים!","en":"Chorus · everybody sing!","ch":1},"l":["כולם בפנים? — כן!","כולם חגורים? — כן!","כולם עשו פיפי? — כן! (אֶהֶם...)","קליק, קליק, קליק — כל החגורות!","בלי קליק לא זזים — זה החוק של מַאמִי!","יאללה, נוסעים — געשמאק, מחיה!"]},{"t":{"e":"🎤","he":"הבית של גִּיטִי","en":"Gitty’s verse"},"l":["גִּיטִי עוזרת, גִּיטִי מסדרת,","\"עוד תמונה! אל תזוזו! עוד אחת!\"","עוד לא יצאנו — הטלפון כבר מלא!","\"גִּיטִי, יש לך דרכון?\" — \"מאאאמי!!! זה היה פעם אחת!!!\"","חחח! גִּיטִי, לא נשכח לך את זה!"]},{"t":{"e":"🎤","he":"הבית של הֶענִי","en":"Henny’s verse"},"l":["הֶענִי המפקדת בודקת תיקים,","סופרת: אחת, שתיים... שש! \"חסר מישהו!!!\"","הֶענִי, תסתכלי במראה — זאת את!","\"הֶענִי! וואו! תירגעי!\" — \"אני רגועה!\""]},{"t":{"e":"🎤","he":"הבית של שֶׁעוִוי","en":"Shevy’s verse"},"l":["שֶׁעוִוי שרה בקול, הכי חזק בעולם,","\"שֶׁעוִוי, קצת שקט?\" — היא שרה עוד יותר!","\"שֶׁעוִוי, מה שלומך?\" — OH MY PEANUT BUTTER!","שֶׁעוִוי, תירגעי... טוב, אחרי הפזמון!"]},{"t":{"e":"🎤","he":"הבית של פַייגִי","en":"Faigy’s verse"},"l":["פַייגִי שקטה, רואה הכל מהחלון,","\"מאמי, הכובע של חַנִי על הגג של האוטו.\"","\"פַייגִי, איך ראית?\" — היא רק מרימה גבה,","בלי פַייגִי היינו שוכחים חצי בית!"]},{"t":{"e":"🎤","he":"הבית של זַלְמִי","en":"Zalmy’s verse"},"l":["זַלְמִי קופץ, זַלְמִי רוקד, אף פעם לא עייף,","\"מאמי, אפשר לקחת את האופניים?\" — \"לא.\"","\"...אפשר לחשוב על זה?\" — \"זַלְמִי, איפה הגרב?\"","גרב אחת ברגל, והשנייה — בטיול משלה!"]},{"t":{"e":"🎤","he":"הבית של אִיטִי","en":"Itty’s verse"},"l":["אִיטִי המלאך — ראשונה באוטו, חגורה, קליק!","מחזיקה לחַנִי את היד, בלי שביקשו.","\"אִיטִי, מי אמר לך?\" — \"אף אחד.\"","וואו, אִיטִי, איזה לב של זהב!"]},{"t":{"e":"🎤","he":"הבית של חַנִי","en":"Chani’s verse"},"l":["חַנִי: \"אני גדולה! אני חוגרת לבד!\"","(קליק... כמעט... קליק!) — \"אני גדולה!\"","כולם מוכנים, המנוע כבר דולק —","\"מאמי, אני צריכה!!!\"","כולם: \"עכשיו?!\" — חַנִי: \"עכשיו!\"","רצים, חוזרים, ועוד פעם מההתחלה!"]},{"t":{"e":"🎶","he":"פזמון שוב · כולם!","en":"Chorus again · everybody!","ch":1},"l":["כולם בפנים? — כן!","כולם חגורים? — כן!","כולם עשו פיפי? — כן! (אֶהֶם...)","קליק, קליק, קליק — כל החגורות!","בלי קליק לא זזים — זה החוק של מַאמִי!","יאללה, נוסעים — געשמאק, מחיה!"]},{"t":{"e":"📣","he":"שאלה ותשובה · עונים בקול!","en":"Call & answer · shout back!"},"l":["\"מתי מגיעים?\" — עוד רגע, חַנִי!","\"מתי אוכלים?\" — עוד שנייה, חַנִי!","\"מה בא לך היום?\" — \"הכל!!!\"","\"מאמי, נקנה גלידה?\" — \"נראה...\"","כולם: \"נראה\" זה כן! יֶשְׁשְׁשׁ!"]},{"t":{"e":"🚀","he":"פזמון שוב · כולם!","en":"Chorus again · everybody!","ch":1},"l":["כולם בפנים? — כן!","כולם חגורים? — כן!","כולם עשו פיפי? — כן! (אֶהֶם...)","קליק, קליק, קליק — כל החגורות!","בלי קליק לא זזים — זה החוק של מַאמִי!","יאללה, נוסעים — געשמאק, מחיה!"]},{"t":{"e":"👋","he":"סיום","en":"Outro"},"l":["דאנק השם על חול המועד,","על כולנו ביחד באוטו אחד.","הסוכה מחכה לנו בבית...","ועכשיו — יאללה, נוסעים!"]}]},{"id":"song2","n":2,"stops":["farm"],"time":"11:20","acc":"#1FA45B","emo":"🫓","dur":198,"stop":{"he":"משק ברגר · כפר הס","en":"Meshek Berger · Kfar Hess"},"title":{"he":"פִּיתָה בַּטָּאבּוּן","en":"Pita BaTaboon (Farm Day)"},"tease":{"he":"חַנִי עם קמח באף: ״מאמי, אני צריכה!״ 🫣","en":"Chani, flour on her nose: “Mami, I need to go!” 🫣"},"audio":"__AUDIO_BASE__/audio/song2.mp3","lyrics":[{"t":{"e":"🎬","he":"פתיחה","en":"Intro"},"l":["מווווו! בוקר טוב, כפר הס!","משק ברגר — הגענו! געשמאק!"]},{"t":{"e":"🎤","he":"הבית של מַאמִי","en":"Mami’s verse"},"l":["מַאמִי פורקת תיקים, כובעים ומים,","\"ילדים, ידיים לשטוף, ואז לבצק!\"","עשרה ילדים? לא — שבעה, אבל נשמע כמו מאה,","והעגלים כבר מסתכלים: \"מי אלה?!\""]},{"t":{"e":"🎶","he":"פזמון · כולם שרים!","en":"Chorus · everybody sing!","ch":1},"l":["פיתה בטאבון — חם, חם, חם!","עגל עם בקבוק — שלום, שלום, שלום!","חולבים את הפרה — שפריץ! טְפוּ, איזה כיף!","ארנב קטן — ליטוף, ליטוף!","חול המועד בחווה — מחיה, מחיה!"]},{"t":{"e":"🎤","he":"הבית של גִּיטִי","en":"Gitty’s verse"},"l":["גִּיטִי מצלמת את העגל: \"אל תזוז! עוד אחת!\"","העגל זז. העגל מלקק את הטלפון.","\"גִּיטִי, יש מקום בטלפון?\" — \"תמחקו לי משהו!\"","שלושים תמונות של אוזן אחת של עגל!"]},{"t":{"e":"🎤","he":"הבית של הֶענִי","en":"Henny’s verse"},"l":["הֶענִי המפקדת מסדרת את הארנבים בשורה,","\"אחד, שתיים, שלוש... חסר ארנב!\"","הארנב בידיים שלה. הֶענִי, וואו!","\"הֶענִי! תירגעי!\" — \"אני רגועה!\""]},{"t":{"e":"🎤","he":"הבית של שֶׁעוִוי","en":"Shevy’s verse"},"l":["שֶׁעוִוי שרה לפרות שיר עם עשרים בתים,","הפרות עונות לה: \"מווו!\" — היא עונה חזק יותר!","\"שֶׁעוִוי, איך הפיתה?\" — OH MY PEANUT BUTTER!","היא אפילו לא שמה חמאת בוטנים!"]},{"t":{"e":"🎤","he":"הבית של פַייגִי","en":"Faigy’s verse"},"l":["פַייגִי חולבת ברצינות, כמו מדענית,","שפריץ ראשון — בדיוק לתוך הדלי.","\"פַייגִי, איך ידעת?\" — \"הסתכלתי.\"","הפרה נותנת לה חצי קריצה!"]},{"t":{"e":"🎤","he":"הבית של זַלְמִי","en":"Zalmy’s verse"},"l":["זַלְמִי מאכיל עגל, והעגל מושך חזק,","\"מאמי, אפשר לקחת עגל הביתה?\" — \"לא.\"","\"...אפשר לחשוב על זה? יש לי כבר דגים!\"","והגרב? העגל אכל אותה! (סתם, היא הלכה עוד בבוקר.)"]},{"t":{"e":"🎤","he":"הבית של אִיטִי","en":"Itty’s verse"},"l":["אִיטִי מלטפת ארנב ברכות, לאט לאט,","ונותנת לחַנִי ללטף ראשונה.","\"אִיטִי, מי אמר לך?\" — \"אף אחד.\"","גם הארנב יודע: יש פה מלאך!"]},{"t":{"e":"🎤","he":"הבית של חַנִי","en":"Chani’s verse"},"l":["חַנִי לשה בצק: \"אני גדולה! אני לבד!\"","קמח באף, קמח בשיער, קמח על מאמי!","\"חַנִי, מה לשים על הפיתה?\" — \"הכל!!!\"","זעתר, שמן, גבינה — \"הכל!!!\""]},{"t":{"e":"🎶","he":"פזמון שוב · כולם!","en":"Chorus again · everybody!","ch":1},"l":["פיתה בטאבון — חם, חם, חם!","עגל עם בקבוק — שלום, שלום, שלום!","חולבים את הפרה — שפריץ! טְפוּ, איזה כיף!","ארנב קטן — ליטוף, ליטוף!","חול המועד בחווה — מחיה, מחיה!"]},{"t":{"e":"📣","he":"שאלה ותשובה · עונים בקול!","en":"Call & answer · shout back!"},"l":["איך עושה העגל? — מווו!","איך עושה הכבשה? — מֶעֶה!","איך עושה חַנִי? — \"מאמי, אני צריכה!\"","ואיך עושה מאמי? — \"תאכלו! יש עוד!\""]},{"t":{"e":"👋","he":"סיום","en":"Outro"},"l":["פיתה חמה ביד, ריח של חג,","דאנק השם על כל ברייה קטנה.","יאללה, לאוטו — כולם חגורים?","כן! לים, לים, לים!"]}]},{"id":"song3","n":3,"stops":["boat"],"time":"13:15","acc":"#1E7BEA","emo":"🚤","dur":216,"stop":{"he":"סירת מרוץ · מרינה הרצליה","en":"Speedboat · Herzliya Marina"},"title":{"he":"יוֹתֵר חָזָק מֵהַמָּנוֹעַ!","en":"Louder Than the Engine!"},"tease":{"he":"שֶׁעוִוי חזקה מהמנוע: ⁦OH MY PEANUT BUTTER!⁩ 🥜","en":"Shevy is louder than the engine: OH MY PEANUT BUTTER! 🥜"},"audio":"__AUDIO_BASE__/audio/song3.mp3","lyrics":[{"t":{"e":"🎬","he":"פתיחה","en":"Intro"},"l":["וררררום! מרינה הרצליה!","אפודים כתומים — סגורים? סגורים!","מחזיקים חזק? מחזיקים!","3... 2... 1... ווייייי!"]},{"t":{"e":"🎤","he":"הבית של מַאמִי","en":"Mami’s verse"},"l":["מַאמִי בודקת אפודים, אחד-אחד בכוח,","\"כולם סגורים? כולם יושבים? כולם מחזיקים?\"","על המים אותו חוק כמו באוטו, מותק:","בלי אפוד סגור — לא זזים!"]},{"t":{"e":"🎶","he":"פזמון · כולם שרים!","en":"Chorus · everybody sing!","ch":1},"l":["גלים! (בום!) גלים! (בום!)","הסירה קופצת — ואנחנו צועקים!","ווייייי! עוד פעם! ווייייי!","אבל מי יותר חזקה מהמנוע?","שֶׁעוִוי! שֶׁעוִוי! שֶׁעוִוי!"]},{"t":{"e":"🎤","he":"הבית של שֶׁעוִוי","en":"Shevy’s verse"},"l":["המנוע עושה \"ררררר\", שֶׁעוִוי עושה \"לה-לה-לה!\"","\"שֶׁעוִוי, קצת שקט!\" — עכשיו גם הדגים שומעים!","פעם נסעה לפארק מים עם אקווריום על הברכיים,","היום — כל הים שלה! \"שֶׁעוִוי, זה כיף?\" — OH MY PEANUT BUTTER!"]},{"t":{"e":"🎤","he":"הבית של גִּיטִי","en":"Gitty’s verse"},"l":["גִּיטִי מצלמת: \"אל תזוזו! עוד אחת!\"","\"גִּיטִי, אנחנו בסירה! הכל זז!\"","חמישים תמונות של שמיים ושל טיפה,","\"גִּיטִי, הדרכון בכיס?\" — \"מאאאמי!!!\" — חחח!"]},{"t":{"e":"🎤","he":"הבית של הֶענִי","en":"Henny’s verse"},"l":["הֶענִי סופרת אפודים: \"שש! חסר אחד!!!\"","\"הקפטן, תעצור! מישהו נפל!\"","הקפטן מסתכל: \"את לובשת אותו.\"","\"הֶענִי! וואו! תירגעי!\" — \"אני רגועה!\""]},{"t":{"e":"🎤","he":"הבית של פַייגִי","en":"Faigy’s verse"},"l":["פַייגִי יושבת שקטה, רצינית, עם עיניים גדולות,","סופרת גלים — \"שלושה-עשר. היה גם דולפין? לא, שקית.\"","כולם צועקים, פַייגִי רק מהנהנת,","אבל הלב שלה — גם הוא עושה ווייייי!"]},{"t":{"e":"🎤","he":"הבית של זַלְמִי","en":"Zalmy’s verse"},"l":["זַלְמִי קם לרקוד — \"זַלְמִי, לשבת!\" — יושב, רוקד בישיבה,","\"קפטן, אפשר עוד סיבוב?\" — \"לא.\"","\"...אפשר לחשוב על זה? שני סיבובים? חצי?\"","והגרב? היא נשארה בבית — חכמה!"]},{"t":{"e":"🎤","he":"הבית של אִיטִי","en":"Itty’s verse"},"l":["אִיטִי יושבת בדיוק איפה שמאמי אמרה,","מחזיקה לחַנִי את היד חזק-חזק.","\"אִיטִי, מי אמר לך?\" — \"אף אחד.\"","גל ענק! — והיד של אִיטִי לא עוזבת!"]},{"t":{"e":"🎤","he":"הבית של חַנִי","en":"Chani’s verse"},"l":["חַנִי: \"אני גדולה! אני נוהגת בסירה!\"","באמצע הים: \"מאמי, מתי מגיעים?\"","\"חַנִי, הגענו! זה הים!\" — \"אה. מתי אוכלים?\"","\"מה הכי כיף, חַנִי?\" — \"הכל!!!\""]},{"t":{"e":"🎶","he":"פזמון שוב · כולם!","en":"Chorus again · everybody!","ch":1},"l":["גלים! (בום!) גלים! (בום!)","הסירה קופצת — ואנחנו צועקים!","ווייייי! עוד פעם! ווייייי!","אבל מי יותר חזקה מהמנוע?","שֶׁעוִוי! שֶׁעוִוי! שֶׁעוִוי!"]},{"t":{"e":"📣","he":"שאלה ותשובה · עונים בקול!","en":"Call & answer · shout back!"},"l":["מי צועק? — אנחנו!","מי יותר חזק? — שֶׁעוִוי!","מי רגועה? — הֶענִי! (\"אני רגועה!!!\")","מי חגורים? — כולם!"]},{"t":{"e":"👋","he":"סיום","en":"Outro"},"l":["חוזרים למזח, רטובים ומאושרים,","דאנק השם על הים ועל השמש של החג.","יאללה, לאוטו — כולם חגורים?","כן! לקארטינג!"]}]},{"id":"song4","n":4,"stops":["kart"],"time":"14:15","acc":"#F0452B","emo":"🏎️","dur":218,"stop":{"he":"דן קארטינג · נתניה","en":"Dan Karting · Netanya"},"title":{"he":"הַמְּפַקֶּדֶת בַּמַּסְלוּל","en":"The Commander on the Track"},"tease":{"he":"זַלְמִי איבד גרב שוב… והגרב מנצחת במרוץ 🧦","en":"Zalmy lost a sock again… and the sock is winning the race 🧦"},"audio":"__AUDIO_BASE__/audio/song4.mp3","lyrics":[{"t":{"e":"🎬","he":"פתיחה","en":"Intro"},"l":["קסדות על הראש? — כן!","חגורות סגורות? — כן!","אור אדום... אור צהוב... אור ירוק — סע!"]},{"t":{"e":"🎤","he":"הבית של הֶענִי","en":"Henny’s verse"},"l":["הֶענִי המפקדת עומדת בקו הזינוק,","בודקת קסדות, בודקת שרוכים, בודקת את המדריך.","סופרת נהגים: \"שש! מישהו נעלם!!!\"","\"הֶענִי, את בתוך הקארט.\" — \"אה. אני רגועה!\""]},{"t":{"e":"🎶","he":"פזמון · כולם שרים!","en":"Chorus · everybody sing!","ch":1},"l":["וררררום! סיבוב, סיבוב!","הֶענִי נותנת פקודות — כולם מקשיבים (בערך)!","קסדה, חגורה, ורגל על הגז,","דן קארטינג נתניה — יאללה, יאללה, סבבה!"]},{"t":{"e":"🎤","he":"הבית של זַלְמִי","en":"Zalmy’s verse"},"l":["זַלְמִי: \"מאמי, אפשר לנהוג לבד?\" — \"לא.\"","\"...אפשר לחשוב על זה?\" — \"נוסעים ביחד בקארט הכפול.\"","\"אפשר מהר?\" — \"נראה.\" — \"נראה זה כן!!!\"","גרב אחת ברגל, והגרב השנייה — מנצחת בבית!"]},{"t":{"e":"🎤","he":"הבית של גִּיטִי","en":"Gitty’s verse"},"l":["גִּיטִי ליד הגדר: \"אל תזוזו! עוד אחת!\"","\"גִּיטִי, זה מרוץ! כולם זזים!\"","\"אין מקום בטלפון!\" — מוחקת את העגל מהבוקר,","\"גִּיטִי, דרכון?\" — \"מאאאמי!!! זה היה פעם אחת!!!\""]},{"t":{"e":"🎤","he":"הבית של שֶׁעוִוי","en":"Shevy’s verse"},"l":["שֶׁעוִוי שרה בתוך הקסדה, הקסדה רועדת,","\"שֶׁעוִוי, איך המרוץ?\" — OH MY PEANUT BUTTER!","היא מנופפת לכל קארט שעובר,","\"שֶׁעוִוי, שתי ידיים על ההגה!\" — \"אה, נכון!\" (שתיים!)"]},{"t":{"e":"🎤","he":"הבית של פַייגִי","en":"Faigy’s verse"},"l":["פַייגִי נוהגת שקט, שקט, בדיוק על הקו,","יודעת כל פנייה, רואה כל קונוס.","\"פַייגִי, את נהנית?\" — מהנהנת פעם אחת,","פעם אחת של פַייגִי — שווה אלף!"]},{"t":{"e":"🎤","he":"הבית של אִיטִי","en":"Itty’s verse"},"l":["אִיטִי מחכה בתור, בסבלנות, בלי לדחוף,","מריעה לכל אחד: \"יפה! יאללה! כל הכבוד!\"","\"אִיטִי, מי אמר לך?\" — \"אף אחד.\"","היא מנצחת בלב, בלי שום מדליה!"]},{"t":{"e":"🎤","he":"הבית של חַנִי","en":"Chani’s verse"},"l":["חַנִי ליד הגדר: \"אני גדולה! אני רוצה לנהוג!\"","קיבלה דגל — מנופפת כמו אלופה!","דקה לפני הזינוק: \"מאמי, אני צריכה!!!\"","\"עכשיו?!\" — \"עכשיו!\" — וכולם מחכים, מחייכים."]},{"t":{"e":"🎤","he":"הבית של מַאמִי","en":"Mami’s verse"},"l":["מַאמִי מחזיקה תיקים, קסדות וחטיפים,","\"שותים מים! חגורים! נוסעים בזהירות!\"","וכשכולם יוצאים מהמסלול בשלום,","מאמי לוחשת: \"ברוך השם — כולם פה!\""]},{"t":{"e":"🎶","he":"פזמון שוב · כולם!","en":"Chorus again · everybody!","ch":1},"l":["וררררום! סיבוב, סיבוב!","הֶענִי נותנת פקודות — כולם מקשיבים (בערך)!","קסדה, חגורה, ורגל על הגז,","דן קארטינג נתניה — יאללה, יאללה, סבבה!"]},{"t":{"e":"📣","he":"שאלה ותשובה · עונים בקול!","en":"Call & answer · shout back!"},"l":["מי המפקדת? — הֶענִי!","מי שואל \"אפשר?\" — זַלְמִי!","מי מצלמת? — גִּיטִי!","מי שרה? — שֶׁעוִוי!","מי רואה הכל? — פַייגִי!","מי המלאך? — אִיטִי!","מי גדולה? — חַנִי! (\"אני גדולה!!!\")"]},{"t":{"e":"🚀","he":"פזמון שוב · כולם!","en":"Chorus again · everybody!","ch":1},"l":["וררררום! סיבוב, סיבוב!","הֶענִי נותנת פקודות — כולם מקשיבים (בערך)!","קסדה, חגורה, ורגל על הגז,","דן קארטינג נתניה — יאללה, יאללה, סבבה!"]},{"t":{"e":"👋","he":"סיום","en":"Outro"},"l":["דגל משובץ — כולם ניצחו היום!","דאנק השם, חול המועד — יאללה, לפיצה!"]}]},{"id":"song5","n":5,"stops":["pizza","sunset"],"time":"17:00","acc":"#EE4E89","emo":"🍕🌅","dur":252,"stop":{"he":"פיצה + שקיעה על צוקי נתניה","en":"Pizza + sunset · Netanya cliffs"},"title":{"he":"פַייגִי חִיְּכָה!","en":"Faigy Smiled! (Pizza & Sunset)"},"tease":{"he":"פַייגִי חייכה — תצלמו! זה היסטורי! 📸","en":"Faigy smiled — take a picture! It’s historic! 📸"},"audio":"__AUDIO_BASE__/audio/song5.mp3","lyrics":[{"t":{"e":"🐝","he":"פתיחה · מזמזמים ביחד","en":"Intro · hum along"},"l":["אַי-יַאי-יַאי, אַי-יַאי-יַאי...","השמש יורדת על נתניה,","צוקים, ים, ורוח של חג...","אַי-יַאי-יַאי..."]},{"t":{"e":"🎤","he":"הבית של מַאמִי","en":"Mami’s verse"},"l":["כיכר העצמאות, מזרקה, והפיצה חמה!","מַאמִי מחלקת משולשים בכוח, בשמחה:","\"תאכלו! יש עוד!\" — \"מאמי, אכלנו!\" — \"יש עוד!\"","עוד מגש, ועוד מגש, ועוד... ברוך השם!"]},{"t":{"e":"🎶","he":"פזמון · כולם שרים!","en":"Chorus · everybody sing!","ch":1},"l":["תאכלו! יש עוד! — יש עוד!","פיצה על הים — מחיה, מחיה!","וכשהשמש נוגעת במים,","קרה משהו היסטורי — פַייגִי חייכה!"]},{"t":{"e":"🎤","he":"הבית של חַנִי","en":"Chani’s verse"},"l":["\"חַנִי, איזו תוספת?\" — \"הכל!!!\"","זיתים, תירס, פטריות — \"הכל!!!\"","\"אני גדולה! אני אוכלת לבד!\" — גבינה עד האוזניים,","ביס אחרון: \"מאמי, אני צריכה!\" — נו, ברור!"]},{"t":{"e":"🎤","he":"הבית של זַלְמִי","en":"Zalmy’s verse"},"l":["זַלְמִי: \"מאמי, אפשר עוד משולש?\" — \"כן.\"","\"...אפשר שלושה?\" — \"נראה.\" — \"נראה זה כן!!!\"","רוקד ליד המזרקה, אף פעם לא עייף,","ושוב גרב אחת — הים לקח את השנייה? לא, היא בכלל לא באה!"]},{"t":{"e":"🎤","he":"הבית של גִּיטִי","en":"Gitty’s verse"},"l":["גִּיטִי: \"כולם לשקיעה! אל תזוזו! עוד אחת!\"","\"גִּיטִי, השמש זזה!\" — \"שמש, חכי רגע!\"","הטלפון מלא — מוחקת שלושים אוזניים של עגל,","כדי שיהיה מקום לתמונה הכי חשובה!"]},{"t":{"e":"🎤","he":"הבית של הֶענִי","en":"Henny’s verse"},"l":["הֶענִי סופרת על הצוק: \"שש! מישהו חסר!\"","\"הֶענִי...\" — \"אני! שוב אני! אני רגועה!\"","ואז גם היא צוחקת, עם כל המשפחה,","המפקדת נותנת פקודה: \"כולם ליהנות!\""]},{"t":{"e":"🎤","he":"הבית של שֶׁעוִוי","en":"Shevy’s verse"},"l":["שֶׁעוִוי שרה לשקיעה, והשחפים בורחים,","\"שֶׁעוִוי, השמש שוקעת!\" — OH MY PEANUT BUTTER!","היא צריכה להירגע... היא מנסה... שנייה אחת...","ושוב שרה! אבל הפעם — כולם שרים איתה!"]},{"t":{"e":"🎤","he":"הבית של אִיטִי","en":"Itty’s verse"},"l":["אִיטִי מחלקת מפיות לכולם, בשקט,","שומרת לחַנִי משולש, מחזיקה לה את היד.","\"אִיטִי, מי אמר לך?\" — \"אף אחד.\"","גם השמש מחייכת אלייך, אִיטִי!"]},{"t":{"e":"🎤","he":"הבית של פַייגִי","en":"Faigy’s verse"},"l":["פַייגִי שקטה, מסתכלת על הים,","השמש נוגעת במים — וּ... רגע... מה זה?!","פַייגִי חייכה!!! תצלמו! זה היסטורי!","\"עצרו את האוטו!\" — \"אנחנו לא באוטו!\" — \"אז עצרו את השמש!\""]},{"t":{"e":"🎶","he":"פזמון שוב · כולם!","en":"Chorus again · everybody!","ch":1},"l":["תאכלו! יש עוד! — יש עוד!","פיצה על הים — מחיה, מחיה!","וכשהשמש נוגעת במים,","קרה משהו היסטורי — פַייגִי חייכה!"]},{"t":{"e":"🌉","he":"לאט… ואז מהר!","en":"Slow… then FAST!"},"l":["אַי-יַאי-יַאי... דאנק השם,","על יום של שמחה, על כולנו ביחד,","חול המועד, ים, ושבעה חיוכים —","ואחד מהם היסטורי!","מי בסוכה הערב? — כולם בסוכה!","(faster!) מי בסוכה?! — כולם בסוכה!"]},{"t":{"e":"🚀","he":"פזמון שוב · כולם!","en":"Chorus again · everybody!","ch":1},"l":["תאכלו! יש עוד! — יש עוד!","פיצה על הים — מחיה, מחיה!","וכשהשמש נוגעת במים,","קרה משהו היסטורי — פַייגִי חייכה!"]}]},{"id":"song6","n":6,"stops":["home"],"time":"18:45","acc":"#6B4FD8","emo":"🌙","dur":292,"stop":{"he":"נוסעים הביתה","en":"Drive home"},"title":{"he":"דַּאנְק הַשֵּׁם, אַ גֶעשְׁמַאקֶער טָאג","en":"Dank Hashem, a Geshmake Tog (Drive-Home Lullaby)"},"tease":{"he":"זַלְמִי: ״אני לא עייף! אני לא עייף!״ — זזזז… 😴","en":"Zalmy: “I’m not tired! I’m NOT tired!” — zzzz… 😴"},"audio":"__AUDIO_BASE__/audio/song6.mp3","lyrics":[{"t":{"e":"🐝","he":"פתיחה · מזמזמים ביחד","en":"Intro · hum along"},"l":["מממ... יַאי-דַּאי-דַּאי...","הכביש שקט, הפנסים זורמים,","האוטו מלא... ושקט. שקט?!"]},{"t":{"e":"🎤","he":"הבית של מַאמִי","en":"Mami’s verse"},"l":["מַאמִי נוהגת לאט, חגורה, רגועה,","מסתכלת במראה — איזה מראה!","שבעה ילדים, שבעה חלומות,","ולוחשת: \"כולם חגורים?\" — קליק, קליק... כולם."]},{"t":{"e":"🎶","he":"פזמון · כולם שרים!","en":"Chorus · everybody sing!","ch":1},"l":["לילה טוב, חול המועד,","דאנק השם, א געשמאקער טאג!","פיתות, גלים, קארטים ושקיעה,","עיניים נעצמות — עוד מעט בבית.","נוּמִי, נוּמִי, משפחה מתוקה..."]},{"t":{"e":"🎤","he":"הבית של גִּיטִי","en":"Gitty’s verse"},"l":["גִּיטִי גוללת אלף תמונות מהיום,","תמונה של עגל, תמונה של גל, תמונה של אוזן,","בתמונה שמונה מאות — העיניים נעצמות,","הטלפון מלא... והלב — עוד יותר."]},{"t":{"e":"🎤","he":"הבית של הֶענִי","en":"Henny’s verse"},"l":["הֶענִי סופרת בלחש: \"אחת... שתיים... שש...\"","נרדמת לפני שהיא סופרת את עצמה.","מחר בבוקר היא תקום ותגיד:","\"חסר מישהו?\" — לא, מתוקה. כולנו פה."]},{"t":{"e":"🎤","he":"הבית של שֶׁעוִוי","en":"Shevy’s verse"},"l":["שֶׁעוִוי סוף סוף שקטה... כמעט:","שרה בשינה, בלחש, שיר של עשרים בתים.","\"שֶׁעוִוי, את ישנה?\" — ממלמלת:","\"...oh my peanut butter...\" — חחח, בשקט!"]},{"t":{"e":"🎤","he":"הבית של פַייגִי","en":"Faigy’s verse"},"l":["פַייגִי נרדמת עם חיוך קטן על הפנים,","\"גִּיטִי, תצלמי! זה היסטורי!\"","אבל גִּיטִי ישנה, והטלפון מלא...","לא נורא — את החיוך הזה נזכור בלב."]},{"t":{"e":"🎤","he":"הבית של זַלְמִי","en":"Zalmy’s verse"},"l":["זַלְמִי: \"אני לא עייף! אני לא עייף!\"","\"מאמי, אפשר להישאר ער?\" — \"נראה...\"","\"...אפשר לחשוב על ז...\" — זזזז...","גרב אחת ברגל, והשנייה — חולמת גם היא."]},{"t":{"e":"🎤","he":"הבית של אִיטִי","en":"Itty’s verse"},"l":["אִיטִי נרדמת כשהיד של חַנִי בידה,","אף אחד לא ביקש, אף אחד לא אמר,","\"אִיטִי, מי אמר לך?\" — בחצי חלום:","\"אף אחד...\" — מלאך קטן, לילה טוב."]},{"t":{"e":"🎤","he":"הבית של חַנִי","en":"Chani’s verse"},"l":["חַנִי פוקחת עין: \"מתי מגיעים?\"","\"עוד מעט, חַנִי.\" — \"מתי אוכלים?\"","\"אכלת פיצה, מותק.\" — \"מה היה הכי כיף?\"","\"הכל...\" — וזהו. היא ישנה."]},{"t":{"e":"🎶","he":"פזמון שוב · כולם!","en":"Chorus again · everybody!","ch":1},"l":["לילה טוב, חול המועד,","דאנק השם, א געשמאקער טאג!","פיתות, גלים, קארטים ושקיעה,","עיניים נעצמות — עוד מעט בבית.","נוּמִי, נוּמִי, משפחה מתוקה..."]},{"t":{"e":"🤫","he":"בשקט בשקט…","en":"Soft and quiet…"},"l":["מַאמִי סוחבת אותם הביתה, אחד-אחד, בכוח,","דרך הסוכה, מתחת לקישוטים,","ולוחשת לשמיים: \"דאנק השם,","על כל הילדים, על כל היום הזה.\""]},{"t":{"e":"👋","he":"סיום","en":"Outro"},"l":["מחר בבוקר — מי בסוכה? (לחש) כולם בסוכה...","יַאי-דַּאי-דַּאי... לילה טוב... געשמאק...","מממ..."]}]}];
+  var TOKEN="__AUDIO_"+"BASE__";
+  function audioUrl(p){var base=(typeof AUDIO_BASE!=="string"||/^__AUDIO_/.test(AUDIO_BASE)||!AUDIO_BASE)?".":AUDIO_BASE;while(base.length>1&&base.slice(-1)==="/")base=base.slice(0,-1);return p.split(TOKEN).join(base);}
   function esc(t){return String(t).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});}
-  function lyricsHtml(t){return t.split("\n").map(function(l){var m=l.match(/^\[(.+)\]$/);if(m)return '<span class="lyr-tag" dir="auto">'+esc(m[1])+'</span>';if(!l.trim())return '<span class="lyr-gap"></span>';return '<span class="lyr-line" dir="auto">'+esc(l)+'</span>';}).join("");}
-  var L={copyStyle:['Copy style','העתקת סטייל'],copyLyrics:['Copy lyrics','העתקת מילים'],suno:['Make it on Suno','ליצור ב־Suno'],copied:['Copied!','הועתק!'],lyrics:['Lyrics','מילים'],style:['Suno style','סטייל ל־Suno'],showLyrics:['Show lyrics','הצגת המילים']};
-  function bi(k){return '<span class="en">'+L[k][0]+'</span><span class="he">'+L[k][1]+'</span>';}
-  function actions(song){return '<div class="song-actions"><button type="button" class="song-btn" data-copy="style" data-song="'+song.id+'">📋 '+bi("copyStyle")+'</button><button type="button" class="song-btn" data-copy="lyrics" data-song="'+song.id+'">📝 '+bi("copyLyrics")+'</button><a class="song-btn suno" href="'+(song.suno||"https://suno.com/create")+'" target="_blank" rel="noopener">🎶 '+bi("suno")+'</a></div>'+(song.audio?'<audio controls preload="none" src="'+song.audio+'"></audio>':'');}
+  function bi2(en,he){return '<span class="en">'+en+'</span><span class="he">'+he+'</span>';}
+  function fmt(s){s=Math.max(0,Math.floor(s||0));return Math.floor(s/60)+":"+("0"+s%60).slice(-2);}
+  var ICON_PLAY='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.6-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z" fill="currentColor"/></svg>';
+  var ICON_PAUSE='<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="5" width="4.2" height="14" rx="1.4" fill="currentColor"/><rect x="13.8" y="5" width="4.2" height="14" rx="1.4" fill="currentColor"/></svg>';
+  function lyricsHtml(song){return song.lyrics.map(function(b){
+    var tag=b.t?'<span class="lyr-tag"><span aria-hidden="true">'+b.t.e+'</span> '+bi2(esc(b.t.en),esc(b.t.he))+'</span>':'';
+    return '<div class="lyr-block'+(b.t&&b.t.ch?' chorus':'')+'">'+tag+b.l.map(function(l){return '<span class="lyr-line">'+esc(l)+'</span>';}).join("")+'</div>';}).join("");}
+  function playBtn(song,sm){return '<button type="button" class="pbtn'+(sm?' sm':'')+'" data-play="'+song.id+'" aria-label="Play '+esc(song.title.en)+'">'+ICON_PLAY+'</button>';}
   var songById={};
-  songs.forEach(function(song){songById[song.id]=song; song.stops.forEach(function(stopId){var slot=document.querySelector('.song-slot[data-song-id="'+stopId+'"]'); if(!slot)return; slot.style.setProperty("--acc",song.acc); slot.innerHTML='<span class="song-icon" aria-hidden="true">🎵</span><span class="song-copy"><b><span class="en">Song '+song.n+' · '+esc(song.title.en)+'</span><span class="he">שיר '+song.n+' · '+esc(song.title.he)+'</span></b><small><a href="#'+song.id+'" data-open-song="'+song.id+'">'+bi("showLyrics")+' ›</a></small></span>'+actions(song);});});
+  songs.forEach(function(song){songById[song.id]=song; song.stops.forEach(function(stopId){var slot=document.querySelector('.song-slot[data-song-id="'+stopId+'"]'); if(!slot)return; slot.style.setProperty("--acc",song.acc);
+    slot.innerHTML='<span class="song-icon" aria-hidden="true">'+song.emo+'</span><span class="song-copy"><b><span class="en">Song '+song.n+' · '+esc(song.title.en)+'</span><span class="he">שיר '+song.n+' · '+esc(song.title.he)+'</span></b><small><a href="#'+song.id+'" data-open-song="'+song.id+'">🎤 '+bi2("Sing-along lyrics","מילים לשירה")+' ›</a></small></span>'+playBtn(song,true);});});
   var freeSlot=document.querySelector('.song-slot[data-song-id="free"]');
-  if(freeSlot){freeSlot.style.setProperty("--acc","var(--c-free)");freeSlot.innerHTML='<span class="song-icon" aria-hidden="true">🎵</span><span class="song-copy"><b><span class="en">Free time = request time!</span><span class="he">זמן חופשי = זמן בקשות!</span></b><small><a href="#songs"><span class="en">Replay any song from the Songs tab ›</span><span class="he">שרים שוב כל שיר מלשונית השירים ›</span></a></small></span>';}
+  if(freeSlot){freeSlot.style.setProperty("--acc","var(--c-free)");freeSlot.innerHTML='<span class="song-icon" aria-hidden="true">📻</span><span class="song-copy"><b><span class="en">Free time = request time!</span><span class="he">זמן חופשי = זמן בקשות!</span></b><small><a href="#songs"><span class="en">Pick any song on Bernshtein Radio ›</span><span class="he">בוחרים שיר ברדיו ברנשטיין ›</span></a></small></span>';}
   var songList=document.getElementById("songs-list");
   if(songList) songs.forEach(function(song){var card=document.createElement("article");card.className="song-card";card.id=song.id;card.style.setProperty("--acc",song.acc);
-    card.innerHTML='<div class="song-meta"><span class="song-num">'+song.n+'</span><span class="song-time"><bdi dir="ltr">'+song.time+'</bdi> · <span class="en">'+esc(song.stop.en)+'</span><span class="he">'+esc(song.stop.he)+'</span></span></div>'
-      +'<h3><span class="he-title" dir="rtl" lang="he">'+esc(song.title.he)+'</span><small dir="ltr" lang="en">'+esc(song.title.en)+'</small></h3>'
-      +actions(song)
-      +'<details class="song-style"><summary>🎛️ '+bi("style")+'</summary><p dir="ltr" lang="en">'+esc(song.style)+'</p></details>'
-      +'<details class="song-lyrics"'+(song.n===1?' open':'')+'><summary>🎤 '+bi("lyrics")+'</summary><div class="lyrics" dir="rtl" lang="he">'+lyricsHtml(song.lyrics)+'</div></details>';
+    card.innerHTML='<span class="now-badge">📍 '+bi2("We’re here now!","אנחנו פה עכשיו!")+'</span>'
+      +'<div class="sc-top"><div class="vinyl" aria-hidden="true"><div class="vinyl-label">'+song.emo+'</div></div><div class="sc-info">'
+      +'<div class="song-meta"><span class="song-num">'+song.n+'</span><span class="song-time"><bdi dir="ltr">'+song.time+'</bdi> · <span class="en">'+esc(song.stop.en)+'</span><span class="he">'+esc(song.stop.he)+'</span></span></div>'
+      +'<h3><span class="he-title" dir="rtl" lang="he">'+esc(song.title.he)+'</span><small dir="ltr" lang="en">'+esc(song.title.en)+'</small></h3></div></div>'
+      +'<p class="teaser">💬 '+bi2(esc(song.tease.en),esc(song.tease.he))+'</p>'
+      +'<div class="player" dir="ltr">'+playBtn(song)+'<div class="pmain"><div class="prow"><span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><span class="pstate">'+bi2("Ready to rock","מוכן לשירה")+'</span></div>'
+      +'<input type="range" class="prog" min="0" max="1000" value="0" step="1" data-seek="'+song.id+'" aria-label="Seek '+esc(song.title.en)+'">'
+      +'<div class="ptime"><span class="cur">0:00</span><span class="dur">'+fmt(song.dur)+'</span></div></div></div>'
+      +'<p class="cheer" aria-live="polite"></p>'
+      +'<details class="song-lyrics"><summary><span aria-hidden="true">🎤</span> '+bi2("Sing along! Show the words","שרים ביחד! הצגת המילים")+'</summary><div class="lyrics" dir="rtl" lang="he">'+lyricsHtml(song)+'</div></details>';
     songList.appendChild(card);});
-  function copyText(t){if(navigator.clipboard&&window.isSecureContext)return navigator.clipboard.writeText(t);return new Promise(function(res,rej){var ta=document.createElement("textarea");ta.value=t;ta.setAttribute("readonly","");ta.style.position="fixed";ta.style.opacity="0";document.body.appendChild(ta);ta.select();try{document.execCommand("copy")?res():rej();}catch(e){rej(e);}document.body.removeChild(ta);});}
+
+  /* one shared player */
+  var au=document.createElement("audio"); au.id="radio-audio"; au.preload="none"; au.hidden=true; document.body.appendChild(au);
+  var curId=null, playlist=false, pendingSeek=null, order=songs.map(function(s){return s.id;});
+  var playAll=document.getElementById("play-all"), np=document.getElementById("np"), npTxt=document.getElementById("np-txt");
+  function load(id){var s=songById[id]; if(!s)return; if(curId!==id){curId=id; au.src=audioUrl(s.audio); try{au.load();}catch(e){}}
+    if("mediaSession" in navigator&&window.MediaMetadata){try{navigator.mediaSession.metadata=new MediaMetadata({title:lang==="he"?s.title.he:s.title.en,artist:lang==="he"?"רדיו ברנשטיין":"Bernshtein Radio",album:"1.10 · "+(lang==="he"?s.stop.he:s.stop.en)});}catch(e){}}}
+  function play(id){load(id); var p=au.play(); if(p&&p.catch)p.catch(function(err){if(err&&err.name==="AbortError")return; showErr(id);}); }
+  function toggle(id){ if(curId===id&&!au.paused){au.pause();} else {if(curId!==id)playlist=false; play(id);} }
+  function showErr(id){var c=document.getElementById(id); if(c){var ch=c.querySelector(".cheer"); ch.innerHTML="⚠️ "+bi2("Oops, the song didn’t load. Check the internet and try again!","אופס, השיר לא נטען. בודקים אינטרנט ומנסים שוב!"); ch.className="cheer err";} render();}
+  function render(){
+    var playing=!!curId&&!au.paused&&!au.ended;
+    document.querySelectorAll("[data-play]").forEach(function(b){var on=b.dataset.play===curId&&playing, s=songById[b.dataset.play]; b.innerHTML=on?ICON_PAUSE:ICON_PLAY; b.classList.toggle("on",on); b.setAttribute("aria-label",(on?"Pause ":"Play ")+s.title.en);});
+    document.querySelectorAll(".song-card").forEach(function(c){var me=c.id===curId; c.classList.toggle("playing",me&&playing); c.classList.toggle("paused",me&&!playing);
+      var st=c.querySelector(".pstate"); if(st) st.innerHTML=me&&playing?bi2("Now playing · sing!","מתנגן עכשיו · שרים!"):me&&au.currentTime>0?bi2("Paused","בהפסקה"):bi2("Ready to rock","מוכן לשירה");});
+    if(playAll){playAll.classList.toggle("on",playlist&&playing); playAll.setAttribute("aria-pressed",playlist&&playing?"true":"false");
+      playAll.querySelector(".pa-ico").textContent=playlist&&playing?"❚❚":"▶";
+      playAll.querySelector(".pa-txt").innerHTML=playlist&&playing?bi2("Pause the trip","עוצרים את הטיול"):playlist&&curId&&!au.ended?bi2("Keep the trip going","ממשיכים את הטיול"):bi2("Play the whole trip","מנגנים את כל הטיול");}
+    if(np){var s=songById[curId]; np.hidden=!s; np.classList.toggle("playing",playing); if(s&&npTxt) npTxt.innerHTML=(playing?'🎧 ':'⏸️ ')+bi2((playlist?'Trip mix '+s.n+'/6 · ':'')+esc(s.title.en),(playlist?'מיקס הטיול '+s.n+'/6 · ':'')+esc(s.title.he));}
+  }
+  function progress(){var c=curId&&document.getElementById(curId); if(!c)return; var d=au.duration||songById[curId].dur, r=d?au.currentTime/d:0, pr=c.querySelector(".prog");
+    if(pr&&!pr.dragging){pr.value=Math.round(r*1000);} if(pr)pr.style.setProperty("--p",(r*100).toFixed(2)+"%");
+    c.querySelector(".cur").textContent=fmt(au.currentTime); if(au.duration&&isFinite(au.duration)) c.querySelector(".dur").textContent=fmt(au.duration);}
+  ["play","playing","pause","ended","emptied"].forEach(function(ev){au.addEventListener(ev,render);});
+  au.addEventListener("timeupdate",progress); au.addEventListener("loadedmetadata",function(){if(pendingSeek!=null&&au.duration){au.currentTime=pendingSeek*au.duration;pendingSeek=null;} progress();});
+  au.addEventListener("error",function(){if(curId)showErr(curId);});
+  au.addEventListener("ended",function(){var c=document.getElementById(curId), s=songById[curId];
+    if(c){var ch=c.querySelector(".cheer"); ch.className="cheer yay"; ch.innerHTML="🎉 "+bi2("Bravo! You sang it all!","כל הכבוד! שרתם את כל השיר!"); c.classList.remove("cheered"); void c.offsetWidth; c.classList.add("cheered");}
+    confetti();
+    var i=order.indexOf(curId);
+    if(playlist&&i>-1&&i<order.length-1){setTimeout(function(){if(playlist){var nx=order[i+1]; play(nx); var nc=document.getElementById(nx); if(nc&&document.getElementById("songs").getBoundingClientRect().top<innerHeight)nc.scrollIntoView({behavior:reduce?"auto":"smooth",block:"nearest"});}},1600);}
+    else playlist=false;
+    render();});
+  document.querySelectorAll(".prog").forEach(function(pr){
+    pr.addEventListener("pointerdown",function(){pr.dragging=true;}); pr.addEventListener("pointerup",function(){pr.dragging=false;});
+    pr.addEventListener("input",function(){var id=pr.dataset.seek, r=pr.value/1000; pr.style.setProperty("--p",(r*100)+"%");
+      if(curId!==id){pendingSeek=r; play(id);} else if(au.duration){au.currentTime=r*au.duration;} else {pendingSeek=r;}});
+    pr.addEventListener("change",function(){pr.dragging=false;});
+  });
+  if(playAll) playAll.addEventListener("click",function(){
+    if(playlist&&curId&&!au.paused){au.pause(); render(); return;}
+    if(playlist&&curId&&!au.ended){play(curId); render(); return;}
+    playlist=true; play(order[0]); render();});
   document.addEventListener("click",function(e){
-    var b=e.target.closest&&e.target.closest("[data-copy]");
-    if(b){var song=songById[b.dataset.song];if(!song)return;var html=b.innerHTML;copyText(b.dataset.copy==="style"?song.style:song.lyrics).then(function(){b.classList.add("ok");b.innerHTML="✅ "+bi("copied");setTimeout(function(){b.classList.remove("ok");b.innerHTML=html;},1600);},function(){b.innerHTML="⚠️ "+html;});return;}
+    var b=e.target.closest&&e.target.closest("[data-play]"); if(b){e.preventDefault(); toggle(b.dataset.play); render(); return;}
     var o=e.target.closest&&e.target.closest("[data-open-song]");
     if(o){var c=document.getElementById(o.dataset.openSong);if(c){var d=c.querySelector(".song-lyrics");if(d)d.open=true;}}
   });
->>>>>>> c56e28e (v7: trip songs in Songs tab)
+
+  /* which song fits right now (Israel clock) */
+  var radioNow=document.getElementById("radio-now");
+  function nowSong(){var m=israelMinutes();
+    if(m<680)return {id:"song1",soon:m<600}; if(m<795)return {id:"song2"}; if(m<855)return {id:"song3"}; if(m<930)return {id:"song4"};
+    if(m<1020)return {id:null}; if(m<1125)return {id:"song5"}; return {id:"song6"};}
+  function suggest(){var ns=nowSong(), s=songById[ns.id];
+    document.querySelectorAll(".song-card").forEach(function(c){c.classList.toggle("is-now",!!s&&c.id===s.id);});
+    if(!radioNow)return;
+    if(!s){radioNow.innerHTML='<span class="rn-txt">🎲 '+bi2("Free time = request time! Everyone picks a song.","זמן חופשי = זמן בקשות! כל אחד בוחר שיר.")+'</span>';return;}
+    radioNow.innerHTML='<span class="rn-txt">'+s.emo+' '+bi2((ns.soon?'Coming up: ':'Right now: ')+esc(s.stop.en)+' → song '+s.n,(ns.soon?'בקרוב: ':'עכשיו: ')+esc(s.stop.he)+' ← שיר '+s.n)+'</span><button type="button" class="rn-play" data-play="'+s.id+'">'+ICON_PLAY+'</button>';
+    render();}
+  suggest(); setInterval(suggest,60000); render();
 
   /* schedule-aware next stop, using Israel clock */
   var schedule=[
