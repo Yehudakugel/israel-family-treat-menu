@@ -341,6 +341,30 @@ dialog.lb::backdrop{background:#000}
 .songs-grid{display:grid;gap:12px}.song-card{display:flex;flex-direction:column;gap:7px;padding:16px;border:1px solid var(--line);border-radius:var(--r-lg);background:#fff;box-shadow:var(--sh-1)}.song-card h3{font:600 18px/1.25 var(--display);color:var(--acc,var(--ink))}.song-card .song-time{font-size:13px;color:var(--muted);font-weight:600;direction:ltr}.song-card p{font-size:14px;color:var(--ink-2);line-height:1.5}.song-card audio{width:100%;height:36px}.song-card a{font-size:13px;font-weight:700;color:var(--acc,var(--brand))}
 @media (min-width:600px){.nextbar{left:auto;right:20px}.songs-grid{grid-template-columns:1fr 1fr}}@media (min-width:960px){.nextbar{bottom:20px;right:28px;left:auto}.route-map iframe{height:300px}}@media (max-width:599px){.song-slot audio{margin-inline-start:0;flex-basis:100%}.song-slot{flex-wrap:wrap}.song-slot .song-copy{flex:1}.endpoint-actions .btn{flex:1 1 0}.nextbar{font-size:13px}}
 
+<<<<<<< HEAD
+=======
+/* ---------- v7 songs: lyrics, style, copy + Suno ---------- */
+.songs-grid{grid-template-columns:1fr!important;max-width:760px}
+.song-card{gap:10px;border-top:4px solid var(--acc,var(--brand))}
+.song-meta{display:flex;align-items:center;gap:8px}
+.song-num{flex:none;display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--acc,var(--brand));color:#fff;font:700 14px/1 var(--display,var(--font))}
+.song-card .song-time{direction:inherit}
+.song-card h3{margin:0;display:flex;flex-direction:column;gap:2px}.song-card h3 .he-title{font:700 21px/1.3 "Heebo",var(--font);color:var(--acc,var(--ink))}.song-card h3 small{font:500 13px/1.3 "Inter",var(--font);color:var(--muted);text-align:start}
+.song-actions{display:flex;flex-wrap:wrap;gap:6px;width:100%}
+.song-btn{display:inline-flex;align-items:center;justify-content:center;gap:5px;min-height:38px;padding:0 12px;border:1px solid color-mix(in srgb,var(--acc,#222) 40%,#fff);border-radius:999px;background:#fff;color:var(--acc,var(--ink))!important;font:600 13px/1 var(--font);text-decoration:none;cursor:pointer;flex:1 1 auto;white-space:nowrap}
+.song-btn:hover{background:color-mix(in srgb,var(--acc,#222) 8%,#fff)}.song-btn.ok{background:var(--ok-bg);border-color:var(--ok);color:var(--ok)!important}
+.song-btn.suno{background:var(--acc,var(--brand));border-color:var(--acc,var(--brand));color:#fff!important}
+.song-card details{border:1px solid var(--line);border-radius:var(--r-md);background:var(--bg-2)}
+.song-card summary{cursor:pointer;padding:10px 12px;font:600 14px/1.2 var(--font);color:var(--ink);list-style:none}.song-card summary::-webkit-details-marker{display:none}
+.song-card summary::after{content:"＋";float:inline-end;color:var(--muted)}.song-card details[open] summary::after{content:"－"}
+.song-style p{margin:0;padding:0 12px 12px;font:400 13px/1.55 "Inter",var(--font);color:var(--ink-2);text-align:left}
+.lyrics{display:flex;flex-direction:column;padding:4px 14px 14px;font:500 16px/1.7 "Heebo",var(--font);color:var(--ink);text-align:right}
+.lyrics .lyr-line{display:block;text-align:start}.lyrics .lyr-gap{display:block;height:8px}
+.lyrics .lyr-tag{align-self:flex-start;margin:6px 0 2px;padding:2px 9px;border-radius:999px;background:color-mix(in srgb,var(--acc,#222) 14%,#fff);color:var(--acc,var(--ink));font:700 12px/1.6 "Inter","Heebo",sans-serif}
+.song-slot{flex-wrap:wrap}.song-slot .song-copy{flex:1}.song-slot .song-actions{margin-top:4px}.song-slot .song-btn{min-height:34px;font-size:12.5px;padding:0 10px}
+.song-slot small a{color:var(--acc,var(--ink));font-weight:700;text-decoration:none}
+
+>>>>>>> c56e28e (v7: trip songs in Songs tab)
 /* ================= v5: fun layer ================= */
 :root{
   --display:"Fredoka","Varela Round","Inter",system-ui,sans-serif;
@@ -674,7 +698,11 @@ html[lang=he] .cd-num small{text-transform:none;letter-spacing:0;font-size:11px}
       </aside>
     </div>
 
+<<<<<<< HEAD
     <section class="section" id="songs" aria-labelledby="songs-title"><div class="sec-head"><h2 id="songs-title"><span class="en">Songs for the road</span><span class="he">שירים לדרך</span></h2><p><span class="en">Every stop gets its own soundtrack. We’ll drop the real songs in here soon.</span><span class="he">לכל תחנה יש פסקול משלה. בקרוב נוסיף כאן את השירים האמיתיים.</span></p></div><div class="songs-grid" id="songs-list"></div></section>
+=======
+    <section class="section" id="songs" aria-labelledby="songs-title"><div class="sec-head"><h2 id="songs-title"><span class="en">Songs for the road</span><span class="he">שירים לדרך</span></h2><p><span class="en">6 original songs, one per stop. Tap “Copy style” and “Copy lyrics”, then “Make it on Suno” (Custom mode) and paste.</span><span class="he">6 שירים מקוריים, שיר לכל תחנה. לוחצים ״העתקת סטייל״ ו״העתקת מילים״, ואז ״ליצור ב־Suno״ (מצב Custom) ומדביקים.</span></p></div><div class="songs-grid" id="songs-list"></div></section>
+>>>>>>> c56e28e (v7: trip songs in Songs tab)
 
     <hr class="div" />
     <section class="section older" id="ideas" aria-labelledby="ideas-title">
@@ -1059,6 +1087,7 @@ html[lang=he] .cd-num small{text-transform:none;letter-spacing:0;font-size:11px}
   boxes.forEach(function(c){c.addEventListener("change",won);});
   won();
 
+<<<<<<< HEAD
   /* songs: keep the data drop-in friendly for titles, lyrics, audio and Suno links */
   var songs=[
     {id:"go",time:"10:15",title:{he:"יוצאים לדרך!",en:"Hit the road!"},lyrics:{he:"שיר בדרך…",en:"Song coming soon…"},audio:null,suno:null},
@@ -1080,6 +1109,162 @@ html[lang=he] .cd-num small{text-transform:none;letter-spacing:0;font-size:11px}
   var songById={}; songs.forEach(function(song){songById[song.id]=song; var slot=document.querySelector('.song-slot[data-song-id="'+song.id+'"]'); if(slot) slot.innerHTML=songMarkup(song,false);});
   var songList=document.getElementById("songs-list");
   if(songList) songs.forEach(function(song){var card=document.createElement("article");card.className="song-card";card.dataset.songId=song.id;card.style.setProperty("--acc","var(--c-boat)");card.innerHTML='<span class="song-time"><bdi dir="ltr">'+song.time+'</bdi></span><h3><span class="en">'+song.title.en+'</span><span class="he">'+song.title.he+'</span></h3><p><span class="en">'+song.lyrics.en+'</span><span class="he">'+song.lyrics.he+'</span></p>'+(song.audio?'<audio controls preload="none" src="'+song.audio+'"></audio>':'')+(song.suno?'<a href="'+song.suno+'" target="_blank" rel="noopener"><span class="en">Open in Suno</span><span class="he">פתיחה ב־Suno</span></a>':'');songList.appendChild(card);});
+=======
+  /* songs v7: six Suno-ready songs (title, style, lyrics, audio, suno). Drop an mp3 URL into "audio" later. */
+  var songs=[
+{
+"id": "song1",
+"n": 1,
+"stops": [
+"go"
+],
+"time": "10:15",
+"acc": "var(--brand)",
+"stop": {
+"he": "יוצאים מגבעת זאב",
+"en": "Leaving Givat Ze’ev"
+},
+"title": {
+"he": "כּוּלָם בִּפְנִים?!",
+"en": "Kulam Bifnim?! (Everyone In?!)"
+},
+"style": "Sung by a Hasidic Jewish singer with an authentic heimish accent, warm and joyful, Israeli Hebrew with heimish Yiddish flavor. Upbeat Israeli Chassidish pop car anthem, 126 BPM, major key, bright brass section, clarinet runs, bouncy bass, hand claps, festive Chol HaMoed simcha energy. One male solo lead; a small group of kids shouts the call-and-answer replies (\"כן!\", \"עכשיו!\", \"הכל!\"). Huge shout-along chorus, key change up for the final chorus, clear Hebrew diction, car-horn and seatbelt-click accents.",
+"lyrics": "[Intro]\nיאללה, יאללה, חול המועד!\nגבעת זאב — יוצאים לדרך!\nמשפחת בֶּרְנְשְׁטַיין — סבבה, נוסעים!\n\n[Verse 1 – Mami]\nמַאמִי סוחבת עשרה תיקים בכוח,\nמים, חטיפים, ועוד תיק \"למקרה\".\nעומדת ליד האוטו, מחייכת,\nושואלת את השאלות הגדולות:\n\n[Chorus]\nכולם בפנים? — כן!\nכולם חגורים? — כן!\nכולם עשו פיפי? — כן! (אֶהֶם...)\nקליק, קליק, קליק — כל החגורות!\nבלי קליק לא זזים — זה החוק של מַאמִי!\nיאללה, נוסעים — געשמאק, מחיה!\n\n[Verse 2 – Gitty]\nגִּיטִי עוזרת, גִּיטִי מסדרת,\n\"עוד תמונה! אל תזוזו! עוד אחת!\"\nעוד לא יצאנו — הטלפון כבר מלא!\n\"גִּיטִי, יש לך דרכון?\" — \"מאאאמי!!! זה היה פעם אחת!!!\"\nחחח! גִּיטִי, לא נשכח לך את זה!\n\n[Verse 3 – Henny]\nהֶענִי המפקדת בודקת תיקים,\nסופרת: אחת, שתיים... שש! \"חסר מישהו!!!\"\nהֶענִי, תסתכלי במראה — זאת את!\n\"הֶענִי! וואו! תירגעי!\" — \"אני רגועה!\"\n\n[Verse 4 – Shevy]\nשֶׁעוִוי שרה בקול, הכי חזק בעולם,\n\"שֶׁעוִוי, קצת שקט?\" — היא שרה עוד יותר!\n\"שֶׁעוִוי, מה שלומך?\" — OH MY PEANUT BUTTER!\nשֶׁעוִוי, תירגעי... טוב, אחרי הפזמון!\n\n[Verse 5 – Faigy]\nפַייגִי שקטה, רואה הכל מהחלון,\n\"מאמי, הכובע של חַנִי על הגג של האוטו.\"\n\"פַייגִי, איך ראית?\" — היא רק מרימה גבה,\nבלי פַייגִי היינו שוכחים חצי בית!\n\n[Verse 6 – Zalmy]\nזַלְמִי קופץ, זַלְמִי רוקד, אף פעם לא עייף,\n\"מאמי, אפשר לקחת את האופניים?\" — \"לא.\"\n\"...אפשר לחשוב על זה?\" — \"זַלְמִי, איפה הגרב?\"\nגרב אחת ברגל, והשנייה — בטיול משלה!\n\n[Verse 7 – Itty]\nאִיטִי המלאך — ראשונה באוטו, חגורה, קליק!\nמחזיקה לחַנִי את היד, בלי שביקשו.\n\"אִיטִי, מי אמר לך?\" — \"אף אחד.\"\nוואו, אִיטִי, איזה לב של זהב!\n\n[Verse 8 – Chani]\nחַנִי: \"אני גדולה! אני חוגרת לבד!\"\n(קליק... כמעט... קליק!) — \"אני גדולה!\"\nכולם מוכנים, המנוע כבר דולק —\n\"מאמי, אני צריכה!!!\"\nכולם: \"עכשיו?!\" — חַנִי: \"עכשיו!\"\nרצים, חוזרים, ועוד פעם מההתחלה!\n\n[Chorus]\n\n[Bridge – call and answer]\n\"מתי מגיעים?\" — עוד רגע, חַנִי!\n\"מתי אוכלים?\" — עוד שנייה, חַנִי!\n\"מה בא לך היום?\" — \"הכל!!!\"\n\"מאמי, נקנה גלידה?\" — \"נראה...\"\nכולם: \"נראה\" זה כן! יֶשְׁשְׁשׁ!\n\n[Final Chorus – key up]\n\n[Outro – soft]\nדאנק השם על חול המועד,\nעל כולנו ביחד באוטו אחד.\nהסוכה מחכה לנו בבית...\nועכשיו — יאללה, נוסעים!",
+"audio": null,
+"suno": "https://suno.com/create"
+},
+{
+"id": "song2",
+"n": 2,
+"stops": [
+"farm"
+],
+"time": "11:20",
+"acc": "var(--c-farm)",
+"stop": {
+"he": "משק ברגר · כפר הס",
+"en": "Meshek Berger · Kfar Hess"
+},
+"title": {
+"he": "פִּיתָה בַּטָּאבּוּן",
+"en": "Pita BaTaboon (Farm Day)"
+},
+"style": "Sung by a Hasidic Jewish singer with an authentic heimish accent, playful and bright, Israeli Hebrew with heimish Yiddish words. Heimish kids song meets Israeli Chassidish pop with a farmyard bounce: fiddle, clarinet, accordion, acoustic guitar strums, stomps and hand claps, 116 BPM, major key, cheerful oom-pah bass. One male solo lead; kids answer the call-and-answer lines. Fun spoken moo and baa shouts, big sing-along chorus, clean Hebrew diction.",
+"lyrics": "[Intro]\nמווווו! בוקר טוב, כפר הס!\nמשק ברגר — הגענו! געשמאק!\n\n[Verse 1 – Mami]\nמַאמִי פורקת תיקים, כובעים ומים,\n\"ילדים, ידיים לשטוף, ואז לבצק!\"\nעשרה ילדים? לא — שבעה, אבל נשמע כמו מאה,\nוהעגלים כבר מסתכלים: \"מי אלה?!\"\n\n[Chorus]\nפיתה בטאבון — חם, חם, חם!\nעגל עם בקבוק — שלום, שלום, שלום!\nחולבים את הפרה — שפריץ! טְפוּ, איזה כיף!\nארנב קטן — ליטוף, ליטוף!\nחול המועד בחווה — מחיה, מחיה!\n\n[Verse 2 – Gitty]\nגִּיטִי מצלמת את העגל: \"אל תזוז! עוד אחת!\"\nהעגל זז. העגל מלקק את הטלפון.\n\"גִּיטִי, יש מקום בטלפון?\" — \"תמחקו לי משהו!\"\nשלושים תמונות של אוזן אחת של עגל!\n\n[Verse 3 – Henny]\nהֶענִי המפקדת מסדרת את הארנבים בשורה,\n\"אחד, שתיים, שלוש... חסר ארנב!\"\nהארנב בידיים שלה. הֶענִי, וואו!\n\"הֶענִי! תירגעי!\" — \"אני רגועה!\"\n\n[Verse 4 – Shevy]\nשֶׁעוִוי שרה לפרות שיר עם עשרים בתים,\nהפרות עונות לה: \"מווו!\" — היא עונה חזק יותר!\n\"שֶׁעוִוי, איך הפיתה?\" — OH MY PEANUT BUTTER!\nהיא אפילו לא שמה חמאת בוטנים!\n\n[Verse 5 – Faigy]\nפַייגִי חולבת ברצינות, כמו מדענית,\nשפריץ ראשון — בדיוק לתוך הדלי.\n\"פַייגִי, איך ידעת?\" — \"הסתכלתי.\"\nהפרה נותנת לה חצי קריצה!\n\n[Verse 6 – Zalmy]\nזַלְמִי מאכיל עגל, והעגל מושך חזק,\n\"מאמי, אפשר לקחת עגל הביתה?\" — \"לא.\"\n\"...אפשר לחשוב על זה? יש לי כבר דגים!\"\nוהגרב? העגל אכל אותה! (סתם, היא הלכה עוד בבוקר.)\n\n[Verse 7 – Itty]\nאִיטִי מלטפת ארנב ברכות, לאט לאט,\nונותנת לחַנִי ללטף ראשונה.\n\"אִיטִי, מי אמר לך?\" — \"אף אחד.\"\nגם הארנב יודע: יש פה מלאך!\n\n[Verse 8 – Chani]\nחַנִי לשה בצק: \"אני גדולה! אני לבד!\"\nקמח באף, קמח בשיער, קמח על מאמי!\n\"חַנִי, מה לשים על הפיתה?\" — \"הכל!!!\"\nזעתר, שמן, גבינה — \"הכל!!!\"\n\n[Chorus]\n\n[Bridge – call and answer]\nאיך עושה העגל? — מווו!\nאיך עושה הכבשה? — מֶעֶה!\nאיך עושה חַנִי? — \"מאמי, אני צריכה!\"\nואיך עושה מאמי? — \"תאכלו! יש עוד!\"\n\n[Outro]\nפיתה חמה ביד, ריח של חג,\nדאנק השם על כל ברייה קטנה.\nיאללה, לאוטו — כולם חגורים?\nכן! לים, לים, לים!",
+"audio": null,
+"suno": "https://suno.com/create"
+},
+{
+"id": "song3",
+"n": 3,
+"stops": [
+"boat"
+],
+"time": "13:15",
+"acc": "var(--c-boat)",
+"stop": {
+"he": "סירת מרוץ · מרינה הרצליה",
+"en": "Speedboat · Herzliya Marina"
+},
+"title": {
+"he": "יוֹתֵר חָזָק מֵהַמָּנוֹעַ!",
+"en": "Louder Than the Engine!"
+},
+"style": "Sung by a Hasidic Jewish singer with an authentic heimish accent, explosive and joyful, Israeli Hebrew with heimish Yiddish words. High-energy Israeli Chassidish pop-rock, 140 BPM, driving drums, electric guitar riffs, punchy brass stabs, fast clarinet runs, synth whooshes like waves, motorboat revving sound effects. One male solo lead; kids scream \"וויייי!\" on the drops and answer the call-and-answer lines. Build-ups and big drops, shout-along chorus, clean Hebrew diction.",
+"lyrics": "[Intro]\nוררררום! מרינה הרצליה!\nאפודים כתומים — סגורים? סגורים!\nמחזיקים חזק? מחזיקים!\n3... 2... 1... ווייייי!\n\n[Verse 1 – Mami]\nמַאמִי בודקת אפודים, אחד-אחד בכוח,\n\"כולם סגורים? כולם יושבים? כולם מחזיקים?\"\nעל המים אותו חוק כמו באוטו, מותק:\nבלי אפוד סגור — לא זזים!\n\n[Chorus]\nגלים! (בום!) גלים! (בום!)\nהסירה קופצת — ואנחנו צועקים!\nווייייי! עוד פעם! ווייייי!\nאבל מי יותר חזקה מהמנוע?\nשֶׁעוִוי! שֶׁעוִוי! שֶׁעוִוי!\n\n[Verse 2 – Shevy]\nהמנוע עושה \"ררררר\", שֶׁעוִוי עושה \"לה-לה-לה!\"\n\"שֶׁעוִוי, קצת שקט!\" — עכשיו גם הדגים שומעים!\nפעם נסעה לפארק מים עם אקווריום על הברכיים,\nהיום — כל הים שלה! \"שֶׁעוִוי, זה כיף?\" — OH MY PEANUT BUTTER!\n\n[Verse 3 – Gitty]\nגִּיטִי מצלמת: \"אל תזוזו! עוד אחת!\"\n\"גִּיטִי, אנחנו בסירה! הכל זז!\"\nחמישים תמונות של שמיים ושל טיפה,\n\"גִּיטִי, הדרכון בכיס?\" — \"מאאאמי!!!\" — חחח!\n\n[Verse 4 – Henny]\nהֶענִי סופרת אפודים: \"שש! חסר אחד!!!\"\n\"הקפטן, תעצור! מישהו נפל!\"\nהקפטן מסתכל: \"את לובשת אותו.\"\n\"הֶענִי! וואו! תירגעי!\" — \"אני רגועה!\"\n\n[Verse 5 – Faigy]\nפַייגִי יושבת שקטה, רצינית, עם עיניים גדולות,\nסופרת גלים — \"שלושה-עשר. היה גם דולפין? לא, שקית.\"\nכולם צועקים, פַייגִי רק מהנהנת,\nאבל הלב שלה — גם הוא עושה ווייייי!\n\n[Verse 6 – Zalmy]\nזַלְמִי קם לרקוד — \"זַלְמִי, לשבת!\" — יושב, רוקד בישיבה,\n\"קפטן, אפשר עוד סיבוב?\" — \"לא.\"\n\"...אפשר לחשוב על זה? שני סיבובים? חצי?\"\nוהגרב? היא נשארה בבית — חכמה!\n\n[Verse 7 – Itty]\nאִיטִי יושבת בדיוק איפה שמאמי אמרה,\nמחזיקה לחַנִי את היד חזק-חזק.\n\"אִיטִי, מי אמר לך?\" — \"אף אחד.\"\nגל ענק! — והיד של אִיטִי לא עוזבת!\n\n[Verse 8 – Chani]\nחַנִי: \"אני גדולה! אני נוהגת בסירה!\"\nבאמצע הים: \"מאמי, מתי מגיעים?\"\n\"חַנִי, הגענו! זה הים!\" — \"אה. מתי אוכלים?\"\n\"מה הכי כיף, חַנִי?\" — \"הכל!!!\"\n\n[Chorus]\n\n[Bridge – call and answer]\nמי צועק? — אנחנו!\nמי יותר חזק? — שֶׁעוִוי!\nמי רגועה? — הֶענִי! (\"אני רגועה!!!\")\nמי חגורים? — כולם!\n\n[Outro]\nחוזרים למזח, רטובים ומאושרים,\nדאנק השם על הים ועל השמש של החג.\nיאללה, לאוטו — כולם חגורים?\nכן! לקארטינג!",
+"audio": null,
+"suno": "https://suno.com/create"
+},
+{
+"id": "song4",
+"n": 4,
+"stops": [
+"kart"
+],
+"time": "14:15",
+"acc": "var(--c-kart)",
+"stop": {
+"he": "דן קארטינג · נתניה",
+"en": "Dan Karting · Netanya"
+},
+"title": {
+"he": "הַמְּפַקֶּדֶת בַּמַּסְלוּל",
+"en": "The Commander on the Track"
+},
+"style": "Sung by a Hasidic Jewish singer with an authentic heimish accent, confident and funny, Israeli Hebrew with heimish Yiddish words. Race-day Israeli Chassidish pop anthem, 132 BPM, pumping synth bass, four-on-the-floor drums, bold brass hits, fast clarinet riff hook, engine revs, tire screeches and a start-light countdown. One male solo lead; kids shout the countdown and call-and-answer replies. Stadium-style chant chorus, key change for the last chorus, clean Hebrew diction.",
+"lyrics": "[Intro]\nקסדות על הראש? — כן!\nחגורות סגורות? — כן!\nאור אדום... אור צהוב... אור ירוק — סע!\n\n[Verse 1 – Henny]\nהֶענִי המפקדת עומדת בקו הזינוק,\nבודקת קסדות, בודקת שרוכים, בודקת את המדריך.\nסופרת נהגים: \"שש! מישהו נעלם!!!\"\n\"הֶענִי, את בתוך הקארט.\" — \"אה. אני רגועה!\"\n\n[Chorus]\nוררררום! סיבוב, סיבוב!\nהֶענִי נותנת פקודות — כולם מקשיבים (בערך)!\nקסדה, חגורה, ורגל על הגז,\nדן קארטינג נתניה — יאללה, יאללה, סבבה!\n\n[Verse 2 – Zalmy]\nזַלְמִי: \"מאמי, אפשר לנהוג לבד?\" — \"לא.\"\n\"...אפשר לחשוב על זה?\" — \"נוסעים ביחד בקארט הכפול.\"\n\"אפשר מהר?\" — \"נראה.\" — \"נראה זה כן!!!\"\nגרב אחת ברגל, והגרב השנייה — מנצחת בבית!\n\n[Verse 3 – Gitty]\nגִּיטִי ליד הגדר: \"אל תזוזו! עוד אחת!\"\n\"גִּיטִי, זה מרוץ! כולם זזים!\"\n\"אין מקום בטלפון!\" — מוחקת את העגל מהבוקר,\n\"גִּיטִי, דרכון?\" — \"מאאאמי!!! זה היה פעם אחת!!!\"\n\n[Verse 4 – Shevy]\nשֶׁעוִוי שרה בתוך הקסדה, הקסדה רועדת,\n\"שֶׁעוִוי, איך המרוץ?\" — OH MY PEANUT BUTTER!\nהיא מנופפת לכל קארט שעובר,\n\"שֶׁעוִוי, שתי ידיים על ההגה!\" — \"אה, נכון!\" (שתיים!)\n\n[Verse 5 – Faigy]\nפַייגִי נוהגת שקט, שקט, בדיוק על הקו,\nיודעת כל פנייה, רואה כל קונוס.\n\"פַייגִי, את נהנית?\" — מהנהנת פעם אחת,\nפעם אחת של פַייגִי — שווה אלף!\n\n[Verse 6 – Itty]\nאִיטִי מחכה בתור, בסבלנות, בלי לדחוף,\nמריעה לכל אחד: \"יפה! יאללה! כל הכבוד!\"\n\"אִיטִי, מי אמר לך?\" — \"אף אחד.\"\nהיא מנצחת בלב, בלי שום מדליה!\n\n[Verse 7 – Chani]\nחַנִי ליד הגדר: \"אני גדולה! אני רוצה לנהוג!\"\nקיבלה דגל — מנופפת כמו אלופה!\nדקה לפני הזינוק: \"מאמי, אני צריכה!!!\"\n\"עכשיו?!\" — \"עכשיו!\" — וכולם מחכים, מחייכים.\n\n[Verse 8 – Mami]\nמַאמִי מחזיקה תיקים, קסדות וחטיפים,\n\"שותים מים! חגורים! נוסעים בזהירות!\"\nוכשכולם יוצאים מהמסלול בשלום,\nמאמי לוחשת: \"ברוך השם — כולם פה!\"\n\n[Chorus]\n\n[Bridge – call and answer]\nמי המפקדת? — הֶענִי!\nמי שואל \"אפשר?\" — זַלְמִי!\nמי מצלמת? — גִּיטִי!\nמי שרה? — שֶׁעוִוי!\nמי רואה הכל? — פַייגִי!\nמי המלאך? — אִיטִי!\nמי גדולה? — חַנִי! (\"אני גדולה!!!\")\n\n[Final Chorus – key up]\n\n[Outro]\nדגל משובץ — כולם ניצחו היום!\nדאנק השם, חול המועד — יאללה, לפיצה!",
+"audio": null,
+"suno": "https://suno.com/create"
+},
+{
+"id": "song5",
+"n": 5,
+"stops": [
+"pizza",
+"sunset"
+],
+"time": "17:00",
+"acc": "var(--c-sun)",
+"stop": {
+"he": "פיצה + שקיעה על צוקי נתניה",
+"en": "Pizza + sunset · Netanya cliffs"
+},
+"title": {
+"he": "פַייגִי חִיְּכָה!",
+"en": "Faigy Smiled! (Pizza & Sunset)"
+},
+"style": "Sung by a Hasidic Jewish singer with an authentic heimish accent, heartfelt then bursting with joy, Israeli Hebrew with heimish Yiddish words. Opens as a slow Stolin-Karlin style niggun: rubato, soft piano and warm strings, sea waves, soulful \"ai-yai-yai\" melody; then accelerates into fast, joyful Israeli Chassidish pop dance at 138 BPM with brass, clarinet, driving drums and claps. One male solo lead; kids shout the call-and-answer lines. Slow-then-fast arc, huge final chorus, clean Hebrew diction.",
+"lyrics": "[Intro – slow niggun]\nאַי-יַאי-יַאי, אַי-יַאי-יַאי...\nהשמש יורדת על נתניה,\nצוקים, ים, ורוח של חג...\nאַי-יַאי-יַאי...\n\n[Verse 1 – Mami, faster]\nכיכר העצמאות, מזרקה, והפיצה חמה!\nמַאמִי מחלקת משולשים בכוח, בשמחה:\n\"תאכלו! יש עוד!\" — \"מאמי, אכלנו!\" — \"יש עוד!\"\nעוד מגש, ועוד מגש, ועוד... ברוך השם!\n\n[Chorus]\nתאכלו! יש עוד! — יש עוד!\nפיצה על הים — מחיה, מחיה!\nוכשהשמש נוגעת במים,\nקרה משהו היסטורי — פַייגִי חייכה!\n\n[Verse 2 – Chani]\n\"חַנִי, איזו תוספת?\" — \"הכל!!!\"\nזיתים, תירס, פטריות — \"הכל!!!\"\n\"אני גדולה! אני אוכלת לבד!\" — גבינה עד האוזניים,\nביס אחרון: \"מאמי, אני צריכה!\" — נו, ברור!\n\n[Verse 3 – Zalmy]\nזַלְמִי: \"מאמי, אפשר עוד משולש?\" — \"כן.\"\n\"...אפשר שלושה?\" — \"נראה.\" — \"נראה זה כן!!!\"\nרוקד ליד המזרקה, אף פעם לא עייף,\nושוב גרב אחת — הים לקח את השנייה? לא, היא בכלל לא באה!\n\n[Verse 4 – Gitty]\nגִּיטִי: \"כולם לשקיעה! אל תזוזו! עוד אחת!\"\n\"גִּיטִי, השמש זזה!\" — \"שמש, חכי רגע!\"\nהטלפון מלא — מוחקת שלושים אוזניים של עגל,\nכדי שיהיה מקום לתמונה הכי חשובה!\n\n[Verse 5 – Henny]\nהֶענִי סופרת על הצוק: \"שש! מישהו חסר!\"\n\"הֶענִי...\" — \"אני! שוב אני! אני רגועה!\"\nואז גם היא צוחקת, עם כל המשפחה,\nהמפקדת נותנת פקודה: \"כולם ליהנות!\"\n\n[Verse 6 – Shevy]\nשֶׁעוִוי שרה לשקיעה, והשחפים בורחים,\n\"שֶׁעוִוי, השמש שוקעת!\" — OH MY PEANUT BUTTER!\nהיא צריכה להירגע... היא מנסה... שנייה אחת...\nושוב שרה! אבל הפעם — כולם שרים איתה!\n\n[Verse 7 – Itty]\nאִיטִי מחלקת מפיות לכולם, בשקט,\nשומרת לחַנִי משולש, מחזיקה לה את היד.\n\"אִיטִי, מי אמר לך?\" — \"אף אחד.\"\nגם השמש מחייכת אלייך, אִיטִי!\n\n[Verse 8 – Faigy]\nפַייגִי שקטה, מסתכלת על הים,\nהשמש נוגעת במים — וּ... רגע... מה זה?!\nפַייגִי חייכה!!! תצלמו! זה היסטורי!\n\"עצרו את האוטו!\" — \"אנחנו לא באוטו!\" — \"אז עצרו את השמש!\"\n\n[Chorus]\n\n[Bridge – slow, then fast]\nאַי-יַאי-יַאי... דאנק השם,\nעל יום של שמחה, על כולנו ביחד,\nחול המועד, ים, ושבעה חיוכים —\nואחד מהם היסטורי!\nמי בסוכה הערב? — כולם בסוכה!\n(faster!) מי בסוכה?! — כולם בסוכה!\n\n[Final Chorus – fast]",
+"audio": null,
+"suno": "https://suno.com/create"
+},
+{
+"id": "song6",
+"n": 6,
+"stops": [
+"home"
+],
+"time": "18:45",
+"acc": "#6B4FD8",
+"stop": {
+"he": "נוסעים הביתה",
+"en": "Drive home"
+},
+"title": {
+"he": "דַּאנְק הַשֵּׁם, אַ גֶעשְׁמַאקֶער טָאג",
+"en": "Dank Hashem, a Geshmake Tog (Drive-Home Lullaby)"
+},
+"style": "Sung by a Hasidic Jewish singer with an authentic heimish accent, soft, tender and smiling, Israeli Hebrew with heimish Yiddish words. Gentle heimish lullaby in 3/4 waltz, 72 BPM, soft felt piano, fingerpicked acoustic guitar, warm low strings, a quiet clarinet answering the melody, faint night-road ambience. One intimate male solo voice, sung close and hushed, playful little smiles in the delivery. Slow, dreamy, a slight Stolin-Karlin niggun feel in the humming sections, fading out softly.",
+"lyrics": "[Intro – humming]\nמממ... יַאי-דַּאי-דַּאי...\nהכביש שקט, הפנסים זורמים,\nהאוטו מלא... ושקט. שקט?!\n\n[Verse 1 – Mami]\nמַאמִי נוהגת לאט, חגורה, רגועה,\nמסתכלת במראה — איזה מראה!\nשבעה ילדים, שבעה חלומות,\nולוחשת: \"כולם חגורים?\" — קליק, קליק... כולם.\n\n[Chorus]\nלילה טוב, חול המועד,\nדאנק השם, א געשמאקער טאג!\nפיתות, גלים, קארטים ושקיעה,\nעיניים נעצמות — עוד מעט בבית.\nנוּמִי, נוּמִי, משפחה מתוקה...\n\n[Verse 2 – Gitty]\nגִּיטִי גוללת אלף תמונות מהיום,\nתמונה של עגל, תמונה של גל, תמונה של אוזן,\nבתמונה שמונה מאות — העיניים נעצמות,\nהטלפון מלא... והלב — עוד יותר.\n\n[Verse 3 – Henny]\nהֶענִי סופרת בלחש: \"אחת... שתיים... שש...\"\nנרדמת לפני שהיא סופרת את עצמה.\nמחר בבוקר היא תקום ותגיד:\n\"חסר מישהו?\" — לא, מתוקה. כולנו פה.\n\n[Verse 4 – Shevy]\nשֶׁעוִוי סוף סוף שקטה... כמעט:\nשרה בשינה, בלחש, שיר של עשרים בתים.\n\"שֶׁעוִוי, את ישנה?\" — ממלמלת:\n\"...oh my peanut butter...\" — חחח, בשקט!\n\n[Verse 5 – Faigy]\nפַייגִי נרדמת עם חיוך קטן על הפנים,\n\"גִּיטִי, תצלמי! זה היסטורי!\"\nאבל גִּיטִי ישנה, והטלפון מלא...\nלא נורא — את החיוך הזה נזכור בלב.\n\n[Verse 6 – Zalmy]\nזַלְמִי: \"אני לא עייף! אני לא עייף!\"\n\"מאמי, אפשר להישאר ער?\" — \"נראה...\"\n\"...אפשר לחשוב על ז...\" — זזזז...\nגרב אחת ברגל, והשנייה — חולמת גם היא.\n\n[Verse 7 – Itty]\nאִיטִי נרדמת כשהיד של חַנִי בידה,\nאף אחד לא ביקש, אף אחד לא אמר,\n\"אִיטִי, מי אמר לך?\" — בחצי חלום:\n\"אף אחד...\" — מלאך קטן, לילה טוב.\n\n[Verse 8 – Chani]\nחַנִי פוקחת עין: \"מתי מגיעים?\"\n\"עוד מעט, חַנִי.\" — \"מתי אוכלים?\"\n\"אכלת פיצה, מותק.\" — \"מה היה הכי כיף?\"\n\"הכל...\" — וזהו. היא ישנה.\n\n[Chorus]\n\n[Bridge – very soft]\nמַאמִי סוחבת אותם הביתה, אחד-אחד, בכוח,\nדרך הסוכה, מתחת לקישוטים,\nולוחשת לשמיים: \"דאנק השם,\nעל כל הילדים, על כל היום הזה.\"\n\n[Outro – humming, fading]\nמחר בבוקר — מי בסוכה? (לחש) כולם בסוכה...\nיַאי-דַּאי-דַּאי... לילה טוב... געשמאק...\nמממ...",
+"audio": null,
+"suno": "https://suno.com/create"
+}
+];
+  function esc(t){return String(t).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});}
+  function lyricsHtml(t){return t.split("\n").map(function(l){var m=l.match(/^\[(.+)\]$/);if(m)return '<span class="lyr-tag" dir="auto">'+esc(m[1])+'</span>';if(!l.trim())return '<span class="lyr-gap"></span>';return '<span class="lyr-line" dir="auto">'+esc(l)+'</span>';}).join("");}
+  var L={copyStyle:['Copy style','העתקת סטייל'],copyLyrics:['Copy lyrics','העתקת מילים'],suno:['Make it on Suno','ליצור ב־Suno'],copied:['Copied!','הועתק!'],lyrics:['Lyrics','מילים'],style:['Suno style','סטייל ל־Suno'],showLyrics:['Show lyrics','הצגת המילים']};
+  function bi(k){return '<span class="en">'+L[k][0]+'</span><span class="he">'+L[k][1]+'</span>';}
+  function actions(song){return '<div class="song-actions"><button type="button" class="song-btn" data-copy="style" data-song="'+song.id+'">📋 '+bi("copyStyle")+'</button><button type="button" class="song-btn" data-copy="lyrics" data-song="'+song.id+'">📝 '+bi("copyLyrics")+'</button><a class="song-btn suno" href="'+(song.suno||"https://suno.com/create")+'" target="_blank" rel="noopener">🎶 '+bi("suno")+'</a></div>'+(song.audio?'<audio controls preload="none" src="'+song.audio+'"></audio>':'');}
+  var songById={};
+  songs.forEach(function(song){songById[song.id]=song; song.stops.forEach(function(stopId){var slot=document.querySelector('.song-slot[data-song-id="'+stopId+'"]'); if(!slot)return; slot.style.setProperty("--acc",song.acc); slot.innerHTML='<span class="song-icon" aria-hidden="true">🎵</span><span class="song-copy"><b><span class="en">Song '+song.n+' · '+esc(song.title.en)+'</span><span class="he">שיר '+song.n+' · '+esc(song.title.he)+'</span></b><small><a href="#'+song.id+'" data-open-song="'+song.id+'">'+bi("showLyrics")+' ›</a></small></span>'+actions(song);});});
+  var freeSlot=document.querySelector('.song-slot[data-song-id="free"]');
+  if(freeSlot){freeSlot.style.setProperty("--acc","var(--c-free)");freeSlot.innerHTML='<span class="song-icon" aria-hidden="true">🎵</span><span class="song-copy"><b><span class="en">Free time = request time!</span><span class="he">זמן חופשי = זמן בקשות!</span></b><small><a href="#songs"><span class="en">Replay any song from the Songs tab ›</span><span class="he">שרים שוב כל שיר מלשונית השירים ›</span></a></small></span>';}
+  var songList=document.getElementById("songs-list");
+  if(songList) songs.forEach(function(song){var card=document.createElement("article");card.className="song-card";card.id=song.id;card.style.setProperty("--acc",song.acc);
+    card.innerHTML='<div class="song-meta"><span class="song-num">'+song.n+'</span><span class="song-time"><bdi dir="ltr">'+song.time+'</bdi> · <span class="en">'+esc(song.stop.en)+'</span><span class="he">'+esc(song.stop.he)+'</span></span></div>'
+      +'<h3><span class="he-title" dir="rtl" lang="he">'+esc(song.title.he)+'</span><small dir="ltr" lang="en">'+esc(song.title.en)+'</small></h3>'
+      +actions(song)
+      +'<details class="song-style"><summary>🎛️ '+bi("style")+'</summary><p dir="ltr" lang="en">'+esc(song.style)+'</p></details>'
+      +'<details class="song-lyrics"'+(song.n===1?' open':'')+'><summary>🎤 '+bi("lyrics")+'</summary><div class="lyrics" dir="rtl" lang="he">'+lyricsHtml(song.lyrics)+'</div></details>';
+    songList.appendChild(card);});
+  function copyText(t){if(navigator.clipboard&&window.isSecureContext)return navigator.clipboard.writeText(t);return new Promise(function(res,rej){var ta=document.createElement("textarea");ta.value=t;ta.setAttribute("readonly","");ta.style.position="fixed";ta.style.opacity="0";document.body.appendChild(ta);ta.select();try{document.execCommand("copy")?res():rej();}catch(e){rej(e);}document.body.removeChild(ta);});}
+  document.addEventListener("click",function(e){
+    var b=e.target.closest&&e.target.closest("[data-copy]");
+    if(b){var song=songById[b.dataset.song];if(!song)return;var html=b.innerHTML;copyText(b.dataset.copy==="style"?song.style:song.lyrics).then(function(){b.classList.add("ok");b.innerHTML="✅ "+bi("copied");setTimeout(function(){b.classList.remove("ok");b.innerHTML=html;},1600);},function(){b.innerHTML="⚠️ "+html;});return;}
+    var o=e.target.closest&&e.target.closest("[data-open-song]");
+    if(o){var c=document.getElementById(o.dataset.openSong);if(c){var d=c.querySelector(".song-lyrics");if(d)d.open=true;}}
+  });
+>>>>>>> c56e28e (v7: trip songs in Songs tab)
 
   /* schedule-aware next stop, using Israel clock */
   var schedule=[
