@@ -1,0 +1,55 @@
+{
+"trips": [
+{
+"id": "2026-10-05-helicopter",
+"title": {
+"en": "Helicopter Flight",
+"he": "טיסת מסוק"
+},
+"date": "2026-10-05",
+"place": {
+"en": "Coming Monday, be’ezras Hashem",
+"he": "ביום שני, בעזרת השם"
+},
+"status": "upcoming",
+"cover": null,
+"count": 0,
+"photos": 0,
+"videos": 0,
+"people": [],
+"file": "data/trips/2026-10-05-helicopter.json",
+"guide": null,
+"album": null
+},
+{
+"id": "2026-10-01-chol-hamoed",
+"title": {
+"en": "The Chol HaMoed Trip",
+"he": "טיול חול המועד"
+},
+"date": "2026-10-01",
+"place": {
+"en": "Herzliya · Netanya · Jerusalem",
+"he": "הרצליה · נתניה · ירושלים"
+},
+"status": "past",
+"cover": "images/itinerary/hero-family.jpg",
+"count": 43,
+"photos": 13,
+"videos": 30,
+"people": [
+"chani",
+"faigy",
+"gitty",
+"henny",
+"itty",
+"mommy",
+"shevy",
+"zalmy"
+],
+"file": "data/trips/2026-10-01-chol-hamoed.json",
+"guide": "thursday.html",
+"album": "thursday"
+}
+]
+}
