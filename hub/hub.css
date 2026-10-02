@@ -216,3 +216,4 @@ html[lang=he] .lyr-t{letter-spacing:0;font-size:12.5px}
 .fade{animation:fd .4s var(--ease)}
 @keyframes fd{from{opacity:0;transform:translateY(6px)}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+.row.nosrc .tx{cursor:default}.row.nosrc .tt{color:var(--muted)}.row.nosrc .cv{opacity:.55}

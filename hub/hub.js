@@ -1,6 +1,6 @@
 /* Bernshtein family hub · songs & memories */
 (function(){
-'use strict';var VER='3';
+'use strict';var VER='4';
 var CONFIG={
   whatsapp:'',        // optional: international number without + (e.g. 9725xxxxxxxx). Empty = family picks the chat.
   notesEmail:'',      // optional: address for emailed notes. Empty = family picks the recipient.
@@ -10,7 +10,7 @@ var CONFIG={
 var T={
  en:{fam:'The Bernshtein Family',hubsub:'Songs · Memories',t_home:'Home',t_music:'Music',t_search:'Search',t_mem:'Memories',
   welcome:'Our songs, our trips, our family',heroP:'Every song we sing together and every trip we take, kept in one place.',
-  songsN:'{n} songs',songsN1:'1 song',tripsN1:'1 trip',itemsN1:'1 memory',photosN1:'1 photo',videosN1:'1 video',albumsN:'{n} albums',tripsN:'{n} trips',photosN:'{n} photos',videosN:'{n} videos',itemsN:'{n} memories',
+  songsN:'{n} songs',soon:'Audio coming soon',songsN1:'1 song',tripsN1:'1 trip',itemsN1:'1 memory',photosN1:'1 photo',videosN1:'1 video',albumsN:'{n} albums',tripsN:'{n} trips',photosN:'{n} photos',videosN:'{n} videos',itemsN:'{n} memories',
   listen:'Listen',open:'Open',seeAll:'See all',albums:'Albums',album:'Album',lbl:'Bernshtein',people:'People',songs:'Songs',recent:'Recently played',
   favs:'Favourites',all:'All',fresh:'From the Chol HaMoed trip',latest:'Latest memories',everyone:'Everyone',
   upcoming:'Coming up',heli:'Helicopter flight',heliSub:'Monday 5 October, be’ezras Hashem',days:'days',hrs:'hrs',min:'min',
@@ -29,7 +29,7 @@ var T={
   peopleSub:'Songs and memories for each of us'},
  he:{fam:'משפחת ברנשטיין',hubsub:'שירים · זכרונות',t_home:'בית',t_music:'מוזיקה',t_search:'חיפוש',t_mem:'זכרונות',
   welcome:'השירים שלנו, הטיולים שלנו, המשפחה שלנו',heroP:'כל שיר שאנחנו שרים יחד וכל טיול שאנחנו עושים, במקום אחד.',
-  songsN:'{n} שירים',songsN1:'שיר אחד',tripsN1:'טיול אחד',itemsN1:'זכרון אחד',photosN1:'תמונה אחת',videosN1:'סרטון אחד',albumsN:'{n} אלבומים',tripsN:'{n} טיולים',photosN:'{n} תמונות',videosN:'{n} סרטונים',itemsN:'{n} זכרונות',
+  songsN:'{n} שירים',soon:'השמע יעלה בקרוב',songsN1:'שיר אחד',tripsN1:'טיול אחד',itemsN1:'זכרון אחד',photosN1:'תמונה אחת',videosN1:'סרטון אחד',albumsN:'{n} אלבומים',tripsN:'{n} טיולים',photosN:'{n} תמונות',videosN:'{n} סרטונים',itemsN:'{n} זכרונות',
   listen:'להאזנה',open:'לפתיחה',seeAll:'הכל',albums:'אלבומים',album:'אלבום',lbl:'ברנשטיין',people:'אנשים',songs:'שירים',recent:'הושמעו לאחרונה',
   favs:'אהובים',all:'הכל',fresh:'מטיול חול המועד',latest:'זכרונות אחרונים',everyone:'כולם',
   upcoming:'בקרוב',heli:'טיסת מסוק',heliSub:'יום שני, ב׳ תשרי… בעזרת השם',days:'ימים',hrs:'שעות',min:'דקות',
@@ -90,8 +90,8 @@ function personChip(p,on,href){return'<a class="pp'+(on?' on':'')+'" href="'+hre
 /* ---------- song rows ---------- */
 function songRow(s,i,listKey){
   var on=cur()&&cur().id===s.id,f=favs.indexOf(s.id)>=0;
-  var sub=[aName(s.album),fmt(s.dur)];
-  return'<li class="row'+(on?' playing':'')+'" data-sid="'+s.id+'">'+
+  var sub=[aName(s.album),s.src?fmt(s.dur):t('soon')];
+  return'<li class="row'+(on?' playing':'')+(s.src?'':' nosrc')+'" data-sid="'+s.id+'">'+
    '<img class="cv" loading="lazy" src="'+esc(s.cover||'')+'" alt="">'+
    '<div class="tx" data-act="play" data-list="'+listKey+'" data-i="'+i+'"><div class="tt" dir="auto">'+esc(sTitle(s))+'</div><div class="st">'+esc(sub.join(' · '))+'</div></div>'+
    '<button class="ic'+(f?' fav':'')+'" data-act="fav" aria-label="'+t('favs')+'">'+ic(f?'heart-f':'heart')+'</button></li>';
@@ -312,7 +312,7 @@ function noteText(){
 var au=$('#au'),Q=[],QI=-1,SHUF=false;
 function cur(){return QI>=0?SONG[Q[QI]]:null}
 function playList(ids,i,shuffle){
-  ids=ids.slice();if(shuffle){for(var k=ids.length-1;k>0;k--){var j=Math.floor(Math.random()*(k+1));var x=ids[k];ids[k]=ids[j];ids[j]=x}i=0}
+  var want=ids[i||0];ids=ids.filter(function(id){return SONG[id]&&SONG[id].src});i=Math.max(0,ids.indexOf(want));if(!ids.length)return;if(shuffle){for(var k=ids.length-1;k>0;k--){var j=Math.floor(Math.random()*(k+1));var x=ids[k];ids[k]=ids[j];ids[j]=x}i=0}
   Q=ids;QI=i||0;load(true);
 }
 function load(autoplay){
@@ -358,7 +358,7 @@ function updNP(timeOnly){var el=$('#np');if(el.hidden)return;var sk=$('#seek');i
 document.addEventListener('click',function(e){
   var g=e.target.closest('[data-go]');if(g){location.hash=g.getAttribute('data-go');return}
   var a=e.target.closest('[data-act]');if(!a)return;var act=a.getAttribute('data-act');
-  if(act==='play'){var ids=LISTS[a.getAttribute('data-list')]||[];var i=+a.getAttribute('data-i');if(a.getAttribute('data-list')==='q'){QI=i;load(true)}else playList(ids,i,false);return}
+  if(act==='play'){var ids=LISTS[a.getAttribute('data-list')]||[];var i=+a.getAttribute('data-i');if(!(SONG[ids[i]]||{}).src)return;if(a.getAttribute('data-list')==='q'){QI=i;load(true)}else playList(ids,i,false);return}
   if(act==='playlist'){var l=LISTS[a.getAttribute('data-list')]||[];if(l.length){SHUF=a.getAttribute('data-shuffle')==='1';playList(l,0,SHUF);openNP()}return}
   if(act==='fav'){var row=a.closest('[data-sid]');var id=a.getAttribute('data-id')||(row&&row.getAttribute('data-sid'));if(!id)return;var k=favs.indexOf(id);if(k>=0)favs.splice(k,1);else favs.unshift(id);LS.set('favs',favs);var on=favs.indexOf(id)>=0;if(row){a.classList.toggle('fav',on);a.innerHTML=ic(on?'heart-f':'heart')}else renderNP();return}
   if(act==='toggle'){if(au.paused){var p=au.play();if(p&&p.catch)p.catch(function(){})}else au.pause();return}
