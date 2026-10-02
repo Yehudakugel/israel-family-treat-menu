@@ -30,7 +30,7 @@ function foot(){return'<footer class="foot"><img src="images/brand/monogram.svg"
 function head(eye,title,sub){return'<div class="ph-head"><div class="eyebrow">'+esc(eye)+'</div><h1 class="h1">'+esc(title)+'</h1>'+(sub?'<p class="muted lead">'+esc(sub)+'</p>':'')+'</div>'}
 
 function vHome(){
-  var past=TRIPS.filter(function(x){return x.status!=='upcoming'}),up=TRIPS.filter(function(x){return x.status==='upcoming'});
+  var past=TRIPS.filter(function(x){return x.status!=='upcoming'&&!x.newf}),up=TRIPS.filter(function(x){return x.status==='upcoming'});
   var h='<section class="hero"><picture><source type="image/webp" srcset="images/hero/hero-480.webp 480w, images/hero/hero-800.webp 800w, images/hero/hero-1200.webp 1200w" sizes="100vw"><img class="hero-img" src="images/itinerary/hero-family-800.jpg" width="800" height="600" fetchpriority="high" alt=""></picture>'+
    '<div class="hero-body"><img class="crest" src="images/brand/monogram.svg" width="96" height="96" alt=""><div class="eyebrow">'+esc(t('fam'))+'</div><h1 class="h1">'+esc(t('welcome'))+'</h1><p>'+esc(t('heroP'))+'</p></div></section>';
   h+='<div class="wrap"><div class="sec"><div class="tiles">'+
@@ -84,7 +84,7 @@ function vAlbum(id){
   var mins=Math.round(arr.reduce(function(x,s){return x+(s.d||0)},0)/60),trip=TRIPS.filter(function(x){return x.album===id})[0];
   var h='<div class="wrap"><a class="back" href="#/songs/albums">'+ic('back')+esc(t('albums'))+'</a><div class="ahead">'+albumCover(a,1)+'<div><div class="eyebrow">'+esc(t('album'))+'</div><h1>'+esc(lang==='he'?a.he:a.en)+'</h1><p class="muted sm">'+esc(lang==='he'?a.sub_he:a.sub_en)+'</p><p class="muted xs">'+esc(t('songsN',{n:arr.length}))+' · '+mins+' '+esc(t('min'))+'</p></div></div>';
   h+=playBtns('alb').replace('</div>',(trip?'<a class="btn" href="#/trip/'+trip.id+'">'+ic('photo')+esc(t('t_trips'))+'</a>':'')+'</div>');
-  setView(h+songList(arr,'alb')+foot()+'</div>','songs');
+  setView(h+songList(arr,'alb')+(id==='new'&&!arr.length?'<p class="empty">'+esc(lang==='he'?'השירים שתבקשו יופיעו כאן.':'The songs you ask for will appear here.')+'</p><div class="actions center"><a class="btn pri" href="#/create">'+esc(lang==='he'?'יוצרים שיר':'Create a song')+'</a></div>':'')+foot()+'</div>','songs');
 }
 function vPerson(id){
   var p=PPL[id];if(!p)return vHome();var nm=lang==='he'?p.he:p.en;

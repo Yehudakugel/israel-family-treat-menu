@@ -1,0 +1,22 @@
+name = "bernshtein-hub"
+main = "src/index.js"
+account_id = "206c41967e113cd4136eecdc0bcafa2f"
+compatibility_date = "2026-09-01"
+workers_dev = true
+routes = [{ pattern = "api.bernshteinfamily.com", custom_domain = true }]
+
+[vars]
+ALLOW_ORIGINS = "https://yehudakugel.github.io,https://bernshteinfamily.com,https://www.bernshteinfamily.com"
+# Secrets (set with `wrangler secret put`): FAMILY_PASS, ADMIN_TOKEN
+
+[[r2_buckets]]
+binding = "BUCKET"
+bucket_name = "bernshtein-hub"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "bernshtein-hub"
+database_id = "1ff3d092-4112-439f-9cdf-3829afc6ae00"
+
+[triggers]
+crons = ["17 3 * * *"]

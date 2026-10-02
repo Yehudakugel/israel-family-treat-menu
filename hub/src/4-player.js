@@ -10,7 +10,7 @@ function renderLB(){
   h+='<div class="lb-stage">'+st+(LB.i>0?'<button class="lb-nav p" data-act="lbp" aria-label="Previous">'+ic('back')+'</button>':'')+(LB.i<arr.length-1?'<button class="lb-nav n" data-act="lbn" aria-label="Next">'+ic('chev')+'</button>':'')+'</div>';
   h+='<div class="lb-cap">'+(L(it.caption)?'<p dir="auto">'+esc(L(it.caption))+'</p>':'')+'<small>'+esc([L(tr.title),ch?L(ch.title):''].filter(Boolean).join(' · '))+'</small>';
   if(it.people&&it.people.length)h+='<div class="tagp">'+it.people.map(function(p){return'<a href="#/memories/person/'+p+'">'+esc(pName(p))+'</a>'}).join('')+'</div>';
-  h+='<div class="row2"><span></span><button class="btn ghost sm" data-act="note" data-trip="'+tr.id+'" data-item="'+esc(it.id)+'">'+ic('note')+esc(t('addNote'))+'</button></div></div>';
+  if(!tr.solemn)h+='<div class="row2"><span></span><button class="btn ghost sm" data-act="note" data-trip="'+tr.id+'" data-item="'+esc(it.id)+'">'+ic('note')+esc(t('addNote'))+'</button></div>';h+='</div>';
   $('#lb').innerHTML=h;
 }
 function lbStep(d){var v=$('#lb video');if(v)v.pause();var n=LB.i+d,arr=GRIDS[LB.g]||[];if(n<0||n>=arr.length)return;LB.i=n;renderLB()}
@@ -26,23 +26,8 @@ function openNote(trip,item){
   sheet('<div class="sh-h">'+(th?'<img src="'+esc(th)+'" alt="">':'')+'<div><div class="eyebrow">'+esc(t('noteFor'))+' '+esc(it?(it.type==='video'?t('video'):t('photo')):'')+'</div><h3>'+esc(L(tr.title))+'</h3></div></div><p>'+esc(t('noteSub'))+'</p>'+
    '<label for="nn">'+esc(t('yourName'))+'</label><input id="nn" autocomplete="name" value="'+esc(LS.get('name',''))+'">'+
    '<label>'+esc(t('whoIn'))+'</label><div class="who">'+M.people.map(function(p){return'<button class="chip'+(NOTE.who.indexOf(p.id)>=0?' on':'')+'" data-act="who" data-p="'+p.id+'">'+esc(lang==='he'?p.he:p.en)+'</button>'}).join('')+'</div>'+
-   '<label for="nt">'+esc(t('whatHappened'))+'</label><textarea id="nt" dir="auto"></textarea>'+sendBtns('note'));
+   '<label for="nt">'+esc(t('whatHappened'))+'</label><textarea id="nt" dir="auto"></textarea>'+noteBtns());
 }
-function sendBtns(kind){return'<div class="acts"><button class="btn pri" data-act="send" data-kind="'+kind+'" data-via="wa">'+esc(t('sendWa'))+'</button><button class="btn" data-act="send" data-kind="'+kind+'" data-via="mail">'+esc(t('sendMail'))+'</button></div><div class="center"><button class="link muted" data-act="notex">'+esc(t('cancel'))+'</button></div>'}
-function noteMsg(){
-  var tr=TRIPCACHE[NOTE.trip]||TRIPS.filter(function(x){return x.id===NOTE.trip})[0]||{};
-  var link=CONFIG.site+'#/trip/'+NOTE.trip+(NOTE.item?'/i/'+NOTE.item:''),who=NOTE.who.map(pName).join(', '),name=$('#nn').value.trim();LS.set('name',name);
-  var lines=[(lang==='he'?'הערה לזכרונות':'Memory note')+': '+L(tr.title)+(NOTE.item?' ('+NOTE.item+')':'')];if(who)lines.push(t('whoIn')+' '+who);var tx=$('#nt').value.trim();if(tx)lines.push(tx);if(name)lines.push('— '+name);lines.push(link);
-  return{subject:(lang==='he'?'הערה: ':'Note: ')+L(tr.title),body:lines.join('\n')};
-}
-function sendVia(via,m){var url=via==='wa'?'https://wa.me/'+CONFIG.whatsapp.replace(/\D/g,'')+'?text='+encodeURIComponent(m.body):'mailto:'+encodeURIComponent(CONFIG.notesEmail)+'?subject='+encodeURIComponent(m.subject)+'&body='+encodeURIComponent(m.body);window.open(url,'_blank');$('#note').hidden=true}
-function openUpload(){
-  var has=!!CONFIG.uploadUrl;
-  sheet('<div class="eyebrow">'+esc(t('t_mem'))+'</div><h3>'+esc(lang==='he'?'הוספת תמונות וסרטונים':'Add photos and videos')+'</h3><p>'+esc(has?(lang==='he'?'האלבום המשותף של המשפחה ייפתח. הוסיפו שם את התמונות, ואנחנו נכניס אותן לאתר.':'The family shared album opens. Add your photos there and we’ll bring them into the site.'):(lang==='he'?'ההעלאה תיפתח בקרוב. בינתיים שלחו לנו את התמונות בוואטסאפ.':'Uploading opens soon. For now, send us your photos on WhatsApp.'))+'</p>'+
-   (has?'<a class="btn pri wide" href="'+esc(CONFIG.uploadUrl)+'" target="_blank" rel="noopener">'+ic('plus')+esc(lang==='he'?'לאלבום המשותף':'Open the shared album')+'</a>':'<span class="pending">'+esc(lang==='he'?'ממתין להגדרה':'Pending setup')+'</span><a class="btn pri wide" href="https://wa.me/'+CONFIG.whatsapp.replace(/\D/g,'')+'?text='+encodeURIComponent(lang==='he'?'שולחים תמונות לאתר המשפחה 📸':'Sending photos for the family site 📸')+'" target="_blank" rel="noopener">'+esc(t('sendWa'))+'</a>')+
-   '<div class="center"><button class="link muted" data-act="notex">'+esc(t('cancel'))+'</button></div>');
-}
-
 /* ---------- player ---------- */
 var au=$('#au'),Q=[],QI=-1,SHUF=false,counted=null;
 function cur(){return QI>=0?SONG[Q[QI]]:null}

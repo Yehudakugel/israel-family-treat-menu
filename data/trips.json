@@ -19,7 +19,12 @@
 "people": [],
 "file": "data/trips/2026-10-05-helicopter.json",
 "guide": null,
-"album": null
+"album": null,
+"category": {
+"id": "israel",
+"en": "Israel",
+"he": "ארץ ישראל"
+}
 },
 {
 "id": "2026-10-01-chol-hamoed",
@@ -49,7 +54,1084 @@
 ],
 "file": "data/trips/2026-10-01-chol-hamoed.json",
 "guide": "thursday.html",
-"album": "thursday"
+"album": "thursday",
+"category": {
+"id": "israel",
+"en": "Israel",
+"he": "ארץ ישראל"
+}
+},
+{
+"id": "kugy-birthday-siyum",
+"title": {
+"en": "Kugy's birthday & siyum",
+"he": "יום ההולדת והסיום של קוגי"
+},
+"date": "2026-09-30",
+"place": {
+"en": "Israel",
+"he": "ארץ ישראל"
+},
+"status": "past",
+"cover": "https://api.bernshteinfamily.com/media/kugy-birthday-siyum/21a8d966-6fe2-4635-ab95-6f115bbefb76.jpg",
+"count": 77,
+"photos": 46,
+"videos": 31,
+"people": [],
+"file": "data/trips/kugy-birthday-siyum.json",
+"guide": null,
+"album": null,
+"category": {
+"id": "parties-simchas",
+"en": "Parties & Simchas",
+"he": "מסיבות ושמחות"
+}
+},
+{
+"id": "israel",
+"title": {
+"en": "Back in Israel",
+"he": "חזרה לארץ"
+},
+"date": "2026-09-10",
+"place": {
+"en": "Israel",
+"he": "ארץ ישראל"
+},
+"status": "past",
+"cover": "https://api.bernshteinfamily.com/media/israel/IMG_7921.jpg",
+"count": 41,
+"photos": 17,
+"videos": 24,
+"people": [],
+"file": "data/trips/israel.json",
+"guide": null,
+"album": null,
+"category": {
+"id": "israel",
+"en": "Israel",
+"he": "ארץ ישראל"
+}
+},
+{
+"id": "passport-prank",
+"title": {
+"en": "Gitty's passport prank",
+"he": "מתיחת הדרכון של גיטי"
+},
+"date": "2026-08-13",
+"place": {
+"en": "On the way to the airport",
+"he": "בדרך לשדה התעופה"
+},
+"status": "past",
+"cover": "https://api.bernshteinfamily.com/media/passport-prank/IMG_6835.jpg",
+"count": 2,
+"photos": 2,
+"videos": 0,
+"people": [],
+"file": "data/trips/passport-prank.json",
+"guide": null,
+"album": null,
+"category": {
+"id": "pranks-breakouts",
+"en": "Pranks & Breakouts",
+"he": "מתיחות והפתעות"
+}
+},
+{
+"id": "airport",
+"title": {
+"en": "Goodbye America",
+"he": "להתראות אמריקה"
+},
+"date": "2026-08-05",
+"place": {
+"en": "JFK airport",
+"he": "שדה התעופה JFK"
+},
+"status": "past",
+"cover": "https://api.bernshteinfamily.com/media/airport/IMG_6423.jpg",
+"count": 9,
+"photos": 5,
+"videos": 4,
+"people": [],
+"file": "data/trips/airport.json",
+"guide": null,
+"album": null,
+"category": {
+"id": "trips-outings",
+"en": "Trips & Outings",
+"he": "טיולים ויציאות"
+}
+},
+{
+"id": "apple-store",
+"title": {
+"en": "Apple Store & Vision Pro",
+"he": "חנות אפל ו־Vision Pro"
+},
+"date": "2026-08-04",
+"place": {
+"en": "Apple Store, Manhattan",
+"he": "חנות אפל, מנהטן"
+},
+"status": "past",
+"cover": "https://api.bernshteinfamily.com/media/apple-store/IMG_6124.jpg",
+"count": 9,
+"photos": 4,
+"videos": 5,
+"people": [],
+"file": "data/trips/apple-store.json",
+"guide": null,
+"album": null,
+"category": {
+"id": "trips-outings",
+"en": "Trips & Outings",
+"he": "טיולים ויציאות"
+}
+},
+{
+"id": "fish-tank-avi",
+"title": {
+"en": "Zalmy's fish tank for Avi",
+"he": "האקווריום של זלמי לאבי"
+},
+"date": "2026-08-04",
+"place": {
+"en": "Avi Steinman's fire-sprinkler office",
+"he": "המשרד של אבי שטיינמן"
+},
+"status": "past",
+"cover": "https://api.bernshteinfamily.com/media/fish-tank-avi/IMG_6081.jpg",
+"count": 6,
+"photos": 3,
+"videos": 3,
+"people": [],
+"file": "data/trips/fish-tank-avi.json",
+"guide": null,
+"album": null,
+"category": {
+"id": "office-work",
+"en": "Office & Work",
+"he": "במשרד"
+}
+},
+{
+"id": "last-day-camp",
+"title": {
+"en": "Shevy's last day in day camp",
+"he": "היום האחרון של שבי בקייטנה"
+},
+"date": "2026-08-04",
+"place": {
+"en": "Day camp",
+"he": "הקייטנה"
+},
+"status": "past",
+"cover": "https://api.bernshteinfamily.com/media/last-day-camp/IMG_6051.jpg",
+"count": 17,
+"photos": 11,
+"videos": 6,
+"people": [],
+"file": "data/trips/last-day-camp.json",
+"guide": null,
+"album": null,
+"category": {
+"id": "camp-school",
+"en": "Camp & School",
+"he": "מחנה ובית ספר"
+}
+},
+{
+"id": "last-day-yeshiva",
+"title": {
+"en": "Zalmy's last day of yeshiva",
+"he": "היום האחרון של זלמי בישיבה"
+},
+"date": "2026-08-04",
+"place": {
+"en": "Yeshiva",
+"he": "הישיבה"
+},
+"status": "past",
+"cover": "https://api.bernshteinfamily.com/media/last-day-yeshiva/IMG_6085.jpg",
+"count": 39,
+"photos": 35,
+"videos": 4,
+"people": [],
+"file": "data/trips/last-day-yeshiva.json",
+"guide": null,
+"album": null,
+"category": {
+"id": "camp-school",
+"en": "Camp & School",
+"he": "מחנה ובית ספר"
+}
+},
+{
+"id": "summit",
+"title": {
+"en": "SUMMIT One Vanderbilt",
+"he": "SUMMIT One Vanderbilt"
+},
+"date": "2026-08-04",
+"place": {
+"en": "SUMMIT One Vanderbilt, Manhattan",
+"he": "SUMMIT One Vanderbilt, מנהטן"
+},
+"status": "past",
+"cover": "https://api.bernshteinfamily.com/media/summit/IMG_6133.jpg",
+"count": 206,
+"photos": 184,
+"videos": 22,
+"people": [],
+"file": "data/trips/summit.json",
+"guide": null,
+"album": null,
+"category": {
+"id": "trips-outings",
+"en": "Trips & Outings",
+"he": "טיולים ויציאות"
+}
+},
+{
+"id": "color-breakout",
+"title": {
+"en": "The Massive Color Breakout",
+"he": "פתיחת מלחמת הצבעים הענקית"
+},
+"date": "2026-08-02",
+"place": {
+"en": "Camp Baisainu",
+"he": "מחנה בייסיינו"
+},
+"status": "past",
+"cover": "https://api.bernshteinfamily.com/media/color-breakout/IMG_5962.jpg",
+"count": 14,
+"photos": 3,
+"videos": 11,
+"people": [],
+"file": "data/trips/color-breakout.json",
+"guide": null,
+"album": null,
+"category": {
+"id": "pranks-breakouts",
+"en": "Pranks & Breakouts",
+"he": "מתיחות והפתעות"
+}
+},
+{
+"id": "beast-speedboat",
+"title": {
+"en": "The Beast speedboat",
+"he": "סירת המהירות The Beast"
+},
+"date": "2026-07-29",
+"place": {
+"en": "NY Harbor & the Statue of Liberty",
+"he": "נמל ניו יורק ופסל החירות"
+},
+"status": "past",
+"cover": "https://api.bernshteinfamily.com/media/beast-speedboat/IMG_5779.jpg",
+"count": 77,
+"photos": 62,
+"videos": 15,
+"people": [],
+"file": "data/trips/beast-speedboat.json",
+"guide": null,
+"album": null,
+"category": {
+"id": "trips-outings",
+"en": "Trips & Outings",
+"he": "טיולים ויציאות"
+}
+},
+{
+"id": "freedom-tower-again",
+"title": {
+"en": "Freedom Tower again, with Mommy",
+"he": "שוב מגדל החירות, עם מאמי"
+},
+"date": "2026-07-28",
+"place": {
+"en": "One World Trade Center, NYC",
+"he": "וואן וורלד טרייד סנטר, ניו יורק"
+},
+"status": "past",
+"cover": "https://api.bernshteinfamily.com/media/freedom-tower-again/IMG_5646.jpg",
+"count": 118,
+"photos": 110,
+"videos": 8,
+"people": [],
+"file": "data/trips/freedom-tower-again.json",
+"guide": null,
+"album": null,
+"category": {
+"id": "trips-outings",
+"en": "Trips & Outings",
+"he": "טיולים ויציאות"
+}
+},
+{
+"id": "zalmy-big-tzaddik",
+"title": {
+"en": "Zalmy the big tzaddik",
+"he": "זלמי הצדיק הגדול"
+},
+"date": "2026-07-22",
+"place": {
+"en": "Yehuda's office",
+"he": "המשרד של יהודה"
+},
+"status": "past",
+"cover": "https://api.bernshteinfamily.com/media/zalmy-big-tzaddik/IMG_5462.jpg",
+"count": 14,
+"photos": 3,
+"videos": 11,
+"people": [],
+"file": "data/trips/zalmy-big-tzaddik.json",
+"guide": null,
+"album": null,
+"category": {
+"id": "office-work",
+"en": "Office & Work",
+"he": "במשרד"
+}
+},
+{
+"id": "fish-delivery",
+"title": {
+"en": "A fish for Chaim Asher Reisman",
+"he": "דג לחיים אשר רייזמן"
+},
+"date": "2026-07-21",
+"place": {
+"en": "Chaim Asher Reisman's office",
+"he": "המשרד של חיים אשר רייזמן"
+},
+"status": "past",
+"cover": "https://api.bernshteinfamily.com/media/fish-delivery/IMG_5405.jpg",
+"count": 3,
+"photos": 2,
+"videos": 1,
+"people": [],
+"file": "data/trips/fish-delivery.json",
+"guide": null,
+"album": null,
+"category": {
+"id": "pranks-breakouts",
+"en": "Pranks & Breakouts",
+"he": "מתיחות והפתעות"
+}
+},
+{
+"id": "bonfire",
+"title": {
+"en": "Bonfire",
+"he": "מדורה"
+},
+"date": "2026-07-13",
+"place": {
+"en": "The woods by camp",
+"he": "היער ליד המחנה"
+},
+"status": "past",
+"cover": "https://api.bernshteinfamily.com/media/bonfire/IMG_5261.jpg",
+"count": 13,
+"photos": 10,
+"videos": 3,
+"people": [],
+"file": "data/trips/bonfire.json",
+"guide": null,
+"album": null,
+"category": {
+"id": "camp-school",
+"en": "Camp & School",
+"he": "מחנה ובית ספר"
+}
+},
+{
+"id": "car-wash",
+"title": {
+"en": "Car wash for Pilchik's car",
+"he": "שטיפה לאוטו של פילצ'יק"
+},
+"date": "2026-07-13",
+"place": {
+"en": "Camp",
+"he": "המחנה"
+},
+"status": "past",
+"cover": "https://api.bernshteinfamily.com/media/car-wash/7CCF761C-F8A2-457F-A32B-619D1C68D5BC.jpg",
+"count": 1,
+"photos": 1,
+"videos": 0,
+"people": [],
+"file": "data/trips/car-wash.json",
+"guide": null,
+"album": null,
+"category": {
+"id": "camp-school",
+"en": "Camp & School",
+"he": "מחנה ובית ספר"
+}
+},
+{
+"id": "outdoors-bongos",
+"title": {
+"en": "Chilling outside with bongos",
+"he": "צ'יל בחוץ עם בונגוס"
+},
+"date": "2026-07-13",
+"place": {
+"en": "The woods by camp",
+"he": "היער ליד המחנה"
+},
+"status": "past",
+"cover": "https://api.bernshteinfamily.com/media/outdoors-bongos/IMG_5191.jpg",
+"count": 73,
+"photos": 50,
+"videos": 23,
+"people": [],
+"file": "data/trips/outdoors-bongos.json",
+"guide": null,
+"album": null,
+"category": {
+"id": "camp-school",
+"en": "Camp & School",
+"he": "מחנה ובית ספר"
+}
+},
+{
+"id": "zalmy-yerushalmi",
+"title": {
+"en": "Zalmy the Yerushalmi",
+"he": "זלמי הירושלמי"
+},
+"date": "2026-07-12",
+"place": {
+"en": "Camp",
+"he": "המחנה"
+},
+"status": "past",
+"cover": "https://api.bernshteinfamily.com/media/zalmy-yerushalmi/IMG_5160.jpg",
+"count": 11,
+"photos": 9,
+"videos": 2,
+"people": [],
+"file": "data/trips/zalmy-yerushalmi.json",
+"guide": null,
+"album": null,
+"category": {
+"id": "camp-school",
+"en": "Camp & School",
+"he": "מחנה ובית ספר"
+}
+},
+{
+"id": "night-swim",
+"title": {
+"en": "Night swim",
+"he": "שחייה בלילה"
+},
+"date": "2026-07-11",
+"place": {
+"en": "Camp pool at night",
+"he": "בריכת המחנה בלילה"
+},
+"status": "past",
+"cover": "https://api.bernshteinfamily.com/media/night-swim/IMG_5106.jpg",
+"count": 57,
+"photos": 52,
+"videos": 5,
+"people": [],
+"file": "data/trips/night-swim.json",
+"guide": null,
+"album": null,
+"category": {
+"id": "camp-school",
+"en": "Camp & School",
+"he": "מחנה ובית ספר"
+}
+},
+{
+"id": "zalmy-golf-cart",
+"title": {
+"en": "Zalmy drives the golf cart",
+"he": "זלמי נוהג ברכב הגולף"
+},
+"date": "2026-07-10",
+"place": {
+"en": "Stolin Camp",
+"he": "מחנה סטולין"
+},
+"status": "past",
+"cover": "https://api.bernshteinfamily.com/media/zalmy-golf-cart/IMG_5081.jpg",
+"count": 8,
+"photos": 4,
+"videos": 4,
+"people": [],
+"file": "data/trips/zalmy-golf-cart.json",
+"guide": null,
+"album": null,
+"category": {
+"id": "camp-school",
+"en": "Camp & School",
+"he": "מחנה ובית ספר"
+}
+},
+{
+"id": "bunk-golf-cart",
+"title": {
+"en": "Faigy & Itty's bunk golf cart",
+"he": "רכב הגולף של הבאנק של פייגי ואיטי"
+},
+"date": "2026-07-08",
+"place": {
+"en": "Girls' day camp",
+"he": "קייטנת הבנות"
+},
+"status": "past",
+"cover": "https://api.bernshteinfamily.com/media/bunk-golf-cart/IMG_4959.jpg",
+"count": 11,
+"photos": 5,
+"videos": 6,
+"people": [],
+"file": "data/trips/bunk-golf-cart.json",
+"guide": null,
+"album": null,
+"category": {
+"id": "camp-school",
+"en": "Camp & School",
+"he": "מחנה ובית ספר"
+}
+},
+{
+"id": "camp-pool",
+"title": {
+"en": "Camp's huge pool",
+"he": "הבריכה הענקית של המחנה"
+},
+"date": "2026-07-08",
+"place": {
+"en": "Camp pool",
+"he": "בריכת המחנה"
+},
+"status": "past",
+"cover": "https://api.bernshteinfamily.com/media/camp-pool/IMG_5003.jpg",
+"count": 39,
+"photos": 18,
+"videos": 21,
+"people": [],
+"file": "data/trips/camp-pool.json",
+"guide": null,
+"album": null,
+"category": {
+"id": "camp-school",
+"en": "Camp & School",
+"he": "מחנה ובית ספר"
+}
+},
+{
+"id": "girls-golf-cart",
+"title": {
+"en": "40 girls on the golf cart",
+"he": "40 בנות על רכב הגולף"
+},
+"date": "2026-07-08",
+"place": {
+"en": "Girls' day camp",
+"he": "קייטנת הבנות"
+},
+"status": "past",
+"cover": "https://api.bernshteinfamily.com/media/girls-golf-cart/IMG_4976.jpg",
+"count": 18,
+"photos": 15,
+"videos": 3,
+"people": [],
+"file": "data/trips/girls-golf-cart.json",
+"guide": null,
+"album": null,
+"category": {
+"id": "camp-school",
+"en": "Camp & School",
+"he": "מחנה ובית ספר"
+}
+},
+{
+"id": "kalahari",
+"title": {
+"en": "Kalahari with Stolin Camp",
+"he": "קלהארי עם מחנה סטולין"
+},
+"date": "2026-07-07",
+"place": {
+"en": "Kalahari Waterpark",
+"he": "פארק המים קלהארי"
+},
+"status": "past",
+"cover": "https://api.bernshteinfamily.com/media/kalahari/IMG_4925-thumb.jpg",
+"count": 5,
+"photos": 0,
+"videos": 5,
+"people": [],
+"file": "data/trips/kalahari.json",
+"guide": null,
+"album": null,
+"category": {
+"id": "camp-school",
+"en": "Camp & School",
+"he": "מחנה ובית ספר"
+}
+},
+{
+"id": "stolin-golf-cart",
+"title": {
+"en": "Stolin Camp golf cart",
+"he": "רכב הגולף של מחנה סטולין"
+},
+"date": "2026-07-05",
+"place": {
+"en": "Stolin Camp",
+"he": "מחנה סטולין"
+},
+"status": "past",
+"cover": "https://api.bernshteinfamily.com/media/stolin-golf-cart/IMG_4883-thumb.jpg",
+"count": 2,
+"photos": 0,
+"videos": 2,
+"people": [],
+"file": "data/trips/stolin-golf-cart.json",
+"guide": null,
+"album": null,
+"category": {
+"id": "camp-school",
+"en": "Camp & School",
+"he": "מחנה ובית ספר"
+}
+},
+{
+"id": "hoopla-again",
+"title": {
+"en": "Hoopla again",
+"he": "שוב הופלה"
+},
+"date": "2026-07-02",
+"place": {
+"en": "Hoopla arcade",
+"he": "הארקייד של הופלה"
+},
+"status": "past",
+"cover": "https://api.bernshteinfamily.com/media/hoopla-again/IMG_4829-thumb.jpg",
+"count": 11,
+"photos": 0,
+"videos": 11,
+"people": [],
+"file": "data/trips/hoopla-again.json",
+"guide": null,
+"album": null,
+"category": {
+"id": "trips-outings",
+"en": "Trips & Outings",
+"he": "טיולים ויציאות"
+}
+},
+{
+"id": "american-dream",
+"title": {
+"en": "American Dream",
+"he": "אמריקן דרים"
+},
+"date": "2026-06-29",
+"place": {
+"en": "American Dream mall",
+"he": "קניון אמריקן דרים"
+},
+"status": "past",
+"cover": "https://api.bernshteinfamily.com/media/american-dream/IMG_4753.jpg",
+"count": 12,
+"photos": 9,
+"videos": 3,
+"people": [],
+"file": "data/trips/american-dream.json",
+"guide": null,
+"album": null,
+"category": {
+"id": "trips-outings",
+"en": "Trips & Outings",
+"he": "טיולים ויציאות"
+}
+},
+{
+"id": "mall-fun",
+"title": {
+"en": "Rock climbing & animal rides at the mall",
+"he": "טיפוס וחיות רכיבה בקניון"
+},
+"date": "2026-06-28",
+"place": {
+"en": "Mall play place",
+"he": "משחקייה בקניון"
+},
+"status": "past",
+"cover": "https://api.bernshteinfamily.com/media/mall-fun/IMG_4694.jpg",
+"count": 19,
+"photos": 3,
+"videos": 16,
+"people": [],
+"file": "data/trips/mall-fun.json",
+"guide": null,
+"album": null,
+"category": {
+"id": "trips-outings",
+"en": "Trips & Outings",
+"he": "טיולים ויציאות"
+}
+},
+{
+"id": "back-at-work",
+"title": {
+"en": "Back at work",
+"he": "חזרה לעבודה"
+},
+"date": "2026-06-25",
+"place": {
+"en": "Yehuda's office",
+"he": "המשרד של יהודה"
+},
+"status": "past",
+"cover": "https://api.bernshteinfamily.com/media/back-at-work/IMG_4651.jpg",
+"count": 5,
+"photos": 1,
+"videos": 4,
+"people": [],
+"file": "data/trips/back-at-work.json",
+"guide": null,
+"album": null,
+"category": {
+"id": "office-work",
+"en": "Office & Work",
+"he": "במשרד"
+}
+},
+{
+"id": "avi-birthday",
+"title": {
+"en": "Avi's birthday party",
+"he": "מסיבת יום ההולדת של אבי"
+},
+"date": "2026-06-24",
+"place": {
+"en": "Avi Steinman's office & warehouse",
+"he": "המשרד והמחסן של אבי שטיינמן"
+},
+"status": "past",
+"cover": "https://api.bernshteinfamily.com/media/avi-birthday/IMG_4592.jpg",
+"count": 31,
+"photos": 15,
+"videos": 16,
+"people": [],
+"file": "data/trips/avi-birthday.json",
+"guide": null,
+"album": null,
+"category": {
+"id": "parties-simchas",
+"en": "Parties & Simchas",
+"he": "מסיבות ושמחות"
+}
+},
+{
+"solemn": true,
+"people": [],
+"id": "shloshim-seuda",
+"title": {
+"en": "Shloshim seuda",
+"he": "סעודת שלושים"
+},
+"date": "2026-06-23",
+"place": {
+"en": "Event hall",
+"he": "אולם"
+},
+"status": "past",
+"cover": "https://api.bernshteinfamily.com/media/shloshim-seuda/IMG_4566.jpg",
+"count": 12,
+"photos": 7,
+"videos": 5,
+"file": "data/trips/shloshim-seuda.json",
+"guide": null,
+"album": null,
+"category": {
+"id": "family-occasions",
+"en": "Family Occasions",
+"he": "אירועים משפחתיים"
+}
+},
+{
+"id": "hoopla",
+"title": {
+"en": "Hoopla!",
+"he": "הופלה!"
+},
+"date": "2026-06-21",
+"place": {
+"en": "Hoopla (rides at the house, then the arcade)",
+"he": "הופלה (מתקנים בבית, ואז הארקייד)"
+},
+"status": "past",
+"cover": "https://api.bernshteinfamily.com/media/hoopla/IMG_4542.jpg",
+"count": 18,
+"photos": 5,
+"videos": 13,
+"people": [],
+"file": "data/trips/hoopla.json",
+"guide": null,
+"album": null,
+"category": {
+"id": "trips-outings",
+"en": "Trips & Outings",
+"he": "טיולים ויציאות"
+}
+},
+{
+"id": "langsam-feldman-show",
+"title": {
+"en": "Zalmy & the Langsam Feldman Show",
+"he": "זלמי וההצגה של לנגזם פלדמן"
+},
+"date": "2026-06-17",
+"place": {
+"en": "At home",
+"he": "בבית"
+},
+"status": "past",
+"cover": "https://api.bernshteinfamily.com/media/langsam-feldman-show/IMG_4349.jpg",
+"count": 7,
+"photos": 6,
+"videos": 1,
+"people": [],
+"file": "data/trips/langsam-feldman-show.json",
+"guide": null,
+"album": null,
+"category": {
+"id": "parties-simchas",
+"en": "Parties & Simchas",
+"he": "מסיבות ושמחות"
+}
+},
+{
+"id": "vr-funland",
+"title": {
+"en": "VR & Funland",
+"he": "VR ופאנלנד"
+},
+"date": "2026-06-17",
+"place": {
+"en": "VR arcade & Funland",
+"he": "ארקייד VR ופאנלנד"
+},
+"status": "past",
+"cover": "https://api.bernshteinfamily.com/media/vr-funland/IMG_4326-thumb.jpg",
+"count": 14,
+"photos": 0,
+"videos": 14,
+"people": [],
+"file": "data/trips/vr-funland.json",
+"guide": null,
+"album": null,
+"category": {
+"id": "trips-outings",
+"en": "Trips & Outings",
+"he": "טיולים ויציאות"
+}
+},
+{
+"id": "hatzalah",
+"title": {
+"en": "New Hatzalah members",
+"he": "חברי הצלה חדשים"
+},
+"date": "2026-06-04",
+"place": {
+"en": "Hatzalah car",
+"he": "רכב הצלה"
+},
+"status": "past",
+"cover": "https://api.bernshteinfamily.com/media/hatzalah/IMG_4063-thumb.jpg",
+"count": 2,
+"photos": 0,
+"videos": 2,
+"people": [],
+"file": "data/trips/hatzalah.json",
+"guide": null,
+"album": null,
+"category": {
+"id": "everyday-moments",
+"en": "Everyday Moments",
+"he": "רגעים מהיום־יום"
+}
+},
+{
+"id": "office-new-workers",
+"title": {
+"en": "New workers in Yehuda's office",
+"he": "עובדים חדשים במשרד של יהודה"
+},
+"date": "2026-06-04",
+"place": {
+"en": "Yehuda's office (new job)",
+"he": "המשרד של יהודה (העבודה החדשה)"
+},
+"status": "past",
+"cover": "https://api.bernshteinfamily.com/media/office-new-workers/IMG_4059.jpg",
+"count": 5,
+"photos": 4,
+"videos": 1,
+"people": [],
+"file": "data/trips/office-new-workers.json",
+"guide": null,
+"album": null,
+"category": {
+"id": "office-work",
+"en": "Office & Work",
+"he": "במשרד"
+}
+},
+{
+"id": "welcoming-fish",
+"title": {
+"en": "Welcoming the new Bernshteins home",
+"he": "מקבלים את בני ברנשטיין החדשים הביתה"
+},
+"date": "2026-06-04",
+"place": {
+"en": "On the way to the fish store, and home",
+"he": "בדרך לחנות הדגים, והביתה"
+},
+"status": "past",
+"cover": "https://api.bernshteinfamily.com/media/welcoming-fish/55C45802-8D8A-48A3-9996-1C14CD539058-thumb.jpg",
+"count": 6,
+"photos": 0,
+"videos": 6,
+"people": [],
+"file": "data/trips/welcoming-fish.json",
+"guide": null,
+"album": null,
+"category": {
+"id": "everyday-moments",
+"en": "Everyday Moments",
+"he": "רגעים מהיום־יום"
+}
+},
+{
+"id": "everyday-moments",
+"title": {
+"en": "Everyday moments",
+"he": "רגעים מהיום־יום"
+},
+"date": "2026-05-23",
+"place": {
+"en": "Here and there",
+"he": "פה ושם"
+},
+"status": "past",
+"cover": "https://api.bernshteinfamily.com/media/everyday-moments/D9C50CE1-2B7B-4CF4-BAB1-6D92AC2F279C.jpg",
+"count": 55,
+"photos": 37,
+"videos": 18,
+"people": [
+"henny",
+"mommy",
+"shevy",
+"zalmy"
+],
+"file": "data/trips/everyday-moments.json",
+"guide": null,
+"album": null,
+"category": {
+"id": "everyday-moments",
+"en": "Everyday Moments",
+"he": "רגעים מהיום־יום"
+}
+},
+{
+"id": "go-karting",
+"title": {
+"en": "Massive go-karting day",
+"he": "יום קארטינג ענק"
+},
+"date": "2026-05-20",
+"place": {
+"en": "RPM Raceway (Race · Play · More)",
+"he": "RPM Raceway"
+},
+"status": "past",
+"cover": "https://api.bernshteinfamily.com/media/go-karting/IMG_3571.jpg",
+"count": 36,
+"photos": 20,
+"videos": 16,
+"people": [],
+"file": "data/trips/go-karting.json",
+"guide": null,
+"album": null,
+"category": {
+"id": "trips-outings",
+"en": "Trips & Outings",
+"he": "טיולים ויציאות"
+}
+},
+{
+"id": "beast-round-one",
+"title": {
+"en": "The Beast, round one",
+"he": "The Beast, סיבוב ראשון"
+},
+"date": "2026-05-18",
+"place": {
+"en": "NY Harbor",
+"he": "נמל ניו יורק"
+},
+"status": "past",
+"cover": "https://api.bernshteinfamily.com/media/beast-round-one/IMG_3523-thumb.jpg",
+"count": 2,
+"photos": 0,
+"videos": 2,
+"people": [],
+"file": "data/trips/beast-round-one.json",
+"guide": null,
+"album": null,
+"category": {
+"id": "trips-outings",
+"en": "Trips & Outings",
+"he": "טיולים ויציאות"
+}
+},
+{
+"id": "freedom-tower",
+"title": {
+"en": "Freedom Tower",
+"he": "מגדל החירות"
+},
+"date": "2026-05-15",
+"place": {
+"en": "One World Trade Center, NYC",
+"he": "וואן וורלד טרייד סנטר, ניו יורק"
+},
+"status": "past",
+"cover": "https://api.bernshteinfamily.com/media/freedom-tower/IMG_3403.jpg",
+"count": 74,
+"photos": 64,
+"videos": 10,
+"people": [],
+"file": "data/trips/freedom-tower.json",
+"guide": null,
+"album": null,
+"category": {
+"id": "trips-outings",
+"en": "Trips & Outings",
+"he": "טיולים ויציאות"
+}
 }
 ]
 }

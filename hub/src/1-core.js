@@ -1,6 +1,6 @@
 /* Bernshtein family hub v5 */
-var VER='7';
-var CONFIG={whatsapp:'',notesEmail:'',site:'https://yehudakugel.github.io/israel-family-treat-menu/',helicopter:'2026-10-05T09:00:00+03:00'};
+var VER='8';
+var CONFIG={api:'',site:'https://bernshteinfamily.com/',helicopter:'2026-10-05T09:00:00+03:00'};
 var T={
 en:{fam:'The Bernshtein Family',hubsub:'Songs · Trips · Memories',t_home:'Home',t_trips:'Trips',t_mem:'Memories',t_songs:'Songs',t_fun:'Fun',t_search:'Search',
  welcome:'Our songs, our trips, our family',heroP:'Every song we sing together and every trip we take, kept in one place.',
@@ -13,8 +13,8 @@ en:{fam:'The Bernshtein Family',hubsub:'Songs · Trips · Memories',t_home:'Home
  starName:'Starring {p}',alsoIn:'Also appears in',inMem:'{p} in our memories',
  tripsIntro:'Every outing, one page each: the story, the songs and the photos.',memIntro:'All our photos and videos. Pick a person or a trip.',
  noteCta:'Know who’s in it or what happened?',noteCtaSub:'Send us a note and we’ll add it.',addNote:'Add a note',noteTitle:'Send a note',
- noteSub:'Tell us who’s in the picture or what happened. It opens WhatsApp or email with your note ready.',yourName:'Your name',whoIn:'Who’s in it?',whatHappened:'What happened?',
- sendWa:'WhatsApp',sendMail:'Email',cancel:'Cancel',noteFor:'Note for',photo:'Photo',video:'Video',fullSize:'Full size',
+ noteSub:'Tell us who’s in the picture or what happened.',yourName:'Your name',whoIn:'Who’s in it?',whatHappened:'What happened?',
+ cancel:'Cancel',noteFor:'Note for',photo:'Photo',video:'Video',fullSize:'Full size',
  tripSoon:'Photos will appear here after the trip.',seeGuide:'Open the trip guide',tripSongs:'Songs from this trip',
  favsEmpty:'Tap the heart on any song to keep it here.',recentEmpty:'Songs you play will show up here.',
  lang_he:'Hebrew',lang_yi:'Yiddish',lang_en:'English',memNone:'No memories with this filter yet.',peopleSub:'Songs and memories for each of us',
@@ -41,8 +41,8 @@ he:{fam:'משפחת ברנשטיין',hubsub:'שירים · טיולים · זכ
  starName:'בכיכוב {p}',alsoIn:'מופיע/ה גם ב־',inMem:'{p} בזכרונות שלנו',
  tripsIntro:'כל יציאה בעמוד משלה: הסיפור, השירים והתמונות.',memIntro:'כל התמונות והסרטונים שלנו. בחרו אדם או טיול.',
  noteCta:'יודעים מי בתמונה או מה קרה?',noteCtaSub:'שלחו לנו הערה ונוסיף אותה.',addNote:'הוספת הערה',noteTitle:'שליחת הערה',
- noteSub:'ספרו לנו מי בתמונה או מה קרה. ייפתח וואטסאפ או מייל עם ההודעה מוכנה.',yourName:'השם שלך',whoIn:'מי בתמונה?',whatHappened:'מה קרה?',
- sendWa:'וואטסאפ',sendMail:'מייל',cancel:'ביטול',noteFor:'הערה על',photo:'תמונה',video:'סרטון',fullSize:'גודל מלא',
+ noteSub:'ספרו לנו מי בתמונה או מה קרה.',yourName:'השם שלך',whoIn:'מי בתמונה?',whatHappened:'מה קרה?',
+ cancel:'ביטול',noteFor:'הערה על',photo:'תמונה',video:'סרטון',fullSize:'גודל מלא',
  tripSoon:'התמונות יופיעו כאן אחרי הטיול.',seeGuide:'למדריך הטיול',tripSongs:'השירים של הטיול',
  favsEmpty:'לחצו על הלב ליד שיר כדי לשמור אותו כאן.',recentEmpty:'שירים שתשמיעו יופיעו כאן.',
  lang_he:'עברית',lang_yi:'אידיש',lang_en:'אנגלית',memNone:'אין עדיין זכרונות בסינון הזה.',peopleSub:'השירים והזכרונות של כל אחד מאיתנו',
@@ -63,6 +63,8 @@ var lang=qs.get('lang')||LS.get('lang',null)||((navigator.language||'').indexOf(
 var M=null,TRIPS=[],TRIPCACHE={},SONG={},ALB={},PPL={},LYR=null,FUN=null;
 var favs=LS.get('favs',[]),recents=LS.get('recent',[]),plays=LS.get('plays',{});
 var $=function(s,r){return(r||document).querySelector(s)},$$=function(s,r){return[].slice.call((r||document).querySelectorAll(s))};
+/* form fields can exist both on a page and in a closed sheet: prefer the visible one */
+var vis=function(s){var a=$$(s);for(var i=0;i<a.length;i++)if(a[i].offsetParent!==null||a[i].getClientRects().length)return a[i];return a[0]||null};
 function t(k,o){if(o&&o.n===1&&(T[lang][k+'1']))k=k+'1';var s=(T[lang][k]!=null?T[lang][k]:T.en[k]);if(s==null)s=k;if(o)for(var x in o)s=s.replace('{'+x+'}',o[x]);return s}
 function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
 function L(o){if(o==null)return'';if(typeof o==='string')return o;return o[lang]||o.en||o.he||''}
@@ -73,12 +75,12 @@ function dirOf(s){return hasHe(s)?'rtl':'ltr'}
 function sTitle(s){return lang==='he'?(s.th||s.t):(s.te||s.t)}
 function aName(id){var a=ALB[id];return a?(lang==='he'?a.he:a.en):''}
 function pName(id){var p=PPL[id];return p?(lang==='he'?p.he:p.en):id}
-function cov(s,big){return s&&s.c?'music/covers/'+(big?'m':'t')+'/'+s.c+'.webp':''}
+function cov(s,big){if(s&&s.cu)return s.cu;if(s&&s.a==='new'&&!s.c)return'images/brand/monogram.svg';return s&&s.c?'music/covers/'+(big?'m':'t')+'/'+s.c+'.webp':''}
 function avatar(id){return'images/people/w/'+id+'.webp?v='+VER}
 function dateFmt(d,o){try{return new Intl.DateTimeFormat(lang==='he'?'he-IL':'en-GB',o||{day:'numeric',month:'long',year:'numeric'}).format(new Date(d+'T12:00:00'))}catch(e){return d}}
 function media(trip,u){if(!u)return'';if(/^(https?:)?\/\//.test(u)||!trip||!trip.base)return u;return trip.base.replace(/\/?$/,'/')+u}
 function idle(f){(window.requestIdleCallback||function(c){return setTimeout(c,200)})(f)}
 function getJSON(u){return fetch(u+(u.indexOf('?')<0?'?v='+VER:'')).then(function(r){if(!r.ok)throw new Error(r.status);return r.json()})}
-var lyrP=null;function needLyrics(){if(!lyrP)lyrP=getJSON('data/lyrics.json').then(function(d){LYR=d;return d}).catch(function(){LYR={};return LYR});return lyrP}
+var lyrP=null;function needLyrics(){if(!lyrP)lyrP=getJSON('data/lyrics.json').then(function(d){LYR=d;for(var k in NEWLYR)LYR[k]=NEWLYR[k];return d}).catch(function(){LYR={};return LYR});return lyrP}
 var funP=null;function needFun(){if(!funP)funP=getJSON('data/fun.json').then(function(d){FUN=d;return d});return funP}
 function toast(msg){var el=$('#toast');el.textContent=msg;el.hidden=false;el.classList.remove('go');void el.offsetWidth;el.classList.add('go');clearTimeout(toast.t);toast.t=setTimeout(function(){el.hidden=true},2200)}

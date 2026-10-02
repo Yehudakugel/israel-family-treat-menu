@@ -1,0 +1,5 @@
+CREATE TABLE IF NOT EXISTS uploads(id TEXT PRIMARY KEY,key TEXT NOT NULL,thumb TEXT,type TEXT,mime TEXT,size INTEGER,by TEXT,caption TEXT,people TEXT,trip TEXT,w INTEGER,h INTEGER,date TEXT,hidden INTEGER DEFAULT 0,orig TEXT);
+CREATE TABLE IF NOT EXISTS pending(id TEXT PRIMARY KEY,key TEXT,upload_id TEXT,mime TEXT,meta TEXT,created TEXT);
+CREATE TABLE IF NOT EXISTS requests(id TEXT PRIMARY KEY,status TEXT,type TEXT,lang TEXT,style TEXT,kids TEXT,other TEXT,details TEXT,name TEXT,ui_lang TEXT,date TEXT,song TEXT,note TEXT);
+CREATE TABLE IF NOT EXISTS songs(id TEXT PRIMARY KEY,t TEXT,th TEXT,te TEXT,g TEXT,y TEXT,p TEXT,st TEXT,d INTEGER,lyrics TEXT,audio TEXT,cover TEXT,request TEXT,date TEXT,hidden INTEGER DEFAULT 0);
+CREATE TABLE IF NOT EXISTS notes(id TEXT PRIMARY KEY,trip TEXT,item TEXT,who TEXT,text TEXT,name TEXT,date TEXT,status TEXT);

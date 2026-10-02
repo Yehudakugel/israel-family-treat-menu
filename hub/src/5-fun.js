@@ -79,10 +79,6 @@ function vCreate(){
   h+='<label>'+esc(lang==='he'?'לאיזה אירוע?':'What’s the occasion?')+'</label>'+chips(occ,'occ');
   h+='<label>'+esc(lang==='he'?'שפה':'Language')+'</label>'+chips([['yi',t('lang_yi')],['he',t('lang_he')],['en',t('lang_en')]],'lng');
   h+='<label>'+esc(lang==='he'?'סגנון':'Style')+'</label>'+chips(sty,'sty');
-  h+='<label for="csd">'+esc(lang==='he'?'פרטים מצחיקים, משפטים, מה קרה':'Funny details, catchphrases, what happened')+'</label><textarea id="csd" dir="auto" rows="5"></textarea><label for="nn">'+esc(t('yourName'))+'</label><input id="nn" value="'+esc(LS.get('name',''))+'"></div>'+sendBtns('song')+foot()+'</div>';
+  h+='<label for="csd">'+esc(lang==='he'?'פרטים מצחיקים, משפטים, מה קרה':'Funny details, catchphrases, what happened')+'</label><textarea id="csd" dir="auto" rows="5"></textarea><label for="nn">'+esc(t('yourName'))+'</label><input id="nn" value="'+esc(LS.get('name',''))+'">'+createBtns()+'</div>'+foot()+'</div>';
   setView(h,'fun');
 }
-function songMsg(){var name=$('#nn').value.trim();LS.set('name',name);var who=CS.who.map(pName);var o=$('#cso').value.trim();if(o)who.push(o);
-  var lines=[lang==='he'?'🎵 בקשה לשיר חדש':'🎵 New song request'];if(who.length)lines.push((lang==='he'?'על: ':'About: ')+who.join(', '));
-  var oc=$('[data-k=occ].on'),lg=$('[data-k=lng].on'),st=$('[data-k=sty].on');if(oc)lines.push((lang==='he'?'אירוע: ':'Occasion: ')+oc.textContent);if(lg)lines.push((lang==='he'?'שפה: ':'Language: ')+lg.textContent);if(st)lines.push((lang==='he'?'סגנון: ':'Style: ')+st.textContent);
-  var d=$('#csd').value.trim();if(d)lines.push(d);if(name)lines.push('— '+name);return{subject:lang==='he'?'בקשה לשיר חדש':'New song request',body:lines.join('\n')}}

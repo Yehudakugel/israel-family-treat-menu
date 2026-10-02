@@ -23,9 +23,10 @@ document.addEventListener('click',function(e){
   if(act==='jump'){e.preventDefault();var el=document.getElementById(a.getAttribute('data-to'));if(el)window.scrollTo({top:el.getBoundingClientRect().top+scrollY-70,behavior:'smooth'});return}
   if(act==='note')return openNote(a.getAttribute('data-trip'),a.getAttribute('data-item'));
   if(act==='upload')return openUpload();
+  if(act==='csend')return sendSongReq();
+  if(act==='nsend')return sendNote();
   if(act==='notex'){$('#note').hidden=true;return}
   if(act==='who'){var pid=a.getAttribute('data-p'),w=NOTE.who.indexOf(pid);if(w>=0)NOTE.who.splice(w,1);else NOTE.who.push(pid);a.classList.toggle('on',w<0);return}
-  if(act==='send'){var kind=a.getAttribute('data-kind'),m=kind==='song'?songMsg():noteMsg();sendVia(a.getAttribute('data-via'),m);var me1=me();if(me1){me1.n=(me1.n||0)+1;save();award(5);badge('note')}return}
   if(act==='prof'){PROF=a.getAttribute('data-p');LS.set('prof',PROF);me();save();location.hash=a.getAttribute('data-back')||'#/fun';route();return}
   if(act==='qans')return quizAnswer(+a.getAttribute('data-o'));
   if(act==='qnext'){QZ.i++;QZ.ans=null;renderQuiz();return}
@@ -42,7 +43,7 @@ var bar=$('#bar');window.addEventListener('scroll',function(){bar.classList.togg
 var tripsSeen=LS.get('tseen',[]);
 function route(){
   var p=decodeURIComponent(location.hash.replace(/^#\/?/,'')).split('/');
-  if(!$('#lb').hidden)closeLB();if(!$('#np').hidden&&p[0]!=='')closeNP();if(!$('#kar').hidden)closeKar();
+  if(!$('#lb').hidden)closeLB();if(!$('#note').hidden)$('#note').hidden=true;if(!$('#np').hidden&&p[0]!=='')closeNP();if(!$('#kar').hidden)closeKar();
   switch(p[0]){
     case'songs':return vSongs(p[1],p.slice(2).join('/')||null);
     case'music':return vSongs(p[1]==='people'?'artists':p[1],p.slice(2).join('/')||null);
@@ -61,10 +62,11 @@ function route(){
 }
 window.addEventListener('hashchange',route);
 applyLang();
-Promise.all([getJSON('data/songs.json'),getJSON('data/trips.json')]).then(function(r){
-  M=r[0];TRIPS=r[1].trips||[];
+Promise.all([getJSON('data/songs.json'),getJSON('data/trips.json'),fetch('data/config.json',{cache:'no-cache'}).then(function(r){return r.ok?r.json():{}}).catch(function(){return{}})]).then(function(r){
+  M=r[0];TRIPS=r[1].trips||[];if(r[2]&&typeof r[2].api==='string')CONFIG.api=r[2].api;
   M.songs.forEach(function(s){SONG[s.id]=s});M.albums.forEach(function(a){ALB[a.id]=a});M.people.forEach(function(p){PPL[p.id]=p});
   favs=favs.filter(function(id){return SONG[id]});route();
+  loadBackend().then(function(){if(apiOn()&&/^#\/(memories|songs\/albums|album\/new|$)/.test(location.hash||'#/'))route()});
   ['pointerdown','keydown'].forEach(function(e){document.addEventListener(e,function f(){document.removeEventListener(e,f,true);idle(function(){needLyrics()})},true)});
 }).catch(function(e){V.innerHTML='<p class="empty">'+esc(String(e))+'</p>'});
 if('serviceWorker'in navigator&&location.protocol!=='file:')window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});

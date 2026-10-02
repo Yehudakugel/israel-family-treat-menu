@@ -152,3 +152,18 @@ html[dir=rtl] .meter i{transform-origin:right}
 .tlist .tcard:not(.up) .meta{font-size:12px}
 .tline small{display:block}
 .catnav{margin:14px 0 4px;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}.catnav .chip{white-space:nowrap}.cn{color:var(--muted);font-size:12px;margin-inline-start:2px}.catsec{scroll-margin-top:70px}.catsec .sec-h{margin-top:28px}.catsec .h3{margin-top:24px}
+.gi .gv{width:100%;height:auto;display:block;background:var(--paper-2);pointer-events:none}
+.upick,.sheet-modal label.upick{position:relative;margin:16px 0 0;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;font-size:14px}
+.uplist{list-style:none;margin:12px 0 0;padding:0}
+.uplist li{display:grid;grid-template-columns:1fr auto;gap:4px 10px;padding:8px 0;border-bottom:1px solid var(--line);font-size:13px}
+.uplist .un{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.uplist small{color:var(--muted);text-align:end}
+.uplist .ub{grid-column:1/-1;height:4px;background:var(--line);border-radius:2px;overflow:hidden}
+.uplist .ub i{display:block;height:100%;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .2s}
+html[dir=rtl] .uplist .ub i{transform-origin:right}
+.uplist li.ok small{color:var(--accent)}.uplist li.bad small{color:#9A4A3A}
+.form input[type=password],.sheet-modal input[type=password]{letter-spacing:.1em}
+.acov.k-new{background:var(--accent);color:var(--paper)}
+
+/* video without a thumbnail: light placeholder instead of a <video> element (cheaper on iPhone) */
+.gi .gph{display:flex;align-items:center;justify-content:center;width:100%;background:linear-gradient(160deg,#2b2620,#4a4136);color:#f5f1ea}.gi .gph svg{width:34px;height:34px;opacity:.85}

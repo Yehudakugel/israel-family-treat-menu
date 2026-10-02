@@ -32,7 +32,8 @@ function doSearch(q){
 /* ---------- trips & memories ---------- */
 function loadTrip(id){if(TRIPCACHE[id])return Promise.resolve(TRIPCACHE[id]);var s=TRIPS.filter(function(x){return x.id===id})[0];if(!s)return Promise.reject();return getJSON(s.file).then(function(tr){(tr.items||[]).forEach(function(it){it._trip=tr});TRIPCACHE[id]=tr;return tr})}
 var allP=null;function loadAllTrips(){if(!allP)allP=Promise.all(TRIPS.filter(function(x){return x.count>0}).map(function(x){return loadTrip(x.id).catch(function(){})}));return allP}
-function allItems(){var a=[];TRIPS.forEach(function(x){var tr=TRIPCACHE[x.id];if(tr)a=a.concat(tr.items||[])});return a}
+/* solemn trips (e.g. the shloshim seuda) are never mixed into All, person views or search */
+function allItems(withSolemn){var a=[];TRIPS.forEach(function(x){var tr=TRIPCACHE[x.id];if(tr&&(withSolemn||!(x.solemn||tr.solemn)))a=a.concat(tr.items||[])});return a}
 function coverSrc(x){var c=x.cover;if(!c)return'';if(c==='images/itinerary/hero-family.jpg')return'images/hero/hero-800.webp';return c}
 function tripCard(x){
   var up=x.status==='upcoming',meta=up?L(x.place):[dateFmt(x.date),L(x.place)].filter(Boolean).join(' · ');
@@ -45,7 +46,7 @@ function tripCard(x){
   return h+'</div></a>';
 }
 var GRIDS={};
-function gi(it,key,i){var tr=it._trip,th=media(tr,it.thumb||it.poster||it.src),r=it.w&&it.h?' width="'+it.w+'" height="'+it.h+'"':'';return'<button class="gi" data-act="lb" data-g="'+key+'" data-i="'+i+'"><img loading="lazy" decoding="async" src="'+esc(th)+'"'+r+' alt="'+esc(L(it.caption))+'">'+(it.type==='video'?'<span class="vd">'+ic('play')+(it.duration?fmt(it.duration):'')+'</span>':'')+'</button>'}
+function gi(it,key,i){var tr=it._trip,th=media(tr,it.thumb||it.poster||it.src),r=it.w&&it.h?' width="'+it.w+'" height="'+it.h+'"':'';var vt=it.type==='video'&&!it.thumb&&!it.poster;return'<button class="gi" data-act="lb" data-g="'+key+'" data-i="'+i+'">'+(vt?'<span class="gv gph" style="aspect-ratio:'+(it.w&&it.h?it.w+'/'+it.h:'9/16')+'">'+ic('play')+'</span>':'<img loading="lazy" decoding="async" src="'+esc(th)+'"'+r+' alt="'+esc(L(it.caption))+'">')+(it.type==='video'?'<span class="vd">'+ic('play')+(it.duration?fmt(it.duration):'')+'</span>':'')+'</button>'}
 function gridHTML(items,key,page){GRIDS[key]=items;var n=page||items.length;var h='<div class="grid" data-key="'+key+'">'+items.slice(0,n).map(function(it,i){return gi(it,key,i)}).join('')+'</div>';if(items.length>n)h+='<div class="sentinel" data-key="'+key+'" data-from="'+n+'"></div>';return h}
 var io=('IntersectionObserver'in window)?new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;var s=e.target,key=s.getAttribute('data-key'),from=+s.getAttribute('data-from'),items=GRIDS[key]||[],g=$('.grid[data-key="'+key+'"]');if(!g)return;var to=Math.min(items.length,from+60);g.insertAdjacentHTML('beforeend',items.slice(from,to).map(function(it,k){return gi(it,key,from+k)}).join(''));if(to>=items.length){io.unobserve(s);s.remove()}else s.setAttribute('data-from',to)})},{rootMargin:'800px'}):null;
 function watchSentinels(){if(io)$$('.sentinel').forEach(function(s){io.observe(s)})}
@@ -69,7 +70,7 @@ function byCat(list){
 }
 function catNav(gs,pre){return gs.length>1?'<div class="chips catnav">'+gs.map(function(k){return'<button class="chip" data-act="jump" data-to="'+pre+k.c.id+'">'+esc(L(k.c))+' <span class="cn">'+k.items.length+'</span></button>'}).join('')+'</div>':''}
 function vTrips(){
-  var up=TRIPS.filter(function(x){return x.status==='upcoming'}),past=TRIPS.filter(function(x){return x.status!=='upcoming'}),gs=byCat(past);
+  var up=TRIPS.filter(function(x){return x.status==='upcoming'}),past=TRIPS.filter(function(x){return x.status!=='upcoming'&&!x.newf}),gs=byCat(past);
   var h='<div class="wrap">'+head(t('t_trips'),t('t_trips'),t('tripsIntro'))+catNav(gs,'tc-')+(up.length?'<div class="tlist">'+up.map(tripCard).join('')+'</div>':'');
   gs.forEach(function(k){h+='<section class="catsec" id="tc-'+k.c.id+'"><div class="sec-h"><h2 class="h2">'+esc(L(k.c))+'</h2><span class="count">'+k.items.length+'</span></div><div class="tlist">'+k.items.map(tripCard).join('')+'</div></section>'});
   h+=foot()+'</div>';
@@ -97,7 +98,7 @@ function vTrip(id,pid,item){
       (chs||[{id:null}]).forEach(function(c){var ci=c.id?its.filter(function(it){return it.chapter===c.id}):its;if(!ci.length)return;if(c.title)h+='<div class="chap" id="ch-'+c.id+'"><h3>'+esc(L(c.title))+'</h3></div>';h+=gridHTML(ci,'tr-'+(c.id||'all'),60)});
       if(!its.length)h+='<p class="empty">'+esc(t('memNone'))+'</p>';h+='</div>';
     }
-    h+='<button class="note-cta" data-act="note" data-trip="'+id+'">'+ic('note')+'<span><b>'+esc(t('noteCta'))+'</b><small>'+esc(t('noteCtaSub'))+'</small></span></button>'+foot()+'</div>';
+    if(!tr.solemn)h+='<button class="note-cta" data-act="note" data-trip="'+id+'">'+ic('note')+'<span><b>'+esc(t('noteCta'))+'</b><small>'+esc(t('noteCtaSub'))+'</small></span></button>';h+=foot()+'</div>';
     setView(h,'trips');watchSentinels();
     if(item){Object.keys(GRIDS).some(function(k){var i=GRIDS[k].findIndex(function(it){return it.id===item});if(i>=0){openLB(k,i);return true}})}
   }).catch(function(){setView('<div class="wrap"><p class="empty">'+esc(t('memNone'))+'</p></div>','trips')});
@@ -112,10 +113,10 @@ function vMemories(mode,arg){
     return setView(h+foot()+'</div>','memories');
   }
   if(mode==='person')h+='<div class="rail ppl">'+M.people.map(function(p){return personChip(p,p.id===arg,'#/memories/person/'+p.id)}).join('')+'</div>';
-  if(mode==='trip'){var x=TRIPS.filter(function(z){return z.id===arg})[0];h+='<a class="back" href="#/memories/trips">'+ic('back')+esc(lang==='he'?'תיקיות':'Folders')+'</a><h2 class="h2">'+esc(x?L(x.title):'')+'</h2><p><a class="link" href="#/trip/'+arg+'">'+esc(lang==='he'?'לעמוד הטיול':'Open the trip page')+'</a></p>'}
+  if(mode==='trip'){var x=TRIPS.filter(function(z){return z.id===arg})[0];h+='<a class="back" href="#/memories/trips">'+ic('back')+esc(lang==='he'?'תיקיות':'Folders')+'</a><h2 class="h2">'+esc(x?L(x.title):'')+'</h2>'+(x&&x.newf?'<p class="muted sm">'+esc(L(x.place))+'</p>':'<p><a class="link" href="#/trip/'+arg+'">'+esc(lang==='he'?'לעמוד הטיול':'Open the trip page')+'</a></p>')}
   h+='<div id="mres"><p class="empty">…</p></div>'+foot()+'</div>';
   setView(h,'memories');
-  loadAllTrips().then(function(){var el=$('#mres');if(!el)return;var its=allItems();
+  loadAllTrips().then(function(){var el=$('#mres');if(!el)return;var its=allItems(mode==='trip');
     if(mode==='person')its=its.filter(function(it){return(it.people||[]).indexOf(arg)>=0});
     if(mode==='trip')its=its.filter(function(it){return it._trip.id===arg});
     its.sort(function(a,b){return String(b.date||b._trip.date).localeCompare(String(a.date||a._trip.date))});
