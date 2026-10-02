@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Trip questions · The Bernshtein Family</title>
+<meta name="theme-color" content="#F5F1EA">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;500;600&family=Heebo:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#F5F1EA;--paper-2:#EDE7DC;--card:#FBF9F5;--ink:#1F1E1B;--ink-2:#46433D;--muted:#7A756B;--faint:#A29C90;--line:#E1DACD;--line-2:#CDC4B3;--accent:#4E5A3B;--accent-soft:#E7E8DC;
+--serif:"Frank Ruhl Libre",Georgia,serif;--sans:"Heebo",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--paper);-webkit-text-size-adjust:100%}
+body{font:400 15px/1.55 var(--sans);color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased;padding-bottom:calc(84px + env(safe-area-inset-bottom))}
+button,input,textarea{font:inherit;color:inherit}
+button{background:none;border:0;cursor:pointer}
+.wrap{max-width:680px;margin:0 auto;padding:0 16px}
+.bar{position:sticky;top:0;z-index:20;background:var(--paper);border-bottom:1px solid var(--line);padding:10px 16px}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0}
+.brand b{display:block;font:500 16px/1.15 var(--serif)}
+.brand small{display:block;font-size:11.5px;color:var(--muted)}
+.prog{font-size:12px;color:var(--muted);white-space:nowrap}
+.prog i{display:block;height:3px;background:var(--line);border-radius:2px;margin-top:4px;overflow:hidden}
+.prog i span{display:block;height:100%;background:var(--accent);width:0;transition:width .4s}
+.eyebrow{font:500 11px/1.3 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+h1,h2,h3{font-family:var(--serif);font-weight:500;letter-spacing:-.01em;line-height:1.15}
+.intro{padding:28px 0 8px}
+.intro h1{font-size:30px;margin:8px 0 10px}
+.intro p{color:var(--ink-2)}
+.toc{display:flex;gap:8px;overflow-x:auto;padding:14px 0 6px;scrollbar-width:none}
+.toc::-webkit-scrollbar{display:none}
+.toc a{flex:none;border:1px solid var(--line-2);border-radius:999px;padding:5px 12px;font-size:13px;color:var(--ink-2);text-decoration:none;white-space:nowrap}
+.toc a.ok{background:var(--accent-soft);border-color:var(--accent-soft);color:var(--accent)}
+.q{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:18px 16px;margin:16px 0;scroll-margin-top:72px}
+.q .num{font-size:12px;color:var(--faint);letter-spacing:.12em}
+.q h2{font-size:21px;margin:4px 0 8px}
+.q .body{color:var(--ink-2);white-space:pre-line}
+.q.done{border-color:var(--accent)}
+.q.done .num::after{content:" · answered";color:var(--accent)}
+.grp{margin-top:14px}
+.grp .lbl{font-size:12px;color:var(--muted);margin-bottom:6px}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:4px}
+@media(min-width:520px){.grid{grid-template-columns:repeat(6,1fr)}}
+.th{position:relative;aspect-ratio:1;border-radius:3px;overflow:hidden;background:var(--paper-2)}
+.th img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.92)}
+.th .v{position:absolute;inset:auto auto 4px 4px;width:18px;height:18px;border-radius:50%;background:rgba(31,30,27,.7)}
+.th .v::after{content:"";position:absolute;left:7px;top:5px;border-left:6px solid #fff;border-top:4px solid transparent;border-bottom:4px solid transparent}
+.th .n{position:absolute;right:3px;bottom:3px;font-size:9.5px;color:#fff;background:rgba(31,30,27,.55);padding:0 4px;border-radius:2px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.chip{border:1px solid var(--line-2);border-radius:999px;padding:6px 13px;font-size:13px;color:var(--ink-2)}
+.chip[aria-pressed=true]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+textarea{display:block;width:100%;margin-top:12px;min-height:76px;border:1px solid var(--line-2);border-radius:6px;background:#fff;padding:10px 12px;font-size:16px;resize:vertical;line-height:1.45}
+textarea:focus,input:focus{outline:2px solid var(--accent-soft);border-color:var(--accent)}
+.sec{margin:34px 0 6px}
+.sec h2{font-size:24px;margin:6px 0 6px}
+.sec p{color:var(--ink-2)}
+.trip{display:grid;grid-template-columns:64px 1fr;gap:12px;align-items:start;padding:12px 0;border-bottom:1px solid var(--line)}
+.trip .c{width:64px;height:64px;border-radius:4px;object-fit:cover;background:var(--paper-2)}
+.trip b{font:500 16px/1.25 var(--serif);display:block}
+.trip small{color:var(--muted);font-size:12.5px}
+.trip .row{display:flex;gap:6px;margin-top:8px;align-items:center}
+.trip .row .chip{padding:4px 11px;font-size:12.5px}
+.trip .row .chip.y[aria-pressed=true]{background:var(--accent);border-color:var(--accent)}
+.trip input{flex:1;min-width:0;border:1px solid var(--line-2);border-radius:999px;background:#fff;padding:5px 12px;font-size:16px}
+.trip.ok{opacity:.75}
+.allok{margin-top:10px;font-size:13px;color:var(--muted);text-decoration:underline}
+.send{position:fixed;inset:auto 0 0;z-index:30;background:var(--paper);border-top:1px solid var(--line);padding:10px 16px calc(10px + env(safe-area-inset-bottom))}
+.send .wrap{display:flex;gap:8px;padding:0}
+.btn{flex:1;border-radius:6px;padding:12px;font-weight:500;text-align:center;text-decoration:none;font-size:15px}
+.btn.p{background:var(--ink);color:var(--paper)}
+.btn.s{flex:none;border:1px solid var(--line-2);color:var(--ink-2);padding:12px 14px}
+.saved{font-size:12px;color:var(--accent);text-align:center;padding:24px 0 10px}
+.lb{position:fixed;inset:0;z-index:50;background:rgba(31,30,27,.92);display:none;align-items:center;justify-content:center;flex-direction:column;gap:10px;padding:20px}
+.lb.on{display:flex}
+.lb img{max-width:100%;max-height:78vh;border-radius:4px}
+.lb p{color:#EDE7DC;font-size:13px}
+.toast{position:fixed;left:50%;bottom:90px;transform:translateX(-50%);background:var(--ink);color:var(--paper);padding:8px 14px;border-radius:6px;font-size:13px;opacity:0;transition:opacity .3s;pointer-events:none;z-index:60}
+.toast.on{opacity:1}
+</style>
+</head>
+<body>
+<header class="bar"><div class="wrap">
+  <div class="brand"><b>The Bernshtein Family</b><small>Trip questions</small></div>
+  <div class="prog"><span id="pt">0 of 0 answered</span><i><span id="pb"></span></i></div>
+</div></header>
+<main class="wrap">
+  <section class="intro">
+    <div class="eyebrow">iCloud album · 1,196 photos & videos</div>
+    <h1>A few questions before the trips go live</h1>
+    <p>I sorted everything into 44 trips. Wherever I wasn’t sure, there’s a question below with the photos. Tap a photo to see it bigger. Answer whatever you know and skip the rest. Your answers are saved on this phone as you type. When you’re done, tap <b>Send answers</b>.</p>
+    <nav class="toc" id="toc"></nav>
+  </section>
+  <div id="qs"></div>
+  <section class="sec" id="trips">
+    <div class="eyebrow">Last step</div>
+    <h2>Confirm the trip names</h2>
+    <p>Tap ✓ if the name is right, or type a better name.</p>
+    <button class="allok" id="allok">Mark all the rest as correct</button>
+    <div id="tl"></div>
+  </section>
+  <p class="saved" id="saved">Answers are saved on this phone.</p>
+</main>
+<div class="send"><div class="wrap">
+  <a class="btn p" id="wa" href="#">Send answers on WhatsApp</a>
+  <a class="btn s" id="ml" href="#" aria-label="Email">Email</a>
+  <button class="btn s" id="cp" aria-label="Copy">Copy</button>
+</div></div>
+<div class="lb" id="lb"><img alt=""><p></p></div>
+<div class="toast" id="toast"></div>
+<script>
+const KEY='bernshtein-questions-v1';
+let S={};try{S=JSON.parse(localStorage.getItem(KEY))||{}}catch(e){}
+S.q=S.q||{};S.t=S.t||{};
+let D;
+const $=s=>document.querySelector(s);
+const M=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const fd=s=>String(s).replace(/(\d\d)-(\d\d)/g,(m,a,b)=>M[+a-1]+' '+(+b));
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}refresh()}
+function answered(id){const a=S.q[id];return a&&((a.text||'').trim()||(a.chips||[]).length)}
+function tripDone(slug){const a=S.t[slug];return a&&(a.ok||(a.name||'').trim())}
+function refresh(){
+  const total=D.q.length+1;let n=D.q.filter(q=>answered(q.id)).length;
+  const td=D.trips.filter(t=>tripDone(t.slug)).length; if(td===D.trips.length)n++;
+  $('#pt').textContent=`${n} of ${total} done`;$('#pb').style.width=(100*n/total)+'%';
+  D.q.forEach(q=>{const el=document.getElementById('q-'+q.id);el.classList.toggle('done',!!answered(q.id));document.querySelector(`.toc a[href="#q-${q.id}"]`).classList.toggle('ok',!!answered(q.id))});
+  document.querySelector('.toc a[href="#trips"]').classList.toggle('ok',td===D.trips.length);
+  document.querySelector('.toc a[href="#trips"]').textContent=`Trip names ${td}/${D.trips.length}`;
+  const msg=buildMsg();
+  $('#wa').href='https://wa.me/?text='+encodeURIComponent(msg);
+  $('#ml').href='mailto:?subject='+encodeURIComponent('Trip questions: my answers')+'&body='+encodeURIComponent(msg);
+}
+function buildMsg(){
+  const L=['Trip questions: my answers',''];
+  D.q.forEach((q,i)=>{if(!answered(q.id))return;const a=S.q[q.id];
+    L.push(`${i+1}. ${q.title}`);
+    if((a.chips||[]).length)L.push('→ '+a.chips.join(' / '));
+    if((a.text||'').trim())L.push(a.text.trim());
+    L.push('');});
+  const ok=[],ren=[];
+  D.trips.forEach(t=>{const a=S.t[t.slug];if(!a)return;
+    if((a.name||'').trim())ren.push(`#${t.n} ${t.title} (${fd(t.date)}) → ${a.name.trim()}`);
+    else if(a.ok)ok.push(t.n);});
+  if(ok.length||ren.length){L.push('Trip names:');
+    if(ok.length)L.push(ok.length===D.trips.length?'All correct':(ok.length+ren.length===D.trips.length?(ren.length?'All others correct':'All correct'):'Correct: #'+ok.join(', #')));
+    ren.forEach(r=>L.push(r));}
+  if(L.length===2)L.push('(nothing answered yet)');
+  return L.join('\n').trim();
+}
+function thumbs(items){return '<div class="grid">'+items.map(it=>`<button class="th" data-src="${it.src}" data-cap="#${it.n} · ${esc(fd(it.d))}${it.v?' · video':''}"><img loading="lazy" src="${it.src}" alt="">${it.v?'<span class="v"></span>':''}<span class="n">#${it.n}</span></button>`).join('')+'</div>'}
+function render(){
+  $('#toc').innerHTML=D.q.map((q,i)=>`<a href="#q-${q.id}">${i+1}. ${esc(q.title.replace(/[“”]/g,'').split(/[:?]/)[0].replace(/^(.{24}).+$/,'$1…'))}</a>`).join('')+'<a href="#trips">Trip names</a>';
+  $('#qs').innerHTML=D.q.map((q,i)=>{const a=S.q[q.id]||{};return `<article class="q" id="q-${q.id}">
+    <div class="num">QUESTION ${i+1} OF ${D.q.length}</div><h2>${esc(q.title)}</h2><p class="body">${esc(q.body)}</p>
+    ${q.groups.map(g=>`<div class="grp"><div class="lbl">${esc(g.label)}</div>${thumbs(g.items)}</div>`).join('')}
+    ${q.chips.length?`<div class="chips">${q.chips.map(c=>`<button class="chip" data-q="${q.id}" aria-pressed="${(a.chips||[]).includes(c)}">${esc(c)}</button>`).join('')}</div>`:''}
+    <textarea data-q="${q.id}" placeholder="Your answer…">${esc(a.text||'')}</textarea></article>`}).join('');
+  $('#tl').innerHTML=D.trips.map(t=>{const a=S.t[t.slug]||{};return `<div class="trip${a.ok?' ok':''}" data-t="${t.slug}">
+    <button class="th" style="width:64px;height:64px" data-src="${t.cover}" data-cap="${esc(t.title)} · ${fd(t.date)}"><img class="c" loading="lazy" src="${t.cover}" alt=""></button>
+    <div><b>${t.n}. ${esc(t.title)}</b><small>${fd(t.date)} · ${t.count} items · ${esc(t.place)}</small>
+    <div class="row"><button class="chip y" data-ok="${t.slug}" aria-pressed="${!!a.ok}">✓</button><input data-name="${t.slug}" placeholder="Rename…" value="${esc(a.name||'')}"></div></div></div>`}).join('');
+}
+document.addEventListener('click',e=>{
+  const c=e.target.closest('.chip[data-q]');
+  if(c){const id=c.dataset.q;const a=S.q[id]=S.q[id]||{};a.chips=a.chips||[];const v=c.textContent;
+    const i=a.chips.indexOf(v);i<0?a.chips.push(v):a.chips.splice(i,1);c.setAttribute('aria-pressed',i<0);save();return}
+  const o=e.target.closest('[data-ok]');
+  if(o){const s=o.dataset.ok;const a=S.t[s]=S.t[s]||{};a.ok=!a.ok;o.setAttribute('aria-pressed',a.ok);o.closest('.trip').classList.toggle('ok',a.ok);save();return}
+  const th=e.target.closest('.th');
+  if(th){const lb=$('#lb');lb.querySelector('img').src=th.dataset.src;lb.querySelector('p').textContent=th.dataset.cap;lb.classList.add('on');return}
+  if(e.target.closest('#lb')){$('#lb').classList.remove('on');return}
+});
+document.addEventListener('input',e=>{
+  const t=e.target;
+  if(t.dataset.q){(S.q[t.dataset.q]=S.q[t.dataset.q]||{}).text=t.value;save()}
+  else if(t.dataset.name){(S.t[t.dataset.name]=S.t[t.dataset.name]||{}).name=t.value;save()}
+});
+$('#allok').onclick=()=>{D.trips.forEach(t=>{const a=S.t[t.slug]=S.t[t.slug]||{};if(!(a.name||'').trim())a.ok=true});render();save();toast('All marked correct')};
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('on');setTimeout(()=>t.classList.remove('on'),1600)}
+$('#cp').onclick=async()=>{try{await navigator.clipboard.writeText(buildMsg());toast('Copied')}catch(e){prompt('Copy:',buildMsg())}};
+const bar=document.querySelector('.bar');
+fetch('data.json').then(r=>r.json()).then(d=>{D=d;render();refresh()});
+</script>
+</body>
+</html>
