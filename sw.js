@@ -1,5 +1,5 @@
 /* Bernshtein hub service worker: instant repeat visits, offline browsing. Audio is never cached here. */
-var V='bh-v6',SHELL=['./','index.html','hub/app.js?v=6','data/songs.json?v=6','data/trips.json?v=6','images/brand/monogram.svg','images/hero/hero-480.webp','images/hero/hero-800.webp'];
+var V='bh-v7',SHELL=['./','index.html','hub/app.js?v=7','data/songs.json?v=7','data/trips.json?v=7','images/brand/monogram.svg','images/hero/hero-480.webp','images/hero/hero-800.webp'];
 self.addEventListener('install',function(e){e.waitUntil(caches.open(V).then(function(c){return c.addAll(SHELL)}).then(function(){return self.skipWaiting()}))});
 self.addEventListener('activate',function(e){e.waitUntil(caches.keys().then(function(ks){return Promise.all(ks.filter(function(k){return k!==V&&k!==V+'-img'}).map(function(k){return caches.delete(k)}))}).then(function(){return self.clients.claim()}))});
 function swr(req,name){return caches.open(name).then(function(c){return c.match(req).then(function(hit){var net=fetch(req).then(function(r){if(r.ok&&r.status===200)c.put(req,r.clone());return r}).catch(function(){return hit});return hit||net})})}

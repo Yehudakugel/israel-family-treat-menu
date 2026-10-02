@@ -1,5 +1,5 @@
 /* Bernshtein family hub v5 */
-var VER='6';
+var VER='7';
 var CONFIG={whatsapp:'',notesEmail:'',site:'https://yehudakugel.github.io/israel-family-treat-menu/',helicopter:'2026-10-05T09:00:00+03:00'};
 var T={
 en:{fam:'The Bernshtein Family',hubsub:'Songs · Trips · Memories',t_home:'Home',t_trips:'Trips',t_mem:'Memories',t_songs:'Songs',t_fun:'Fun',t_search:'Search',
@@ -74,7 +74,7 @@ function sTitle(s){return lang==='he'?(s.th||s.t):(s.te||s.t)}
 function aName(id){var a=ALB[id];return a?(lang==='he'?a.he:a.en):''}
 function pName(id){var p=PPL[id];return p?(lang==='he'?p.he:p.en):id}
 function cov(s,big){return s&&s.c?'music/covers/'+(big?'m':'t')+'/'+s.c+'.webp':''}
-function avatar(id){return'images/people/w/'+id+'.webp'}
+function avatar(id){return'images/people/w/'+id+'.webp?v='+VER}
 function dateFmt(d,o){try{return new Intl.DateTimeFormat(lang==='he'?'he-IL':'en-GB',o||{day:'numeric',month:'long',year:'numeric'}).format(new Date(d+'T12:00:00'))}catch(e){return d}}
 function media(trip,u){if(!u)return'';if(/^(https?:)?\/\//.test(u)||!trip||!trip.base)return u;return trip.base.replace(/\/?$/,'/')+u}
 function idle(f){(window.requestIdleCallback||function(c){return setTimeout(c,200)})(f)}
