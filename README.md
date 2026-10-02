@@ -1,2 +1,3 @@
-# israel-family-treat-menu
-Live treat-menu page for Lilna family activities near Jerusalem — updated as we plan
+# Bernshtein family
+
+The family site lives at https://bernshteinfamily.com (family passcode required).
